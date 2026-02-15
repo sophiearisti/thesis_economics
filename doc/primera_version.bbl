@@ -1,0 +1,1375 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{alvarez_informalidad_nodate}{report}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8ae11aa44c84f1f4a90f91157303b177}{%
+           family={Álvarez},
+           familyi={Á\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=239cb7e6f87c51ac0ee65799895c272f}{%
+           family={Zambrano},
+           familyi={Z\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=935aa7ec9282a39a5067e9bf0e3d4176}{%
+           family={Zuleta},
+           familyi={Z\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Banco de la República}%
+      }
+      \strng{namehash}{6669c30baa28af52d87e4900ba12daeb}
+      \strng{fullhash}{f15fa0cfbbc1dc729a0b13e40793e455}
+      \strng{fullhashraw}{f15fa0cfbbc1dc729a0b13e40793e455}
+      \strng{bibnamehash}{f15fa0cfbbc1dc729a0b13e40793e455}
+      \strng{authorbibnamehash}{f15fa0cfbbc1dc729a0b13e40793e455}
+      \strng{authornamehash}{6669c30baa28af52d87e4900ba12daeb}
+      \strng{authorfullhash}{f15fa0cfbbc1dc729a0b13e40793e455}
+      \strng{authorfullhashraw}{f15fa0cfbbc1dc729a0b13e40793e455}
+      \field{sortinit}{Á}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{n.d.}
+      \field{title}{Informalidad laboral y Covid-19: vulnerabilidad o flexibilidad}
+      \field{type}{techreport}
+      \verb{urlraw}
+      \verb https://repositorio.banrep.gov.co/server/api/core/bitstreams/23e2c186-01c4-43e9-955c-a5c2c0531de0/content
+      \endverb
+      \verb{url}
+      \verb https://repositorio.banrep.gov.co/server/api/core/bitstreams/23e2c186-01c4-43e9-955c-a5c2c0531de0/content
+      \endverb
+    \endentry
+    \entry{DelgadoGomez2025_tiendas_de_barrio}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=85b74b056e9b76affc03c14cd5158029}{%
+           family={ANIF},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Valora Analitik}%
+      }
+      \strng{namehash}{85b74b056e9b76affc03c14cd5158029}
+      \strng{fullhash}{85b74b056e9b76affc03c14cd5158029}
+      \strng{fullhashraw}{85b74b056e9b76affc03c14cd5158029}
+      \strng{bibnamehash}{85b74b056e9b76affc03c14cd5158029}
+      \strng{authorbibnamehash}{85b74b056e9b76affc03c14cd5158029}
+      \strng{authornamehash}{85b74b056e9b76affc03c14cd5158029}
+      \strng{authorfullhash}{85b74b056e9b76affc03c14cd5158029}
+      \strng{authorfullhashraw}{85b74b056e9b76affc03c14cd5158029}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{title}{Se reducen las tiendas de barrio en Colombia: ¿Qué hay detrás de esta caída?}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.valoraanalitik.com/se-reducen-las-tiendas-de-barrio-en-colombia-que-hay-detras-de-esta-caida/
+      \endverb
+      \verb{url}
+      \verb https://www.valoraanalitik.com/se-reducen-las-tiendas-de-barrio-en-colombia-que-hay-detras-de-esta-caida/
+      \endverb
+    \endentry
+    \entry{basker2005}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=33eb389e0910df88f1e6037735807142}{%
+           family={Basker},
+           familyi={B\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{33eb389e0910df88f1e6037735807142}
+      \strng{fullhash}{33eb389e0910df88f1e6037735807142}
+      \strng{fullhashraw}{33eb389e0910df88f1e6037735807142}
+      \strng{bibnamehash}{33eb389e0910df88f1e6037735807142}
+      \strng{authorbibnamehash}{33eb389e0910df88f1e6037735807142}
+      \strng{authornamehash}{33eb389e0910df88f1e6037735807142}
+      \strng{authorfullhash}{33eb389e0910df88f1e6037735807142}
+      \strng{authorfullhashraw}{33eb389e0910df88f1e6037735807142}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Review of Economics and Statistics}
+      \field{number}{1}
+      \field{title}{Job creation or Destruction? Labor market effects of Wal-Mart expansion}
+      \field{volume}{87}
+      \field{year}{2005}
+      \field{pages}{174\bibrangedash 183}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1162/0034653053327568
+      \endverb
+    \endentry
+    \entry{Callaway_SantAnna_2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4a5a67b3788b4a3653a14d9ab03fba0e}{%
+           family={Callaway},
+           familyi={C\bibinitperiod},
+           given={Brantly},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f90144f1e670fa40bee88166593b00ea}{%
+           family={Sant'Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelimb H.\bibnamedelimi C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{fullhash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{fullhashraw}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{bibnamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authorbibnamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authornamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authorfullhash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authorfullhashraw}{ad085d57563a91bbe53422c59ebffdd2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Econometrics}
+      \field{number}{2}
+      \field{title}{Difference-in-Differences with Multiple Time Periods}
+      \field{volume}{225}
+      \field{year}{2021}
+      \field{pages}{200\bibrangedash 230}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1016/j.jeconom.2020.12.001
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.jeconom.2020.12.001
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.jeconom.2020.12.001
+      \endverb
+    \endentry
+    \entry{cho2015}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=d2be4a319cfbaebc0c12b68a982755bf}{%
+           family={Cho},
+           familyi={C\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=45d9f395236228a9dbfad8f171f1f8ef}{%
+           family={Chun},
+           familyi={C\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d50c5d908fe9ead398d6448f784be74}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b99fde9b547d36badce03dd6b2615deb}
+      \strng{fullhash}{8e6ca9785ead9d6a982a773b82413294}
+      \strng{fullhashraw}{8e6ca9785ead9d6a982a773b82413294}
+      \strng{bibnamehash}{8e6ca9785ead9d6a982a773b82413294}
+      \strng{authorbibnamehash}{8e6ca9785ead9d6a982a773b82413294}
+      \strng{authornamehash}{b99fde9b547d36badce03dd6b2615deb}
+      \strng{authorfullhash}{8e6ca9785ead9d6a982a773b82413294}
+      \strng{authorfullhashraw}{8e6ca9785ead9d6a982a773b82413294}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Comparative Economics}
+      \field{number}{3}
+      \field{title}{How does the entry of large discount stores increase retail employment? Evidence from Korea}
+      \field{volume}{43}
+      \field{year}{2015}
+      \field{pages}{559\bibrangedash 574}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1016/j.jce.2015.04.004
+      \endverb
+    \endentry
+    \entry{concejo_proyecto_2022}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=65bf5ea4ec5a4e9a6b41960e4a88eba0}{%
+           family={{Concejo de Bogotá, D.C.}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Alcaldiabogota}%
+      }
+      \strng{namehash}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \strng{fullhash}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \strng{fullhashraw}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \strng{bibnamehash}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \strng{authorbibnamehash}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \strng{authornamehash}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \strng{authorfullhash}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \strng{authorfullhashraw}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=143212}}
+      \field{note}{Consultado el 21 de septiembre de 2025}
+      \field{title}{Proyecto de Acuerdo 106 de 2022}
+      \field{year}{2022}
+    \endentry
+    \entry{dane_emicron_2025}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e949548a1c94237c2714130be28a14d3}{%
+           family={{DANE}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {DANE}%
+      }
+      \strng{namehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{fullhash}{e949548a1c94237c2714130be28a14d3}
+      \strng{fullhashraw}{e949548a1c94237c2714130be28a14d3}
+      \strng{bibnamehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authorbibnamehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authornamehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authorfullhash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authorfullhashraw}{e949548a1c94237c2714130be28a14d3}
+      \field{extraname}{1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Consultado el 21 de septiembre de 2025}
+      \field{title}{Encuesta de Micronegocios (EMICRON) 2024}
+      \field{type}{techreport}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.dane.gov.co/files/operaciones/EMICRON/bol-EMICRON-2024.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.dane.gov.co/files/operaciones/EMICRON/bol-EMICRON-2024.pdf
+      \endverb
+    \endentry
+    \entry{DANE2025a}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e949548a1c94237c2714130be28a14d3}{%
+           family={{DANE}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{fullhash}{e949548a1c94237c2714130be28a14d3}
+      \strng{fullhashraw}{e949548a1c94237c2714130be28a14d3}
+      \strng{bibnamehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authorbibnamehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authornamehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authorfullhash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authorfullhashraw}{e949548a1c94237c2714130be28a14d3}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{In DANE. Retrieved September 27, 2025, from \url{https://www.dane.gov.co/files/operaciones/EMICRON/bol-EMICRON-PanaderiasTiendasBarrio-2023.pdf}}
+      \field{title}{Encuesta de Micronegocios (EMICRON) Panaderías y tiendas de barrio 2019-2023}
+      \field{year}{2025}
+    \endentry
+    \entry{delgado2024}{report}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=19168c8fa6a548fdb2f62eac962a4e6e}{%
+           family={Delgado},
+           familyi={D\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc97c39b6126c25df83f026bcec396c1}{%
+           family={Otero},
+           familyi={O\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=530574ab5f0b54252d62c50617b74bce}{%
+           family={Calderón},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Centro De Estudios Económicos Regionales - Cartagena}%
+      }
+      \strng{namehash}{fa7668a78ab94837838caf51b6203be0}
+      \strng{fullhash}{6fdd7a3aa20bf243852aeb57dd89a686}
+      \strng{fullhashraw}{6fdd7a3aa20bf243852aeb57dd89a686}
+      \strng{bibnamehash}{6fdd7a3aa20bf243852aeb57dd89a686}
+      \strng{authorbibnamehash}{6fdd7a3aa20bf243852aeb57dd89a686}
+      \strng{authornamehash}{fa7668a78ab94837838caf51b6203be0}
+      \strng{authorfullhash}{6fdd7a3aa20bf243852aeb57dd89a686}
+      \strng{authorfullhashraw}{6fdd7a3aa20bf243852aeb57dd89a686}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{326}
+      \field{title}{The impact of hard discount stores on local labor markets: evidence from Colombia}
+      \field{type}{techreport}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.banrep.gov.co/en/documentos-trabajo-sobre-economia-regional-urbana-impact-hard-discount-stores-local-labor-markets
+      \endverb
+      \verb{url}
+      \verb https://www.banrep.gov.co/en/documentos-trabajo-sobre-economia-regional-urbana-impact-hard-discount-stores-local-labor-markets
+      \endverb
+    \endentry
+    \entry{godoy2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=08496f3db292ab3eaa141e69ae8345cf}{%
+           family={Godoy},
+           familyi={G\bibinitperiod},
+           given={M.\bibnamedelimi C.\bibnamedelimi P.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{08496f3db292ab3eaa141e69ae8345cf}
+      \strng{fullhash}{08496f3db292ab3eaa141e69ae8345cf}
+      \strng{fullhashraw}{08496f3db292ab3eaa141e69ae8345cf}
+      \strng{bibnamehash}{08496f3db292ab3eaa141e69ae8345cf}
+      \strng{authorbibnamehash}{08496f3db292ab3eaa141e69ae8345cf}
+      \strng{authornamehash}{08496f3db292ab3eaa141e69ae8345cf}
+      \strng{authorfullhash}{08496f3db292ab3eaa141e69ae8345cf}
+      \strng{authorfullhashraw}{08496f3db292ab3eaa141e69ae8345cf}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{17}
+      \field{journaltitle}{Valora Analitik}
+      \field{month}{3}
+      \field{title}{Tiendas Oxxo abre su local número 600 en Colombia}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.valoraanalitik.com/tiendas-oxxo-abre-su-local-numero-600-en-colombia/
+      \endverb
+      \verb{url}
+      \verb https://www.valoraanalitik.com/tiendas-oxxo-abre-su-local-numero-600-en-colombia/
+      \endverb
+    \endentry
+    \entry{Konishi2005}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=933756f939b72ad113b50ff2c60ffb08}{%
+           family={Konishi},
+           familyi={K\bibinitperiod},
+           given={Hideo},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{933756f939b72ad113b50ff2c60ffb08}
+      \strng{fullhash}{933756f939b72ad113b50ff2c60ffb08}
+      \strng{fullhashraw}{933756f939b72ad113b50ff2c60ffb08}
+      \strng{bibnamehash}{933756f939b72ad113b50ff2c60ffb08}
+      \strng{authorbibnamehash}{933756f939b72ad113b50ff2c60ffb08}
+      \strng{authornamehash}{933756f939b72ad113b50ff2c60ffb08}
+      \strng{authorfullhash}{933756f939b72ad113b50ff2c60ffb08}
+      \strng{authorfullhashraw}{933756f939b72ad113b50ff2c60ffb08}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The geographical concentration of stores that sell similar commodities is analyzed using a two-dimensional spatial competition model. A higher concentration of stores attracts more consumers with taste uncertainty and low price expectations (a market-size effect), while it leads to fiercer price competition (a price-cutting effect). Our model is general enough to allow for the coexistence of multiple (possibly) asymmetric clusters of stores. We provide sufficient conditions for the nonemptiness of equilibrium store location choices in pure strategies. Through numerical examples, we illustrate the trade-off between the market-size and price-cutting effects, and provide agglomeration patterns of stores in special cases.}
+      \field{journaltitle}{Journal of Urban Economics}
+      \field{number}{3}
+      \field{title}{Concentration of competing retail stores}
+      \field{volume}{58}
+      \field{year}{2005}
+      \field{pages}{488\bibrangedash 512}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1016/j.jue.2005.08.005
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0094119005000562
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0094119005000562
+      \endverb
+      \keyw{Consumer search,Market size effect,Price cutting effect,Taste uncertainty}
+    \endentry
+    \entry{llanes2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=965355982f5ada4ae7bb410e8b5e0190}{%
+           family={Llanes},
+           familyi={L\bibinitperiod},
+           given={M.\bibnamedelimi C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {BBVA Research}%
+      }
+      \strng{namehash}{965355982f5ada4ae7bb410e8b5e0190}
+      \strng{fullhash}{965355982f5ada4ae7bb410e8b5e0190}
+      \strng{fullhashraw}{965355982f5ada4ae7bb410e8b5e0190}
+      \strng{bibnamehash}{965355982f5ada4ae7bb410e8b5e0190}
+      \strng{authorbibnamehash}{965355982f5ada4ae7bb410e8b5e0190}
+      \strng{authornamehash}{965355982f5ada4ae7bb410e8b5e0190}
+      \strng{authorfullhash}{965355982f5ada4ae7bb410e8b5e0190}
+      \strng{authorfullhashraw}{965355982f5ada4ae7bb410e8b5e0190}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{title}{Colombia | Empleo no asalariado, gran jalonador del empleo nacional}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.bbvaresearch.com/publicaciones/colombia-empleo-no-asalariado-gran-jalonador-del-empleo-nacional/
+      \endverb
+      \verb{url}
+      \verb https://www.bbvaresearch.com/publicaciones/colombia-empleo-no-asalariado-gran-jalonador-del-empleo-nacional/
+      \endverb
+    \endentry
+    \entry{marcos2022}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8e5c5fdbc284b20602db3d27b40da47d}{%
+           family={Marcos},
+           familyi={M\bibinitperiod},
+           given={M.\bibnamedelimi Á.},
+           giveni={M\bibinitperiod\bibinitdelim Á\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8e5c5fdbc284b20602db3d27b40da47d}
+      \strng{fullhash}{8e5c5fdbc284b20602db3d27b40da47d}
+      \strng{fullhashraw}{8e5c5fdbc284b20602db3d27b40da47d}
+      \strng{bibnamehash}{8e5c5fdbc284b20602db3d27b40da47d}
+      \strng{authorbibnamehash}{8e5c5fdbc284b20602db3d27b40da47d}
+      \strng{authornamehash}{8e5c5fdbc284b20602db3d27b40da47d}
+      \strng{authorfullhash}{8e5c5fdbc284b20602db3d27b40da47d}
+      \strng{authorfullhashraw}{8e5c5fdbc284b20602db3d27b40da47d}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cuadernos de Economía}
+      \field{title}{Preliminary Evidence of Surviving Competition: Neighborhood Shops vs. Convenience Chains}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.18235/0004453
+      \endverb
+    \endentry
+    \entry{naranjo_ocupacion_2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=443ad9acfcb2d7a528fd2c5446de387e}{%
+           family={Naranjo},
+           familyi={N\bibinitperiod},
+           given={D.\bibnamedelimi H.},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Portafolio.co}%
+      }
+      \strng{namehash}{443ad9acfcb2d7a528fd2c5446de387e}
+      \strng{fullhash}{443ad9acfcb2d7a528fd2c5446de387e}
+      \strng{fullhashraw}{443ad9acfcb2d7a528fd2c5446de387e}
+      \strng{bibnamehash}{443ad9acfcb2d7a528fd2c5446de387e}
+      \strng{authorbibnamehash}{443ad9acfcb2d7a528fd2c5446de387e}
+      \strng{authornamehash}{443ad9acfcb2d7a528fd2c5446de387e}
+      \strng{authorfullhash}{443ad9acfcb2d7a528fd2c5446de387e}
+      \strng{authorfullhashraw}{443ad9acfcb2d7a528fd2c5446de387e}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{title}{Más ocupación, menos protección, la paradoja del trabajo por cuenta propia}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.portafolio.co/economia/empleo/trabajo-por-cuenta-propia-crece-en-colombia-pero-informalidad-y-falta-de-aportes-preocupan-634514
+      \endverb
+      \verb{url}
+      \verb https://www.portafolio.co/economia/empleo/trabajo-por-cuenta-propia-crece-en-colombia-pero-informalidad-y-falta-de-aportes-preocupan-634514
+      \endverb
+    \endentry
+    \entry{RiosAvila_Callaway_SantAnna_2021_csdid_slides}{misc}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8780ffb8b2119e19b7327ec3426ba2a3}{%
+           family={Rios-Avila},
+           familyi={R\bibinithyphendelim A\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4a5a67b3788b4a3653a14d9ab03fba0e}{%
+           family={Callaway},
+           familyi={C\bibinitperiod},
+           given={Brantly},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f90144f1e670fa40bee88166593b00ea}{%
+           family={Sant'Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelimb H.\bibnamedelimi C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{2}{%
+        {Levy Economics Institute, University of Georgia,}%
+        {Vanderbilt University}%
+      }
+      \strng{namehash}{4d2d3e2bca3f23d146b02d8d2d361cf3}
+      \strng{fullhash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{fullhashraw}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{bibnamehash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{authorbibnamehash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{authornamehash}{4d2d3e2bca3f23d146b02d8d2d361cf3}
+      \strng{authorfullhash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{authorfullhashraw}{3cb58943e0d53b9ad6b3aebba9690672}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Presentation slides, Stata Conference}
+      \field{month}{8}
+      \field{note}{Available upon request or at the Stata Conference 2021 materials}
+      \field{title}{csdid: Difference-in-Differences with Multiple Time Periods in Stata}
+      \field{year}{2021}
+    \endentry
+    \entry{m_2025}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ad4b6003de0b7ce760ea128daf47ae47}{%
+           family={Rodríguez},
+           familyi={R\bibinitperiod},
+           given={J.\bibnamedelimi R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ad4b6003de0b7ce760ea128daf47ae47}
+      \strng{fullhash}{ad4b6003de0b7ce760ea128daf47ae47}
+      \strng{fullhashraw}{ad4b6003de0b7ce760ea128daf47ae47}
+      \strng{bibnamehash}{ad4b6003de0b7ce760ea128daf47ae47}
+      \strng{authorbibnamehash}{ad4b6003de0b7ce760ea128daf47ae47}
+      \strng{authornamehash}{ad4b6003de0b7ce760ea128daf47ae47}
+      \strng{authorfullhash}{ad4b6003de0b7ce760ea128daf47ae47}
+      \strng{authorfullhashraw}{ad4b6003de0b7ce760ea128daf47ae47}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Portafolio.co}
+      \field{month}{3}
+      \field{title}{Oxxo llegó a su apertura 600 en Colombia: ¿cuántas tiendas abre en el año?}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.portafolio.co/negocios/empresas/oxxo-llega-a-las-600-tiendas-en-colombia-626124
+      \endverb
+      \verb{url}
+      \verb https://www.portafolio.co/negocios/empresas/oxxo-llega-a-las-600-tiendas-en-colombia-626124
+      \endverb
+    \endentry
+    \entry{Seong2022}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=f6a3f423029340e4ded9192e8828f1ce}{%
+           family={Seong},
+           familyi={S\bibinitperiod},
+           given={E.\bibnamedelimi Y.},
+           giveni={E\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=89dda28cac79a47adf9134d5598c4f12}{%
+           family={Lim},
+           familyi={L\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d8a536f8fbfb1908979eae934c6e9891}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={C.\bibnamedelimi G.},
+           giveni={C\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{238d92dfa5108e0df9209985588777c8}
+      \strng{fullhash}{c21efe56725cbaf95dae9affec0ea3a8}
+      \strng{fullhashraw}{c21efe56725cbaf95dae9affec0ea3a8}
+      \strng{bibnamehash}{c21efe56725cbaf95dae9affec0ea3a8}
+      \strng{authorbibnamehash}{c21efe56725cbaf95dae9affec0ea3a8}
+      \strng{authornamehash}{238d92dfa5108e0df9209985588777c8}
+      \strng{authorfullhash}{c21efe56725cbaf95dae9affec0ea3a8}
+      \strng{authorfullhashraw}{c21efe56725cbaf95dae9affec0ea3a8}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Environment and Planning B: Urban Analytics and City Science}
+      \field{note}{Original work published 2021}
+      \field{number}{3}
+      \field{title}{Why are convenience stores clustered? The reasons behind the clustering of similar shops and the effect of increased competition}
+      \field{volume}{49}
+      \field{year}{2022}
+      \field{pages}{834\bibrangedash 846}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1177/23998083211021870
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1177/23998083211021870
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1177/23998083211021870
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{alvarez_informalidad_nodate}{report}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8ae11aa44c84f1f4a90f91157303b177}{%
+           family={Álvarez},
+           familyi={Á\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=239cb7e6f87c51ac0ee65799895c272f}{%
+           family={Zambrano},
+           familyi={Z\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=935aa7ec9282a39a5067e9bf0e3d4176}{%
+           family={Zuleta},
+           familyi={Z\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Banco de la República}%
+      }
+      \strng{namehash}{6669c30baa28af52d87e4900ba12daeb}
+      \strng{fullhash}{f15fa0cfbbc1dc729a0b13e40793e455}
+      \strng{fullhashraw}{f15fa0cfbbc1dc729a0b13e40793e455}
+      \strng{bibnamehash}{f15fa0cfbbc1dc729a0b13e40793e455}
+      \strng{authorbibnamehash}{f15fa0cfbbc1dc729a0b13e40793e455}
+      \strng{authornamehash}{6669c30baa28af52d87e4900ba12daeb}
+      \strng{authorfullhash}{f15fa0cfbbc1dc729a0b13e40793e455}
+      \strng{authorfullhashraw}{f15fa0cfbbc1dc729a0b13e40793e455}
+      \field{sortinit}{Á}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labeldatesource}{nodate}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{n.d.}
+      \field{title}{Informalidad laboral y Covid-19: vulnerabilidad o flexibilidad}
+      \field{type}{techreport}
+      \verb{urlraw}
+      \verb https://repositorio.banrep.gov.co/server/api/core/bitstreams/23e2c186-01c4-43e9-955c-a5c2c0531de0/content
+      \endverb
+      \verb{url}
+      \verb https://repositorio.banrep.gov.co/server/api/core/bitstreams/23e2c186-01c4-43e9-955c-a5c2c0531de0/content
+      \endverb
+    \endentry
+    \entry{DelgadoGomez2025_tiendas_de_barrio}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=85b74b056e9b76affc03c14cd5158029}{%
+           family={ANIF},
+           familyi={A\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Valora Analitik}%
+      }
+      \strng{namehash}{85b74b056e9b76affc03c14cd5158029}
+      \strng{fullhash}{85b74b056e9b76affc03c14cd5158029}
+      \strng{fullhashraw}{85b74b056e9b76affc03c14cd5158029}
+      \strng{bibnamehash}{85b74b056e9b76affc03c14cd5158029}
+      \strng{authorbibnamehash}{85b74b056e9b76affc03c14cd5158029}
+      \strng{authornamehash}{85b74b056e9b76affc03c14cd5158029}
+      \strng{authorfullhash}{85b74b056e9b76affc03c14cd5158029}
+      \strng{authorfullhashraw}{85b74b056e9b76affc03c14cd5158029}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{title}{Se reducen las tiendas de barrio en Colombia: ¿Qué hay detrás de esta caída?}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.valoraanalitik.com/se-reducen-las-tiendas-de-barrio-en-colombia-que-hay-detras-de-esta-caida/
+      \endverb
+      \verb{url}
+      \verb https://www.valoraanalitik.com/se-reducen-las-tiendas-de-barrio-en-colombia-que-hay-detras-de-esta-caida/
+      \endverb
+    \endentry
+    \entry{basker2005}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=33eb389e0910df88f1e6037735807142}{%
+           family={Basker},
+           familyi={B\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{33eb389e0910df88f1e6037735807142}
+      \strng{fullhash}{33eb389e0910df88f1e6037735807142}
+      \strng{fullhashraw}{33eb389e0910df88f1e6037735807142}
+      \strng{bibnamehash}{33eb389e0910df88f1e6037735807142}
+      \strng{authorbibnamehash}{33eb389e0910df88f1e6037735807142}
+      \strng{authornamehash}{33eb389e0910df88f1e6037735807142}
+      \strng{authorfullhash}{33eb389e0910df88f1e6037735807142}
+      \strng{authorfullhashraw}{33eb389e0910df88f1e6037735807142}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Review of Economics and Statistics}
+      \field{number}{1}
+      \field{title}{Job creation or Destruction? Labor market effects of Wal-Mart expansion}
+      \field{volume}{87}
+      \field{year}{2005}
+      \field{pages}{174\bibrangedash 183}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1162/0034653053327568
+      \endverb
+    \endentry
+    \entry{Callaway_SantAnna_2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4a5a67b3788b4a3653a14d9ab03fba0e}{%
+           family={Callaway},
+           familyi={C\bibinitperiod},
+           given={Brantly},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f90144f1e670fa40bee88166593b00ea}{%
+           family={Sant'Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelimb H.\bibnamedelimi C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{fullhash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{fullhashraw}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{bibnamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authorbibnamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authornamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authorfullhash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authorfullhashraw}{ad085d57563a91bbe53422c59ebffdd2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Econometrics}
+      \field{number}{2}
+      \field{title}{Difference-in-Differences with Multiple Time Periods}
+      \field{volume}{225}
+      \field{year}{2021}
+      \field{pages}{200\bibrangedash 230}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1016/j.jeconom.2020.12.001
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.jeconom.2020.12.001
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.jeconom.2020.12.001
+      \endverb
+    \endentry
+    \entry{cho2015}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=d2be4a319cfbaebc0c12b68a982755bf}{%
+           family={Cho},
+           familyi={C\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=45d9f395236228a9dbfad8f171f1f8ef}{%
+           family={Chun},
+           familyi={C\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=1d50c5d908fe9ead398d6448f784be74}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{b99fde9b547d36badce03dd6b2615deb}
+      \strng{fullhash}{8e6ca9785ead9d6a982a773b82413294}
+      \strng{fullhashraw}{8e6ca9785ead9d6a982a773b82413294}
+      \strng{bibnamehash}{8e6ca9785ead9d6a982a773b82413294}
+      \strng{authorbibnamehash}{8e6ca9785ead9d6a982a773b82413294}
+      \strng{authornamehash}{b99fde9b547d36badce03dd6b2615deb}
+      \strng{authorfullhash}{8e6ca9785ead9d6a982a773b82413294}
+      \strng{authorfullhashraw}{8e6ca9785ead9d6a982a773b82413294}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Comparative Economics}
+      \field{number}{3}
+      \field{title}{How does the entry of large discount stores increase retail employment? Evidence from Korea}
+      \field{volume}{43}
+      \field{year}{2015}
+      \field{pages}{559\bibrangedash 574}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1016/j.jce.2015.04.004
+      \endverb
+    \endentry
+    \entry{concejo_proyecto_2022}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=65bf5ea4ec5a4e9a6b41960e4a88eba0}{%
+           family={{Concejo de Bogotá, D.C.}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Alcaldiabogota}%
+      }
+      \strng{namehash}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \strng{fullhash}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \strng{fullhashraw}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \strng{bibnamehash}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \strng{authorbibnamehash}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \strng{authornamehash}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \strng{authorfullhash}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \strng{authorfullhashraw}{65bf5ea4ec5a4e9a6b41960e4a88eba0}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.alcaldiabogota.gov.co/sisjur/normas/Norma1.jsp?i=143212}}
+      \field{note}{Consultado el 21 de septiembre de 2025}
+      \field{title}{Proyecto de Acuerdo 106 de 2022}
+      \field{year}{2022}
+    \endentry
+    \entry{dane_emicron_2025}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e949548a1c94237c2714130be28a14d3}{%
+           family={{DANE}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {DANE}%
+      }
+      \strng{namehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{fullhash}{e949548a1c94237c2714130be28a14d3}
+      \strng{fullhashraw}{e949548a1c94237c2714130be28a14d3}
+      \strng{bibnamehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authorbibnamehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authornamehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authorfullhash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authorfullhashraw}{e949548a1c94237c2714130be28a14d3}
+      \field{extraname}{1}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Consultado el 21 de septiembre de 2025}
+      \field{title}{Encuesta de Micronegocios (EMICRON) 2024}
+      \field{type}{techreport}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.dane.gov.co/files/operaciones/EMICRON/bol-EMICRON-2024.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.dane.gov.co/files/operaciones/EMICRON/bol-EMICRON-2024.pdf
+      \endverb
+    \endentry
+    \entry{DANE2025a}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=e949548a1c94237c2714130be28a14d3}{%
+           family={{DANE}},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{fullhash}{e949548a1c94237c2714130be28a14d3}
+      \strng{fullhashraw}{e949548a1c94237c2714130be28a14d3}
+      \strng{bibnamehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authorbibnamehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authornamehash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authorfullhash}{e949548a1c94237c2714130be28a14d3}
+      \strng{authorfullhashraw}{e949548a1c94237c2714130be28a14d3}
+      \field{extraname}{2}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{In DANE. Retrieved September 27, 2025, from \url{https://www.dane.gov.co/files/operaciones/EMICRON/bol-EMICRON-PanaderiasTiendasBarrio-2023.pdf}}
+      \field{title}{Encuesta de Micronegocios (EMICRON) Panaderías y tiendas de barrio 2019-2023}
+      \field{year}{2025}
+    \endentry
+    \entry{delgado2024}{report}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=19168c8fa6a548fdb2f62eac962a4e6e}{%
+           family={Delgado},
+           familyi={D\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=fc97c39b6126c25df83f026bcec396c1}{%
+           family={Otero},
+           familyi={O\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=530574ab5f0b54252d62c50617b74bce}{%
+           family={Calderón},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Centro De Estudios Económicos Regionales - Cartagena}%
+      }
+      \strng{namehash}{fa7668a78ab94837838caf51b6203be0}
+      \strng{fullhash}{6fdd7a3aa20bf243852aeb57dd89a686}
+      \strng{fullhashraw}{6fdd7a3aa20bf243852aeb57dd89a686}
+      \strng{bibnamehash}{6fdd7a3aa20bf243852aeb57dd89a686}
+      \strng{authorbibnamehash}{6fdd7a3aa20bf243852aeb57dd89a686}
+      \strng{authornamehash}{fa7668a78ab94837838caf51b6203be0}
+      \strng{authorfullhash}{6fdd7a3aa20bf243852aeb57dd89a686}
+      \strng{authorfullhashraw}{6fdd7a3aa20bf243852aeb57dd89a686}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{number}{326}
+      \field{title}{The impact of hard discount stores on local labor markets: evidence from Colombia}
+      \field{type}{techreport}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.banrep.gov.co/en/documentos-trabajo-sobre-economia-regional-urbana-impact-hard-discount-stores-local-labor-markets
+      \endverb
+      \verb{url}
+      \verb https://www.banrep.gov.co/en/documentos-trabajo-sobre-economia-regional-urbana-impact-hard-discount-stores-local-labor-markets
+      \endverb
+    \endentry
+    \entry{godoy2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=08496f3db292ab3eaa141e69ae8345cf}{%
+           family={Godoy},
+           familyi={G\bibinitperiod},
+           given={M.\bibnamedelimi C.\bibnamedelimi P.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{08496f3db292ab3eaa141e69ae8345cf}
+      \strng{fullhash}{08496f3db292ab3eaa141e69ae8345cf}
+      \strng{fullhashraw}{08496f3db292ab3eaa141e69ae8345cf}
+      \strng{bibnamehash}{08496f3db292ab3eaa141e69ae8345cf}
+      \strng{authorbibnamehash}{08496f3db292ab3eaa141e69ae8345cf}
+      \strng{authornamehash}{08496f3db292ab3eaa141e69ae8345cf}
+      \strng{authorfullhash}{08496f3db292ab3eaa141e69ae8345cf}
+      \strng{authorfullhashraw}{08496f3db292ab3eaa141e69ae8345cf}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{17}
+      \field{journaltitle}{Valora Analitik}
+      \field{month}{3}
+      \field{title}{Tiendas Oxxo abre su local número 600 en Colombia}
+      \field{year}{2025}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.valoraanalitik.com/tiendas-oxxo-abre-su-local-numero-600-en-colombia/
+      \endverb
+      \verb{url}
+      \verb https://www.valoraanalitik.com/tiendas-oxxo-abre-su-local-numero-600-en-colombia/
+      \endverb
+    \endentry
+    \entry{Konishi2005}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=933756f939b72ad113b50ff2c60ffb08}{%
+           family={Konishi},
+           familyi={K\bibinitperiod},
+           given={Hideo},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{933756f939b72ad113b50ff2c60ffb08}
+      \strng{fullhash}{933756f939b72ad113b50ff2c60ffb08}
+      \strng{fullhashraw}{933756f939b72ad113b50ff2c60ffb08}
+      \strng{bibnamehash}{933756f939b72ad113b50ff2c60ffb08}
+      \strng{authorbibnamehash}{933756f939b72ad113b50ff2c60ffb08}
+      \strng{authornamehash}{933756f939b72ad113b50ff2c60ffb08}
+      \strng{authorfullhash}{933756f939b72ad113b50ff2c60ffb08}
+      \strng{authorfullhashraw}{933756f939b72ad113b50ff2c60ffb08}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The geographical concentration of stores that sell similar commodities is analyzed using a two-dimensional spatial competition model. A higher concentration of stores attracts more consumers with taste uncertainty and low price expectations (a market-size effect), while it leads to fiercer price competition (a price-cutting effect). Our model is general enough to allow for the coexistence of multiple (possibly) asymmetric clusters of stores. We provide sufficient conditions for the nonemptiness of equilibrium store location choices in pure strategies. Through numerical examples, we illustrate the trade-off between the market-size and price-cutting effects, and provide agglomeration patterns of stores in special cases.}
+      \field{journaltitle}{Journal of Urban Economics}
+      \field{number}{3}
+      \field{title}{Concentration of competing retail stores}
+      \field{volume}{58}
+      \field{year}{2005}
+      \field{pages}{488\bibrangedash 512}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1016/j.jue.2005.08.005
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0094119005000562
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0094119005000562
+      \endverb
+      \keyw{Consumer search,Market size effect,Price cutting effect,Taste uncertainty}
+    \endentry
+    \entry{llanes2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=965355982f5ada4ae7bb410e8b5e0190}{%
+           family={Llanes},
+           familyi={L\bibinitperiod},
+           given={M.\bibnamedelimi C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {BBVA Research}%
+      }
+      \strng{namehash}{965355982f5ada4ae7bb410e8b5e0190}
+      \strng{fullhash}{965355982f5ada4ae7bb410e8b5e0190}
+      \strng{fullhashraw}{965355982f5ada4ae7bb410e8b5e0190}
+      \strng{bibnamehash}{965355982f5ada4ae7bb410e8b5e0190}
+      \strng{authorbibnamehash}{965355982f5ada4ae7bb410e8b5e0190}
+      \strng{authornamehash}{965355982f5ada4ae7bb410e8b5e0190}
+      \strng{authorfullhash}{965355982f5ada4ae7bb410e8b5e0190}
+      \strng{authorfullhashraw}{965355982f5ada4ae7bb410e8b5e0190}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{5}
+      \field{title}{Colombia | Empleo no asalariado, gran jalonador del empleo nacional}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.bbvaresearch.com/publicaciones/colombia-empleo-no-asalariado-gran-jalonador-del-empleo-nacional/
+      \endverb
+      \verb{url}
+      \verb https://www.bbvaresearch.com/publicaciones/colombia-empleo-no-asalariado-gran-jalonador-del-empleo-nacional/
+      \endverb
+    \endentry
+    \entry{marcos2022}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=8e5c5fdbc284b20602db3d27b40da47d}{%
+           family={Marcos},
+           familyi={M\bibinitperiod},
+           given={M.\bibnamedelimi Á.},
+           giveni={M\bibinitperiod\bibinitdelim Á\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{8e5c5fdbc284b20602db3d27b40da47d}
+      \strng{fullhash}{8e5c5fdbc284b20602db3d27b40da47d}
+      \strng{fullhashraw}{8e5c5fdbc284b20602db3d27b40da47d}
+      \strng{bibnamehash}{8e5c5fdbc284b20602db3d27b40da47d}
+      \strng{authorbibnamehash}{8e5c5fdbc284b20602db3d27b40da47d}
+      \strng{authornamehash}{8e5c5fdbc284b20602db3d27b40da47d}
+      \strng{authorfullhash}{8e5c5fdbc284b20602db3d27b40da47d}
+      \strng{authorfullhashraw}{8e5c5fdbc284b20602db3d27b40da47d}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Cuadernos de Economía}
+      \field{title}{Preliminary Evidence of Surviving Competition: Neighborhood Shops vs. Convenience Chains}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.18235/0004453
+      \endverb
+    \endentry
+    \entry{naranjo_ocupacion_2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=443ad9acfcb2d7a528fd2c5446de387e}{%
+           family={Naranjo},
+           familyi={N\bibinitperiod},
+           given={D.\bibnamedelimi H.},
+           giveni={D\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Portafolio.co}%
+      }
+      \strng{namehash}{443ad9acfcb2d7a528fd2c5446de387e}
+      \strng{fullhash}{443ad9acfcb2d7a528fd2c5446de387e}
+      \strng{fullhashraw}{443ad9acfcb2d7a528fd2c5446de387e}
+      \strng{bibnamehash}{443ad9acfcb2d7a528fd2c5446de387e}
+      \strng{authorbibnamehash}{443ad9acfcb2d7a528fd2c5446de387e}
+      \strng{authornamehash}{443ad9acfcb2d7a528fd2c5446de387e}
+      \strng{authorfullhash}{443ad9acfcb2d7a528fd2c5446de387e}
+      \strng{authorfullhashraw}{443ad9acfcb2d7a528fd2c5446de387e}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{title}{Más ocupación, menos protección, la paradoja del trabajo por cuenta propia}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.portafolio.co/economia/empleo/trabajo-por-cuenta-propia-crece-en-colombia-pero-informalidad-y-falta-de-aportes-preocupan-634514
+      \endverb
+      \verb{url}
+      \verb https://www.portafolio.co/economia/empleo/trabajo-por-cuenta-propia-crece-en-colombia-pero-informalidad-y-falta-de-aportes-preocupan-634514
+      \endverb
+    \endentry
+    \entry{RiosAvila_Callaway_SantAnna_2021_csdid_slides}{misc}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8780ffb8b2119e19b7327ec3426ba2a3}{%
+           family={Rios-Avila},
+           familyi={R\bibinithyphendelim A\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4a5a67b3788b4a3653a14d9ab03fba0e}{%
+           family={Callaway},
+           familyi={C\bibinitperiod},
+           given={Brantly},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f90144f1e670fa40bee88166593b00ea}{%
+           family={Sant'Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelimb H.\bibnamedelimi C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{2}{%
+        {Levy Economics Institute, University of Georgia,}%
+        {Vanderbilt University}%
+      }
+      \strng{namehash}{4d2d3e2bca3f23d146b02d8d2d361cf3}
+      \strng{fullhash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{fullhashraw}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{bibnamehash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{authorbibnamehash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{authornamehash}{4d2d3e2bca3f23d146b02d8d2d361cf3}
+      \strng{authorfullhash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{authorfullhashraw}{3cb58943e0d53b9ad6b3aebba9690672}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Presentation slides, Stata Conference}
+      \field{month}{8}
+      \field{note}{Available upon request or at the Stata Conference 2021 materials}
+      \field{title}{csdid: Difference-in-Differences with Multiple Time Periods in Stata}
+      \field{year}{2021}
+    \endentry
+    \entry{m_2025}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=ad4b6003de0b7ce760ea128daf47ae47}{%
+           family={Rodríguez},
+           familyi={R\bibinitperiod},
+           given={J.\bibnamedelimi R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ad4b6003de0b7ce760ea128daf47ae47}
+      \strng{fullhash}{ad4b6003de0b7ce760ea128daf47ae47}
+      \strng{fullhashraw}{ad4b6003de0b7ce760ea128daf47ae47}
+      \strng{bibnamehash}{ad4b6003de0b7ce760ea128daf47ae47}
+      \strng{authorbibnamehash}{ad4b6003de0b7ce760ea128daf47ae47}
+      \strng{authornamehash}{ad4b6003de0b7ce760ea128daf47ae47}
+      \strng{authorfullhash}{ad4b6003de0b7ce760ea128daf47ae47}
+      \strng{authorfullhashraw}{ad4b6003de0b7ce760ea128daf47ae47}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Portafolio.co}
+      \field{month}{3}
+      \field{title}{Oxxo llegó a su apertura 600 en Colombia: ¿cuántas tiendas abre en el año?}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://www.portafolio.co/negocios/empresas/oxxo-llega-a-las-600-tiendas-en-colombia-626124
+      \endverb
+      \verb{url}
+      \verb https://www.portafolio.co/negocios/empresas/oxxo-llega-a-las-600-tiendas-en-colombia-626124
+      \endverb
+    \endentry
+    \entry{Seong2022}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=f6a3f423029340e4ded9192e8828f1ce}{%
+           family={Seong},
+           familyi={S\bibinitperiod},
+           given={E.\bibnamedelimi Y.},
+           giveni={E\bibinitperiod\bibinitdelim Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=89dda28cac79a47adf9134d5598c4f12}{%
+           family={Lim},
+           familyi={L\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d8a536f8fbfb1908979eae934c6e9891}{%
+           family={Choi},
+           familyi={C\bibinitperiod},
+           given={C.\bibnamedelimi G.},
+           giveni={C\bibinitperiod\bibinitdelim G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{238d92dfa5108e0df9209985588777c8}
+      \strng{fullhash}{c21efe56725cbaf95dae9affec0ea3a8}
+      \strng{fullhashraw}{c21efe56725cbaf95dae9affec0ea3a8}
+      \strng{bibnamehash}{c21efe56725cbaf95dae9affec0ea3a8}
+      \strng{authorbibnamehash}{c21efe56725cbaf95dae9affec0ea3a8}
+      \strng{authornamehash}{238d92dfa5108e0df9209985588777c8}
+      \strng{authorfullhash}{c21efe56725cbaf95dae9affec0ea3a8}
+      \strng{authorfullhashraw}{c21efe56725cbaf95dae9affec0ea3a8}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Environment and Planning B: Urban Analytics and City Science}
+      \field{note}{Original work published 2021}
+      \field{number}{3}
+      \field{title}{Why are convenience stores clustered? The reasons behind the clustering of similar shops and the effect of increased competition}
+      \field{volume}{49}
+      \field{year}{2022}
+      \field{pages}{834\bibrangedash 846}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1177/23998083211021870
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1177/23998083211021870
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1177/23998083211021870
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

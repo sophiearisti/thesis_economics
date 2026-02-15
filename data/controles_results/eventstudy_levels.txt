@@ -1,0 +1,23 @@
+	(1)
+VARIABLES	prop_independiente_total
+	
+lag3	-0.0318
+	0.0266
+lag2	0.00919
+	0.0249
+lead0	-0.0103
+	0.0166
+lead1	-0.0232
+	0.0181
+lead2	-0.0458
+	0.0264
+lead3	-0.0793
+	0.0315
+Constant	0.325
+	0.0160
+	
+Observations	684
+Number of zat	171
+R-squared	0.084
+DD	0.000199
+DDSE	0.0193

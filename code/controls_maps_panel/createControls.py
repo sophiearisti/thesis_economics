@@ -70,9 +70,35 @@ def merge_upz_localidad_zat(save_csv=False):
         "Nombre_de_l": "nombre_localidad"
     })
 
-    # SAVE geometries of UPZ and Localidad separately
-    gdf_upz_loc["geometry_upz"] = upz_gdf.geometry
-    gdf_upz_loc["geometry_localidad"] = localidad_gdf.geometry
+    # Rename geometry columns BEFORE merge
+    upz_geom = upz_gdf[["codigo_upz", "geometry"]].rename(
+        columns={"geometry": "geometry_upz"}
+    )
+
+    loc_geom = localidad_gdf[["Identificad", "geometry"]].rename(
+        columns={"geometry": "geometry_localidad"}
+    )
+
+    # Merge UPZ geometry
+    gdf_upz_loc = gdf_upz_loc.merge(
+        upz_geom,
+        on="codigo_upz",
+        how="left"
+    )
+
+    # Merge Localidad geometry
+    gdf_upz_loc = gdf_upz_loc.merge(
+        loc_geom,
+        left_on="codigo_localidad",
+        right_on="Identificad",
+        how="left"
+    )
+        
+
+    print  ("UPZ-Localidad merge: ")
+    #only print geometry_upz and geometry_localidad columns
+    #print(gdf_upz_loc[["geometry_upz","codigo_upz"]].head())
+    #print(gdf_upz_loc[["geometry_localidad","codigo_localidad"]].head())
 
 
     # --- 4. associates UPZ with ZAT based on maximum spatial overlap ---
@@ -198,6 +224,7 @@ def mean_estrato_per_zat(save_csv=False):
 
     return gdf_final_estrato
 
+
 # --- 3. Group by ZAT and compute average stratum ---
 def estrato_mean_custom(values):
     # If all blocks have stratum 0 → return 0
@@ -206,7 +233,6 @@ def estrato_mean_custom(values):
     # If there is a mix, ignore zeros and compute the mean of the rest
     mean_val = values[values != 0].mean()
     return round(mean_val, 2)  # round to 2 decimal places
-
 
 #########################################################################
 # Third step:
@@ -218,7 +244,6 @@ def estrato_mean_custom(values):
 # TOTAL POPULATION BY UPZ
 # Merge population data from 2005 and 2009 by UPZ
 #########################################################################
-
 
 def merge_poblacion_baselines():
 
@@ -301,12 +326,10 @@ def merge_baselines(poblacion_2009_2005, save_csv=False):
         
     return merge_baselines
 
-
 #########################################################################
 # Fourth step:
 # miscellaneous controls that may affect d or y
 #########################################################################
-
 
 #########################################################################
 # Control for access to public transportation (TransMilenio)
@@ -322,6 +345,7 @@ def merge_baselines(poblacion_2009_2005, save_csv=False):
 # use gdf_zat_upz_localidad
 
 def transmilenio_access(gdf_zat_upz_localidad, buffer=800, save_csv=False):
+
 
     # --- 1. Load TransMilenio stations shapefile ---
     datos_transmi = gpd.read_file(
@@ -449,7 +473,8 @@ def arterial_access(gdf_zat_upz_localidad, save_csv=False):
 
 ####################################################
 # CREATE MAP TO VERIFY THAT EVERYTHING IS CORRECT
-####################################################
+###################################################
+
 
 def create_map_for_verification(gdf_final, final_geometry="zat"):
     
@@ -463,19 +488,14 @@ def create_map_for_verification(gdf_final, final_geometry="zat"):
     (mean for numeric variables, first for categorical variables)"""
     if final_geometry == "upz":
 
-        # unir el final geometry con la geometría de upz
-
-
         # 1. Set UPZ geometry
         gdf_final = gdf_final.drop(columns=["geometry_zat", "geometry_localidad", "ZAT"]).set_geometry("geometry_upz")
 
         gdf_final = aggregation_function(by="codigo_upz", gdf_final=gdf_final)
         
+        
     elif final_geometry == "localidad":
-        
-        # unir el final geometry con la geometría de localidad
-        
-        
+
         # 1. Set Localidad geometry
         gdf_final = gdf_final.drop(columns=["geometry_zat", "geometry_upz", "ZAT", "codigo_upz"]).set_geometry("geometry_localidad")
 
@@ -521,12 +541,77 @@ def create_map_for_verification(gdf_final, final_geometry="zat"):
 
     # --- Save to HTML ---
     map.save(f"../../data/maps_data/mapa_{final_geometry}s_controles.html")
+    
+    return gdf_final
+
+def aggregation_function(by, gdf_final):
+
+    geom_col = gdf_final.geometry.name
+
+    print("Columns in gdf_final before aggregation:")
+    print(gdf_final.columns)
+    print("Active geometry column:", geom_col)
+
+    mean_cols = ["estrato_mean"]
+
+    sum_cols = [
+        "poblacion_2005",
+        "area_urbana_2009",
+        "poblacion_urbana_2009",
+        "densidad_urbana_2009",
+        "num_est_transmi",
+        "acceso_transmi",
+        "accesibilidad_arterial"
+    ]
+
+    first_cols = [
+        "personas_por_localidad_2007",
+        "personas_por_hogar_2007_localidad",
+        "gasto_promedio_mensual_2007_localidad",
+        "ICV_2007_localidad",
+        "nombre_localidad",
+        "nombre_upz",
+    ]
+
+    agg_dict = {}
+
+    for col in mean_cols:
+        if col in gdf_final.columns:
+            agg_dict[col] = "mean"
+
+    for col in sum_cols:
+        if col in gdf_final.columns:
+            agg_dict[col] = "sum"
+
+    for col in first_cols:
+        if col in gdf_final.columns:
+            agg_dict[col] = "first"
+
+    # 🔥 Ensure active geometry is NOT in agg_dict
+    if geom_col in agg_dict:
+        del agg_dict[geom_col]
+
+    gdf_final = (
+        gdf_final
+        .dissolve(by=by, aggfunc=agg_dict)
+        .reset_index()
+    )
+
+    print(f"After aggregating by {by}:")
+    print(gdf_final.columns)
+
+    return gdf_final
 
 def aggregation_function(by, gdf_final):
 
     geom_col = gdf_final.geometry.name
 
     agg_dict = {}
+    # Must be an average: estrato_mean
+    # Is a sum: poblacion_2005, area_urbana_2009, poblacion_urbana_2009, densidad_urbana_2009, 'num_est_transmi', 'acceso_transmi', 'accesibilidad_arterial'
+    # We take the first value (as all are the same): personas_por_localidad_2007, personas_por_hogar_2007_localidad, gasto_promedio_mensual_2007_localidad, ICV_2007_localidad
+    print("Columns in gdf_final before aggregation:")
+    print(gdf_final.columns)
 
     for col in gdf_final.columns:
         # nunca agregar el identificador ni la geometría
@@ -548,7 +633,6 @@ def aggregation_function(by, gdf_final):
     )
 
     print(f"After aggregating by {by}:")
-    print(gdf_final[["codigo_localidad", "geometry_localidad"]])
     #list all data
     print(gdf_final.columns)
     
@@ -560,28 +644,42 @@ def aggregation_function(by, gdf_final):
 # merge absolutely everything
 ####################################################
 def save_final_results(gdf_final, final_geometry="zat"):
-    gdf_final.drop(columns=["geometry_zat","geometry_localidad","geometry_upz"]).to_csv(
-    "../../data/panel/preliminary_panel_datasets/zat_all_controls.csv",
-    index=False
-    )
 
     if final_geometry == "zat":
-        gdf_final = gdf_final.drop(columns=["geometry_upz","geometry_localidad"]).set_geometry("geometry_zat")
+        gdf_final = gdf_final.set_geometry("geometry_zat")
         # save the complete shapefile
         gdf_final.to_file(
             f"../../data/panel/res_merges/final_shp/{final_geometry}_all_controls.shp"
+        )
+        
+        gdf_final.drop(columns=["geometry_zat"]).to_csv(
+        f"../../data/panel/preliminary_panel_datasets/{final_geometry}_all_controls.csv",
+        index=False
         )
     elif final_geometry == "upz":
-        gdf_final = gdf_final.drop(columns=["geometry_zat","geometry_localidad"]).set_geometry("geometry_upz")
+        gdf_final = gdf_final.set_geometry("geometry_upz")
+        
         # save the complete shapefile
         gdf_final.to_file(
             f"../../data/panel/res_merges/final_shp/{final_geometry}_all_controls.shp"
         )
+        
+        gdf_final.drop(columns=["geometry_upz"]).to_csv(
+        f"../../data/panel/preliminary_panel_datasets/{final_geometry}_all_controls.csv",
+        index=False
+        )
+        
     elif final_geometry == "localidad":
-        gdf_final = gdf_final.drop(columns=["geometry_zat","geometry_upz"]).set_geometry("geometry_localidad")
+        gdf_final = gdf_final.set_geometry("geometry_localidad")
+        
         # save the complete shapefile
         gdf_final.to_file(
             f"../../data/panel/res_merges/final_shp/{final_geometry}_all_controls.shp"
+        )
+        
+        gdf_final.drop(columns=["geometry_localidad"]).to_csv(
+        f"../../data/panel/preliminary_panel_datasets/{final_geometry}_all_controls.csv",
+        index=False
         )
 
 
@@ -589,7 +687,6 @@ def create_all_controls(final_geometry="zat"):
     print("Starting the complete process of creating controls...")
 
     gdf_zat_upz_localidad = merge_upz_localidad_zat(save_csv=True)
-
 
     gdf_final_estrato = mean_estrato_per_zat(save_csv=True)
 
@@ -653,13 +750,12 @@ def create_all_controls(final_geometry="zat"):
     print(gdf_final.head())
     print(gdf_final.columns)
 
-
     # --- 5. Save final result ---
-    save_final_results(gdf_final, final_geometry=final_geometry)
-
     # create a map to verify that everything is correct
-    create_map_for_verification(gdf_final, final_geometry=final_geometry)
-
+    gdf_final = create_map_for_verification(gdf_final, final_geometry=final_geometry)
+    
+    save_final_results(gdf_final, final_geometry=final_geometry)
+    
 
 if __name__ == "__main__":
 
@@ -678,4 +774,3 @@ if __name__ == "__main__":
     print(f"Running controls with final geometry: {final_geometry.upper()}")
 
     create_all_controls(final_geometry=final_geometry)
-

@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1f5180e2309f3af28a4aeeb4d4a4680b {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_1f5180e2309f3af28a4aeeb4d4a4680b" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1f5180e2309f3af28a4aeeb4d4a4680b = L.map(
+                "map_1f5180e2309f3af28a4aeeb4d4a4680b",
+                {
+                    center: [4.57, -74.3],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_bc2889e8e95765b206b56e0c4bac8c35 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_bc2889e8e95765b206b56e0c4bac8c35.addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+    
+            var circle_marker_1147077384095b6679b7924d398fc859 = L.circleMarker(
+                [6.238873400000001, -75.5861496],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+    
+        var popup_564f1ca081d032787f010224648b233c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1bd331bcb4de51d2abac2646c684e8fa = $(`<div id="html_1bd331bcb4de51d2abac2646c684e8fa" style="width: 100.0%; height: 100.0%;">Cadena: d1<br>Mpio: 05001 <br> Nombre: MINIMERCADO D1 BELEN</div>`)[0];
+                popup_564f1ca081d032787f010224648b233c.setContent(html_1bd331bcb4de51d2abac2646c684e8fa);
+            
+        
+
+        circle_marker_1147077384095b6679b7924d398fc859.bindPopup(popup_564f1ca081d032787f010224648b233c)
+        ;
+
+        
+    
+    
+            var circle_marker_1a63d18215657b87f6e651ea8625f473 = L.circleMarker(
+                [6.2382921, -75.5536423],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+    
+        var popup_c249eab9fd955460a5202bc6e29b2032 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d3113253843ccfaf8cb45ffb96a5eb41 = $(`<div id="html_d3113253843ccfaf8cb45ffb96a5eb41" style="width: 100.0%; height: 100.0%;">Cadena: d1<br>Mpio: 05001 <br> Nombre: TIENDA D1 BUENOS AIRES</div>`)[0];
+                popup_c249eab9fd955460a5202bc6e29b2032.setContent(html_d3113253843ccfaf8cb45ffb96a5eb41);
+            
+        
+
+        circle_marker_1a63d18215657b87f6e651ea8625f473.bindPopup(popup_c249eab9fd955460a5202bc6e29b2032)
+        ;
+
+        
+    
+    
+            var circle_marker_8a8408129c7880f219725b4a311469ab = L.circleMarker(
+                [6.2527485, -75.6048335],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+    
+        var popup_c4034ce72a0b3903cb824c206df9c5e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3531c4458f05d703c3478eae0f547862 = $(`<div id="html_3531c4458f05d703c3478eae0f547862" style="width: 100.0%; height: 100.0%;">Cadena: d1<br>Mpio: 05001 <br> Nombre: TIENDA D1 LA AMERICA</div>`)[0];
+                popup_c4034ce72a0b3903cb824c206df9c5e3.setContent(html_3531c4458f05d703c3478eae0f547862);
+            
+        
+
+        circle_marker_8a8408129c7880f219725b4a311469ab.bindPopup(popup_c4034ce72a0b3903cb824c206df9c5e3)
+        ;
+
+        
+    
+    
+            var circle_marker_71bebc4fe7b89ae32e58181d819c1692 = L.circleMarker(
+                [6.267614000000001, -75.5962909],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+    
+        var popup_11a876e2a44afea8b8cf4e7526094f70 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_14550cd83d9ffc2eceff6a954ace73ca = $(`<div id="html_14550cd83d9ffc2eceff6a954ace73ca" style="width: 100.0%; height: 100.0%;">Cadena: d1<br>Mpio: 05001 <br> Nombre: TIENDA D1 CALASANZ</div>`)[0];
+                popup_11a876e2a44afea8b8cf4e7526094f70.setContent(html_14550cd83d9ffc2eceff6a954ace73ca);
+            
+        
+
+        circle_marker_71bebc4fe7b89ae32e58181d819c1692.bindPopup(popup_11a876e2a44afea8b8cf4e7526094f70)
+        ;
+
+        
+    
+    
+            var circle_marker_3d6d38624ef26647ad86420c6b738362 = L.circleMarker(
+                [6.310887999999999, -75.57860769999999],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+    
+        var popup_b16d7e4f912ee043ef49c8b10459ad61 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd888042d98421209cd82f32943da157 = $(`<div id="html_cd888042d98421209cd82f32943da157" style="width: 100.0%; height: 100.0%;">Cadena: d1<br>Mpio: 05088 <br> Nombre: TIENDA D1 PARIS</div>`)[0];
+                popup_b16d7e4f912ee043ef49c8b10459ad61.setContent(html_cd888042d98421209cd82f32943da157);
+            
+        
+
+        circle_marker_3d6d38624ef26647ad86420c6b738362.bindPopup(popup_b16d7e4f912ee043ef49c8b10459ad61)
+        ;
+
+        
+    
+    
+            var circle_marker_923e2c40fe097cbe0b2b42e32d1ca65b = L.circleMarker(
+                [6.1638439, -75.6223072],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+    
+        var popup_f01cdac44458dd392b0ba03240f61798 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_40f87ff4e2b9f70ac00a0dbda9de4821 = $(`<div id="html_40f87ff4e2b9f70ac00a0dbda9de4821" style="width: 100.0%; height: 100.0%;">Cadena: d1<br>Mpio: 05360 <br> Nombre: MINIMERCADO D1 SAN PIO</div>`)[0];
+                popup_f01cdac44458dd392b0ba03240f61798.setContent(html_40f87ff4e2b9f70ac00a0dbda9de4821);
+            
+        
+
+        circle_marker_923e2c40fe097cbe0b2b42e32d1ca65b.bindPopup(popup_f01cdac44458dd392b0ba03240f61798)
+        ;
+
+        
+    
+    
+            var circle_marker_83ab75fc676e91b982b8517a6bcb3349 = L.circleMarker(
+                [6.1738205, -75.6071954],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+    
+        var popup_a4a5b56c850fb1907282a4f220af6341 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f8cc3a2da05fc6f4a9041f320702550a = $(`<div id="html_f8cc3a2da05fc6f4a9041f320702550a" style="width: 100.0%; height: 100.0%;">Cadena: d1<br>Mpio: 05360 <br> Nombre: MINIMERCADO D1 ITAGUI PARQUE</div>`)[0];
+                popup_a4a5b56c850fb1907282a4f220af6341.setContent(html_f8cc3a2da05fc6f4a9041f320702550a);
+            
+        
+
+        circle_marker_83ab75fc676e91b982b8517a6bcb3349.bindPopup(popup_a4a5b56c850fb1907282a4f220af6341)
+        ;
+
+        
+    
+    
+            var circle_marker_e42873e13e3ef1f760ab5c5f27a5706e = L.circleMarker(
+                [4.650510400000001, -74.06324339999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+    
+        var popup_da15531137f40d36cd6d128f66a61176 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0652f716d1f3eda3f56c4a5def6474cb = $(`<div id="html_0652f716d1f3eda3f56c4a5def6474cb" style="width: 100.0%; height: 100.0%;">Cadena: oxxo<br>Mpio: 11001 <br> Nombre: OXXO COSMOS 64</div>`)[0];
+                popup_da15531137f40d36cd6d128f66a61176.setContent(html_0652f716d1f3eda3f56c4a5def6474cb);
+            
+        
+
+        circle_marker_e42873e13e3ef1f760ab5c5f27a5706e.bindPopup(popup_da15531137f40d36cd6d128f66a61176)
+        ;
+
+        
+    
+    
+            var circle_marker_b56ba22b80bb2495d52d54d2235a80e3 = L.circleMarker(
+                [4.6587741, -74.0574613],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+    
+        var popup_fbd63adcaaa3190276d87281d432bd88 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3791331414b6d601f670b92a661a9e54 = $(`<div id="html_3791331414b6d601f670b92a661a9e54" style="width: 100.0%; height: 100.0%;">Cadena: oxxo<br>Mpio: 11001 <br> Nombre: OXXO MODERNO</div>`)[0];
+                popup_fbd63adcaaa3190276d87281d432bd88.setContent(html_3791331414b6d601f670b92a661a9e54);
+            
+        
+
+        circle_marker_b56ba22b80bb2495d52d54d2235a80e3.bindPopup(popup_fbd63adcaaa3190276d87281d432bd88)
+        ;
+
+        
+    
+    
+            var circle_marker_39a909476c0f46b269d12deca68b6380 = L.circleMarker(
+                [4.7138217, -74.05367609999999],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+    
+        var popup_9d3831525b96b9d7e7294a87c41e064f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d7247b43f20ac36ab5eea845b1f619e2 = $(`<div id="html_d7247b43f20ac36ab5eea845b1f619e2" style="width: 100.0%; height: 100.0%;">Cadena: oxxo<br>Mpio: 11001 <br> Nombre: OXXO AUTOPISTA</div>`)[0];
+                popup_9d3831525b96b9d7e7294a87c41e064f.setContent(html_d7247b43f20ac36ab5eea845b1f619e2);
+            
+        
+
+        circle_marker_39a909476c0f46b269d12deca68b6380.bindPopup(popup_9d3831525b96b9d7e7294a87c41e064f)
+        ;
+
+        
+    
+    
+            var circle_marker_ccc9e648b46ecacec2bdb82105a5e2f3 = L.circleMarker(
+                [4.6994927928079235, -74.07682064829628],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+    
+        var popup_17ae45505aac4ba44f84b9b30bd34fb2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3c29a7afd2ae26efae20b1670593f2a1 = $(`<div id="html_3c29a7afd2ae26efae20b1670593f2a1" style="width: 100.0%; height: 100.0%;">Cadena: oxxo<br>Mpio: 11001 <br> Nombre: OXXO SHAIO</div>`)[0];
+                popup_17ae45505aac4ba44f84b9b30bd34fb2.setContent(html_3c29a7afd2ae26efae20b1670593f2a1);
+            
+        
+
+        circle_marker_ccc9e648b46ecacec2bdb82105a5e2f3.bindPopup(popup_17ae45505aac4ba44f84b9b30bd34fb2)
+        ;
+
+        
+    
+    
+            var circle_marker_e5d5a8ac71c30b1736f30fd06ce65b25 = L.circleMarker(
+                [4.70458, -74.103408],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+    
+        var popup_062997ecf19f3d80d4e55955b69a0b76 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f51217b3828b4cec9f1525d194716d14 = $(`<div id="html_f51217b3828b4cec9f1525d194716d14" style="width: 100.0%; height: 100.0%;">Cadena: oxxo<br>Mpio: 11001 <br> Nombre: OXXO PRIMAVERA</div>`)[0];
+                popup_062997ecf19f3d80d4e55955b69a0b76.setContent(html_f51217b3828b4cec9f1525d194716d14);
+            
+        
+
+        circle_marker_e5d5a8ac71c30b1736f30fd06ce65b25.bindPopup(popup_062997ecf19f3d80d4e55955b69a0b76)
+        ;
+
+        
+    
+    
+            var circle_marker_27f5a9d6dac97c445bfd1662191addc0 = L.circleMarker(
+                [4.7222134, -74.06681460000001],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+    
+        var popup_cb4680dbb95b681425fe1494e6e9c5fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_01d6783def29596d2c79f12d59854cfc = $(`<div id="html_01d6783def29596d2c79f12d59854cfc" style="width: 100.0%; height: 100.0%;">Cadena: oxxo<br>Mpio: 11001 <br> Nombre: OXXO BRITANIA</div>`)[0];
+                popup_cb4680dbb95b681425fe1494e6e9c5fa.setContent(html_01d6783def29596d2c79f12d59854cfc);
+            
+        
+
+        circle_marker_27f5a9d6dac97c445bfd1662191addc0.bindPopup(popup_cb4680dbb95b681425fe1494e6e9c5fa)
+        ;
+
+        
+    
+    
+        function geo_json_7478a03348630bd4f214f8404eb2b27f_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "black", "fillColor": "purple", "fillOpacity": 0.2, "weight": 0.5};
+            }
+        }
+
+        function geo_json_7478a03348630bd4f214f8404eb2b27f_onEachFeature(feature, layer) {
+
+            layer.on({
+            });
+        };
+        var geo_json_7478a03348630bd4f214f8404eb2b27f = L.geoJson(null, {
+                onEachFeature: geo_json_7478a03348630bd4f214f8404eb2b27f_onEachFeature,
+            
+                style: geo_json_7478a03348630bd4f214f8404eb2b27f_styler,
+            ...{
+}
+        });
+
+        function geo_json_7478a03348630bd4f214f8404eb2b27f_add (data) {
+            geo_json_7478a03348630bd4f214f8404eb2b27f
+                .addData(data);
+        }
+            geo_json_7478a03348630bd4f214f8404eb2b27f_add({"bbox": [-75.71928797999995, 3.7306330990001593, -73.98612579299981, 6.425101650000045], "features": [{"bbox": [-75.71928797999995, 6.1640865420001765, -75.4847341759999, 6.373599012000001], "geometry": {"coordinates": [[[-75.66974281299991, 6.373599012000001], [-75.63443001699989, 6.317320312000048], [-75.49919811199993, 6.295316307000121], [-75.4847341759999, 6.190933052000105], [-75.68000757999988, 6.1640865420001765], [-75.71928797999995, 6.3415350880000565], [-75.66974281299991, 6.373599012000001]]], "type": "Polygon"}, "id": "0", "properties": {"Nombre": "MINIMERCADO D1 BELEN", "cadena": "d1", "codigo_municipio": "05001", "latitud": 6.238873400000001, "longitud": -75.5861496}, "type": "Feature"}, {"bbox": [-75.6620315469998, 6.288510631999999, -75.51500066699987, 6.425101650000045], "geometry": {"coordinates": [[[-75.58203476499989, 6.425101650000045], [-75.51500066699987, 6.360874895000167], [-75.5223865289999, 6.288510631999999], [-75.65190051499991, 6.333012952000104], [-75.6620315469998, 6.404914735000205], [-75.62276218599993, 6.383043768000051], [-75.58203476499989, 6.425101650000045]]], "type": "Polygon"}, "id": "4", "properties": {"Nombre": "TIENDA D1 PARIS", "cadena": "d1", "codigo_municipio": "05088", "latitud": 6.310887999999999, "longitud": -75.57860769999999}, "type": "Feature"}, {"bbox": [-75.6454223479999, 6.163186262000125, -75.60512678299989, 6.196284048000054], "geometry": {"coordinates": [[[-75.62948561699989, 6.196284048000054], [-75.60512678299989, 6.163186262000125], [-75.6454223479999, 6.1654873220001045], [-75.62948561699989, 6.196284048000054]]], "type": "Polygon"}, "id": "5", "properties": {"Nombre": "MINIMERCADO D1 SAN PIO", "cadena": "d1", "codigo_municipio": "05360", "latitud": 6.1638439, "longitud": -75.6223072}, "type": "Feature"}, {"bbox": [-74.43958715699995, 3.7306330990001593, -73.98612579299981, 4.836546038000165], "geometry": {"coordinates": [[[-74.0741920989999, 4.836546038000165], [-74.0056218229999, 4.82144485900011], [-74.03139107899989, 4.646067733000051], [-73.98612579299981, 4.629074974000105], [-74.11214742699985, 4.433134909000158], [-74.09822521099989, 4.345619248000161], [-74.15271100999985, 4.25455542300017], [-74.11004852299993, 4.181912748000059], [-74.1269221359999, 4.048477853000121], [-74.15067459799991, 4.004849073000173], [-74.2173829809999, 4.010896177000121], [-74.31675894599994, 3.8812823130000447], [-74.29661663399992, 3.8189038470000023], [-74.43958715699995, 3.7306330990001593], [-74.32988660799992, 4.130540258000167], [-74.24564163399992, 4.103247643000146], [-74.20426913799986, 4.239706635999995], [-74.17363220499982, 4.540900181000098], [-74.2225686729999, 4.629401793000056], [-74.15850000699993, 4.6628483820001625], [-74.17697773699985, 4.702908756000114], [-74.0741920989999, 4.836546038000165]]], "type": "Polygon"}, "id": "7", "properties": {"Nombre": "OXXO COSMOS 64", "cadena": "oxxo", "codigo_municipio": "11001", "latitud": 4.650510400000001, "longitud": -74.06324339999999}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_7478a03348630bd4f214f8404eb2b27f.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["codigo_municipio"];
+    let aliases = ["Municipio:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i].toLocaleString()}</th>
+            
+            <td>${handleObject(layer.feature.properties[v]).toLocaleString()}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_7478a03348630bd4f214f8404eb2b27f.addTo(map_1f5180e2309f3af28a4aeeb4d4a4680b);
+        
+</script>
+</html>

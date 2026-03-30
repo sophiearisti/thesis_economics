@@ -48,6 +48,9 @@ localidad_gdf = localidad_gdf.to_crs(crs_metros)
 def merge_upz_localidad_zat(save_csv=False):
 
     # --- 3. associates UPZ with Localidad based on maximum spatial overlap ---
+    # print how many unique UPZ and Localidad we have
+    print("Unique UPZ:", upz_gdf["codigo_upz"].nunique())
+    print("Unique Localidad:", localidad_gdf["Identificad"].nunique())
     
     #Creates a new GeoDataFrame with geometries representing the overlapping areas between upz and locality
     upz_loc_intersections = gpd.overlay(upz_gdf, localidad_gdf, how="intersection")
@@ -297,7 +300,7 @@ def merge_poblacion_baselines():
 #########################################################################
 
 
-def merge_baselines(poblacion_2009_2005, save_csv=False):
+def merge_baselines(poblacion_2009_2005, save_csv=True):
     baselines = pd.read_csv(
         "../../data/panel/baselines/baselines_2007_localidad.csv",
         sep=';',
@@ -344,7 +347,7 @@ def merge_baselines(poblacion_2009_2005, save_csv=False):
 # inside or intersecting each ZAT
 # use gdf_zat_upz_localidad
 
-def transmilenio_access(gdf_zat_upz_localidad, buffer=800, save_csv=False):
+def transmilenio_access(gdf_zat_upz_localidad, buffer=800, save_csv=True):
 
 
     # --- 1. Load TransMilenio stations shapefile ---
@@ -430,7 +433,7 @@ def transmilenio_access(gdf_zat_upz_localidad, buffer=800, save_csv=False):
 # see how many arterial roads are inside or bordering the ZAT
 # we will treat this as exposure measured in number of arterial roads that touch each ZAT
 
-def arterial_access(gdf_zat_upz_localidad, save_csv=False):
+def arterial_access(gdf_zat_upz_localidad, save_csv=True):
     
     datos_arterias = gpd.read_file(
         "../../data/panel/vias_principales/RedInfraestructuraVialArterial.shp"
@@ -556,14 +559,15 @@ def aggregation_function(by, gdf_final):
 
     sum_cols = [
         "poblacion_2005",
-        "area_urbana_2009",
         "poblacion_urbana_2009",
-        "densidad_urbana_2009",
         "num_est_transmi",
         "acceso_transmi",
         "accesibilidad_arterial"
     ]
-
+    
+    #delete densidad urbana and area urbana from gdf_final before aggregation, because they are not additive and we will recalculate them after aggregation
+    gdf_final = gdf_final.drop(columns=["area_urbana_2009", "densidad_urbana_2009"])
+    
     first_cols = [
         "personas_por_localidad_2007",
         "personas_por_hogar_2007_localidad",
@@ -600,42 +604,6 @@ def aggregation_function(by, gdf_final):
     print(f"After aggregating by {by}:")
     print(gdf_final.columns)
 
-    return gdf_final
-
-def aggregation_function(by, gdf_final):
-
-    geom_col = gdf_final.geometry.name
-
-    agg_dict = {}
-    # Must be an average: estrato_mean
-    # Is a sum: poblacion_2005, area_urbana_2009, poblacion_urbana_2009, densidad_urbana_2009, 'num_est_transmi', 'acceso_transmi', 'accesibilidad_arterial'
-    # We take the first value (as all are the same): personas_por_localidad_2007, personas_por_hogar_2007_localidad, gasto_promedio_mensual_2007_localidad, ICV_2007_localidad
-    print("Columns in gdf_final before aggregation:")
-    print(gdf_final.columns)
-
-    for col in gdf_final.columns:
-        # nunca agregar el identificador ni la geometría
-        if col in {by, geom_col}:
-            continue
-
-        # variables numéricas → mean
-        if gdf_final[col].dtype.kind in "iuf":
-            agg_dict[col] = "mean"
-
-        # categóricas → first
-        else:
-            agg_dict[col] = "first"
-
-    gdf_final = (
-        gdf_final
-        .dissolve(by=by, aggfunc=agg_dict)
-        .reset_index()
-    )
-
-    print(f"After aggregating by {by}:")
-    #list all data
-    print(gdf_final.columns)
-    
     return gdf_final
 
 
@@ -736,7 +704,7 @@ def create_all_controls(final_geometry="zat"):
     )
 
     print("After merging with TransMilenio access:")
-    print(gdf_final.head())
+    print(gdf_final.tail())
     print(gdf_final.columns)
 
 

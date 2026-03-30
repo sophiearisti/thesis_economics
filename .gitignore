@@ -1,0 +1,6 @@
+# Data files
+data/municipalities/crime_fiscalia/victimas_fiscalia.csv
+
+# Map outputs
+*.gpkg
+*.geojson

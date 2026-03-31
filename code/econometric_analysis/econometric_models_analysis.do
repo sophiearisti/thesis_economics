@@ -1,5 +1,5 @@
 *********************************************************
-*version 3:analisis de controles y var dep
+*version 4:analisis de controles y var dep
 *********************************************************
 
 *--------------Directorios --------------------------------------------*
@@ -8,18 +8,27 @@ global global_dir "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics"
 global dir_dofile "$global_dir/code" //dirección de los dofiles
 global dir_dofile_controls_analysis "$dir_dofile/controls_maps_panel"
 global dir_BDD_panel "$global_dir/data/panel"
-global doc_panel "$dir_BDD_panel/panel_final_upz_trimestral.csv"
+
+global panel 2
+
+if $panel == 1 {
+    global doc_panel "$dir_BDD_panel/panel_final_upz_trimestral.csv"
+}
+else {
+    global doc_panel "$dir_BDD_panel/panel_final_clean_new_upz_trimestral.csv"
+}
+
 global dir_controls_results "$global_dir/data/controles_results"
 
 *----------------------------------------------------------------------*
 
 import delimited "$doc_panel", clear
 
-replace area_urbana_2009 = subinstr(area_urbana_2009, ".", "", .)
+/*replace area_urbana_2009 = subinstr(area_urbana_2009, ".", "", .)
 destring area_urbana_2009, replace
 
 replace densidad_urbana_2009 = subinstr(densidad_urbana_2009, ".", "", .)
-destring densidad_urbana_2009, replace
+destring densidad_urbana_2009, replace*/
 
 replace personas_por_hogar_2007_localida = subinstr(personas_por_hogar_2007_localida, ",", ".", .)
 destring personas_por_hogar_2007_localida, replace
@@ -34,7 +43,36 @@ gen accesibilidad_arterial_dummy = (accesibilidad_arterial>0)
 
 *drop UPZ 108 PORQUE APARECE Y DESAPARECEN LOS OXXOS 
 
-drop if codigo_upz == 108
+
+
+if $panel == 2 {
+	* Crear una variable de tiempo trimestral
+	gen tq = yq(year, quarter)
+	format tq %tq
+
+	*borrar duplicados
+	duplicates drop
+
+	* Declarar el panel
+	xtset codigo_upz tq
+
+	* Calcular la diferencia con el trimestre anterior
+	* Asumiendo que tu variable se llama 'cant_oxxo'
+	gen diff_oxxo = cantidad_oxxo - L.cantidad_oxxo
+
+	* Crear una bandera (flag) para las UPZ que tuvieron una disminución
+	gen disminuyo = 1 if diff_oxxo < 0 & !missing(diff_oxxo)
+
+	* Listar las UPZ, el periodo y el cambio para los casos donde disminuyó
+	list codigo_upz year quarter cantidad_oxxo diff_oxxo if disminuyo == 1
+
+	//upz 99 y 13
+	drop if codigo_upz == 13
+	drop if codigo_upz == 99
+}
+else {
+    drop if codigo_upz == 108
+}
 
 ***************************************************************
 *REGRESIONES PARA LA ENTREGA
@@ -43,12 +81,42 @@ drop if codigo_upz == 108
 cd "$dir_controls_results"
 
 *ssc install outreg2, replace
-*********************************************************
-*MCO SIMPLE
-*********************************************************
 
-global dep_var crime_index theft_to_vehicle_index theft_to_vehicle theft_to_people_index theft_to_motorbike_index theft_to_motorbike sexual_index homicide_index male_index female_index
+if $panel == 1 {
+	global dep_var crime_index theft_to_vehicle_index theft_to_vehicle theft_to_people_index theft_to_motorbike_index theft_to_motorbike sexual_index homicide_index male_index female_index
+}
+else {
+    global dep_var crime_index theft_to_people_index male_index female_index
+}
 
+if $panel == 1 {
+	global day_controls dia_viernes dia_sábado dia_miércoles dia_martes dia_lunes dia_jueves dia_domingo
+}
+
+global access_controls spillover_oxxo
+ 
+global harddiscount_controls cantidad_d1 cantidad_ara cantidad_jb 
+
+ 
+*********************************************************
+*TWO WAY FIXED EFFECTS
+*********************************************************
+if ${panel} == 1 {
+	
+	gen tq = yq(year, quarter)
+	format tq %tq
+
+	duplicates report codigo_upz tq
+
+	duplicates list codigo_upz tq
+
+	duplicates drop codigo_upz tq, force //todas las observaciones son identicas
+
+	xtset codigo_upz tq
+	
+}
+ 
+	
 local first = 1
 
 foreach y of global dep_var {
@@ -56,174 +124,28 @@ foreach y of global dep_var {
     reg `y' dummy_oxxo
 
     if `first' == 1 {
-        outreg2 using tabla_regresiones.xls, replace label ///
-        ctitle("`y'") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		reghdfe `y' dummy_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
-        local first = 0
-    }
-    else {
-        outreg2 using tabla_regresiones.xls, append label ///
-        ctitle("`y'") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
-    }
-} 
-
-
-
-*********************************************************
-*MCO MULTIPLE
-*********************************************************
-
-global gender_controls male_index female_index
-
-global day_controls dia_viernes dia_sábado dia_miércoles dia_martes dia_lunes dia_jueves dia_domingo
-
-global access_controls spillover_oxxo accesibilidad_arterial acceso_transmi
- 
-global harddiscount_controls cantidad_d1 cantidad_ara cantidad_jb 
-
-local first = 1
-
-foreach y of global dep_var {
-
-    if `first' == 1 {
-		
-		reg `y' dummy_oxxo $gender_controls
-		
-        outreg2 using tabla_regresiones_multiples.xls, replace label ///
-        ctitle("`y' G") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, NO, Gender controles, SI, Day controls, NO, Control spillover, NO, Access controles, NO)
-		
-		reg `y' dummy_oxxo $gender_controls $day_controls 
-		
-        outreg2 using tabla_regresiones_multiples.xls, append label ///
-        ctitle("`y' G D ") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, NO, Gender controles, SI, Day controls, SI, Control spillover, NO, Access controles, NO)
-		
-		reg `y' dummy_oxxo $gender_controls $day_controls $access_controls
-		
-        outreg2 using tabla_regresiones_multiples.xls, append label ///
-        ctitle("`y' G D A") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, NO, Gender controles, SI, Day controls, SI, Control spillover, SI, Access controles, SI)
-		
-		reg `y' dummy_oxxo $gender_controls $day_controls $access_controls $harddiscount_controls
-		
-        outreg2 using tabla_regresiones_multiples.xls, append label ///
-        ctitle("`y' G D A H") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, SI, Gender controles, SI, Day controls, SI, Control spillover, SI, Access controles, SI)
-		
-		reg `y' dummy_oxxo $day_controls $access_controls $harddiscount_controls
-		
-        outreg2 using tabla_regresiones_multiples.xls, append label ///
-        ctitle("`y' D A H") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, SI, Gender controles, NO, Day controls, SI, Control spillover, SI, Access controles, SI)
-
-		reg `y' dummy_oxxo $day_controls $access_controls
-		
-        outreg2 using tabla_regresiones_multiples.xls, append label ///
-        ctitle("`y' D A") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, NO, Gender controles, NO, Day controls, SI, Control spillover, SI, Access controles, SI)
-		
-		reg `y' dummy_oxxo $access_controls $harddiscount_controls
-		
-        outreg2 using tabla_regresiones_multiples.xls, append label ///
-        ctitle("`y' A H") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, SI, Gender controles, NO, Day controls, NO, Control spillover, SI, Access controles, SI)
+		outreg2 using tabla_regresiones_${panel}.xls, replace label ///
+		ctitle("TWFE `y'") ///
+		keep(dummy_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
 		
 
         local first = 0
     }
     else {
-		
-		reg `y' dummy_oxxo $gender_controls
-		
-        outreg2 using tabla_regresiones_multiples.xls, append label ///
-        ctitle("`y' G") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, NO, Gender controles, SI, Day controls, NO, Control spillover, NO, Access controles, NO)
-		
-		reg `y' dummy_oxxo $gender_controls $day_controls 
-		
-        outreg2 using tabla_regresiones_multiples.xls, append label ///
-        ctitle("`y' G D ") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, NO, Gender controles, SI, Day controls, SI, Control spillover, NO, Access controles, NO)
-		
-		reg `y' dummy_oxxo $gender_controls $day_controls $access_controls
-		
-        outreg2 using tabla_regresiones_multiples.xls, append label ///
-        ctitle("`y' G D A") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, NO, Gender controles, SI, Day controls, SI, Control spillover, SI, Access controles, SI)
-		
-		reg `y' dummy_oxxo $gender_controls $day_controls $access_controls $harddiscount_controls
-		
-        outreg2 using tabla_regresiones_multiples.xls, append label ///
-        ctitle("`y' G D A H") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, SI, Gender controles, SI, Day controls, SI, Control spillover, SI, Access controles, SI)
-		
-		reg `y' dummy_oxxo $day_controls $access_controls $harddiscount_controls
-		
-        outreg2 using tabla_regresiones_multiples.xls, append label ///
-        ctitle("`y' D A H") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, SI, Gender controles, NO, Day controls, SI, Control spillover, SI, Access controles, SI)
+        reghdfe `y' dummy_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
-		reg `y' dummy_oxxo $day_controls $access_controls
+		outreg2 using tabla_regresiones_${panel}.xls, append label ///
+		ctitle("TWFE `y'") ///
+		keep(dummy_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
 		
-        outreg2 using tabla_regresiones_multiples.xls, append label ///
-        ctitle("`y' D A") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, NO, Gender controles, NO, Day controls, SI, Control spillover, SI, Access controles, SI)
-		
-		reg `y' dummy_oxxo $access_controls $harddiscount_controls
-		
-        outreg2 using tabla_regresiones_multiples.xls, append label ///
-        ctitle("`y' A H") ///
-        keep(dummy_oxxo) ///
-        addtext(Chain stores, SI, Gender controles, NO, Day controls, NO, Control spillover, SI, Access controles, SI)
-		
-	
     }
 } 
- 
-*********************************************************
-*TWO WAY FIXED EFFECTS
-*********************************************************
 
-gen tq = yq(year, quarter)
-format tq %tq
 
-duplicates report codigo_upz tq
-
-duplicates list codigo_upz tq
-
-duplicates drop codigo_upz tq, force //todas las observaciones son identicas
-
-xtset codigo_upz tq
-
-foreach y of global dep_var {
-
-	reghdfe `y' dummy_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
-
-	outreg2 using tabla_regresiones.xls, append label ///
-	ctitle("TWFE `y'") ///
-	keep(dummy_oxxo) ///
-    addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
-	
-}
- 
 bys codigo_upz (tq): gen change = dummy_oxxo - dummy_oxxo[_n-1]
 
 list codigo_upz tq dummy_oxxo if change < 0
@@ -233,77 +155,94 @@ bacondecomp crime_index dummy_oxxo, ddetail vce(cluster codigo_upz)
 
 foreach y of global dep_var {
 
-
-	reghdfe `y' dummy_oxxo $gender_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	
+	reghdfe `y' dummy_oxxo $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 	
 		
-	outreg2 using tabla_regresiones_multiples.xls, append label ///
-	ctitle("TWFE `y' G") ///
+	outreg2 using tabla_regresiones_${panel}.xls, append label ///
+	ctitle("TWFE `y' H") ///
 	keep(dummy_oxxo) ///
-	addtext(Chain stores, NO, Gender controles, SI, Day controls, NO, Control spillover, NO, Access controles, NO)
+	addtext(Chain stores, SI, Day controls, NO, Control spillover, NO)
 		
-		
-	reghdfe `y' dummy_oxxo $gender_controls $day_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
-		
-		
-	outreg2 using tabla_regresiones_multiples.xls, append label ///
-	ctitle("TWFE `y' G D ") ///
-	keep(dummy_oxxo) ///
-	addtext(Chain stores, NO, Gender controles, SI, Day controls, SI, Control spillover, NO, Access controles, NO)
-		
-		
-	reghdfe `y' dummy_oxxo $gender_controls $day_controls $access_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
-
-		
-	outreg2 using tabla_regresiones_multiples.xls, append label ///
-	ctitle("TWFE `y' G D A") ///
-	keep(dummy_oxxo) ///
-	addtext(Chain stores, NO, Gender controles, SI, Day controls, SI, Control spillover, SI, Access controles, SI)
-	
-	
-	reghdfe `y' dummy_oxxo $gender_controls $day_controls $access_controls $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
-
-			
-	outreg2 using tabla_regresiones_multiples.xls, append label ///
-	ctitle("TWFE `y' G D A H") ///
-	keep(dummy_oxxo) ///
-	addtext(Chain stores, SI, Gender controles, SI, Day controls, SI, Control spillover, SI, Access controles, SI)
-	
 	if "`y'" == "crime_index" {
-		bacondecomp crime_index dummy_oxxo, ddetail vce(cluster codigo_upz)
+		bacondecomp crime_index dummy_oxxo $harddiscount_controls, ddetail vce(cluster codigo_upz)
 	}
 	
-	reghdfe `y' dummy_oxxo $day_controls $access_controls $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe `y' dummy_oxxo $access_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	
+		
+	outreg2 using tabla_regresiones_${panel}.xls, append label ///
+	ctitle("TWFE `y' H") ///
+	keep(dummy_oxxo) ///
+	addtext(Chain stores, NO, Day controls, NO, Control spillover, SI)
+		
+	if "`y'" == "crime_index" {
+		bacondecomp crime_index dummy_oxxo  $access_controlss, ddetail vce(cluster codigo_upz)
+	}
+		
+	if $panel == 1 {
+			
+		
+		reghdfe `y' dummy_oxxo $day_controls $harddiscount_controls ,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+			
+		outreg2 using tabla_regresiones_${panel}.xls, append label ///
+		ctitle("TWFE `y' D H") ///
+		keep(dummy_oxxo) ///
+		addtext(Chain stores, SI, Day controls, SI, Control spillover, NO)
+		
+		if "`y'" == "crime_index" {
+			bacondecomp crime_index dummy_oxxo $day_controls $harddiscount_controls , ddetail vce(cluster codigo_upz)
+		}
+
+			
+		reghdfe `y' dummy_oxxo $day_controls  ,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+		
+			
+		outreg2 using tabla_regresiones_${panel}.xls, append label ///
+		ctitle("TWFE `y' D A") ///
+		keep(dummy_oxxo) ///
+		addtext(Chain stores, NO, Day controls, SI, Control spillover, NO)
+		
+		if "`y'" == "crime_index" {
+			bacondecomp crime_index dummy_oxxo $day_controls , ddetail vce(cluster codigo_upz)
+		}
+		
+		reghdfe `y' dummy_oxxo $day_controls $access_controls ,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+			
+		outreg2 using tabla_regresiones_${panel}.xls, append label ///
+		ctitle("TWFE `y' D A") ///
+		keep(dummy_oxxo) ///
+		addtext(Chain stores, NO, Day controls, SI, Control spillover, SI)
+		
+		
+		reghdfe `y' dummy_oxxo $day_controls $access_controls $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+			
+		outreg2 using tabla_regresiones_${panel}.xls, append label ///
+		ctitle("TWFE `y' D A") ///
+		keep(dummy_oxxo) ///
+		addtext(Chain stores, SI,  Day controls, SI, Control spillover, SI)
 
 	
-	outreg2 using tabla_regresiones_multiples.xls, append label ///
-	ctitle("TWFE `y' D A H") ///
-	keep(dummy_oxxo) ///
-	addtext(Chain stores, SI, Gender controles, NO, Day controls, SI, Control spillover, SI, Access controles, SI)
+	}	
 
 	
-	reghdfe `y' dummy_oxxo $day_controls $access_controls ,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
-
+	reghdfe `y' dummy_oxxo $harddiscount_controls $access_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	
 		
-	outreg2 using tabla_regresiones_multiples.xls, append label ///
-	ctitle("TWFE `y' D A") ///
+	outreg2 using tabla_regresiones_multiples_${panel}.xls, append label ///
+	ctitle("TWFE `y' H A") ///
 	keep(dummy_oxxo) ///
-	addtext(Chain stores, NO, Gender controles, NO, Day controls, SI, Control spillover, SI, Access controles, SI)
-		
-
-	reghdfe `y' dummy_oxxo $access_controls $harddiscount_controls ,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
-
-		
-	outreg2 using tabla_regresiones_multiples.xls, append label ///
-	ctitle("TWFE `y' A H") ///
-	keep(dummy_oxxo) ///
-	addtext(Chain stores, SI, Gender controles, NO, Day controls, NO, Control spillover, SI, Access controles, SI)
-
+	addtext(Chain stores, SI,  Day controls, NO, Control spillover, SI)	
+	
 	
 }
+		
 
 
-*********************************************************
+********************************************************
 *C&S
 *********************************************************
 
@@ -320,8 +259,15 @@ preserve
 	replace first_treat = 0 if missing(first_treat)  // 0 para codigo_upzs nunca tratadas
 
 	* Ejecutar el método de Callaway & Sant'Anna
-	csdid crime_index $gender_controls $day_controls $access_controls $harddiscount_controls, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz)
+	if $panel == 1 {
+		csdid crime_index  $day_controls $access_controls $harddiscount_controls, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz)
 
+	}
+	else {
+		csdid crime_index $access_controls $harddiscount_controls, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz)
+
+	}
+	
 	* Revisar los efectos promedio
 	estat pretrend
 
@@ -357,11 +303,11 @@ preserve
 	estat event, estore(cs1)
 	csdid_plot, title("ES de CS")
 	
-	graph export "event_study_csS.png", replace width(1200) height(800)
+	graph export "event_study_csS_${panel}.png", replace width(1200) height(800)
 
 	
-		* 1. Estimar los efectos dinámicos (event study)
-	estat event, window(-8 12) estore(cs1)
+	* 1. Estimar los efectos dinámicos (event study)
+	estat event, window(-24 24) estore(cs1)
 
 	* 2. Extraer resultados y transponer
 	matrix M = r(table)'
@@ -369,51 +315,43 @@ preserve
 
 	* 3. Convertir matriz a dataset sin borrar memoria
 	clear
-	set obs 6
+    * Convertir la matriz directamente a variables
+    svmat M, names(col)
+    
+    * Extraer los nombres de las filas (donde Stata guarda el periodo relativo)
+    gen rowname = ""
+    local names : rowfullnames M
+    forvalues i = 1/`: word count `names'' {
+        replace rowname = "`: word `i' of `names''" in `i'
+    }
 
-	* 4. Crear variables
-	gen crime_index1 = .
-	gen crime_index0 = .
-	gen exp = .
+    * 4. Limpiar el periodo relativo (exp)
+    * Stata los llama "tm3" para -3, "tp2" para +2, "t0" para 0
+    gen exp = .
+    replace exp = real(substr(rowname, 3, .)) if strpos(rowname, "tp") // Post
+    replace exp = -real(substr(rowname, 3, .)) if strpos(rowname, "tm") // Pre
+    replace exp = 0 if rowname == "t0" | rowname == "T0"
 
-	* NOTA: Usa la matriz M (no se borra porque la definiste ANTES del clear)
-	* Rellena manualmente los 5 periodos (ajusta si son más)
-	replace crime_index1 = M[3,1] in 1
-	replace crime_index1 = M[4,1] in 2
-	replace crime_index1 = M[5,1] in 3
-	replace crime_index1 = M[6,1] in 4
-	replace crime_index1 = M[7,1] in 5
+    * 5. Renombrar para que coincida con tu estructura
+    rename b crime_index1
+    rename se crime_index0
+    rename ll lb
+    rename ul ub
 
-	replace crime_index0 = M[3,2] in 1
-	replace crime_index0 = M[4,2] in 2
-	replace crime_index0 = M[5,2] in 3
-	replace crime_index0 = M[6,2] in 4
-	replace crime_index0 = M[7,2] in 5
+    * 6. Agregar el periodo de referencia (-1) que siempre es CERO
+    set obs `=_N + 1'
+    replace exp = -1 in L
+    foreach var in crime_index1 crime_index0 lb ub {
+        replace `var' = 0 in L
+    }
 
-	* 5. Definir los periodos relativos
-	replace exp = -3 in 1
-	replace exp = -2 in 2
-	replace exp = 0  in 3
-	replace exp = 1  in 4
-	replace exp = 2  in 5
-
-	* 6. Calcular intervalos de confianza
-	gen lb = crime_index1 - 1.96*crime_index0
-	gen ub = crime_index1 + 1.96*crime_index0
-
-	* 7. Agregar fila base (exp = -1)
-	replace exp = -1 in 6
-	replace crime_index1 = 0 in 6
-	replace crime_index0 = 0 in 6
-	replace lb = 0 in 6
-	replace ub = 0 in 6
-
-	* 8. Mantener y exportar
-	keep exp crime_index1 crime_index0 lb ub
-	sort exp
-	list, noobs
-
-	export delimited using "paraEventsStudyMultipleCS.csv", replace
+    * 7. Limpieza final y exportación
+    drop if missing(exp) // Eliminar filas extra de la matriz que no sean periodos
+    sort exp
+    keep exp crime_index1 crime_index0 lb ub
+    
+    list, noobs
+    export delimited using "paraEventsStudyMultipleCS_${panel}.csv", replace
 	
 restore
 
@@ -465,11 +403,12 @@ preserve
 	estat event, estore(cs1)
 	csdid_plot, title("ES de CS")
 	
-	graph export "event_study_csM.png", replace width(1200) height(800)
-
+	graph export "event_study_csM_${panel}.png", replace width(1200) height(800)
+	
+	
 	
 	* 1. Estimar los efectos dinámicos (event study)
-	estat event, window(-8 12) estore(cs1)
+	estat event, window(-24 24) estore(cs1)
 
 	* 2. Extraer resultados y transponer
 	matrix M = r(table)'
@@ -477,52 +416,45 @@ preserve
 
 	* 3. Convertir matriz a dataset sin borrar memoria
 	clear
-	set obs 6
+    * Convertir la matriz directamente a variables
+    svmat M, names(col)
+    
+    * Extraer los nombres de las filas (donde Stata guarda el periodo relativo)
+    gen rowname = ""
+    local names : rowfullnames M
+    forvalues i = 1/`: word count `names'' {
+        replace rowname = "`: word `i' of `names''" in `i'
+    }
 
-	* 4. Crear variables
-	gen crime_index1 = .
-	gen crime_index0 = .
-	gen exp = .
+    * 4. Limpiar el periodo relativo (exp)
+    * Stata los llama "tm3" para -3, "tp2" para +2, "t0" para 0
+    gen exp = .
+    replace exp = real(substr(rowname, 3, .)) if strpos(rowname, "tp") // Post
+    replace exp = -real(substr(rowname, 3, .)) if strpos(rowname, "tm") // Pre
+    replace exp = 0 if rowname == "t0" | rowname == "T0"
 
-	* NOTA: Usa la matriz M (no se borra porque la definiste ANTES del clear)
-	* Rellena manualmente los 5 periodos (ajusta si son más)
-	replace crime_index1 = M[3,1] in 1
-	replace crime_index1 = M[4,1] in 2
-	replace crime_index1 = M[5,1] in 3
-	replace crime_index1 = M[6,1] in 4
-	replace crime_index1 = M[7,1] in 5
+    * 5. Renombrar para que coincida con tu estructura
+    rename b crime_index1
+    rename se crime_index0
+    rename ll lb
+    rename ul ub
 
-	replace crime_index0 = M[3,2] in 1
-	replace crime_index0 = M[4,2] in 2
-	replace crime_index0 = M[5,2] in 3
-	replace crime_index0 = M[6,2] in 4
-	replace crime_index0 = M[7,2] in 5
+    * 6. Agregar el periodo de referencia (-1) que siempre es CERO
+    set obs `=_N + 1'
+    replace exp = -1 in L
+    foreach var in crime_index1 crime_index0 lb ub {
+        replace `var' = 0 in L
+    }
 
-	* 5. Definir los periodos relativos
-	replace exp = -3 in 1
-	replace exp = -2 in 2
-	replace exp = 0  in 3
-	replace exp = 1  in 4
-	replace exp = 2  in 5
+    * 7. Limpieza final y exportación
+    drop if missing(exp) // Eliminar filas extra de la matriz que no sean periodos
+    sort exp
+    keep exp crime_index1 crime_index0 lb ub
+    
+    list, noobs
+	
 
-	* 6. Calcular intervalos de confianza
-	gen lb = crime_index1 - 1.96*crime_index0
-	gen ub = crime_index1 + 1.96*crime_index0
-
-	* 7. Agregar fila base (exp = -1)
-	replace exp = -1 in 6
-	replace crime_index1 = 0 in 6
-	replace crime_index0 = 0 in 6
-	replace lb = 0 in 6
-	replace ub = 0 in 6
-
-	* 8. Mantener y exportar
-	keep exp crime_index1 crime_index0 lb ub
-	sort exp
-	list, noobs
-
-	export delimited using "paraEventsStudySimpleCS.csv", replace
-
+	export delimited using "paraEventsStudySimpleCS_${panel}.csv", replace
 
 restore
 		
@@ -541,12 +473,12 @@ preserve
     gen rel_time = tq - first_treat
 
 	* Leads (antes del tratamiento)
-	forvalues k = 2/15 {
+	forvalues k = 2/24 {
 		gen lead`k' = (rel_time == -`k')
 	}
 
 	* Lags (después del tratamiento)
-	forvalues k = 0/15 {
+	forvalues k = 0/24 {
 		gen lag`k' = (rel_time == `k')
 	}
 	
@@ -554,22 +486,31 @@ preserve
 	local evlist
 
 	* leads (-15 a -2)
-	forvalues k = 15(-1)2 {
+	forvalues k = 24(-1)2 {
 		local evlist `evlist' lead`k'
 	}
 
 	* lags (0 a 15)
-	forvalues k = 0/15 {
+	forvalues k = 0/24 {
 		local evlist `evlist' lag`k'
 	}
 
 	display "`evlist'"
 		
 	*check hard discound controls
-	xtreg crime_index ///
+	if $panel == 1 {
+		xtreg crime_index ///
 		 $day_controls $access_controls $harddiscount_controls ///
 		`evlist' i.tq, fe vce(cluster codigo_upz)
 
+	}
+	else {
+				xtreg crime_index ///
+		  $access_controls $harddiscount_controls ///
+		`evlist' i.tq, fe vce(cluster codigo_upz)
+
+	}
+	
 	coefplot, keep(`evlist') ///
 		xlabel(, angle(vertical)) yline(0) vertical msymbol(E) mfcolor(white) ///
 		ciopts(lwidth(*3) lcolor(purple*0.3)) mlabel format(%9.3f) ///
@@ -592,12 +533,12 @@ preserve
     gen rel_time = tq - first_treat
 
 	* Leads (antes del tratamiento)
-	forvalues k = 2/15 {
+	forvalues k = 2/24 {
 		gen lead`k' = (rel_time == -`k')
 	}
 
 	* Lags (después del tratamiento)
-	forvalues k = 0/15 {
+	forvalues k = 0/24 {
 		gen lag`k' = (rel_time == `k')
 	}
 	
@@ -605,12 +546,12 @@ preserve
 	local evlist
 
 	* leads (-15 a -2)
-	forvalues k = 15(-1)2 {
+	forvalues k = 24(-1)2 {
 		local evlist `evlist' lead`k'
 	}
 
 	* lags (0 a 15)
-	forvalues k = 0/15 {
+	forvalues k = 0/24 {
 		local evlist `evlist' lag`k'
 	}
 
@@ -631,255 +572,6 @@ preserve
 		mcolor(purple) title("Tasa de crimen") 
 		
 		
-	 graph export "event_study_feoS.png", replace
+	 graph export "event_study_feoS_${panel}.png", replace
 
-restore
-
-preserve
-	*hacer el events study bonito
-
-		* 1. Año de primera entrada de OXXO
-		bysort codigo_upz: egen first_treat = min(cond(dummy_oxxo==1, tq, .))
-
-		* 2. Quedarse solo con cohortes tratadas
-		drop if missing(first_treat)
-
-		* 3. Crear tiempo relativo (en períodos de 4 años)
-		gen rel_time = tq - first_treat
-		
-		* Leads: periodos despues del tratamiento
-		gen lead3 = (rel_time==3)
-		gen lead2 = (rel_time==2)
-		gen lead1 = (rel_time==1)
-		gen lead0 = (rel_time==0)
-
-		* Lags: periodos antes del tratamiento
-		*gen lag1 = (rel_time==-1)
-		gen lag2 = (rel_time==-2)
-		gen lag3 = (rel_time==-3)
-		gen lag4 = (rel_time==-4)
-
-		xtset codigo_upz tq
-		
-		xtreg crime_index i.tq dummy_oxxo, fe vce(cluster codigo_upz)
-		
-		bacondecomp crime_index dummy_oxxo, ddetail vce(cluster codigo_upz)
-
-		
-		outreg2 using tabla_regresiones.xls, append label ctitle("ES TWFE") keep(dummy_oxxo) addtext(Tiendas de cadena, NO, Controles variables, NO, Controles fijos, NO, Control spillover, NO, Controles por diferencias, SI) 
-
-		local DDL = _b[dummy_oxxo]
-		local DD : display _b[dummy_oxxo]
-		local DDSE : display  _se[dummy_oxxo]
-		local DD1 = -0.10
-
-		xi: xtreg crime_index lag4 lag3 lag2 lead0 lead1 lead2 lead3 i.year, fe vce(cluster codigo_upz)
-
-			outreg2 using "./eventstudy_levels.xls", replace keep(lag4 lag3 lag2 lead0 lead1 lead2 lead3) noparen noaster addstat(DD, `DD', DDSE, `DDSE')
-			
-				outreg2 using "./eventstudy_levels_table.xls", replace label ctitle("ES TWFE") keep(lag3 lag2 lead0 lead1 lead2 lead3) noparen noaster addstat(DD, `DD', DDSE, `DDSE') addtext(Tiendas de cadena, NO, Controles variables, NO, Controles fijos, NO, Control spillover, NO, Controles por diferencias, SI) 
-
-
-		*Pull in the ES Coefs
-		xmluse "./eventstudy_levels.xls", clear cells(A3:B16) first
-
-		replace VARIABLES = subinstr(VARIABLES,"lead","",.) 
-		replace VARIABLES = subinstr(VARIABLES,"lag","",.)  
-		quietly destring _all, replace ignore(",")
-
-		replace VARIABLES = -4 in 2
-		replace VARIABLES = -3 in 4
-		replace VARIABLES = -2 in 6
-		replace VARIABLES = 0 in 8
-		replace VARIABLES = 1 in 10
-		replace VARIABLES = 2 in 12
-		replace VARIABLES = 3 in 14
-
-		drop in 1
-		compress
-		quietly destring _all, replace ignore(",")
-		compress
-
-		ren VARIABLES exp
-		gen b = exp<.
-		replace exp = -4 in 2
-		replace exp = -3 in 4
-		replace exp = -2 in 6
-		replace exp = 0 in 8
-		replace exp = 1 in 10
-		replace exp = 2 in 12
-		replace exp = 3 in 14
-
-		* Expand the dataset by one more observation so as to include the comparison year
-		local obs =_N+1
-		set obs `obs'
-		for var _all: replace X = 0 in `obs'
-		replace b = 1 in `obs'
-		replace exp = -1 in `obs'
-		keep exp crime_index b 
-		set obs 16
-		foreach x of varlist crime_index b {
-			replace `x'= 0 in 16
-			}
-			
-		replace exp= -1 in 16
-		reshape wide crime_index, i(exp) j(b)
-
-		cap drop *lb* *ub*
-		gen lb = crime_index1 - 1.96*crime_index0 
-		gen ub = crime_index1 + 1.96*crime_index0 
-
-		* Create the picture
-		set scheme s2color
-		#delimit ;
-		twoway (scatter crime_index1 ub lb exp , 
-				lpattern(solid dash dash dot dot solid solid) 
-				lcolor(gray gray gray red blue) 
-				lwidth(thick medium medium medium medium thick thick)
-				msymbol(i i i i i i i i i i i i i i i) msize(medlarge medlarge)
-				mcolor(gray black gray gray red blue) 
-				c(l l l l l l l l l l l l l l l) 
-				cmissing(n n n n n n n n n n n n n n n n) 
-				xline(-1, lcolor(black) lpattern(solid))
-				yline(0, lcolor(black)) 
-				xlabel(-4 -3 -2 -1 0 1 2 3, labsize(medium))
-				ylabel(, nogrid labsize(medium))
-				xsize(7.5) ysize(5.5)           
-				legend(off)
-				xtitle("Años antes y después de la llegada de OXXO a un codigo_upz", size(medium))
-				ytitle("proporción de independientes en el codigo_upz ", size(medium))
-				graphregion(fcolor(white) color(white) icolor(white) margin(zero))
-				yline(`DDL', lcolor(red) lwidth(thick)) text(`DD1' -0.10 "DD Coefficient = `DD' (s.e. = `DDSE')")
-				)
-		;
-
-		#delimit cr;
-
-		graph export "figura_eventsStudyS.png", replace width(2000)
-
-		export delimited using "paraEventsStudySimple.csv", replace
-	restore
-
-preserve
-	*hacer el events study bonito
-
-		* 1. Año de primera entrada de OXXO
-		bysort codigo_upz: egen first_treat = min(cond(dummy_oxxo==1, year, .))
-
-		* 2. Quedarse solo con cohortes tratadas
-		drop if missing(first_treat)
-
-		* 3. Crear tiempo relativo (en períodos de 4 años)
-		gen rel_time = (year - first_treat)/4
-		
-		* Leads: periodos despues del tratamiento
-		gen lead3 = (rel_time==3)
-		gen lead2 = (rel_time==2)
-		gen lead1 = (rel_time==1)
-		gen lead0 = (rel_time==0)
-
-		* Lags: periodos antes del tratamiento
-		*gen lag1 = (rel_time==-1)
-		gen lag2 = (rel_time==-2)
-		gen lag3 = (rel_time==-3)
-		gen lag4 = (rel_time==-4)
-
-		xtset codigo_upz year
-		
-		xtreg crime_index i.year $controls $panel_controls dummy_oxxo, fe vce(cluster codigo_upz)
-		
-		bacondecomp crime_index dummy_oxxo $controls $panel_controls, ddetail vce(cluster codigo_upz)
-		
-		outreg2 using tabla_regresiones.xls, append label ctitle("ES con controles TWFE") keep(dummy_oxxo) addtext(Tiendas de cadena, SI, Controles variables, SI, Controles fijos, NO, Control spillover, SI, Controles por diferencias, SI)
-
-		local DDL = _b[dummy_oxxo]
-		local DD : display _b[dummy_oxxo]
-		local DDSE : display  _se[dummy_oxxo]
-		local DD1 = -0.10
-
-		xi: xtreg crime_index $controls $panel_controls lag3 lag2 lead0 lead1 lead2 lead3 i.year, fe vce(cluster codigo_upz)
-
-		outreg2 using "./eventstudy_levels.xls", replace keep(lag3 lag2 lead0 lead1 lead2 lead3) noparen noaster addstat(DD, `DD', DDSE, `DDSE')
-		
-		outreg2 using "./eventstudy_levels_table.xls", append label ctitle("ES controles") keep(lag3 lag2 lead0 lead1 lead2 lead3) noparen noaster addstat(DD, `DD', DDSE, `DDSE') addtext(Tiendas de cadena, SI, Controles variables, SI, Controles fijos, NO, Control spillover, SI, Controles por diferencias, SI)
-
-
-	*Pull in the ES Coefs
-	xmluse "./eventstudy_levels.xls", clear cells(A3:B16) first
-
-	replace VARIABLES = subinstr(VARIABLES,"lead","",.) 
-	replace VARIABLES = subinstr(VARIABLES,"lag","",.)  
-	quietly destring _all, replace ignore(",")
-
-	replace VARIABLES = -4 in 2
-	replace VARIABLES = -3 in 4
-	replace VARIABLES = -2 in 6
-	replace VARIABLES = 0 in 8
-	replace VARIABLES = 1 in 10
-	replace VARIABLES = 2 in 12
-	replace VARIABLES = 3 in 14
-
-	drop in 1
-	compress
-	quietly destring _all, replace ignore(",")
-	compress
-
-	ren VARIABLES exp
-	gen b = exp<.
-	replace exp = -4 in 2 
-	replace exp = -3 in 4 
-	replace exp = -2 in 6
-	replace exp = 0 in 8
-	replace exp = 1 in 10
-	replace exp = 2 in 12 
-	replace exp = 3 in 14
-
-	* Expand the dataset by one more observation so as to include the comparison year
-	local obs =_N+1
-	set obs `obs'
-	for var _all: replace X = 0 in `obs'
-	replace b = 1 in `obs'
-	replace exp = -1 in `obs'
-	keep exp crime_index b 
-	set obs 16
-	foreach x of varlist crime_index b {
-		replace `x'= 0 in 16
-		}
-		
-	replace exp= -1 in 16
-	reshape wide crime_index, i(exp) j(b)
-
-	cap drop *lb* *ub*
-	gen lb = crime_index1 - 1.96*crime_index0 
-	gen ub = crime_index1 + 1.96*crime_index0 
-
-	* Create the picture
-	set scheme s2color
-	#delimit ;
-	twoway (scatter crime_index1 ub lb exp , 
-			lpattern(solid dash dash dot dot solid solid) 
-			lcolor(gray gray gray red blue) 
-			lwidth(thick medium medium medium medium thick thick)
-			msymbol(i i i i i i i i i i i i i i i) msize(medlarge medlarge)
-			mcolor(gray black gray gray red blue) 
-			c(l l l l l l l l l l l l l l l) 
-			cmissing(n n n n n n n n n n n n n n n n) 
-			xline(-1, lcolor(black) lpattern(solid))
-			yline(0, lcolor(black)) 
-			xlabel(-4 -3 -2 -1 0 1 2 3, labsize(medium))
-			ylabel(, nogrid labsize(medium))
-			xsize(7.5) ysize(5.5)           
-			legend(off)
-			xtitle("Años antes y después de la llegada de OXXO a un codigo_upz", size(medium))
-			ytitle("proporción de independientes en el codigo_upz ", size(medium))
-			graphregion(fcolor(white) color(white) icolor(white) margin(zero))
-			yline(`DDL', lcolor(red) lwidth(thick)) text(`DD1' -0.10 "DD Coefficient = `DD' (s.e. = `DDSE')")
-			)
-	;
-
-	#delimit cr;
-
-	graph export "figura_eventsStudyC.png", replace width(2000)
-
-	export delimited using "paraEventsStudyControls.csv", replace
 restore

@@ -15,9 +15,11 @@
 \usepackage{setspace}
 
 %for citations
+\usepackage[spanish]{babel} % Fundamental para que APA use "y" entre autores
+\usepackage{csquotes}       % Requerido por biblatex para manejar comillas según el estilo
 \usepackage[style=apa, backend=biber]{biblatex}
-\usepackage{hyperref}
 \addbibresource{references.bib}
+\usepackage{hyperref}       % Siempre cárgalo DESPUÉS de biblatex
 
 %for notes and corrections
 \usepackage{soul}
@@ -39,13 +41,45 @@
 
 \section{Abstract}
 
+\newpage
+
 \section{Acknowledgements}
+
+\newpage
 
 \section{Introduction}
 
+The rapid expansion of modern retail chains in Latin America after the 2019 COVID-19 pandemic has transformed urban commercial dynamics and people's daily routines in the main cities of the region \parencite{Antom2024,McKinsey2024,MDPI2021}. 
+OXXO, a Mexican retail chain owned by FEMSA, has intensively proliferated across Mexico, Colombia, Peru, and Brazil. Specifically in Colombia, the chain operated more than 500 stores by 2025, with over 300 located in the capital city, Bogotá \parencite{godoy2025}.\\
+
+These establishments strategically locate in high-traffic areas, residential neighborhoods, and commercial corridors; they are simultaneously seen as magnets of economic, urban, and pedestrian activity \parencite{Dugato2026,marcos2022}. 
+Additionally, these 24-hour stores offer basic goods, financial services, and bill payment facilities, attracting diverse customer flows throughout the day and night \parencite{OxxoColombia2026, Dugato2026}.\\
+
+Due to their growing importance in the urban panorama, research has focused on the impact of these establishments on retail businesses, consumer behavior, and the labor market \parencite{delgado2024}.
+They have also occupied a contested position in the crime literature. Depending on the type of crime, these stores are seen as \textit{crime generators} by increasing foot traffic and creating incidental criminal opportunities \parencite{Dugato2026}, and they have been acknowledged as robbery-prone commercial establishments as they have available cash on hand \parencite{Wellford1997}. 
+On the other hand, they are perceived as \textit{crime combators} by providing natural surveillance and increasing ``eyes on the street'' through extended operating hours and improved lighting \parencite{Davis2021}. 
+This duality highlights the necessity of analyzing their role in the surrounding criminal environment, as targeting the aspects that facilitate criminal behavior is often more effective for long-term crime reduction than traditional repression \parencite{Dugato2026}.\\
+
+As OXXO continues to expand throughout Colombia, particularly in Bogotá, where more than 50\% of the stores are located, understanding the relationship between criminal activity and OXXO presence is crucial for the city. 
+Although Bogotá has experienced significant crime reduction since the 1990s \parencite{Sanchez2003}, it remains a major security concern as high volumes of personal theft and a rising public perception of insecurity continue to affect the daily lives of its citizens \parencite{CCB2026}. 
+Additionally, crime remains spatially concentrated, with substantial variation across zones driven by socioeconomic stratification, land use, and policing intensity \parencite{Enriquez2014,GimenezSantana2018}.\\
+
+Thus, in this paper, I aim to explore the causal effect of OXXO openings on local crime activity in Bogotá and analyze if effects vary by crime type and time since opening. To estimate this impact, I use the public georeferenced crime data stored in the Statistical, Criminal, Contraventional, and Operational Information System of the National Police (SIEDCO). 
+I create a quarterly panel aggregated at the level of the Zonal Planning Unit (UPZ), which serves as a sub-district administrative division in Bogotá. I also employ Two-Way Fixed Effects (TWFE) and the Callaway and Sant'Anna (C\&S) estimator, along with their corresponding event study methods, to capture the dynamic evolution of the treatment effect over time.\\
+
+Despite extensive research on urban crime in Bogotá, no study has systematically examined the causal impact of convenience store proliferation, particularly OXXO, on local crime patterns. 
+Existing research has focused on public transport infrastructure \parencite{Bacares2013a,Bacares2013b,Garcia2005}, large-scale policing interventions \parencite{Blattman2017,Blattman2021}, alcohol sales restrictions \parencite{Mello2013}, and socioeconomic determinants \parencite{Escobar2012}. 
+One recent study examined low-cost supermarkets or hard-discount stores (Tiendas D1) and crime \parencite{Lopez2024}, but OXXO represents a distinct retail model characterized by 24-hour operations and a higher density of ``grab-and-go'' items, which may create different criminal opportunities compared to the limited operating hours of hard-discount formats.\\
+
+The remainder of this paper is organized as follows:
+
 \section{Background}
+\subsection{The expansion of OXXO in Bogotá}
+
+\subsection{Criminality in Bogotá}
 
 \section{Related Literature}
+
 
 \section{Data used in the research}
 
@@ -53,7 +87,7 @@
 
 \section{Control Variables}
 
-\section{Econometric Model (or empirical strategy)}
+\section{Empirical strategy}
 
 \section{Results}
 
@@ -62,7 +96,6 @@
 \section{Robustness}
 
 \section{Conclusions}
-
 
 
 \newpage

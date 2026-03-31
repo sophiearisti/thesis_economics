@@ -1,5 +1,5 @@
 *********************************************************
-*version 1: analisis de los modelos econometricos
+*version 2: analisis de los modelos econometricos
 *********************************************************
 
 *--------------Directorios --------------------------------------------*
@@ -8,7 +8,16 @@ global global_dir "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics"
 global dir_dofile "$global_dir/code" //dirección de los dofiles
 global dir_dofile_controls_analysis "$dir_dofile/controls_maps_panel"
 global dir_BDD_panel "$global_dir/data/panel"
-global doc_panel "$dir_BDD_panel/panel_final_upz_trimestral.csv"
+
+global panel 2
+
+if $panel == 1 {
+    global doc_panel "$dir_BDD_panel/panel_final_upz_trimestral.csv"
+}
+else {
+    global doc_panel "$dir_BDD_panel/panel_final_clean_new_upz_trimestral.csv"
+}
+
 global dir_controls_results "$global_dir/data/controles_results"
 global dir_dif_medias "$dir_controls_results/dif_medias"
 
@@ -19,11 +28,11 @@ global dir_dif_medias "$dir_controls_results/dif_medias"
 *********************************************************
 import delimited "$doc_panel", clear
 
-replace area_urbana_2009 = subinstr(area_urbana_2009, ".", "", .)
+/*replace area_urbana_2009 = subinstr(area_urbana_2009, ".", "", .)
 destring area_urbana_2009, replace
 
 replace densidad_urbana_2009 = subinstr(densidad_urbana_2009, ".", "", .)
-destring densidad_urbana_2009, replace
+destring densidad_urbana_2009, replace*/
 
 replace personas_por_hogar_2007_localida = subinstr(personas_por_hogar_2007_localida, ",", ".", .)
 destring personas_por_hogar_2007_localida, replace
@@ -44,13 +53,16 @@ cd "$dir_dif_medias/controls_vars"
 
 //se hace una tabla de diferencia de medias con los baselines entre tratados y nunca tratados
 
-global controles poblacion_urbana_2009 poblacion_por_localidad_2005 poblacion_2005 personas_por_localidad_2007 personas_por_hogar_2007_localida num_est_transmi icv_2007_localidad gasto_promedio_mensual_2007_loca estrato_mean densidad_urbana_2009 area_urbana_2009 acceso_transmi accesibilidad_arterial accesibilidad_arterial_dummy
+global controles poblacion_urbana_2009 personas_por_localidad_2007 personas_por_hogar_2007_localida num_est_transmi icv_2007_localidad gasto_promedio_mensual_2007_loca estrato_mean acceso_transmi accesibilidad_arterial accesibilidad_arterial_dummy
 
 //recorrer por anos y trimestre
+if $panel == 1 {
+	local anos 2015 2016 2017 2018
+} 
+else {
+	local anos 2018 2019 2020 2021 2022 2023
+}
 
-// recorrer por años y trimestres
-
-local anos 2015 2016 2017 2018
 local trimestres 1 2 3 4
 
 foreach a of local anos {
@@ -64,10 +76,11 @@ foreach a of local anos {
         iebaltab $controles, ///
             groupvar(dummy_oxxo) ///
             control(0) ///
-            savexlsx(difmedias_controles_baselines_fixed_`a'_T`t') ///
+            savexlsx(difmedias_controles_baselines_fixed_`a'_T`t'_$panel) ///
             replace
         
         restore
+		
     }
 }
 
@@ -76,17 +89,23 @@ foreach a of local anos {
 *CONTROLES RESAGADOS TIENDAS
 *********************************************************
 
-*es basicamente la misma logica que lo anterior 
+* es basicamente la misma logica que lo anterior 
 
-*pero en este caso si es para cada cohorte, porque cambian en el tiempo
+* pero en este caso si es para cada cohorte, porque cambian en el tiempo
 
-*es ver si la presencia de otras tiendas parecidas afecta literalmente la presencia de las tiendas oxxo
+* es ver si la presencia de otras tiendas parecidas afecta literalmente la presencia de las tiendas oxxo
 
 cd "$dir_dif_medias/controls_staggered_vars"
 
 global staggered_controls dummy_jb dummy_d1 dummy_ara cantidad_jb cantidad_d1 cantidad_ara
 
-local anos 2015 2016 2017 2018
+if $panel == 1 {
+	local anos 2015 2016 2017 2018
+} 
+else {
+	local anos 2018 2019 2020 2021 2022 2023
+}
+
 local trimestres 1 2 3 4
 
 foreach a of local anos {
@@ -100,10 +119,11 @@ foreach a of local anos {
         iebaltab $staggered_controls, ///
             groupvar(dummy_oxxo) ///
             control(0) ///
-            savexlsx(difmedias_controles_staggered_variables_`a'_T`t') ///
+            savexlsx(difmedias_controles_staggered_variables_`a'_T`t'_$panel) ///
             replace
         
         restore
+		
     }
 }
 
@@ -167,7 +187,7 @@ preserve
 		title("Evolución relativa de OXXO por cohorte") ///
 		legend(`legendcmd')
 			
-	graph export "difference_in_oxxo_counts_over_time.png", replace
+	graph export "difference_in_oxxo_counts_panel_${panel}_over_time.png", replace
 
 restore
 
@@ -177,10 +197,20 @@ cd "$dir_dif_medias/dep_vars"
 *TABLA DE VAR DEP POR ANO POR TRATAMIENTO STAGGERED PREGUNTAR
 *por tratamiento (presencia oxxo)
 *********************************************************
+if $panel == 1 {
+	global depVar theft_to_vehicle_index theft_to_vehicle theft_to_people_index crime_index theft_to_motorbike_index theft_to_motorbike sexual_index homicide_index male_index female_index
+}
+else {
+	global depVar theft_to_people_index male_index female_index
+}
 
-global depVar theft_to_vehicle_index theft_to_vehicle theft_to_people_index crime_index theft_to_motorbike_index theft_to_motorbike sexual_index homicide_index male_index female_index
+if $panel== 1 {
+	local anos 2015 2016 2017 2018
+} 
+else {
+	local anos 2018 2019 2020 2021 2022 2023
+}
 
-local anos 2015 2016 2017 2018
 local trimestres 1 2 3 4
 
 *para ir comparando cada ano
@@ -206,4 +236,4 @@ foreach a of local anos {
 
 
 *total entre tratados y controles
-iebaltab $depVar , groupvar(dummy_oxxo) control(0) savexlsx(difmedias_dep_vars_tot) replace 
+iebaltab $depVar , groupvar(dummy_oxxo) control(0) savexlsx(difmedias_dep_vars_tot_$panel) replace 

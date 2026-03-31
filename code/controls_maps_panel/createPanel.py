@@ -28,11 +28,13 @@ geometry_dict={
 }
 
 #this is correct
-def create_dependent_variable(final_geometry="upz", frequency="anual"):
+def create_dependent_variable(final_geometry="upz", frequency="anual", panel_type="2015_2019"):
+   
     # open the file of all crimes 
-    #file_path_2015_2019 = "../../data/crime/bogota_crime/final_crime_data_bogota.csv"
-    
-    file_path_2015_2019 = "../../data/crime/bogota_crime/delitos_bogota_theft.csv"
+    if panel_type == "2015_2019":
+        file_path_2015_2019 = "../../data/crime/bogota_crime/final_crime_data_bogota.csv"
+    else:
+        file_path_2015_2019 = "../../data/crime/bogota_crime/delitos_bogota_theft.csv"
     
     df = pd.read_csv(file_path_2015_2019)
     
@@ -98,17 +100,18 @@ def create_dependent_variable(final_geometry="upz", frequency="anual"):
     else:
         raise ValueError("Frecuencia no válida")
     
-    """crime_zat = pd.get_dummies(
-        crime_zat,
-        columns=["DIA_SEMANA", "GENERO"],
-        prefix=["dia", "genero"]    
-    )"""
-    
-    crime_zat = pd.get_dummies(
-        crime_zat,
-        columns=["GENERO"],
-        prefix=["genero"]    
-    )
+    if panel_type == "2015_2019":
+        crime_zat = pd.get_dummies(
+            crime_zat,
+            columns=["DIA_SEMANA", "GENERO"],
+            prefix=["dia", "genero"]    
+        )
+    else:
+        crime_zat = pd.get_dummies(
+            crime_zat,
+            columns=["GENERO"],
+            prefix=["genero"]    
+        )
     
     
     #tambien por la hora podria poner dummies de noche dia y tarde
@@ -116,17 +119,18 @@ def create_dependent_variable(final_geometry="upz", frequency="anual"):
     #day_cols = [col for col in crime_zat.columns if col.startswith("dia_")]
     gender_cols = [col for col in crime_zat.columns if col.startswith("genero_")]
     
-    """crime_vars = [
-        "theft_to_people",
-        "homicide",
-        "sexual",
-        "theft_to_vehicle",
-        "theft_to_motorbike"
-    ]"""
-    
-    crime_vars = [
-        "theft_to_people"
-    ]
+    if panel_type == "2015_2019":
+        crime_vars = [
+            "theft_to_people",
+            "homicide",
+            "sexual",
+            "theft_to_vehicle",
+            "theft_to_motorbike",
+        ]
+    else:
+        crime_vars = [
+            "theft_to_people"
+        ]
 
     all_sum_vars = crime_vars + gender_cols # + day_cols
     
@@ -181,7 +185,10 @@ def create_dependent_variable(final_geometry="upz", frequency="anual"):
         
         
     #save the panel
-    crime_panel.to_csv(f"../../data/panel/preliminary_panel_datasets/crime_panel_new_{final_geometry}_{frequency}.csv", index=False)
+    if panel_type == "2015_2019":
+        crime_panel.to_csv(f"../../data/panel/preliminary_panel_datasets/crime_panel_{final_geometry}_{frequency}.csv", index=False)   
+    else:
+        crime_panel.to_csv(f"../../data/panel/preliminary_panel_datasets/crime_panel_new_{final_geometry}_{frequency}.csv", index=False)
        
     return crime_panel      
 
@@ -281,7 +288,7 @@ def create_tienda_gdf():
     
     return tienda_gdf
 
-def create_basic_panel(map=False, tienda_gdf = None, final_geometry = "upz", frequency = "anual"):
+def create_basic_panel(map=False, tienda_gdf = None, final_geometry = "upz", frequency = "anual", panel_type="2015_2019"):
 
     tienda_counts_by_geometry_list = [] #lista para guardar los conteos por año
     
@@ -290,8 +297,12 @@ def create_basic_panel(map=False, tienda_gdf = None, final_geometry = "upz", fre
     #crear el panel inical sin la parte socioeconomica
     #depending on frequency, we can create different panels
     
-    #años= range(2015, 2019)  # years
-    años= range(2018, 2024)  # years
+    if panel_type == "2015_2019": 
+        años= range(2015, 2019)  # years
+    else:
+        años= range(2018, 2024)  # years
+        
+   #años= range(2009, 2026)  # years
     
     frequency_list = {
         "anual": 1,
@@ -413,6 +424,7 @@ def create_basic_panel(map=False, tienda_gdf = None, final_geometry = "upz", fre
                           (tiendas_gdf['cadena'] != 'oxxo'))
                         )
                     ]
+                    
 
             joined_geometry_tiendas_list.append(joined_geometry_tiendas)
 
@@ -503,7 +515,6 @@ def create_basic_panel(map=False, tienda_gdf = None, final_geometry = "upz", fre
 
             else:
                 tienda_counts_by_geometry['spillover_oxxo'] = 0
-                
             
                   
             tienda_counts_by_geometry_list.append(tienda_counts_by_geometry)
@@ -514,14 +525,13 @@ def create_basic_panel(map=False, tienda_gdf = None, final_geometry = "upz", fre
     # Guardar
     tiendas_counts.to_csv("../../data/panel/preliminary_panel_datasets/oxxo_counts.csv", index=False)
     
-    print(tiendas_counts.columns)
     
     return tiendas_counts, joined_geometry_tiendas_list, tienda_counts_by_geometry_list
 
 ####################################################
 # Unir controles baseline y otros
 ####################################################
-def create_final_panel(tiendas_counts, dependent_variable_panel, final_geometry, frequency):
+def create_final_panel(tiendas_counts, dependent_variable_panel, final_geometry, frequency, panel_type="2015_2019"):
        
     print(dependent_variable_panel.columns)
     print(dependent_variable_panel.head())
@@ -582,7 +592,10 @@ def create_final_panel(tiendas_counts, dependent_variable_panel, final_geometry,
     panel[cols_to_fill] = panel[cols_to_fill].fillna(0)
     
     # Guardar el panel final
-    panel.to_csv(f"../../data/panel/panel_final_{final_geometry}_{frequency}.csv", index=False)
+    if panel_type == "2015_2019":
+        panel.to_csv(f"../../data/panel/panel_final_{final_geometry}_{frequency}.csv", index=False)
+    else:
+        panel.to_csv(f"../../data/panel/panel_final_new_{final_geometry}_{frequency}.csv", index=False)
 
     #solo quedarme con zats de bogota que tienen codigo_upz
     panel = panel.dropna(subset=[geometry_dict[final_geometry]])
@@ -615,9 +628,12 @@ def create_final_panel(tiendas_counts, dependent_variable_panel, final_geometry,
     print(f"{final_geometry}s totales después de limpiar: {panel_cleaned[geometry_dict[final_geometry]].nunique()}") 
 
     # Guardar el panel limpio
-    panel_cleaned.to_csv(f"../../data/panel/panel_final_clean_new_{final_geometry}_{frequency}.csv", index=False)
+    if panel_type == "2015_2019":
+        panel_cleaned.to_csv(f"../../data/panel/panel_final_clean_{final_geometry}_{frequency}.csv", index=False)
+    else:
+        panel_cleaned.to_csv(f"../../data/panel/panel_final_clean_new_{final_geometry}_{frequency}.csv", index=False)
 
-def create_geopackage_with_panel(panel_cleaned, joined_zat_tiendas_list, tienda_counts_by_geometry_list, final_geometry):
+def create_geopackage_with_panel(panel_cleaned, joined_zat_tiendas_list, tienda_counts_by_geometry_list, final_geometry, panel_type="2015_2019"):
     # Ruta del GeoPackage
     # unir el panel_cleaned con la geometria de zat zat_gdf
     # de zat_gdf solo necesito ZAT y geometry
@@ -637,15 +653,33 @@ def create_geopackage_with_panel(panel_cleaned, joined_zat_tiendas_list, tienda_
     # de zat_gdf solo necesito ZAT y geometry
     # del panel_cleaned todo
     # iterar por años y crear un GeoDataFrame por año
+    
+    if panel_type == "2015_2019":
+        years = range(2015, 2019)
+    else:
+        years = range(2018, 2024)
+        
+    #years = range(2009, 2026)
         
     
     for the_list, gpkg_path in zip (lists_to_save, gpkg_paths):
         
         joined_years_panel = []
 
-        for year, joined in zip(range(2018, 2024), the_list):
+        for year, joined in zip(years, the_list):
             
             if gpkg_path == gpkg_path_geometries:
+                #first merge with the geometry shp
+                if final_geometry == "zat":
+                    geometry_gdf = zat_gdf[['ZAT','geometry']].copy()
+                elif final_geometry == "upz":
+                    geometry_gdf = upz_gdf[['codigo_upz','geometry']].copy()
+                elif final_geometry == "localidad":
+                    geometry_gdf = localidad_gdf[['codigo_localidad','geometry']].copy()
+                
+                #merge 
+                joined = geometry_gdf.merge(joined, left_on=geometry_dict[final_geometry], right_on=geometry_dict[final_geometry], how='left')
+                
                 panel_year = panel_cleaned[panel_cleaned['year'] == year]
 
                 # 1. Asegurar que la llave de unión sea STRING en ambos dataframes
@@ -672,24 +706,30 @@ def create_geopackage_with_panel(panel_cleaned, joined_zat_tiendas_list, tienda_
 
             joined_years_panel.append(merged_gdf)
 
+        #print (f"Guardando GeoPackage para {gpkg_path}...")
+        #print (f"Cantidad de capas a guardar: {len(joined_years_panel)}")
+        
         # guardar cada año como capa en el GPKG
-        for year, gdf in zip(range(2018, 2024), joined_years_panel):
+        for year, gdf in zip(years, joined_years_panel):
             gdf.to_file(gpkg_path, layer=f"joined_{year}", driver="GPKG") 
         
-def createPanel(map, final_geometry="upz", frequency="anual"):
+def createPanel(map, final_geometry="upz", frequency="anual", panel_type="2015_2019"):
     
     #crear el panel final
-    dependent_variables= create_dependent_variable(final_geometry=final_geometry, frequency=frequency)
+    dependent_variables= create_dependent_variable(final_geometry=final_geometry, frequency=frequency, panel_type=panel_type)
     
     tienda_gdf = create_tienda_gdf()
     
-    tiendas_counts, joined_zat_tiendas_list, tienda_counts_by_geometry_list = create_basic_panel(tienda_gdf=tienda_gdf, map=map, final_geometry=final_geometry, frequency=frequency)
+    tiendas_counts, joined_zat_tiendas_list, tienda_counts_by_geometry_list = create_basic_panel(tienda_gdf=tienda_gdf, map=map, final_geometry=final_geometry, frequency=frequency, panel_type=panel_type)
    
-    create_final_panel(tiendas_counts, dependent_variables, final_geometry=final_geometry, frequency=frequency)
+    create_final_panel(tiendas_counts, dependent_variables, final_geometry=final_geometry, frequency=frequency, panel_type=panel_type  )
     
     if frequency == "anual" and map:
         #leer el panel limpio
-        panel_cleaned = pd.read_csv(f"../../data/panel/panel_final_clean_new_{final_geometry}_anual.csv")
+        if panel_type == "2015_2019":
+            panel_cleaned = pd.read_csv(f"../../data/panel/panel_final_clean_{final_geometry}_anual.csv")
+        else:
+            panel_cleaned = pd.read_csv(f"../../data/panel/panel_final_clean_new_{final_geometry}_anual.csv")
         
         """ #merge tienda_counts_by_geometry_list with the geometry shapefile to have all upz, then add 0 to all the NanS
 
@@ -739,23 +779,24 @@ def createPanel(map, final_geometry="upz", frequency="anual"):
                 tienda_counts_by_geometry_list2.append(merged)"""
             
         #crear geopackage con el panel y la geometria
-        create_geopackage_with_panel(panel_cleaned, joined_zat_tiendas_list, tienda_counts_by_geometry_list, final_geometry=final_geometry)
+        create_geopackage_with_panel(panel_cleaned, joined_zat_tiendas_list, tienda_counts_by_geometry_list, final_geometry=final_geometry, panel_type=panel_type)
     
 #pedir por consola si mapa o panel
 # <nombre_del_script>.py map
 if __name__ == "__main__":
     
-    if len(sys.argv) < 4:
-        print("Uso: python script.py [panel | map] [upz | localidad | zat] [anual | mensual | semestral | trimestral]")
+    if len(sys.argv) < 5:
+        print("Uso: python script.py [panel | map] [upz | localidad | zat] [anual | mensual | semestral | trimestral] [final panel type: 2015_2019 | new]")
         sys.exit(1)
 
     mode = sys.argv[1].lower()
     final_geometry = sys.argv[2].lower()
     frequency = sys.argv[3].lower()
+    panel_type = sys.argv[4].lower()
 
     if mode == "panel":
-         createPanel(False, final_geometry=final_geometry, frequency=frequency)
+         createPanel(False, final_geometry=final_geometry, frequency=frequency, panel_type=panel_type)
     elif mode == "map":
-         createPanel(True, final_geometry=final_geometry, frequency=frequency)
+         createPanel(True, final_geometry=final_geometry, frequency=frequency, panel_type=panel_type)
     else:
         print("Opción inválida. Usa 'panel' o 'map'")

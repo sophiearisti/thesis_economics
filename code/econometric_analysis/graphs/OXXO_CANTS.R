@@ -44,14 +44,19 @@ df_plot <- data.frame(
   conteo = conteo_oxxos
 )
 
+#print conteo_oxxos in 2020
+print(conteo_oxxos[which(anos == 2020)])
+#print conteo_oxxos in 2025
+print(conteo_oxxos[which(anos == 2025)])
+
 ggplot(df_plot, aes(x = ano, y = conteo)) +
   geom_line(color = "grey", size = 1.2) +       # línea lila
   geom_point(color = "purple", size = 2) +        # círculos en cada año
   scale_y_continuous(breaks = seq(0, max(df_plot$conteo) + 50, by = 50)) +
   labs(
     title = "Evolucion de la cantidad de Oxxos por año en Bogotá",
-    x = "Año",
-    y = "Cantidad de Oxxos"
+    x = "Year",
+    y = "Number of Oxxos"
   ) +
   theme_minimal()
 

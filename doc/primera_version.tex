@@ -6,7 +6,6 @@
 \usepackage{adjustbox}
 \usepackage[utf8]{inputenc}  % This is for old compilers, but good practice
 \usepackage[T1]{fontenc}    % This is for correct character encoding (accents, ñ, etc.)
-\usepackage[spanish,es-tabla]{babel}
 \usepackage[margin=3cm]{geometry} % This line changes the margins
 \usepackage{subcaption}
 \usepackage{url}
@@ -15,7 +14,6 @@
 \usepackage{setspace}
 
 %for citations
-\usepackage[spanish]{babel} % Fundamental para que APA use "y" entre autores
 \usepackage{csquotes}       % Requerido por biblatex para manejar comillas según el estilo
 \usepackage[style=apa, backend=biber]{biblatex}
 \addbibresource{references.bib}
@@ -50,24 +48,30 @@
 \section{Introduction}
 
 The rapid expansion of modern retail chains in Latin America after the 2019 COVID-19 pandemic has transformed urban commercial dynamics and people's daily routines in the main cities of the region \parencite{Antom2024,McKinsey2024,MDPI2021}. 
-OXXO, a Mexican retail chain owned by FEMSA, has intensively proliferated across Mexico, Colombia, Peru, and Brazil. Specifically in Colombia, the chain operated more than 500 stores by 2025, with over 300 located in the capital city, Bogotá \parencite{godoy2025}.\\
+These establishments strategically locates in high-traffic areas, residential neighborhoods, and commercial corridors. 
+Additionally, their 24-hour establishments offer basic goods, financial services, and bill payment facilities, attracting diverse customer flows throughout the day and night. Given their expanding footprint within the urban landscape, these retail hubs have naturally emerged as magnets of economic, urban and pedestrian activity \parencite{Dugato2026,marcos2022}.\\
 
-These establishments strategically locate in high-traffic areas, residential neighborhoods, and commercial corridors; they are simultaneously seen as magnets of economic, urban, and pedestrian activity \parencite{Dugato2026,marcos2022}. 
-Additionally, these 24-hour stores offer basic goods, financial services, and bill payment facilities, attracting diverse customer flows throughout the day and night \parencite{OxxoColombia2026, Dugato2026}.\\
+Convenience stores’ growing commercial importance has prompted economic research to primarily focus on the impact of these establishments on retail businesses, consumer behavior, and the labor market \parencite{delgado2024}. 
+However, beyond their economic role, their physical and operational characteristics place them in a contested position within the literature on urban crime.\\ 
 
-Due to their growing importance in the urban panorama, research has focused on the impact of these establishments on retail businesses, consumer behavior, and the labor market \parencite{delgado2024}.
-They have also occupied a contested position in the crime literature. Depending on the type of crime, these stores are seen as \textit{crime generators} by increasing foot traffic and creating incidental criminal opportunities \parencite{Dugato2026}, and they have been acknowledged as robbery-prone commercial establishments as they have available cash on hand \parencite{Wellford1997}. 
-On the other hand, they are perceived as \textit{crime combators} by providing natural surveillance and increasing ``eyes on the street'' through extended operating hours and improved lighting \parencite{Davis2021}. 
-This duality highlights the necessity of analyzing their role in the surrounding criminal environment, as targeting the aspects that facilitate criminal behavior is often more effective for long-term crime reduction than traditional repression \parencite{Dugato2026}.\\
+Depending on the context, these stores are seen as \textit{crime generators} by increasing foot traffic and creating incidental criminal opportunities \parencite{Dugato2026}. 
+Also, they have been acknowledged as robbery prone commercial establishments as they have available cash on hand \parencite{Wellford1997}. 
+Conversely, they are perceived as crime combators by providing natural surveillance and increasing 'eyes on the street' through extended operating hours and improved lighting \parencite{Davis2021}. 
+This duality highlights the necessity of analysing their role on their surrounding criminal environment, as targeting the aspects that facilitate criminal behaviour is often more effective for long-term crime reduction than traditional repression \parencite{Dugato2026}.\\
 
-As OXXO continues to expand throughout Colombia, particularly in Bogotá, where more than 50\% of the stores are located, understanding the relationship between criminal activity and OXXO presence is crucial for the city. 
-Although Bogotá has experienced significant crime reduction since the 1990s \parencite{Sanchez2003}, it remains a major security concern as high volumes of personal theft and a rising public perception of insecurity continue to affect the daily lives of its citizens \parencite{CCB2026}. 
-Additionally, crime remains spatially concentrated, with substantial variation across zones driven by socioeconomic stratification, land use, and policing intensity \parencite{Enriquez2014,GimenezSantana2018}.\\
+OXXO, a Mexican retail chain now owned by FEMSA, represents a valuable case study for this trend, having intensively proliferated across Mexico, Colombia, Peru, and Brazil with more than 25,000 locations.
+In Colombia specifically, the chain operates more than 500 stores with over 300 located in the capital, Bogotá Bogotá \parencite{godoy2025}.  
+Since more than 50\% of these establishments are located in Bogotá, the city serves as a unique laboratory for understanding the spatial relationship between criminal activity and OXXO’s presence.\\
 
-Thus, in this paper, I aim to explore the causal effect of OXXO openings on local crime activity in Bogotá and analyze if effects vary by crime type and time since opening. To estimate this impact, I use the public georeferenced crime data stored in the Statistical, Criminal, Contraventional, and Operational Information System of the National Police (SIEDCO). 
+Additionally, researching this phenomenon  is crucial for the city. 
+Although Bogotá has experienced significant crime reduction since 1990s \parencite{Sanchez2003}, it is still a major public policy concern as high volumes of personal theft and a rising public perception of insecurity continue to affect the daily lives of its citizens \parencite{CCB2026}. 
+Additionally, crime remains spatially concentrated, with substantial variation across zones driven by socioeconomic stratification, land use, and policing intensity \parencite{Enriquez2014,GimenezSantana2018}, wich underscores the importance of evaluationg how the introduction of these modern retail chains could reconfigure Bogotá’s urban criminal environment.\\
+
+Thus, in this paper, I aim to explore the causal effect of OXXO openings on local crime activity in Bogotá and analyze if effects vary by crime type and time since opening. 
+To estimate this impact, I use the public georeferenced crime data stored in the Statistical, Criminal, Contraventional, and Operational Information System of the National Police (SIEDCO). 
 I create a quarterly panel aggregated at the level of the Zonal Planning Unit (UPZ), which serves as a sub-district administrative division in Bogotá. I also employ Two-Way Fixed Effects (TWFE) and the Callaway and Sant'Anna (C\&S) estimator, along with their corresponding event study methods, to capture the dynamic evolution of the treatment effect over time.\\
 
-Despite extensive research on urban crime in Bogotá, no study has systematically examined the causal impact of convenience store proliferation, particularly OXXO, on local crime patterns. 
+Despite extensive research on urban crime in Bogotá, no study has systematically examined the causal impact of convenience store proliferation, particularly OXXO, on local crime patterns.
 Existing research has focused on public transport infrastructure \parencite{Bacares2013a,Bacares2013b,Garcia2005}, large-scale policing interventions \parencite{Blattman2017,Blattman2021}, alcohol sales restrictions \parencite{Mello2013}, and socioeconomic determinants \parencite{Escobar2012}. 
 One recent study examined low-cost supermarkets or hard-discount stores (Tiendas D1) and crime \parencite{Lopez2024}, but OXXO represents a distinct retail model characterized by 24-hour operations and a higher density of ``grab-and-go'' items, which may create different criminal opportunities compared to the limited operating hours of hard-discount formats.\\
 
@@ -75,10 +79,158 @@ The remainder of this paper is organized as follows:
 
 \section{Background}
 \subsection{The expansion of OXXO in Bogotá}
+OXXO is one of the most prominent convenience store brands in Latin America, and since its arrival to Colombia in 2009 it has consolidated itself as one of the main convenience store chains in the country. 
+Although OXXO has been operating in Colombia for almost 17 years, it only gained momentum after the pandemic. 
+In fact, in Bogota the number of establishments skyrocketed from 82 in 2020 to 384 in 2025. 
+This represents an increment of over 368\% in only five years. Figure~\ref{fig:EVOLUTION_OXXO} depicts its accelerated growth in Bogotá, as it shows the number of OXXO locations in the capital by year since its arrival.\\
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth]{other_figs/oxxos_por_ano.png} % Ajusta el path y tamaño
+    \caption{
+        \textbf{Yearly evolution of the number of OXXOs in Bogotá} 
+        \newline
+        \footnotesize{\textit{Note:} BLAH BLAH }
+     }   
+    \label{fig:EVOLUTION_OXXO}
+\end{figure}
+
+OXXO’s main objective is to be part of people’s lifestyles by offering an ample variety of products and services that can be useful and practical for their daily lives \parencite{oxxo_quienes_somos}. 
+Another distinctive characteristic is that 95\% of its establishments function in a 24-hour format \parencite{oxxo_faqs}, providing a competitive advantage by being the primary option of consumers whenever they need to satisfy spontaneous consumption needs, regardless of the hour. 
+These well-defined competitive objectives and inherent brand characteristics have allowed OXXO to proliferate rapidly throughout Bogotá, where it has been widely embraced by the local population.\\
+
+In line with this strategy, this modern retail chain began its expansion in the northern part of the city, later expanding throughout the eastern region. 
+This strategic behavior responds to the inherent characteristics of the northeastern neighborhoods of Bogotá, where a higher concentration of formal employment and high-income residential clusters provide an ideal environment for the convenience store model  \hl{(citation)}.\\
+
+Figure~\ref{fig:fourpanelOXXO_evolution_UPZ} presents this evolution, and shows that now, OXXO is present in almost 70\% of all the city´s Zonal Planning Units (UPZ). 
+UPZs are analysis units that group neighborhoods based on their socioeconomic stratification, commercial, land use, and housing characteristics, and living conditions of their inhabitants \parencite{alcaldia_bogota_upz}. 
+Currently, the only areas without OXXO establishments are in the far southern reaches of Bogotá, which correspods to UPZs with low levels of economic performance, socioeconomic stratification, urban transport connection, and are blocks that continue to relly heavily in traditional neighborhood stores \hl{(citation)}.\\
+
+\begin{figure}
+    \centering
+    % Top row
+    \begin{subfigure}[b]{0.3\textwidth} % Reduced from 0.4 to 0.3
+        \includegraphics[width=\linewidth]{figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png}
+        \caption{2009}
+        \label{fig:panelA}
+    \end{subfigure}
+    \hspace{0.5cm} % Adds specific horizontal space between images
+    \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png}
+        \caption{2011}
+        \label{fig:panelB}
+    \end{subfigure}
+    \hspace{0.5cm} % Adds specific horizontal space between images
+        \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png}
+        \caption{2015}
+        \label{fig:panelC}
+    \end{subfigure}
+    
+    \vspace{0.3cm} % Vertical space between rows
+    
+    % Bottom row
+    \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png}
+        \caption{2019}
+        \label{fig:panelD}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png}
+        \caption{2023}
+        \label{fig:panelE}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png}
+        \caption{2025}
+        \label{fig:panelF}
+    \end{subfigure}
+    
+    \caption{\textbf{Evolution of the presence of OXXO by UPZ}}
+    \label{fig:fourpanelOXXO_evolution_UPZ}
+\end{figure}
+
+As noted, OXXO’s stores are not randomly located. 
+They are centrally administered by FEMSA (meaning the brand does not operate under a franchise model) with the purpose of standardizing processes, logistics, services, and products \parencite{oxxo_faqs}. 
+This means that each location is carefully planned to respond to the overall interests of the company. In fact, if we attentively analyze how these establishments are clustered around Bogotá, we can identify that they tend to localize in areas where there is higher traffic and spatial accessibility. This helps OXXO to maximize its market reach and ensure high levels of consumer visibility.\\
+
+Figure~\ref{fig:oxxo_transmilenio_vias} graphically demonstrates this correlation by plotting the city’s arterial roads, main avenues, and Transmilenio stations (Bogotá's Bus Rapid Transit system); 
+it shows that by 2025, OXXO locations tend to group along these major transport corridors.\\
+
+\begin{figure} [H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png} % Ajusta el path y tamaño
+    \caption{
+        \textbf{Bogota's OXXO stores, Transmilenio stations and main roads in 2025} 
+        \newline
+        \footnotesize{\textit{Note:} BLAH BLAH }
+     }   
+    \label{fig:oxxo_transmilenio_vias}
+\end{figure}
+
+With these in mind, it is reasonable to think there may be a correlation between urban crime and modern convenience stores chains, especially in the case of OXXO. 
+Locating in areas with high foot traffic means more potential targets for crimes such as robbery or assault. 
+Also, due to their 24-hour format and alcohol sales during the night, OXXO locations serve as  informal gathering points that may escalate into conflicts or provide opportunities for illicit activities. 
+Additionally, locations near major transit areas and public transport stops increase accessibility for both legitimate customers and offenders \parencite{Dugato2026, shin2024dollar, feng2019aggravating}.
 
 \subsection{Criminality in Bogotá}
 
+Between the 80s and 90s Bogota was recognized as one of the most insecure cities of Colombia, in fact, in 1991 it reached an annual crime rate of 1,287 crimes for each 100 thousand inhabitants \parencite{rodriguez2017ciudad}. 
+During this time the capital lived an upswing of narcoterrorism and the assassination of political leaders. However, at the end of the 90s and beginning of the 2000s, crime started to decrease; for example, between 1993 and 2002 Bogotá saw an estimated 65\% decrease in the homicide rate, while robbery fell by about 33\%. 
+This shift was driven by citizen culture programs, large-scale urban renewal projects, and robust institutional reforms implemented by the majors of this period \parencite{Sanchez2003, mockus2012building}. 
+Finally, in past years urban crime has shown resistance to keep declining. After the 2019 covid pandemic criminality had a significant rebound, with personal theft surpassing pre-pandemic levels. By 2025, despite institutional efforts, the city's crime rates have shown resistance to reduce, particularly regarding homicides and robberies hl{(citation)}.\\
+
+Currently, Bogota’s crime, as any other city, clusters in specific zones. 
+The most insecure Localities (a unit of territorial division that gathers many UPZ) are located in the southeastern region of Bogota, wich correlates with a high presence of criminal organizations, informality, and deficencies of human development \parencite{probogota2024indice}. 
+However, this concentration does not imply that all crime categories peak in the same areas. 
+While homicide rates tend to follow this general rule in the city, personal theft exhibits a distinct geographic distribution, primarily clustering in the city's northeastern sector \parencite{probogota2022informe}.\\ 
+
+Figure~\ref{fig:oxxo_transmilenio_vias} shows this behaviour as it displays how personal theft rates distribute throughout Bogotá´s UPZs over the years. 
+These maps also highlight that between 2015 and 2021 (and even later, as it can be noted in ProBogota’s annual security informs hl{(PIE DE PAGINA)}) this tendency has not drastically changed, meaning that there are environmental characteristics that keep favoring robberies or attracting offenders. 
+Other characteristics that these zones have are high pedestrian throughput, the density of commercial land use, and the proximity to the city's main transit arteries.\\ 
+
+\begin{figure}
+    \centering
+    % Top row
+    \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_dep_maps/mapa_upz_gpkg_2015_2018_2015_theft_to_people_index.png}
+        \caption{2015}
+        \label{fig:panelA}
+    \end{subfigure}
+    \hspace{0.5cm} 
+    \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_dep_maps/mapa_upz_gpkg_2015_2018_2017_theft_to_people_index.png}
+        \caption{2017}
+        \label{fig:panelB}
+    \end{subfigure} % <--- THIS WAS MISSING
+    
+    \vspace{0.3cm} 
+    
+    % Bottom row
+    \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_dep_maps/mapa_upz_gpkg_2018_2023_2019_theft_to_people_index.png}
+        \caption{2019}
+        \label{fig:panelC} % Fixed label sequence (A, B, C, D)
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_dep_maps/mapa_upz_gpkg_2018_2023_2021_theft_to_people_index.png}
+        \caption{2021}
+        \label{fig:panelD}
+    \end{subfigure}
+    
+    \caption{\textbf{Evolution of theft to people rates by UPZ}}
+    \label{fig:fourpanelCrime}
+\end{figure}
+
+Factors that favor crime clustering must be taken into account because if OXXO stores also locate in inherent high crime areas, it will be important to evaluate whether OXXO efectively causes an increment in crime or if both OXXO and criminals are simply attracted to the same high-activity "nodes."
+
 \section{Related Literature}
+
+
+
 
 
 \section{Data used in the research}
@@ -94,6 +246,10 @@ The remainder of this paper is organized as follows:
 \section{Discussion}
 
 \section{Robustness}
+spill over effects, placebo tests with other crime types, etc.
+Vary the buffers fo the spill over effects, etc.
+propensity score matching
+treat controls and treated groups as buffers
 
 \section{Conclusions}
 
@@ -108,6 +264,52 @@ The remainder of this paper is organized as follows:
 \appendix
 \counterwithin{table}{section}
 
-d
+\section{Evolution of OXXO stores in Bogotá divided by Transport Analysis Zones (ZATs)}
+
+\begin{figure}[H]
+    \centering
+    % Top row
+    \begin{subfigure}[b]{0.3\textwidth} % Reduced from 0.4 to 0.3
+        \includegraphics[width=\linewidth]{figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png}
+        \caption{2009}
+        \label{fig:panelA}
+    \end{subfigure}
+    \hspace{0.5cm} % Adds specific horizontal space between images
+    \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_oxxo_maps/mapa_oxxos_binary_zat_2011.png}
+        \caption{2011}
+        \label{fig:panelB}
+    \end{subfigure}
+    \hspace{0.5cm} % Adds specific horizontal space between images
+        \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_oxxo_maps/mapa_oxxos_binary_zat_2015.png}
+        \caption{2015}
+        \label{fig:panelC}
+    \end{subfigure}
+    
+    \vspace{0.3cm} % Vertical space between rows
+    
+    % Bottom row
+    \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_oxxo_maps/mapa_oxxos_binary_zat_2019.png}
+        \caption{2019}
+        \label{fig:panelD}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_oxxo_maps/mapa_oxxos_binary_zat_2023.png}
+        \caption{2023}
+        \label{fig:panelE}
+    \end{subfigure}
+    \hspace{0.5cm}
+    \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png}
+        \caption{2025}
+        \label{fig:panelF}
+    \end{subfigure}
+    
+    \caption{\textbf{Evolution of the presence of OXXO by ZAT}}
+    \label{fig:fourpanelOXXO}
+\end{figure}
 
 \end{document}

@@ -126,25 +126,34 @@ plot_dep_map <- function(year, geometry, folder, depVar) {
     
     gdf <- gdf %>%
       filter(!ZAT %in% c(796, 798, 824, 822, 821, 820, 819, 812, 1845, 801, 811, 800, 810, 795, 791, 823,808))
+    title= "Total crimes "
+  }
+  else if (depVar == "theft_to_people_index")
+  {
+    title= "Theft to people crime rate per 10k inhabitants "
+  }
+  else
+  {
+    title= "Crime rate per 10k inhabitants "
     
   }
-  
-  #print columns
-  print(colnames(gdf))
-  # Convertir la columna a número
-  # Usamos [[depVar]] para acceder al nombre contenido en la variable
+
   gdf$valor_mapa <- as.numeric(gdf[[depVar]])
+  
+  print(paste("Plotting", depVar, "for", geometry, "in", year))
+  #print head valor_mapa
+  print(head(gdf$valor_mapa))
   
   # Graficar mapa coroplético
   ggplot(gdf) +
     geom_sf(aes(fill = valor_mapa), color = "white") +
     scale_fill_gradient(
-      low = "#C3D5C6", high = "#55775A", 
+      low = "#DAF1D0", high = "#DF2935", 
       na.value = "grey90", 
-      name = "Crime rate per 10k inhabitants"
+      name =""
     ) +
     guides(fill = guide_colorbar(barwidth = 15, barheight = 1)) +
-    labs(title = paste("Crime rate per 10k inhabitants by ", geometry, " in ", year)) +
+    labs(title = paste(title," by ", geometry, " in ", year)) +
     theme_void() +
     theme(
       legend.position = "bottom",
@@ -154,28 +163,137 @@ plot_dep_map <- function(year, geometry, folder, depVar) {
 
 periodos <- list(
   list(folder = "gpkg_2018_2023", anos = 2018:2023),
-  list(folder = "gpkg_2015_2018", anos = 2015:2018, depVar = "crime_index")
+  list(folder = "gpkg_2015_2018", anos = 2015:2018)
 )
 
 geometries <- list(
   list(name = "upz", depVar = "crime_index"),
-  list(name = "zat", depVar = "theft_to_people")
+  list(name = "zat", depVar = "theft_to_people"),
+  list(name = "upz", depVar = "theft_to_people_index")
+  
 )
 
 # 2. Recorremos con un bucle triple (Geometría -> Bloque -> Año)
 for (geom in geometries) {
+  
   for (periodo in periodos) {
+    
     current_folder <- periodo$folder
     depVar <- geom$depVar
     
-    for (y in periodo$anos) {
-      # Generamos el mapa
-      p <- plot_dep_map(y, geom$name, current_folder,depVar)
-      print(p)
+    if(!(current_folder == "gpkg_2018_2023" & depVar == "crime_index"))
+    {
       
-      # Guardamos con nombre dinámico para no sobrescribir
-      file_name <- paste0("data/controles_results/mapas/mapa_", geom, "_", current_folder, "_", y, ".png")
-      ggsave(file_name, plot = p, width = 8, height = 6)
+      for (y in periodo$anos) {
+        
+        # Generamos el mapa
+        p <- plot_dep_map(y, geom$name, current_folder,depVar)
+        print(p)
+        
+        # Guardamos con nombre dinámico para no sobrescribir
+        file_name <- paste0("data/controles_results/mapas/mapa_", geom, "_", current_folder, "_", y,"_",depVar,".png")
+        ggsave(file_name, plot = p, width = 8, height = 6)
+        
+      }
+      
     }
+
   }
+  
 }
+
+
+oxxo_shp <- st_read("data/maps_data/oxxo_points_2025/joined_geometry_tiendas.shp", 
+                    options = "ENCODING=WINDOWS-1252")
+oxxo_shp <- st_transform(oxxo_shp, 4326)
+
+#print head
+print(head(oxxo_shp))
+print (colnames(oxxo_shp))
+
+
+plot_dep_map <- function(year, geometry, folder, depVar, oxxo_data) {
+  # 1. Leer layer del año
+  gdf <- st_read(paste0("data/maps_data/", folder, "/joined_all_", geometry, "_years.gpkg"),
+                 layer = paste0("joined_", year), quiet = TRUE)
+  
+  # 2. Estandarizar Proyecciones
+  gdf <- st_transform(gdf, 4326)
+  oxxo_data <- st_transform(oxxo_data, 4326) # Asegurar misma proyección
+  
+  # 3. Filtros de ZAT y Títulos
+  if (geometry == "zat") {
+    gdf <- gdf %>% filter(!is.na(codigo_upz)) %>%
+      filter(!ZAT %in% c(796, 798, 824, 822, 821, 820, 819, 812, 1845, 801, 811, 800, 810, 795, 791, 823, 808))
+    main_title <- "Total crimes"
+  } else if (depVar == "theft_to_people_index") {
+    main_title <- "Theft to people crime rate per 10k inhabitants"
+  } else {
+    main_title <- "Crime rate per 10k inhabitants"
+  }
+  
+  gdf$valor_mapa <- as.numeric(gdf[[depVar]])
+  
+  # 4. FILTRAR PUNTOS DE OXXO POR AÑO
+  oxxos_current <- oxxo_data %>% 
+    filter(lubridate::year(`Fecha.de.M`) <= year)
+  
+  # --- TRUCO DE ZOOM ---
+  # Extraemos los límites de los polígonos (UPZ o ZAT)
+  limites <- st_bbox(gdf)
+  
+  # 5. GRAFICAR
+  ggplot() +
+    # Capa de polígonos
+    geom_sf(data = gdf, aes(fill = valor_mapa), color = "white", size = 0.1) +
+    scale_fill_gradient(
+      low = "#DAF1D0", high = "#DF2935", 
+      na.value = "grey90", 
+      name = main_title
+    ) +
+    # Capa de puntos
+    geom_sf(data = oxxos_current, color = "#CA9502", size = 0.8, alpha = 0.8) + 
+    
+    # FORZAR EL ZOOM al área de los polígonos
+    coord_sf(xlim = c(limites["xmin"], limites["xmax"]), 
+             ylim = c(limites["ymin"], limites["ymax"]), 
+             expand = FALSE) + # expand = FALSE evita márgenes extras
+    
+    guides(fill = guide_colorbar(barwidth = 15, barheight = 1)) +
+    labs(title = paste(main_title, "by", toupper(geometry), "in", year),
+         subtitle = "Yellow dots represent active Oxxo stores within the study area") +
+    theme_void() +
+    theme(
+      legend.position = "bottom",
+      plot.title = element_text(hjust = 0.5, face = "bold")
+    )
+}
+# 2. Recorremos con un bucle triple (Geometría -> Bloque -> Año)
+for (geom in geometries) {
+  
+  for (periodo in periodos) {
+    
+    current_folder <- periodo$folder
+    depVar <- geom$depVar
+    
+    if(!(current_folder == "gpkg_2018_2023" & depVar == "crime_index"))
+    {
+      
+      for (y in periodo$anos) {
+        
+        # Generamos el mapa
+        p <- plot_dep_map(y, geom$name, current_folder,depVar, oxxo_shp)
+        print(p)
+        
+        # Guardamos con nombre dinámico para no sobrescribir
+        file_name <- paste0("data/controles_results/mapas/mapa_", geom, "_", current_folder, "_", y,"_",depVar,"_withoxxo",".png")
+        ggsave(file_name, plot = p, width = 8, height = 6)
+        
+      }
+      
+    }
+    
+  }
+  
+}
+

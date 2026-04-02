@@ -166,7 +166,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortlocale</bcf:key>
-      <bcf:value>spanish</bcf:value>
+      <bcf:value>english</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortingtemplatename</bcf:key>
@@ -3073,28 +3073,38 @@
     <bcf:citekey order="1" intorder="1">Antom2024</bcf:citekey>
     <bcf:citekey order="1" intorder="2">McKinsey2024</bcf:citekey>
     <bcf:citekey order="1" intorder="3">MDPI2021</bcf:citekey>
-    <bcf:citekey order="2" intorder="1">godoy2025</bcf:citekey>
-    <bcf:citekey order="3" intorder="1">Dugato2026</bcf:citekey>
-    <bcf:citekey order="3" intorder="2">marcos2022</bcf:citekey>
-    <bcf:citekey order="4" intorder="1">OxxoColombia2026</bcf:citekey>
-    <bcf:citekey order="4" intorder="2">Dugato2026</bcf:citekey>
-    <bcf:citekey order="5" intorder="1">delgado2024</bcf:citekey>
-    <bcf:citekey order="6" intorder="1">Dugato2026</bcf:citekey>
-    <bcf:citekey order="7" intorder="1">Wellford1997</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">Davis2021</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">Dugato2026</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">Sanchez2003</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">CCB2026</bcf:citekey>
-    <bcf:citekey order="12" intorder="1">Enriquez2014</bcf:citekey>
-    <bcf:citekey order="12" intorder="2">GimenezSantana2018</bcf:citekey>
-    <bcf:citekey order="13" intorder="1">Bacares2013a</bcf:citekey>
-    <bcf:citekey order="13" intorder="2">Bacares2013b</bcf:citekey>
-    <bcf:citekey order="13" intorder="3">Garcia2005</bcf:citekey>
-    <bcf:citekey order="14" intorder="1">Blattman2017</bcf:citekey>
-    <bcf:citekey order="14" intorder="2">Blattman2021</bcf:citekey>
-    <bcf:citekey order="15" intorder="1">Mello2013</bcf:citekey>
-    <bcf:citekey order="16" intorder="1">Escobar2012</bcf:citekey>
-    <bcf:citekey order="17" intorder="1">Lopez2024</bcf:citekey>
+    <bcf:citekey order="2" intorder="1">Dugato2026</bcf:citekey>
+    <bcf:citekey order="2" intorder="2">marcos2022</bcf:citekey>
+    <bcf:citekey order="3" intorder="1">delgado2024</bcf:citekey>
+    <bcf:citekey order="4" intorder="1">Dugato2026</bcf:citekey>
+    <bcf:citekey order="5" intorder="1">Wellford1997</bcf:citekey>
+    <bcf:citekey order="6" intorder="1">Davis2021</bcf:citekey>
+    <bcf:citekey order="7" intorder="1">Dugato2026</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">godoy2025</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">Sanchez2003</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">CCB2026</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">Enriquez2014</bcf:citekey>
+    <bcf:citekey order="11" intorder="2">GimenezSantana2018</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">Bacares2013a</bcf:citekey>
+    <bcf:citekey order="12" intorder="2">Bacares2013b</bcf:citekey>
+    <bcf:citekey order="12" intorder="3">Garcia2005</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">Blattman2017</bcf:citekey>
+    <bcf:citekey order="13" intorder="2">Blattman2021</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">Mello2013</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">Escobar2012</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">Lopez2024</bcf:citekey>
+    <bcf:citekey order="17" intorder="1">oxxo_quienes_somos</bcf:citekey>
+    <bcf:citekey order="18" intorder="1">oxxo_faqs</bcf:citekey>
+    <bcf:citekey order="19" intorder="1">alcaldia_bogota_upz</bcf:citekey>
+    <bcf:citekey order="20" intorder="1">oxxo_faqs</bcf:citekey>
+    <bcf:citekey order="21" intorder="1">Dugato2026</bcf:citekey>
+    <bcf:citekey order="21" intorder="2">shin2024dollar</bcf:citekey>
+    <bcf:citekey order="21" intorder="3">feng2019aggravating</bcf:citekey>
+    <bcf:citekey order="22" intorder="1">rodriguez2017ciudad</bcf:citekey>
+    <bcf:citekey order="23" intorder="1">Sanchez2003</bcf:citekey>
+    <bcf:citekey order="23" intorder="2">mockus2012building</bcf:citekey>
+    <bcf:citekey order="24" intorder="1">probogota2024indice</bcf:citekey>
+    <bcf:citekey order="25" intorder="1">probogota2022informe</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

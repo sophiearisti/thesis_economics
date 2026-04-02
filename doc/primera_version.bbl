@@ -19,6 +19,37 @@
 
 \refsection{0}
   \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{alcaldia_bogota_upz}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fbb8e2c0bf8362b2627a6b5a81ec4ac3}{%
+           family={{Alcaldía Mayor de Bogotá}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \strng{fullhash}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \strng{fullhashraw}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \strng{bibnamehash}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \strng{authorbibnamehash}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \strng{authornamehash}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \strng{authorfullhash}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \strng{authorfullhashraw}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2026-04-01}
+      \field{title}{¿Qué son las {Unidades de Planeamiento Zonal (UPZ)}?}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://bogota.gov.co/mi-ciudad/salud/que-es-una-upz
+      \endverb
+      \verb{url}
+      \verb https://bogota.gov.co/mi-ciudad/salud/que-es-una-upz
+      \endverb
+    \endentry
     \entry{Antom2024}{online}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=5bc2c3684b1941498676f73319b465ec}{%
@@ -525,6 +556,68 @@
       \verb 10.4067/S0718-83582012000100002
       \endverb
     \endentry
+    \entry{feng2019aggravating}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=55388252b64e4a8709e87ccca4c0dd77}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Shun\bibnamedelima Q.},
+           giveni={S\bibinitperiod\bibinitdelim Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9eafa0bd03ba65de12b99da6db5e8052}{%
+           family={Piza},
+           familyi={P\bibinitperiod},
+           given={Eric\bibnamedelima L.},
+           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f6a30a5d09158e4ae18c8d0141d1a821}{%
+           family={Kennedy},
+           familyi={K\bibinitperiod},
+           given={Leslie\bibnamedelima W.},
+           giveni={L\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7bd50863cd5bcae42dd1e1f56895232f}{%
+           family={Caplan},
+           familyi={C\bibinitperiod},
+           given={Joel\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{152175b78dc9fc813cbbdd33c88f8590}
+      \strng{fullhash}{a83f43ccd6fec42757b43633284bad0e}
+      \strng{fullhashraw}{a83f43ccd6fec42757b43633284bad0e}
+      \strng{bibnamehash}{a83f43ccd6fec42757b43633284bad0e}
+      \strng{authorbibnamehash}{a83f43ccd6fec42757b43633284bad0e}
+      \strng{authornamehash}{152175b78dc9fc813cbbdd33c88f8590}
+      \strng{authorfullhash}{a83f43ccd6fec42757b43633284bad0e}
+      \strng{authorfullhashraw}{a83f43ccd6fec42757b43633284bad0e}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Crime and Justice}
+      \field{number}{3}
+      \field{title}{Aggravating effects of alcohol outlet types on street robbery and aggravated assault in {N}ew {Y}ork {C}ity}
+      \field{volume}{42}
+      \field{year}{2019}
+      \field{pages}{257\bibrangedash 273}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1080/0735648X.2018.1559076
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/0735648X.2018.1559076
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/0735648X.2018.1559076
+      \endverb
+    \endentry
     \entry{Garcia2005}{report}{}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -768,14 +861,46 @@
       \verb https://ssrn.com/abstract=2262335
       \endverb
     \endentry
-    \entry{OxxoColombia2026}{online}{}{}
+    \entry{mockus2012building}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=99241b4056204706370a5746f99c725c}{%
+           family={Mockus},
+           familyi={M\bibinitperiod},
+           given={Antanas},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{99241b4056204706370a5746f99c725c}
+      \strng{fullhash}{99241b4056204706370a5746f99c725c}
+      \strng{fullhashraw}{99241b4056204706370a5746f99c725c}
+      \strng{bibnamehash}{99241b4056204706370a5746f99c725c}
+      \strng{authorbibnamehash}{99241b4056204706370a5746f99c725c}
+      \strng{authornamehash}{99241b4056204706370a5746f99c725c}
+      \strng{authorfullhash}{99241b4056204706370a5746f99c725c}
+      \strng{authorfullhashraw}{99241b4056204706370a5746f99c725c}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{note}{Accessed: 2026-04-01}
+      \field{title}{Building ``{C}itizenship {C}ulture'' in {B}ogotá}
+      \field{year}{2012}
+      \verb{urlraw}
+      \verb https://www.americasquarterly.org/fulltextarticle/building-citizenship-culture-in-bogota/
+      \endverb
+      \verb{url}
+      \verb https://www.americasquarterly.org/fulltextarticle/building-citizenship-culture-in-bogota/
+      \endverb
+    \endentry
+    \entry{oxxo_faqs}{misc}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=1074b1d776aa7a7ad8f5eda056f57080}{%
            family={{OXXO Colombia}},
            familyi={O\bibinitperiod}}}%
-      }
-      \list{organization}{1}{%
-        {OXXO}%
       }
       \strng{namehash}{1074b1d776aa7a7ad8f5eda056f57080}
       \strng{fullhash}{1074b1d776aa7a7ad8f5eda056f57080}
@@ -785,21 +910,169 @@
       \strng{authornamehash}{1074b1d776aa7a7ad8f5eda056f57080}
       \strng{authorfullhash}{1074b1d776aa7a7ad8f5eda056f57080}
       \strng{authorfullhashraw}{1074b1d776aa7a7ad8f5eda056f57080}
+      \field{extraname}{1}
       \field{sortinit}{O}
       \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradate}{1}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Consultado el 30 de marzo de 2026}
-      \field{title}{OXXO Colombia: Siempre listos, siempre ahí}
+      \field{note}{Accessed: 2026-04-01}
+      \field{title}{Preguntas Frecuentes (FAQs)}
       \field{year}{2026}
       \verb{urlraw}
-      \verb https://oxxo.co/
+      \verb https://oxxo.co/faqs
       \endverb
       \verb{url}
-      \verb https://oxxo.co/
+      \verb https://oxxo.co/faqs
+      \endverb
+    \endentry
+    \entry{oxxo_quienes_somos}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1074b1d776aa7a7ad8f5eda056f57080}{%
+           family={{OXXO Colombia}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{1074b1d776aa7a7ad8f5eda056f57080}
+      \strng{fullhash}{1074b1d776aa7a7ad8f5eda056f57080}
+      \strng{fullhashraw}{1074b1d776aa7a7ad8f5eda056f57080}
+      \strng{bibnamehash}{1074b1d776aa7a7ad8f5eda056f57080}
+      \strng{authorbibnamehash}{1074b1d776aa7a7ad8f5eda056f57080}
+      \strng{authornamehash}{1074b1d776aa7a7ad8f5eda056f57080}
+      \strng{authorfullhash}{1074b1d776aa7a7ad8f5eda056f57080}
+      \strng{authorfullhashraw}{1074b1d776aa7a7ad8f5eda056f57080}
+      \field{extraname}{2}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2026-04-01}
+      \field{title}{Quiénes Somos}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://oxxo.co/quienes-somos
+      \endverb
+      \verb{url}
+      \verb https://oxxo.co/quienes-somos
+      \endverb
+    \endentry
+    \entry{probogota2022informe}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1741f55d12e3202ee891a68734158592}{%
+           family={{ProBogotá Región}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Fundación ProBogotá}%
+      }
+      \list{location}{1}{%
+        {Bogotá, Colombia}%
+      }
+      \strng{namehash}{1741f55d12e3202ee891a68734158592}
+      \strng{fullhash}{1741f55d12e3202ee891a68734158592}
+      \strng{fullhashraw}{1741f55d12e3202ee891a68734158592}
+      \strng{bibnamehash}{1741f55d12e3202ee891a68734158592}
+      \strng{authorbibnamehash}{1741f55d12e3202ee891a68734158592}
+      \strng{authornamehash}{1741f55d12e3202ee891a68734158592}
+      \strng{authorfullhash}{1741f55d12e3202ee891a68734158592}
+      \strng{authorfullhashraw}{1741f55d12e3202ee891a68734158592}
+      \field{extraname}{1}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{note}{Analysis of crime trends and institutional response}
+      \field{title}{Informe {A}nual de {S}eguridad 2022: {A}nálisis y {P}erpectivas para {B}ogotá}
+      \field{type}{Annual Report}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.probogota.org/wp-content/uploads/2023/10/Informe-Anual-de-Seguridad-2022.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.probogota.org/wp-content/uploads/2023/10/Informe-Anual-de-Seguridad-2022.pdf
+      \endverb
+    \endentry
+    \entry{probogota2024indice}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1741f55d12e3202ee891a68734158592}{%
+           family={{ProBogotá Región}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{1741f55d12e3202ee891a68734158592}
+      \strng{fullhash}{1741f55d12e3202ee891a68734158592}
+      \strng{fullhashraw}{1741f55d12e3202ee891a68734158592}
+      \strng{bibnamehash}{1741f55d12e3202ee891a68734158592}
+      \strng{authorbibnamehash}{1741f55d12e3202ee891a68734158592}
+      \strng{authornamehash}{1741f55d12e3202ee891a68734158592}
+      \strng{authorfullhash}{1741f55d12e3202ee891a68734158592}
+      \strng{authorfullhashraw}{1741f55d12e3202ee891a68734158592}
+      \field{extraname}{2}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{note}{Accessed: 2026-04-01}
+      \field{title}{Estas son las localidades más seguras e inseguras de {B}ogotá según el {Í}ndice {I}ntegral de {S}eguridad}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.probogota.org/comunicacion_c/estas-son-las-localidades-mas-seguras-e-inseguras-de-bogota-segun-el-indice-integral-de-seguridad/
+      \endverb
+      \verb{url}
+      \verb https://www.probogota.org/comunicacion_c/estas-son-las-localidades-mas-seguras-e-inseguras-de-bogota-segun-el-indice-integral-de-seguridad/
+      \endverb
+    \endentry
+    \entry{rodriguez2017ciudad}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=048e7b86d9b15b6c95d830f4bf2e5b08}{%
+           family={Rodríguez\bibnamedelima González},
+           familyi={R\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Sayra\bibnamedelima Catherín},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \strng{fullhash}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \strng{fullhashraw}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \strng{bibnamehash}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \strng{authorbibnamehash}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \strng{authornamehash}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \strng{authorfullhash}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \strng{authorfullhashraw}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1794-3108}
+      \field{journaltitle}{Revista Criminalidad}
+      \field{note}{Language: Spanish}
+      \field{number}{2}
+      \field{title}{``{L}a ciudad más insegura del mundo'': homicidio y crimen en {B}ogotá, 1988-1994}
+      \field{volume}{59}
+      \field{year}{2017}
+      \field{pages}{49\bibrangedash 64}
+      \range{pages}{16}
+      \verb{urlraw}
+      \verb http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S1794-31082017000200049
+      \endverb
+      \verb{url}
+      \verb http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S1794-31082017000200049
       \endverb
     \endentry
     \entry{Sanchez2003}{report}{}{}
@@ -886,6 +1159,48 @@
       \field{title}{The Coexistence of Nanostores within the Retail Landscape: A Spatial Statistical Study}
       \field{volume}{13}
       \field{year}{2021}
+    \endentry
+    \entry{shin2024dollar}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=69fe9e0ea114b6f92396e7032525eea9}{%
+           family={Shin},
+           familyi={S\bibinitperiod},
+           given={Eun\bibnamedelima Jin},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{69fe9e0ea114b6f92396e7032525eea9}
+      \strng{fullhash}{69fe9e0ea114b6f92396e7032525eea9}
+      \strng{fullhashraw}{69fe9e0ea114b6f92396e7032525eea9}
+      \strng{bibnamehash}{69fe9e0ea114b6f92396e7032525eea9}
+      \strng{authorbibnamehash}{69fe9e0ea114b6f92396e7032525eea9}
+      \strng{authornamehash}{69fe9e0ea114b6f92396e7032525eea9}
+      \strng{authorfullhash}{69fe9e0ea114b6f92396e7032525eea9}
+      \strng{authorfullhashraw}{69fe9e0ea114b6f92396e7032525eea9}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Urban Affairs Review}
+      \field{number}{5}
+      \field{title}{Are Dollar Stores Magnets for Violent Crime? {E}vidence from {C}hicago}
+      \field{volume}{60}
+      \field{year}{2024}
+      \field{pages}{1540\bibrangedash 1576}
+      \range{pages}{37}
+      \verb{doi}
+      \verb 10.1177/10780874241226875
+      \endverb
+      \verb{urlraw}
+      \verb https://journals.sagepub.com/doi/10.1177/10780874241226875
+      \endverb
+      \verb{url}
+      \verb https://journals.sagepub.com/doi/10.1177/10780874241226875
+      \endverb
+      \keyw{dollar stores,discount retailers,violent crime,Chicago}
     \endentry
     \entry{Wellford1997}{report}{}{}
       \name{author}{3}{}{%
@@ -943,6 +1258,37 @@
     \endentry
   \enddatalist
   \datalist[entry]{apa/global//global/global/global}
+    \entry{alcaldia_bogota_upz}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=fbb8e2c0bf8362b2627a6b5a81ec4ac3}{%
+           family={{Alcaldía Mayor de Bogotá}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \strng{fullhash}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \strng{fullhashraw}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \strng{bibnamehash}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \strng{authorbibnamehash}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \strng{authornamehash}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \strng{authorfullhash}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \strng{authorfullhashraw}{fbb8e2c0bf8362b2627a6b5a81ec4ac3}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2026-04-01}
+      \field{title}{¿Qué son las {Unidades de Planeamiento Zonal (UPZ)}?}
+      \field{year}{2021}
+      \verb{urlraw}
+      \verb https://bogota.gov.co/mi-ciudad/salud/que-es-una-upz
+      \endverb
+      \verb{url}
+      \verb https://bogota.gov.co/mi-ciudad/salud/que-es-una-upz
+      \endverb
+    \endentry
     \entry{Antom2024}{online}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=5bc2c3684b1941498676f73319b465ec}{%
@@ -1449,6 +1795,68 @@
       \verb 10.4067/S0718-83582012000100002
       \endverb
     \endentry
+    \entry{feng2019aggravating}{article}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=55388252b64e4a8709e87ccca4c0dd77}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Shun\bibnamedelima Q.},
+           giveni={S\bibinitperiod\bibinitdelim Q\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9eafa0bd03ba65de12b99da6db5e8052}{%
+           family={Piza},
+           familyi={P\bibinitperiod},
+           given={Eric\bibnamedelima L.},
+           giveni={E\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f6a30a5d09158e4ae18c8d0141d1a821}{%
+           family={Kennedy},
+           familyi={K\bibinitperiod},
+           given={Leslie\bibnamedelima W.},
+           giveni={L\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7bd50863cd5bcae42dd1e1f56895232f}{%
+           family={Caplan},
+           familyi={C\bibinitperiod},
+           given={Joel\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Routledge}%
+      }
+      \strng{namehash}{152175b78dc9fc813cbbdd33c88f8590}
+      \strng{fullhash}{a83f43ccd6fec42757b43633284bad0e}
+      \strng{fullhashraw}{a83f43ccd6fec42757b43633284bad0e}
+      \strng{bibnamehash}{a83f43ccd6fec42757b43633284bad0e}
+      \strng{authorbibnamehash}{a83f43ccd6fec42757b43633284bad0e}
+      \strng{authornamehash}{152175b78dc9fc813cbbdd33c88f8590}
+      \strng{authorfullhash}{a83f43ccd6fec42757b43633284bad0e}
+      \strng{authorfullhashraw}{a83f43ccd6fec42757b43633284bad0e}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Crime and Justice}
+      \field{number}{3}
+      \field{title}{Aggravating effects of alcohol outlet types on street robbery and aggravated assault in {N}ew {Y}ork {C}ity}
+      \field{volume}{42}
+      \field{year}{2019}
+      \field{pages}{257\bibrangedash 273}
+      \range{pages}{17}
+      \verb{doi}
+      \verb 10.1080/0735648X.2018.1559076
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/0735648X.2018.1559076
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/0735648X.2018.1559076
+      \endverb
+    \endentry
     \entry{Garcia2005}{report}{}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -1692,14 +2100,46 @@
       \verb https://ssrn.com/abstract=2262335
       \endverb
     \endentry
-    \entry{OxxoColombia2026}{online}{}{}
+    \entry{mockus2012building}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=99241b4056204706370a5746f99c725c}{%
+           family={Mockus},
+           familyi={M\bibinitperiod},
+           given={Antanas},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{99241b4056204706370a5746f99c725c}
+      \strng{fullhash}{99241b4056204706370a5746f99c725c}
+      \strng{fullhashraw}{99241b4056204706370a5746f99c725c}
+      \strng{bibnamehash}{99241b4056204706370a5746f99c725c}
+      \strng{authorbibnamehash}{99241b4056204706370a5746f99c725c}
+      \strng{authornamehash}{99241b4056204706370a5746f99c725c}
+      \strng{authorfullhash}{99241b4056204706370a5746f99c725c}
+      \strng{authorfullhashraw}{99241b4056204706370a5746f99c725c}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{note}{Accessed: 2026-04-01}
+      \field{title}{Building ``{C}itizenship {C}ulture'' in {B}ogotá}
+      \field{year}{2012}
+      \verb{urlraw}
+      \verb https://www.americasquarterly.org/fulltextarticle/building-citizenship-culture-in-bogota/
+      \endverb
+      \verb{url}
+      \verb https://www.americasquarterly.org/fulltextarticle/building-citizenship-culture-in-bogota/
+      \endverb
+    \endentry
+    \entry{oxxo_faqs}{misc}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=1074b1d776aa7a7ad8f5eda056f57080}{%
            family={{OXXO Colombia}},
            familyi={O\bibinitperiod}}}%
-      }
-      \list{organization}{1}{%
-        {OXXO}%
       }
       \strng{namehash}{1074b1d776aa7a7ad8f5eda056f57080}
       \strng{fullhash}{1074b1d776aa7a7ad8f5eda056f57080}
@@ -1709,21 +2149,169 @@
       \strng{authornamehash}{1074b1d776aa7a7ad8f5eda056f57080}
       \strng{authorfullhash}{1074b1d776aa7a7ad8f5eda056f57080}
       \strng{authorfullhashraw}{1074b1d776aa7a7ad8f5eda056f57080}
+      \field{extraname}{1}
       \field{sortinit}{O}
       \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradate}{1}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{Consultado el 30 de marzo de 2026}
-      \field{title}{OXXO Colombia: Siempre listos, siempre ahí}
+      \field{note}{Accessed: 2026-04-01}
+      \field{title}{Preguntas Frecuentes (FAQs)}
       \field{year}{2026}
       \verb{urlraw}
-      \verb https://oxxo.co/
+      \verb https://oxxo.co/faqs
       \endverb
       \verb{url}
-      \verb https://oxxo.co/
+      \verb https://oxxo.co/faqs
+      \endverb
+    \endentry
+    \entry{oxxo_quienes_somos}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1074b1d776aa7a7ad8f5eda056f57080}{%
+           family={{OXXO Colombia}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{1074b1d776aa7a7ad8f5eda056f57080}
+      \strng{fullhash}{1074b1d776aa7a7ad8f5eda056f57080}
+      \strng{fullhashraw}{1074b1d776aa7a7ad8f5eda056f57080}
+      \strng{bibnamehash}{1074b1d776aa7a7ad8f5eda056f57080}
+      \strng{authorbibnamehash}{1074b1d776aa7a7ad8f5eda056f57080}
+      \strng{authornamehash}{1074b1d776aa7a7ad8f5eda056f57080}
+      \strng{authorfullhash}{1074b1d776aa7a7ad8f5eda056f57080}
+      \strng{authorfullhashraw}{1074b1d776aa7a7ad8f5eda056f57080}
+      \field{extraname}{2}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradate}{2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2026-04-01}
+      \field{title}{Quiénes Somos}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://oxxo.co/quienes-somos
+      \endverb
+      \verb{url}
+      \verb https://oxxo.co/quienes-somos
+      \endverb
+    \endentry
+    \entry{probogota2022informe}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1741f55d12e3202ee891a68734158592}{%
+           family={{ProBogotá Región}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Fundación ProBogotá}%
+      }
+      \list{location}{1}{%
+        {Bogotá, Colombia}%
+      }
+      \strng{namehash}{1741f55d12e3202ee891a68734158592}
+      \strng{fullhash}{1741f55d12e3202ee891a68734158592}
+      \strng{fullhashraw}{1741f55d12e3202ee891a68734158592}
+      \strng{bibnamehash}{1741f55d12e3202ee891a68734158592}
+      \strng{authorbibnamehash}{1741f55d12e3202ee891a68734158592}
+      \strng{authornamehash}{1741f55d12e3202ee891a68734158592}
+      \strng{authorfullhash}{1741f55d12e3202ee891a68734158592}
+      \strng{authorfullhashraw}{1741f55d12e3202ee891a68734158592}
+      \field{extraname}{1}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{note}{Analysis of crime trends and institutional response}
+      \field{title}{Informe {A}nual de {S}eguridad 2022: {A}nálisis y {P}erpectivas para {B}ogotá}
+      \field{type}{Annual Report}
+      \field{year}{2023}
+      \verb{urlraw}
+      \verb https://www.probogota.org/wp-content/uploads/2023/10/Informe-Anual-de-Seguridad-2022.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.probogota.org/wp-content/uploads/2023/10/Informe-Anual-de-Seguridad-2022.pdf
+      \endverb
+    \endentry
+    \entry{probogota2024indice}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1741f55d12e3202ee891a68734158592}{%
+           family={{ProBogotá Región}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{1741f55d12e3202ee891a68734158592}
+      \strng{fullhash}{1741f55d12e3202ee891a68734158592}
+      \strng{fullhashraw}{1741f55d12e3202ee891a68734158592}
+      \strng{bibnamehash}{1741f55d12e3202ee891a68734158592}
+      \strng{authorbibnamehash}{1741f55d12e3202ee891a68734158592}
+      \strng{authornamehash}{1741f55d12e3202ee891a68734158592}
+      \strng{authorfullhash}{1741f55d12e3202ee891a68734158592}
+      \strng{authorfullhashraw}{1741f55d12e3202ee891a68734158592}
+      \field{extraname}{2}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{7}
+      \field{note}{Accessed: 2026-04-01}
+      \field{title}{Estas son las localidades más seguras e inseguras de {B}ogotá según el {Í}ndice {I}ntegral de {S}eguridad}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://www.probogota.org/comunicacion_c/estas-son-las-localidades-mas-seguras-e-inseguras-de-bogota-segun-el-indice-integral-de-seguridad/
+      \endverb
+      \verb{url}
+      \verb https://www.probogota.org/comunicacion_c/estas-son-las-localidades-mas-seguras-e-inseguras-de-bogota-segun-el-indice-integral-de-seguridad/
+      \endverb
+    \endentry
+    \entry{rodriguez2017ciudad}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=048e7b86d9b15b6c95d830f4bf2e5b08}{%
+           family={Rodríguez\bibnamedelima González},
+           familyi={R\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Sayra\bibnamedelima Catherín},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \strng{fullhash}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \strng{fullhashraw}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \strng{bibnamehash}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \strng{authorbibnamehash}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \strng{authornamehash}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \strng{authorfullhash}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \strng{authorfullhashraw}{048e7b86d9b15b6c95d830f4bf2e5b08}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1794-3108}
+      \field{journaltitle}{Revista Criminalidad}
+      \field{note}{Language: Spanish}
+      \field{number}{2}
+      \field{title}{``{L}a ciudad más insegura del mundo'': homicidio y crimen en {B}ogotá, 1988-1994}
+      \field{volume}{59}
+      \field{year}{2017}
+      \field{pages}{49\bibrangedash 64}
+      \range{pages}{16}
+      \verb{urlraw}
+      \verb http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S1794-31082017000200049
+      \endverb
+      \verb{url}
+      \verb http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S1794-31082017000200049
       \endverb
     \endentry
     \entry{Sanchez2003}{report}{}{}
@@ -1810,6 +2398,48 @@
       \field{title}{The Coexistence of Nanostores within the Retail Landscape: A Spatial Statistical Study}
       \field{volume}{13}
       \field{year}{2021}
+    \endentry
+    \entry{shin2024dollar}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=69fe9e0ea114b6f92396e7032525eea9}{%
+           family={Shin},
+           familyi={S\bibinitperiod},
+           given={Eun\bibnamedelima Jin},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{69fe9e0ea114b6f92396e7032525eea9}
+      \strng{fullhash}{69fe9e0ea114b6f92396e7032525eea9}
+      \strng{fullhashraw}{69fe9e0ea114b6f92396e7032525eea9}
+      \strng{bibnamehash}{69fe9e0ea114b6f92396e7032525eea9}
+      \strng{authorbibnamehash}{69fe9e0ea114b6f92396e7032525eea9}
+      \strng{authornamehash}{69fe9e0ea114b6f92396e7032525eea9}
+      \strng{authorfullhash}{69fe9e0ea114b6f92396e7032525eea9}
+      \strng{authorfullhashraw}{69fe9e0ea114b6f92396e7032525eea9}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Urban Affairs Review}
+      \field{number}{5}
+      \field{title}{Are Dollar Stores Magnets for Violent Crime? {E}vidence from {C}hicago}
+      \field{volume}{60}
+      \field{year}{2024}
+      \field{pages}{1540\bibrangedash 1576}
+      \range{pages}{37}
+      \verb{doi}
+      \verb 10.1177/10780874241226875
+      \endverb
+      \verb{urlraw}
+      \verb https://journals.sagepub.com/doi/10.1177/10780874241226875
+      \endverb
+      \verb{url}
+      \verb https://journals.sagepub.com/doi/10.1177/10780874241226875
+      \endverb
+      \keyw{dollar stores,discount retailers,violent crime,Chicago}
     \endentry
     \entry{Wellford1997}{report}{}{}
       \name{author}{3}{}{%

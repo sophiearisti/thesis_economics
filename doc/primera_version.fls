@@ -413,6 +413,7 @@ INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm
 INPUT /usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
 INPUT ./other_figs/oxxos_por_ano.png
@@ -420,7 +421,6 @@ INPUT ./other_figs/oxxos_por_ano.png
 INPUT ./other_figs/oxxos_por_ano.png
 INPUT ./other_figs/oxxos_por_ano.png
 INPUT ./other_figs/oxxos_por_ano.png
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecti0800.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
@@ -480,7 +480,6 @@ INPUT ./figs_dep_maps/mapa_upz_gpkg_2018_2023_2021_theft_to_people_index.png
 INPUT ./figs_dep_maps/mapa_upz_gpkg_2018_2023_2021_theft_to_people_index.png
 INPUT ./figs_dep_maps/mapa_upz_gpkg_2018_2023_2021_theft_to_people_index.png
 INPUT ./figs_dep_maps/mapa_upz_gpkg_2018_2023_2021_theft_to_people_index.png
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT ./figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png
 INPUT ./figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png
 INPUT ./figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png

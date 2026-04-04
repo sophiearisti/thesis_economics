@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  2 APR 2026 12:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  3 APR 2026 22:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -951,68 +951,7 @@ Package: longtable 2024-10-27 v4.22 Multi-page Table package (DPC)
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
- (./primera_version.aux
-
-LaTeX Warning: Label `fig:panelA' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:panelA' multiply defined.
-
-
-LaTeX Warning: Label `fig:panelB' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:panelB' multiply defined.
-
-
-LaTeX Warning: Label `fig:panelC' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:panelC' multiply defined.
-
-
-LaTeX Warning: Label `fig:panelD' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:panelD' multiply defined.
-
-
-LaTeX Warning: Label `fig:panelA' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:panelA' multiply defined.
-
-
-LaTeX Warning: Label `fig:panelB' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:panelB' multiply defined.
-
-
-LaTeX Warning: Label `fig:panelC' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:panelC' multiply defined.
-
-
-LaTeX Warning: Label `fig:panelD' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:panelD' multiply defined.
-
-
-LaTeX Warning: Label `fig:panelE' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:panelE' multiply defined.
-
-
-LaTeX Warning: Label `fig:panelF' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:panelF' multiply defined.
-
-)
+ (./primera_version.aux)
 \openout1 = `primera_version.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -1298,7 +1237,7 @@ Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_2018_2023_2021_theft_to_peo
 [10]
 
 [11]
-Overfull \hbox (7.74509pt too wide) in paragraph at lines 259--259
+Overfull \hbox (7.74509pt too wide) in paragraph at lines 258--258
 \T1/cmr/m/n/10 Índice In-te-gral de Se-guri-dad [Ac-cessed: 2026-04-01]. []$https : / / www . probogota . org / comunicacion _
  []
 
@@ -1308,32 +1247,32 @@ Overfull \hbox (7.74509pt too wide) in paragraph at lines 259--259
 <figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png, id=310, 208.8603pt x 364.9635pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png  used on input line 273.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png  used on input line 272.
 (pdftex.def)             Requested size: 133.07489pt x 232.53445pt.
 <figs_oxxo_maps/mapa_oxxos_binary_zat_2011.png, id=311, 209.8239pt x 367.8543pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_zat_2011.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_zat_2011.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2011.png  used on input line 279.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2011.png  used on input line 278.
 (pdftex.def)             Requested size: 133.07489pt x 233.30983pt.
 <figs_oxxo_maps/mapa_oxxos_binary_zat_2015.png, id=312, 212.7147pt x 359.1819pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_zat_2015.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_zat_2015.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2015.png  used on input line 285.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2015.png  used on input line 284.
 (pdftex.def)             Requested size: 133.07489pt x 224.71283pt.
 <figs_oxxo_maps/mapa_oxxos_binary_zat_2019.png, id=313, 208.1376pt x 360.6273pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_zat_2019.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_zat_2019.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2019.png  used on input line 294.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2019.png  used on input line 293.
 (pdftex.def)             Requested size: 133.07489pt x 230.58057pt.
 <figs_oxxo_maps/mapa_oxxos_binary_zat_2023.png, id=314, 206.6922pt x 358.941pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_zat_2023.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_zat_2023.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2023.png  used on input line 300.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2023.png  used on input line 299.
 (pdftex.def)             Requested size: 133.07489pt x 231.10164pt.
 <figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png, id=315, 210.3057pt x 365.6862pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png  used on input line 306.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png  used on input line 305.
 (pdftex.def)             Requested size: 133.07489pt x 231.39906pt.
 
 
@@ -1342,10 +1281,6 @@ Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png  used on 
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `primera_version.out' has not changed.
 (rerunfilecheck)             Checksum: 8F64F569DDA7A771F76E66D52BEE7506;2471.
 Package logreq Info: Writing requests to 'primera_version.run.xml'.
@@ -1353,15 +1288,15 @@ Package logreq Info: Writing requests to 'primera_version.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38891 strings out of 473190
- 788139 string characters out of 5715801
- 1729833 words of memory out of 5000000
- 61506 multiletter control sequences out of 15000+600000
+ 38911 strings out of 473190
+ 788451 string characters out of 5715801
+ 1730484 words of memory out of 5000000
+ 61526 multiletter control sequences out of 15000+600000
  572777 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,8n,105p,771b,5183s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on primera_version.pdf (13 pages, 4368924 bytes).
+Output written on primera_version.pdf (13 pages, 4368972 bytes).
 PDF statistics:
  392 PDF objects out of 1000 (max. 8388607)
  295 compressed objects within 3 object streams

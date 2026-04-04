@@ -1,4 +1,5 @@
 # Fdb version 4
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 ["biber primera_version"] 1775270794.96507 "primera_version.bcf" "primera_version.bbl" "primera_version" 1775270839.26093 2
   "primera_version.bcf" 1775270838.82477 136089 044efb80c5395ac1f93a49e33a7ef82e "pdflatex"
@@ -8,10 +9,16 @@
   "primera_version.bcf" 1775270935.33741 136095 33eda0708dfe70fa16560f69ab9e2ca4 "pdflatex"
   "references.bib" 1775270855.65708 12076 235001bea005de1296a999de516c8f16 ""
 >>>>>>> Stashed changes
+=======
+["biber primera_version"] 1775270534.09899 "primera_version.bcf" "primera_version.bbl" "primera_version" 1775270580.50806 2
+  "primera_version.bcf" 1775270579.88822 136089 044efb80c5395ac1f93a49e33a7ef82e "pdflatex"
+  "references.bib" 1775270238.13556 14640 4ac9d9e8f6f7289944f759268bb535c4 ""
+>>>>>>> parent of fe2b154 (ghanges)
   (generated)
   "primera_version.bbl"
   "primera_version.blg"
   (rewritten before read)
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 ["pdflatex"] 1775270824.93178 "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" "primera_version.pdf" "primera_version" 1775270839.26171 0
   "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" 1775270779.5642 18852 d58cd7b4459876bc989bd759a37b0273 ""
@@ -19,6 +26,10 @@
 ["pdflatex"] 1775270921.67446 "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" "primera_version.pdf" "primera_version" 1775270935.7055 0
   "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" 1775270906.36201 18862 5b839da51c0554268edfa2431a823ca2 ""
 >>>>>>> Stashed changes
+=======
+["pdflatex"] 1775270567.03658 "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" "primera_version.pdf" "primera_version" 1775270580.50894 0
+  "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" 1775270518.99629 18852 d58cd7b4459876bc989bd759a37b0273 ""
+>>>>>>> parent of fe2b154 (ghanges)
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -272,6 +283,7 @@
   "figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png" 1774995379.68789 466194 f126504b0509ecf291ac45b1ecb8effc ""
   "figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png" 1774984347.25736 678245 dcb4479885c523fb8a2eadcffc53b078 ""
   "other_figs/oxxos_por_ano.png" 1775002513.43307 115534 bf28badacefdcedaeef91d90353f9ffa ""
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   "primera_version.aux" 1775270838.81444 9694 05194bf80b0d43645408a882eb507b9e "pdflatex"
   "primera_version.bbl" 1775270797.45652 0 d41d8cd98f00b204e9800998ecf8427e "biber primera_version"
@@ -285,6 +297,13 @@
   "primera_version.run.xml" 1775270935.33919 2504 b76f80f3fb47b3613c578946be1337de "pdflatex"
   "primera_version.tex" 1775270906.36201 18862 5b839da51c0554268edfa2431a823ca2 ""
 >>>>>>> Stashed changes
+=======
+  "primera_version.aux" 1775270579.87995 9694 05194bf80b0d43645408a882eb507b9e "pdflatex"
+  "primera_version.bbl" 1775270536.7717 0 d41d8cd98f00b204e9800998ecf8427e "biber primera_version"
+  "primera_version.out" 1775270579.88316 2471 34a66da27e7fc84457ea8faef4aa0cbd "pdflatex"
+  "primera_version.run.xml" 1775270579.88963 2504 c5978ba724aae3cb44bcf80b9e1cb71b "pdflatex"
+  "primera_version.tex" 1775270518.99629 18852 d58cd7b4459876bc989bd759a37b0273 ""
+>>>>>>> parent of fe2b154 (ghanges)
   (generated)
   "primera_version.aux"
   "primera_version.bcf"

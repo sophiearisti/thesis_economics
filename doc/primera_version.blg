@@ -1,21 +1,19 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'primera_version.blg'
-[55] biber-darwin:340> INFO - === Fri Apr  3, 2026, 22:09:30
-[70] Biber.pm:420> INFO - Reading 'primera_version.bcf'
-[148] Biber.pm:994> INFO - Found 30 citekeys in bib section 0
-[165] Biber.pm:4463> INFO - Processing section 0
-[173] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
-[177] bibtex.pm:1713> INFO - LaTeX decoding ...
-[206] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[369] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[370] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[370] Biber.pm:4283> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'en-US'
-[370] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[425] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[425] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[425] Biber.pm:4283> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'en-US'
-[425] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[457] bbl.pm:676> INFO - Writing 'primera_version.bbl' with encoding 'UTF-8'
-[481] bbl.pm:779> INFO - Output to primera_version.bbl
-[481] Biber.pm:131> WARN - legacy month field 'April' in entry 'mockus2012building' is not an integer - this will probably not sort properly.
-[482] Biber.pm:133> INFO - WARNINGS: 1
+[54] biber-darwin:340> INFO - === Sun Apr  5, 2026, 18:41:57
+[68] Biber.pm:420> INFO - Reading 'primera_version.bcf'
+[146] Biber.pm:994> INFO - Found 40 citekeys in bib section 0
+[163] Biber.pm:4463> INFO - Processing section 0
+[171] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
+[174] bibtex.pm:1713> INFO - LaTeX decoding ...
+[207] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[421] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[421] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[422] Biber.pm:4283> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[422] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[496] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[496] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[496] Biber.pm:4283> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[496] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[535] bbl.pm:676> INFO - Writing 'primera_version.bbl' with encoding 'UTF-8'
+[568] bbl.pm:779> INFO - Output to primera_version.bbl

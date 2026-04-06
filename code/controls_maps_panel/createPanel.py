@@ -28,7 +28,6 @@ geometry_dict={
 }
 
 
-
 #this is correct
 def create_dependent_variable(final_geometry="upz", frequency="anual", panel_type="2015_2019"):
    
@@ -37,6 +36,13 @@ def create_dependent_variable(final_geometry="upz", frequency="anual", panel_typ
         file_path_2015_2019 = "../../data/crime/bogota_crime/final_crime_data_bogota.csv"
         
         df = pd.read_csv(file_path_2015_2019)
+    elif panel_type == "all":
+        file_path_2015_2019 = "../../data/crime/bogota_crime/final_crime_data_bogota.csv"
+        file_path_2018_2024 = "../../data/crime/bogota_crime/delitos_bogota_consolidado.csv"
+        
+        df_2015_2019 = pd.read_csv(file_path_2015_2019)
+        df_2018_2024 = pd.read_csv(file_path_2018_2024)
+        df = pd.concat([df_2015_2019, df_2018_2024], ignore_index=True)
 
     else:
         # concatenar csvs de delitos_bogota_theft, delitos_bogota_homicide, delitos_bogota_sexual, delitos_bogota_theft_to_vehicle, delitos_bogota_theft_to_motorbike
@@ -221,6 +227,8 @@ def create_dependent_variable(final_geometry="upz", frequency="anual", panel_typ
     #save the panel
     if panel_type == "2015_2019":
         crime_panel.to_csv(f"../../data/panel/preliminary_panel_datasets/crime_panel_{final_geometry}_{frequency}.csv", index=False)   
+    elif panel_type == "all":
+        crime_panel.to_csv(f"../../data/panel/preliminary_panel_datasets/crime_panel_all_{final_geometry}_{frequency}.csv", index=False)
     else:
         crime_panel.to_csv(f"../../data/panel/preliminary_panel_datasets/crime_panel_new_{final_geometry}_{frequency}.csv", index=False)
        
@@ -628,6 +636,10 @@ def create_final_panel(tiendas_counts, dependent_variable_panel, final_geometry,
     # Guardar el panel final
     if panel_type == "2015_2019":
         panel.to_csv(f"../../data/panel/panel_final_{final_geometry}_{frequency}.csv", index=False)
+    
+    elif panel_type == "all":
+        panel.to_csv(f"../../data/panel/panel_final_all_{final_geometry}_{frequency}.csv", index=False)
+        
     else:
         panel.to_csv(f"../../data/panel/panel_final_new_{final_geometry}_{frequency}.csv", index=False)
 
@@ -664,6 +676,8 @@ def create_final_panel(tiendas_counts, dependent_variable_panel, final_geometry,
     # Guardar el panel limpio
     if panel_type == "2015_2019":
         panel_cleaned.to_csv(f"../../data/panel/panel_final_clean_{final_geometry}_{frequency}.csv", index=False)
+    elif panel_type == "all":
+        panel_cleaned.to_csv(f"../../data/panel/panel_final_clean_all_{final_geometry}_{frequency}.csv", index=False)
     else:
         panel_cleaned.to_csv(f"../../data/panel/panel_final_clean_new_{final_geometry}_{frequency}.csv", index=False)
 
@@ -690,6 +704,8 @@ def create_geopackage_with_panel(panel_cleaned, joined_zat_tiendas_list, tienda_
     
     if panel_type == "2015_2019":
         years = range(2015, 2019)
+    elif panel_type == "all":
+        years = range(2015, 2024)
     else:
         years = range(2018, 2024)
         
@@ -762,6 +778,10 @@ def createPanel(map, final_geometry="upz", frequency="anual", panel_type="2015_2
         #leer el panel limpio
         if panel_type == "2015_2019":
             panel_cleaned = pd.read_csv(f"../../data/panel/panel_final_clean_{final_geometry}_anual.csv")
+       
+        elif panel_type == "all":
+            panel_cleaned = pd.read_csv(f"../../data/panel/panel_final_clean_all_{final_geometry}_anual.csv")
+
         else:
             panel_cleaned = pd.read_csv(f"../../data/panel/panel_final_clean_new_{final_geometry}_anual.csv")
         

@@ -9,7 +9,7 @@ global dir_dofile "$global_dir/code" //dirección de los dofiles
 global dir_dofile_controls_analysis "$dir_dofile/controls_maps_panel"
 global dir_BDD_panel "$global_dir/data/panel"
 
-global panel 2
+global panel 1
 
 if $panel == 1 {
     global doc_panel "$dir_BDD_panel/panel_final_upz_trimestral.csv"
@@ -225,7 +225,7 @@ foreach a of local anos {
         iebaltab $depVar, ///
             groupvar(dummy_oxxo) ///
             control(0) ///
-            savexlsx(ddifmedias_dep_vars_`a'_T`t') ///
+            savexlsx(ddifmedias_dep_vars_`a'_T`t'_$panel) ///
             replace
 			
         ttest crime_index, by(dummy_oxxo)

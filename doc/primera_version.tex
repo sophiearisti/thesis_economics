@@ -268,7 +268,7 @@ For example,  \cite{jaramillo2021low} used the same method as \parencite{shin202
 Although D1s are not convenience stores per se, they attract a similar type of costumers and and often share similar spatial locations with OXXO outlets. By analyzing the period of 2016 to 2019 and employing the same information utilized in this thesis (SIEDCO), the authors found that D1 openings caused a 33.4\% average reduction in crime density per block. 
 They attributed this impact to the 'eyes on the street' phenomenon, suggesting that the increased pedestrian flow acts as a form of informal guardianship that deters criminal activity \parencite{ jacobs1961death, jaramillo2021low}.\\ 
 
-\section{Data used in the research and unit of analysis}
+\section{Data used and unit of analysis}
 
 For this thesis I use UPZs as the unit of analysis. UPZs work as a feasible division of Bogotá as the disctrict maintains continuity and consistency of data across the years, and security interventions are normally focalized by UPZ \hl{(cita)}. 
 Also, these Units maintain urbanistic and socioeconomic homogeneity by grouping similar neighborhoods, and are the middle point between Localities and Street blocks (manzanas).\\ 
@@ -303,7 +303,7 @@ And with Mapas-Bogotá I obtained the fixed variable socioeocnomic and environme
 
 \begin{table} [H]
   \centering
-  \caption{Means Differences of means between treated and never treated for fixed controls}
+  \caption{ Differences of means between treated and never treated for fixed controls}
   \label{tab:diferencias_medias_controles_fijos}
   \begin{adjustbox}{width=\textwidth,center}
     \begin{tabular}{l c c c}
@@ -313,26 +313,26 @@ And with Mapas-Bogotá I obtained the fixed variable socioeocnomic and environme
        \midrule
       \multicolumn{4}{l}{\textbf{Baseline}} \\
       \midrule
-      Habitantes por localidad en 2007 & 481.997 & 473.073 & -8.924 \\
-      & (11.180) & (26.920) & \\
-      Cantidad de personas por hogar 2007 & 3.522 & 3.298 & $-0.225^{***}$ \\
-      & (0.015) & (0.030) & \\
-      Indice de condiciones de vida 2007 & 89.121 & 91.724 & $2.603^{***}$ \\
+      Inhabitants by locality in 2007 & 503.534 & 482.463 & -21.071 \\
+      & (38.331) & (43.823) & \\
+      Household size 2007 & 3.714 & 3.335 & $-0.380^{***}$ \\
+      & (0.049) & (0.048) & \\
+      Index of quality of life 2007 & 89.121 & 91.724 & $2.603^{***}$ \\
       & (0.151) & (0.216) & \\
-      Gasto promedio mensual 2007 & $1.02e+06$ & $1.28e+06$ & $2.54e+05^{***}$ \\
-      & $(22613.352)$ & $(50141.458)$ & \\
+      Average monthly expenditure 2007 & $8.97e+05$ & $1.38e+06$ & $4.82e+05^{***}$ \\
+      & $(55836.359)$ & $(57218.217)$ & \\
       \midrule
       \multicolumn{4}{l}{\textbf{Fixed controls}} \\
       \midrule
-      Estrato promedio & 2.722 & 3.483 & $0.761^{***}$ \\
-      & (0.047) & (0.073) & \\
-      Estaciones de transmilenio cercanas & 1.746 & 3.433 & $1.687^{***}$ \\
-      & (0.088) & (0.221) & \\
-      Cantidad acceso a vías arteriales & 3.830 & 6.234 & $2.404^{***}$ \\
-      & (0.103) & (0.292) & \\
+      Average stratum & 2.162 & 3.352 & $1.190^{***}$ \\
+      & (0.135) & (0.119) & \\
+      Nearby transmilenio stations & 2.339 & 6.067 & $3.727^{***}$ \\
+      & (0.404) & (0.544) & \\
+      Access to arterial roads & 29.286 & 44.200 & $14.914^{***}$ \\
+      & (4.490) & (2.738) & \\
       \midrule
       \midrule
-      ZATs & 725 & 171 & 896 \\
+      UPZs & 56 & 60 & 116 \\
       \bottomrule
     \end{tabular}
   \end{adjustbox}
@@ -342,6 +342,7 @@ And with Mapas-Bogotá I obtained the fixed variable socioeocnomic and environme
 \end{table}
 
 \section{Empirical strategy}
+
 
 \section{Results}
 
@@ -367,9 +368,63 @@ treat controls and treated groups as buffers
 \counterwithin{table}{section}
 
 \section{Detailed description of variables}
-
-
 \label{sec:variables_descripcion_detallada}
+
+\begin{longtable}{p{0.25\linewidth} p{0.45\linewidth} p{0.25\linewidth}}
+    \caption{Data sources}
+    \label{tab:variables_descripcion}
+    \\
+        \toprule
+        \textbf{Variable} & \textbf{Description} & \textbf{Data source} \\
+        \midrule
+        \endhead
+        \midrule
+        \multicolumn{3}{l}{\textbf{Dependent Variable}} \\
+        \midrule
+        Proportion of independents & Proportion of independents in the ZAT that year & Movility surveys (2011, 2015, 2019, 2023) \\
+        \midrule
+        \multicolumn{3}{l}{\textbf{Variable de tratamiento escalonado}} \\
+        \midrule
+        Tiene OXXO ($=1$) & Si el ZAT tiene OXXO(s) ese año & RUES y Google Maps API \\
+        \midrule
+        \multicolumn{3}{l}{\textbf{Controles resagados de tiendas de cadena}} \\
+        \midrule
+        Tiene D1s (=1) & El ZAT tiene D1(s) el periodo anterior al año analizado & RUES y Google Maps API \\
+        \midrule
+        Tiene ARAs (=1) & El ZAT tiene ARA(s) el periodo anterior al año analizado & RUES y Google Maps API \\
+        \midrule
+        \multicolumn{3}{l}{\textbf{Controles variables por año}} \\
+        \midrule
+        Número de personas en el hogar por ZAT & Número promedio de personas en el hogar por ZAT en el año analizado & Encuestas de movilidad (2011, 2015, 2019, 2023) \\
+        \midrule
+        Ingresos del hogar por ZAT & Ingreso promedio del hogar por ZAT en el año analizado & Encuestas de movilidad (2011, 2015, 2019, 2023) \\
+        \midrule
+        \multicolumn{3}{l}{\textbf{Controles de línea base}} \\
+        \midrule
+        Habitantes por localidad en 2007 & Número de habitantes por localidad en el 2007 & Encuesta de Calidad de Vida de Bogotá 2007 \\
+        \midrule
+        Cantidad de personas por hogar 2007 & Número promedio de personas en el hogar por localidad en el 2007 & Encuesta de Calidad de Vida de Bogotá 2007 \\
+        \midrule
+        Indice de condiciones de vida 2007 & Indice de condiciones de vida promedio por localidad en el 2007 & Encuesta de Calidad de Vida de Bogotá 2007 \\
+        \midrule
+        Gasto promedio mensual 2007 & Gasto promedio mensual en el hogar por localidad en el 2007 & Encuesta de Calidad de Vida de Bogotá 2007 \\
+        \midrule
+        \multicolumn{3}{l}{\textbf{Controles fijos en el tiempo}} \\
+        \midrule
+        Estrato promedio del ZAT & Estrato promedio del ZAT, que oscila de 1 a 6 & Mapas Bogotá - Infraestructura de Datos Espaciales de Bogotá (IDECA) \\
+        \midrule
+        Estaciones de transmilenio cercanas & Cantidad de estaciones de transmilenio dentro o cercanos al ZAT & Mapas Bogotá - Infraestructura de Datos Espaciales de Bogotá (IDECA) \\
+        \midrule
+        Cantidad acceso a vías arteriales & Cantidad de vías arteriales dentro o cercanos al ZAT & Mapas Bogotá - Infraestructura de Datos Espaciales de Bogotá (IDECA) \\
+        \midrule
+        \multicolumn{3}{l}{\textbf{Control spillover}} \\
+        \midrule
+        Cantidad de Oxxos cercanos fuera del ZAT & Cantidad de OXXOs fuera del ZAT, que se encuentran cerca de este. & RUES y Google Maps API \\
+        \bottomrule
+        \multicolumn{3}{p{\linewidth}}{%
+        \vspace{0.5em}
+        \footnotesize{ \textit{Nota:} No existe controles de línea base por ZAT, por lo que solo se pudo obtener índices previos al 2011 por localidad (ECDV 2007). El control "spillover" tiene en cuenta que hay ZATs que no tienen OXXOs, pero presentan OXXOs cercanos que pueden afectar la dinámica económica y laboral de la zona analizada. Finalmente, cuando de habla de OXXOs, vías arteriales y estaciones de transmilenio cercanos, significa que se encuentran a menos de 400m del ZAT.}}
+\end{longtable}
 
 \section{Evolution of OXXO stores in Bogotá divided by Transport Analysis Zones (ZATs)}
 
@@ -418,5 +473,71 @@ treat controls and treated groups as buffers
     \caption{\textbf{Evolution of the presence of OXXO by ZAT}}
     \label{fig:fourpanelOXXO}
 \end{figure}
+
+\section{Staggered controls of discount store chains}
+\label{sec:controles_cadenas_descuento}
+
+\begin{table} [H]
+  \centering
+  \caption{Means differences of hard discount store staggered controls for the 2018-4 cohort}
+  \label{tab:staggered_controls_2018}
+  \begin{tabular}{l c c c}
+    \toprule
+    & \textbf{Still without treatment} & \textbf{Treated} & \textbf{Means Difference} \\
+    \midrule
+    Has D1s & 0.477 & 0.477 & $0.172^{***}$ \\
+    & (0.054) & (0.079) & \\
+    \midrule
+    Quantity of D1s & 1.233 & 3.250 & $2.017^{***}$ \\
+    & (0.214) & (0.543) & \\
+    \midrule
+    Has Aras & 0.256 & 0.714 & $0.458^{***}$ \\
+    & (0.047) & (0.087) & \\
+    \midrule
+    Quantity of Aras & 0.384 & 1.429 & $0.216^{***}$ \\
+    & (0.089) & (0.264) & \\
+    \midrule
+    Has J\&B & 0.895 & 1.964 & $1.069$ \\
+    & (0.050) & (0.096) & \\
+    \midrule
+    Quantity of J\&B & 0.062 & 0.278 & $0.216^{***}$ \\
+    & (0.256) & (1.202) & \\
+    \midrule
+    UPZs & 86 & 28 & 114 \\
+    \bottomrule
+  \end{tabular}
+  \parbox[t]{\textwidth}{%
+    \vspace{0.5em}
+    \footnotesize{ \textit{Nota:} Significancia: *** p<0.01, ** p<0.05, * p<0.1.}}
+\end{table}
+
+
+\begin{table} [H]
+  \centering
+  \caption{Means differences of hard discount store staggered controls for the 2022-4 cohort}
+  \label{tab:staggered_controls_2022}
+  \begin{tabular}{l c c c}
+    \toprule
+    & \textbf{Still without treatment} & \textbf{Treated} & \textbf{Means Difference} \\
+    \midrule
+    Has D1s & 0.491 & 0.881 & $0.390^{***}$ \\
+    & (0.067) & (0.042) & \\
+    \midrule
+    Quantity of D1s & 1.053 & 4.458 & $3.405^{***}$ \\
+    & (0.191) & (0.512) & \\
+    \midrule
+    Has Aras & 0.298 & 0.627 & $0.329^{***}$ \\
+    & (0.061) & (0.063) & \\
+    \midrule
+    Quantity of Aras & 0.386 & 1.712 & $1.326^{***}$ \\
+    & (0.089) & (0.287) & \\
+    \midrule
+    UPZs & 57 & 59 & 116 \\
+    \bottomrule
+  \end{tabular}
+  \parbox[t]{\textwidth}{%
+    \vspace{0.5em}
+    \footnotesize{ \textit{Nota:} Significancia: *** p<0.01, ** p<0.05, * p<0.1.}}
+\end{table}
 
 \end{document}

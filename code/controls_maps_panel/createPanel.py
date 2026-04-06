@@ -27,17 +27,63 @@ geometry_dict={
     "localidad": "codigo_localidad"
 }
 
+
+
 #this is correct
 def create_dependent_variable(final_geometry="upz", frequency="anual", panel_type="2015_2019"):
    
     # open the file of all crimes 
     if panel_type == "2015_2019":
         file_path_2015_2019 = "../../data/crime/bogota_crime/final_crime_data_bogota.csv"
+        
+        df = pd.read_csv(file_path_2015_2019)
+
     else:
-        file_path_2015_2019 = "../../data/crime/bogota_crime/delitos_bogota_theft.csv"
-    
-    df = pd.read_csv(file_path_2015_2019)
-    
+        # concatenar csvs de delitos_bogota_theft, delitos_bogota_homicide, delitos_bogota_sexual, delitos_bogota_theft_to_vehicle, delitos_bogota_theft_to_motorbike
+        # la unica columna que no tienen igual es la del nombre del delito, entonces para concatenarlos toca a;adir las columnas de los otros delitos con valor 0, para luego concatenarlos y tener un solo csv con todos los delitos
+        # these are the columns theft_to_vehicle,homicide,theft_to_motorbike,sexual,theft_to_people
+        
+        #diccionario de delitos y sus archivos
+        delitos_urls = {
+            "theft_to_people": "../../data/crime/bogota_crime/delitos_bogota_theft_to_people.csv",
+            "theft_to_vehicle": "../../data/crime/bogota_crime/delitos_bogota_theft_to_vehicle.csv",
+            "theft_to_motorbike": "../../data/crime/bogota_crime/delitos_bogota_theft_to_motorbike.csv",
+            "sexual": "../../data/crime/bogota_crime/delitos_bogota_sexual.csv",
+            "homicide": "../../data/crime/bogota_crime/delitos_bogota_homicide.csv"
+        }
+        
+        #hacer un for e ir concatenando los csvs, para luego tener un solo csv con todos los delitos
+        dfs = []
+
+        for delito, file_path in delitos_urls.items():
+            try:
+                # Cargar el CSV
+                df_temp = pd.read_csv(file_path)
+                dfs.append(df_temp)
+                print(f"Cargado: {delito} con {len(df_temp)} registros.")
+            except Exception as e:
+                print(f"Error cargando {delito}: {e}")
+
+        # 1. Concatenar todos los DataFrames
+        # pd.concat alinea automáticamente las columnas por nombre
+        df_final = pd.concat(dfs, axis=0, ignore_index=True)
+
+        # 2. Lista de las columnas de delitos para llenar con 0
+        columnas_delitos = ["theft_to_people", "theft_to_vehicle", "theft_to_motorbike", "sexual", "homicide"]
+
+        # 3. Reemplazar valores nulos (NaN) por 0 en las columnas de delitos
+        # Esto es vital para tu análisis, ya que si es un hurto, homicidio debe ser 0.
+        df_final[columnas_delitos] = df_final[columnas_delitos].fillna(0).astype(int)
+        
+        #quitar columnas que no necesitamos "codigo_upz", "codigo_localidad"
+        df_final = df_final.drop(columns=["codigo_upz", "codigo_localidad"], errors='ignore')
+
+        output_combined = "../../data/crime/bogota_crime/delitos_bogota_consolidado.csv"
+        df_final.to_csv(output_combined, index=False, encoding='utf-8')
+        
+        
+        df = df_final
+        
     #print the data types of the columns
     print(df.dtypes)
     
@@ -100,37 +146,25 @@ def create_dependent_variable(final_geometry="upz", frequency="anual", panel_typ
     else:
         raise ValueError("Frecuencia no válida")
     
-    if panel_type == "2015_2019":
-        crime_zat = pd.get_dummies(
-            crime_zat,
-            columns=["DIA_SEMANA", "GENERO"],
-            prefix=["dia", "genero"]    
-        )
-    else:
-        crime_zat = pd.get_dummies(
-            crime_zat,
-            columns=["GENERO"],
-            prefix=["genero"]    
-        )
-    
-    
+    crime_zat = pd.get_dummies(
+        crime_zat,
+        columns=["DIA_SEMANA", "GENERO"],
+        prefix=["dia", "genero"]    
+    )
+ 
     #tambien por la hora podria poner dummies de noche dia y tarde
     
     #day_cols = [col for col in crime_zat.columns if col.startswith("dia_")]
     gender_cols = [col for col in crime_zat.columns if col.startswith("genero_")]
     
-    if panel_type == "2015_2019":
-        crime_vars = [
-            "theft_to_people",
-            "homicide",
-            "sexual",
-            "theft_to_vehicle",
-            "theft_to_motorbike",
-        ]
-    else:
-        crime_vars = [
-            "theft_to_people"
-        ]
+    
+    crime_vars = [
+        "theft_to_people",
+        "homicide",
+        "sexual",
+        "theft_to_vehicle",
+        "theft_to_motorbike",
+    ]
 
     all_sum_vars = crime_vars + gender_cols # + day_cols
     

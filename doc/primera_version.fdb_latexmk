@@ -1,41 +1,22 @@
 # Fdb version 4
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-["biber primera_version"] 1775270794.96507 "primera_version.bcf" "primera_version.bbl" "primera_version" 1775270839.26093 2
-  "primera_version.bcf" 1775270838.82477 136089 044efb80c5395ac1f93a49e33a7ef82e "pdflatex"
-  "references.bib" 1775270238.13556 14640 4ac9d9e8f6f7289944f759268bb535c4 ""
-=======
-["biber primera_version"] 1775105570.94136 "primera_version.bcf" "primera_version.bbl" "primera_version" 1775270935.70388 0
-  "primera_version.bcf" 1775270935.33741 136095 33eda0708dfe70fa16560f69ab9e2ca4 "pdflatex"
-  "references.bib" 1775270855.65708 12076 235001bea005de1296a999de516c8f16 ""
->>>>>>> Stashed changes
-=======
-["biber primera_version"] 1775270534.09899 "primera_version.bcf" "primera_version.bbl" "primera_version" 1775270580.50806 2
-  "primera_version.bcf" 1775270579.88822 136089 044efb80c5395ac1f93a49e33a7ef82e "pdflatex"
-  "references.bib" 1775270238.13556 14640 4ac9d9e8f6f7289944f759268bb535c4 ""
->>>>>>> parent of fe2b154 (ghanges)
+["biber primera_version"] 1775432514.83186 "primera_version.bcf" "primera_version.bbl" "primera_version" 1775443992.30218 0
+  "primera_version.bcf" 1775443992.05587 137702 7c0890bae6deaba8c05abde725e4610d "pdflatex"
+  "references.bib" 1775432252.71681 16744 8f366a9502b82b2a99f5bf4239188b98 ""
   (generated)
   "primera_version.bbl"
   "primera_version.blg"
   (rewritten before read)
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-["pdflatex"] 1775270824.93178 "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" "primera_version.pdf" "primera_version" 1775270839.26171 0
-  "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" 1775270779.5642 18852 d58cd7b4459876bc989bd759a37b0273 ""
-=======
-["pdflatex"] 1775270921.67446 "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" "primera_version.pdf" "primera_version" 1775270935.7055 0
-  "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" 1775270906.36201 18862 5b839da51c0554268edfa2431a823ca2 ""
->>>>>>> Stashed changes
-=======
-["pdflatex"] 1775270567.03658 "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" "primera_version.pdf" "primera_version" 1775270580.50894 0
-  "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" 1775270518.99629 18852 d58cd7b4459876bc989bd759a37b0273 ""
->>>>>>> parent of fe2b154 (ghanges)
+["pdflatex"] 1775443980.96281 "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" "primera_version.pdf" "primera_version" 1775443992.30276 0
+  "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" 1775443971.81481 36908 1cf03a0fc90cb5853cba5183ae63e814 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm" 1136768653 3584 2d666ecf6d466d8b007246bc2f94d9da ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1136768653 3584 13049b61b922a28b158a38aeff75ee9b ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm0500.tfm" 1136768653 3584 178baad7ffca7f5d3428a83bd7cc64c3 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm" 1136768653 3584 291a5713401683441e0a8c8f4417b17b ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm0700.tfm" 1136768653 3584 cf973739aac7ab6247f9150296af7954 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm" 1136768653 3584 49064b465390a8e316a3c8417a050403 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm0900.tfm" 1136768653 3584 d3d8ac8b25ca19c0a40b86a5db1e8ccc ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
@@ -62,9 +43,16 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1136768653 1116 25a7bf822c58caf309a702ef79f4afbb ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb" 1215737283 145408 43d44302ca7d82d487f511f83e309505 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb" 1215737283 140176 d4962f948b4cc0adf4d3dde77a128c95 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb" 1215737283 135942 859a90cad7494a1e79c94baf546d7de5 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb" 1215737283 162624 9dcc92cd3b1dfe2ecc80e6da7f2eb6bd ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb" 1215737283 154599 ded6d7c21788a8930eadc7fef7518942 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb" 1215737283 164227 3df942b4ff2124425d8fb1b6d3e01c7a ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb" 1215737283 149037 995a6f1e12c1d647b99b1cf55db78699 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1215737283 138258 6525c253f16cededa14c7fd0da7f67b2 ""
@@ -265,45 +253,29 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1758424668 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "figs_dep_maps/mapa_upz_gpkg_2015_2018_2015_theft_to_people_index.png" 1775001936.46957 285079 5c4af3545f1fc5103358dd934dfdc470 ""
-  "figs_dep_maps/mapa_upz_gpkg_2015_2018_2017_theft_to_people_index.png" 1775001936.35275 284649 53c5c16e3d81f02e657725aa6fbe4196 ""
-  "figs_dep_maps/mapa_upz_gpkg_2018_2023_2019_theft_to_people_index.png" 1775002019.38772 276042 d116919e03d200c0e7fe622e6ba95c51 ""
-  "figs_dep_maps/mapa_upz_gpkg_2018_2023_2021_theft_to_people_index.png" 1775002019.29631 280961 dc27d9b270dc9033442058b435523221 ""
-  "figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png" 1774995489.51892 268003 e8fe09788df6f1ddd0fe4e6027811884 ""
-  "figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png" 1774995489.47837 271351 8f6d884bb2c9078c3b0029ffd0573a27 ""
-  "figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png" 1774995489.4313 277580 93cdf92bfe66b123b4bd24c1e4b5e4c6 ""
-  "figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png" 1774995489.36727 286108 cead4134e8880b1f7f2d3693b2630c08 ""
-  "figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png" 1774995489.318 294522 31e02d424555d320fff5c3abf2b028ab ""
-  "figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png" 1774995489.27241 295868 7ccf3d8535417dada156515807b8380d ""
-  "figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png" 1774995539.24764 424912 2c2ce92a9b9560edfde374ecc890b9f0 ""
-  "figs_oxxo_maps/mapa_oxxos_binary_zat_2011.png" 1774995379.92615 427862 6ed3ab160b796f0174f5ca32fb1708b7 ""
-  "figs_oxxo_maps/mapa_oxxos_binary_zat_2015.png" 1774995379.88012 432326 6db67718fe00d06f8ac7adc8a8da0142 ""
-  "figs_oxxo_maps/mapa_oxxos_binary_zat_2019.png" 1774995379.8157 437498 64a5c9542cacc34a492d6c5de71ec52f ""
-  "figs_oxxo_maps/mapa_oxxos_binary_zat_2023.png" 1774995379.7359 457538 95dd97fb3079fbfec937ecaa9f1fc49e ""
-  "figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png" 1774995379.68789 466194 f126504b0509ecf291ac45b1ecb8effc ""
-  "figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png" 1774984347.25736 678245 dcb4479885c523fb8a2eadcffc53b078 ""
-  "other_figs/oxxos_por_ano.png" 1775002513.43307 115534 bf28badacefdcedaeef91d90353f9ffa ""
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-  "primera_version.aux" 1775270838.81444 9694 05194bf80b0d43645408a882eb507b9e "pdflatex"
-  "primera_version.bbl" 1775270797.45652 0 d41d8cd98f00b204e9800998ecf8427e "biber primera_version"
-  "primera_version.out" 1775270838.81864 2471 34a66da27e7fc84457ea8faef4aa0cbd "pdflatex"
-  "primera_version.run.xml" 1775270838.8261 2504 c5978ba724aae3cb44bcf80b9e1cb71b "pdflatex"
-  "primera_version.tex" 1775270779.5642 18852 d58cd7b4459876bc989bd759a37b0273 ""
-=======
-  "primera_version.aux" 1775270935.32835 13508 4405d76c6b684fbeb2dc5bef87063367 "pdflatex"
-  "primera_version.bbl" 1775270855.62718 104674 7f462b2a32dd39bb32df325063ed6b74 "biber primera_version"
-  "primera_version.out" 1775270935.33251 2471 8f64f569dda7a771f76e66d52bee7506 "pdflatex"
-  "primera_version.run.xml" 1775270935.33919 2504 b76f80f3fb47b3613c578946be1337de "pdflatex"
-  "primera_version.tex" 1775270906.36201 18862 5b839da51c0554268edfa2431a823ca2 ""
->>>>>>> Stashed changes
-=======
-  "primera_version.aux" 1775270579.87995 9694 05194bf80b0d43645408a882eb507b9e "pdflatex"
-  "primera_version.bbl" 1775270536.7717 0 d41d8cd98f00b204e9800998ecf8427e "biber primera_version"
-  "primera_version.out" 1775270579.88316 2471 34a66da27e7fc84457ea8faef4aa0cbd "pdflatex"
-  "primera_version.run.xml" 1775270579.88963 2504 c5978ba724aae3cb44bcf80b9e1cb71b "pdflatex"
-  "primera_version.tex" 1775270518.99629 18852 d58cd7b4459876bc989bd759a37b0273 ""
->>>>>>> parent of fe2b154 (ghanges)
+  "figs_dep_maps/mapa_upz_gpkg_2015_2018_2015_theft_to_people_index.png" 1775271185.16806 285079 5c4af3545f1fc5103358dd934dfdc470 ""
+  "figs_dep_maps/mapa_upz_gpkg_2015_2018_2017_theft_to_people_index.png" 1775271185.17974 284649 53c5c16e3d81f02e657725aa6fbe4196 ""
+  "figs_dep_maps/mapa_upz_gpkg_2018_2023_2019_theft_to_people_index.png" 1775271185.1869 276042 d116919e03d200c0e7fe622e6ba95c51 ""
+  "figs_dep_maps/mapa_upz_gpkg_2018_2023_2021_theft_to_people_index.png" 1775271185.18994 280961 dc27d9b270dc9033442058b435523221 ""
+  "figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png" 1775271185.21573 268003 e8fe09788df6f1ddd0fe4e6027811884 ""
+  "figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png" 1775271185.21654 271351 8f6d884bb2c9078c3b0029ffd0573a27 ""
+  "figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png" 1775271185.21738 277580 93cdf92bfe66b123b4bd24c1e4b5e4c6 ""
+  "figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png" 1775271185.21823 286108 cead4134e8880b1f7f2d3693b2630c08 ""
+  "figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png" 1775271185.21935 294522 31e02d424555d320fff5c3abf2b028ab ""
+  "figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png" 1775271185.22049 295868 7ccf3d8535417dada156515807b8380d ""
+  "figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png" 1775271185.22177 424912 2c2ce92a9b9560edfde374ecc890b9f0 ""
+  "figs_oxxo_maps/mapa_oxxos_binary_zat_2011.png" 1775271185.22309 427862 6ed3ab160b796f0174f5ca32fb1708b7 ""
+  "figs_oxxo_maps/mapa_oxxos_binary_zat_2015.png" 1775271185.22468 432326 6db67718fe00d06f8ac7adc8a8da0142 ""
+  "figs_oxxo_maps/mapa_oxxos_binary_zat_2019.png" 1775271185.22583 437498 64a5c9542cacc34a492d6c5de71ec52f ""
+  "figs_oxxo_maps/mapa_oxxos_binary_zat_2023.png" 1775271185.22717 457538 95dd97fb3079fbfec937ecaa9f1fc49e ""
+  "figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png" 1775271185.22844 466194 f126504b0509ecf291ac45b1ecb8effc ""
+  "figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png" 1775271185.2315 678245 dcb4479885c523fb8a2eadcffc53b078 ""
+  "other_figs/oxxos_por_ano.png" 1775271185.2321 115534 bf28badacefdcedaeef91d90353f9ffa ""
+  "primera_version.aux" 1775443992.04421 19571 3980102c3ce24e0d013c5d7940076cc5 "pdflatex"
+  "primera_version.bbl" 1775432517.80638 144416 67e826d71d567498b210748d342682a2 "biber primera_version"
+  "primera_version.out" 1775443992.05066 2993 934afcfc06dcfb9c433a79f968840a5d "pdflatex"
+  "primera_version.run.xml" 1775443992.05709 2504 b76f80f3fb47b3613c578946be1337de "pdflatex"
+  "primera_version.tex" 1775443971.81481 36908 1cf03a0fc90cb5853cba5183ae63e814 ""
   (generated)
   "primera_version.aux"
   "primera_version.bcf"

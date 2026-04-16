@@ -128,13 +128,25 @@ plot_dep_map <- function(year, geometry, folder, depVar) {
       filter(!ZAT %in% c(796, 798, 824, 822, 821, 820, 819, 812, 1845, 801, 811, 800, 810, 795, 791, 823,808))
     title= "Total crimes "
   }
-  else if (depVar == "theft_to_people_index")
+  else if (depVar == "theft_to_people_index_eb")
   {
     title= "Theft to people crime rate per 10k inhabitants "
+    #codigo_upz 63 o 117 asignarles al depVar zero porque son valores muy extremos
+    # 2. ASIGNAR CERO A VALORES EXTREMOS (UPZ 63 y 117)
+    # Usamos sym(depVar) para que dplyr entienda que es el nombre de una columna dinámica
+    #gdf <- gdf %>%
+      #mutate(!!sym(depVar) := ifelse(codigo_upz %in% c(63, 117), 0, !!sym(depVar)))
+    
   }
   else
   {
     title= "Crime rate per 10k inhabitants "
+    #codigo_upz 63 o 117 asignarles al depVar zero porque son valores muy extremos
+    # 2. ASIGNAR CERO A VALORES EXTREMOS (UPZ 63 y 117)
+    # Usamos sym(depVar) para que dplyr entienda que es el nombre de una columna dinámica
+    #gdf <- gdf %>%
+      #mutate(!!sym(depVar) := ifelse(codigo_upz %in% c(63, 117), 0, !!sym(depVar)))
+    
     
   }
 
@@ -162,15 +174,13 @@ plot_dep_map <- function(year, geometry, folder, depVar) {
 }
 
 periodos <- list(
-  list(folder = "gpkg_2018_2023", anos = 2018:2023),
-  list(folder = "gpkg_2015_2018", anos = 2015:2018)
+  list(folder = "gpkg_all_years", anos = 2015:2023)
 )
 
 geometries <- list(
-  list(name = "upz", depVar = "crime_index"),
-  list(name = "zat", depVar = "theft_to_people"),
-  list(name = "upz", depVar = "theft_to_people_index")
-  
+  list(name = "upz", depVar = "crime_index_eb"),
+  list(name = "upz", depVar = "theft_to_people_index_eb"),
+  list(name = "zat", depVar = "theft_to_people_eb")
 )
 
 # 2. Recorremos con un bucle triple (Geometría -> Bloque -> Año)
@@ -181,8 +191,6 @@ for (geom in geometries) {
     current_folder <- periodo$folder
     depVar <- geom$depVar
     
-    if(!(current_folder == "gpkg_2018_2023" & depVar == "crime_index"))
-    {
       
       for (y in periodo$anos) {
         
@@ -196,11 +204,13 @@ for (geom in geometries) {
         
       }
       
-    }
 
   }
   
 }
+
+
+
 
 
 oxxo_shp <- st_read("data/maps_data/oxxo_points_2025/joined_geometry_tiendas.shp", 

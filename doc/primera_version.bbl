@@ -355,6 +355,53 @@
       \verb 10.1093/restud/rdaa074
       \endverb
     \endentry
+    \entry{Callaway_SantAnna_2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4a5a67b3788b4a3653a14d9ab03fba0e}{%
+           family={Callaway},
+           familyi={C\bibinitperiod},
+           given={Brantly},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f90144f1e670fa40bee88166593b00ea}{%
+           family={Sant'Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelimb H.\bibnamedelimi C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{fullhash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{fullhashraw}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{bibnamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authorbibnamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authornamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authorfullhash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authorfullhashraw}{ad085d57563a91bbe53422c59ebffdd2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Econometrics}
+      \field{number}{2}
+      \field{title}{Difference-in-Differences with Multiple Time Periods}
+      \field{volume}{225}
+      \field{year}{2021}
+      \field{pages}{200\bibrangedash 230}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1016/j.jeconom.2020.12.001
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.jeconom.2020.12.001
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.jeconom.2020.12.001
+      \endverb
+    \endentry
     \entry{CCB2026}{online}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=6c0f8f989973d981a19f035de5266566}{%
@@ -511,6 +558,56 @@
       \range{pages}{8}
       \verb{doi}
       \verb 10.1002/ajim.23239
+      \endverb
+    \endentry
+    \entry{deChaisemartin2023survey}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e476426fa9151355cd09327277745a1c}{%
+           family={Chaisemartin},
+           familyi={C\bibinitperiod},
+           given={Clément},
+           giveni={C\bibinitperiod},
+           givenun=0,
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=411f64c7f01ee0e2a0fdc31e20535454}{%
+           family={D'Haultf{œ}uille},
+           familyi={D\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{48bc62d3b1de71e129248df511640093}
+      \strng{fullhash}{48bc62d3b1de71e129248df511640093}
+      \strng{fullhashraw}{48bc62d3b1de71e129248df511640093}
+      \strng{bibnamehash}{48bc62d3b1de71e129248df511640093}
+      \strng{authorbibnamehash}{48bc62d3b1de71e129248df511640093}
+      \strng{authornamehash}{48bc62d3b1de71e129248df511640093}
+      \strng{authorfullhash}{48bc62d3b1de71e129248df511640093}
+      \strng{authorfullhashraw}{48bc62d3b1de71e129248df511640093}
+      \field{sortinit}{d}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Econometrics Journal}
+      \field{month}{9}
+      \field{number}{3}
+      \field{title}{Two-way fixed effects and differences-in-differences with heterogeneous treatment effects: a survey}
+      \field{volume}{26}
+      \field{year}{2023}
+      \field{pages}{C1\bibrangedash C30}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1093/ectj/utac017
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/ectj/utac017
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/ectj/utac017
       \endverb
     \endentry
     \entry{delgado2024}{report}{}{}
@@ -915,6 +1012,48 @@
       \verb{url}
       \verb https://www.valoraanalitik.com/tiendas-oxxo-abre-su-local-numero-600-en-colombia/
       \endverb
+    \endentry
+    \entry{GoodmanBacon2021}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=437b3fad5b4a40d10f45b4fc16dd7730}{%
+           family={Goodman-Bacon},
+           familyi={G\bibinithyphendelim B\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{fullhash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{fullhashraw}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{bibnamehash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{authorbibnamehash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{authornamehash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{authorfullhash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{authorfullhashraw}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Econometrics}
+      \field{number}{2}
+      \field{title}{Difference-in-differences with variation in treatment timing}
+      \field{volume}{225}
+      \field{year}{2021}
+      \field{pages}{254\bibrangedash 277}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1016/j.jeconom.2021.03.014
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.jeconom.2021.03.014
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.jeconom.2021.03.014
+      \endverb
+      \keyw{Difference-in-differences,Variation in treatment timing,Two-way fixed effects,Treatment effect heterogeneity}
     \endentry
     \entry{jacobs1961death}{book}{}{}
       \name{author}{1}{}{%
@@ -1384,6 +1523,52 @@
       \verb{url}
       \verb https://www.probogota.org/comunicacion_c/estas-son-las-localidades-mas-seguras-e-inseguras-de-bogota-segun-el-indice-integral-de-seguridad/
       \endverb
+    \endentry
+    \entry{RiosAvila_Callaway_SantAnna_2021_csdid_slides}{misc}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8780ffb8b2119e19b7327ec3426ba2a3}{%
+           family={Rios-Avila},
+           familyi={R\bibinithyphendelim A\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4a5a67b3788b4a3653a14d9ab03fba0e}{%
+           family={Callaway},
+           familyi={C\bibinitperiod},
+           given={Brantly},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f90144f1e670fa40bee88166593b00ea}{%
+           family={Sant'Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelimb H.\bibnamedelimi C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{2}{%
+        {Levy Economics Institute, University of Georgia,}%
+        {Vanderbilt University}%
+      }
+      \strng{namehash}{4d2d3e2bca3f23d146b02d8d2d361cf3}
+      \strng{fullhash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{fullhashraw}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{bibnamehash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{authorbibnamehash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{authornamehash}{4d2d3e2bca3f23d146b02d8d2d361cf3}
+      \strng{authorfullhash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{authorfullhashraw}{3cb58943e0d53b9ad6b3aebba9690672}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Presentation slides, Stata Conference}
+      \field{month}{8}
+      \field{note}{Available upon request or at the Stata Conference 2021 materials}
+      \field{title}{csdid: Difference-in-Differences with Multiple Time Periods in Stata}
+      \field{year}{2021}
     \endentry
     \entry{rodriguez2017ciudad}{article}{}{}
       \name{author}{1}{}{%
@@ -2067,6 +2252,53 @@
       \verb 10.1093/restud/rdaa074
       \endverb
     \endentry
+    \entry{Callaway_SantAnna_2021}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4a5a67b3788b4a3653a14d9ab03fba0e}{%
+           family={Callaway},
+           familyi={C\bibinitperiod},
+           given={Brantly},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f90144f1e670fa40bee88166593b00ea}{%
+           family={Sant'Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelimb H.\bibnamedelimi C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{fullhash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{fullhashraw}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{bibnamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authorbibnamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authornamehash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authorfullhash}{ad085d57563a91bbe53422c59ebffdd2}
+      \strng{authorfullhashraw}{ad085d57563a91bbe53422c59ebffdd2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Econometrics}
+      \field{number}{2}
+      \field{title}{Difference-in-Differences with Multiple Time Periods}
+      \field{volume}{225}
+      \field{year}{2021}
+      \field{pages}{200\bibrangedash 230}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1016/j.jeconom.2020.12.001
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.jeconom.2020.12.001
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.jeconom.2020.12.001
+      \endverb
+    \endentry
     \entry{CCB2026}{online}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=6c0f8f989973d981a19f035de5266566}{%
@@ -2223,6 +2455,56 @@
       \range{pages}{8}
       \verb{doi}
       \verb 10.1002/ajim.23239
+      \endverb
+    \endentry
+    \entry{deChaisemartin2023survey}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e476426fa9151355cd09327277745a1c}{%
+           family={Chaisemartin},
+           familyi={C\bibinitperiod},
+           given={Clément},
+           giveni={C\bibinitperiod},
+           givenun=0,
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+        {{un=0,uniquepart=base,hash=411f64c7f01ee0e2a0fdc31e20535454}{%
+           family={D'Haultf{œ}uille},
+           familyi={D\bibinitperiod},
+           given={Xavier},
+           giveni={X\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{48bc62d3b1de71e129248df511640093}
+      \strng{fullhash}{48bc62d3b1de71e129248df511640093}
+      \strng{fullhashraw}{48bc62d3b1de71e129248df511640093}
+      \strng{bibnamehash}{48bc62d3b1de71e129248df511640093}
+      \strng{authorbibnamehash}{48bc62d3b1de71e129248df511640093}
+      \strng{authornamehash}{48bc62d3b1de71e129248df511640093}
+      \strng{authorfullhash}{48bc62d3b1de71e129248df511640093}
+      \strng{authorfullhashraw}{48bc62d3b1de71e129248df511640093}
+      \field{sortinit}{d}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Econometrics Journal}
+      \field{month}{9}
+      \field{number}{3}
+      \field{title}{Two-way fixed effects and differences-in-differences with heterogeneous treatment effects: a survey}
+      \field{volume}{26}
+      \field{year}{2023}
+      \field{pages}{C1\bibrangedash C30}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1093/ectj/utac017
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1093/ectj/utac017
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1093/ectj/utac017
       \endverb
     \endentry
     \entry{delgado2024}{report}{}{}
@@ -2627,6 +2909,48 @@
       \verb{url}
       \verb https://www.valoraanalitik.com/tiendas-oxxo-abre-su-local-numero-600-en-colombia/
       \endverb
+    \endentry
+    \entry{GoodmanBacon2021}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=437b3fad5b4a40d10f45b4fc16dd7730}{%
+           family={Goodman-Bacon},
+           familyi={G\bibinithyphendelim B\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{fullhash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{fullhashraw}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{bibnamehash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{authorbibnamehash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{authornamehash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{authorfullhash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{authorfullhashraw}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Econometrics}
+      \field{number}{2}
+      \field{title}{Difference-in-differences with variation in treatment timing}
+      \field{volume}{225}
+      \field{year}{2021}
+      \field{pages}{254\bibrangedash 277}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1016/j.jeconom.2021.03.014
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1016/j.jeconom.2021.03.014
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1016/j.jeconom.2021.03.014
+      \endverb
+      \keyw{Difference-in-differences,Variation in treatment timing,Two-way fixed effects,Treatment effect heterogeneity}
     \endentry
     \entry{jacobs1961death}{book}{}{}
       \name{author}{1}{}{%
@@ -3096,6 +3420,52 @@
       \verb{url}
       \verb https://www.probogota.org/comunicacion_c/estas-son-las-localidades-mas-seguras-e-inseguras-de-bogota-segun-el-indice-integral-de-seguridad/
       \endverb
+    \endentry
+    \entry{RiosAvila_Callaway_SantAnna_2021_csdid_slides}{misc}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=8780ffb8b2119e19b7327ec3426ba2a3}{%
+           family={Rios-Avila},
+           familyi={R\bibinithyphendelim A\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4a5a67b3788b4a3653a14d9ab03fba0e}{%
+           family={Callaway},
+           familyi={C\bibinitperiod},
+           given={Brantly},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f90144f1e670fa40bee88166593b00ea}{%
+           family={Sant'Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelimb H.\bibnamedelimi C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{2}{%
+        {Levy Economics Institute, University of Georgia,}%
+        {Vanderbilt University}%
+      }
+      \strng{namehash}{4d2d3e2bca3f23d146b02d8d2d361cf3}
+      \strng{fullhash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{fullhashraw}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{bibnamehash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{authorbibnamehash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{authornamehash}{4d2d3e2bca3f23d146b02d8d2d361cf3}
+      \strng{authorfullhash}{3cb58943e0d53b9ad6b3aebba9690672}
+      \strng{authorfullhashraw}{3cb58943e0d53b9ad6b3aebba9690672}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Presentation slides, Stata Conference}
+      \field{month}{8}
+      \field{note}{Available upon request or at the Stata Conference 2021 materials}
+      \field{title}{csdid: Difference-in-Differences with Multiple Time Periods in Stata}
+      \field{year}{2021}
     \endentry
     \entry{rodriguez2017ciudad}{article}{}{}
       \name{author}{1}{}{%

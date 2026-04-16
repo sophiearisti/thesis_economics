@@ -2,6 +2,8 @@
 import geopandas as gpd
 import pandas as pd
 import sys
+from esda.smoothing import Empirical_Bayes
+import numpy as np
 
 # --- 1. Charge shapefiles ---
 zat_gdf = gpd.read_file("../../data/panel/zat/ZAT.shp")
@@ -43,6 +45,8 @@ def create_dependent_variable(final_geometry="upz", frequency="anual", panel_typ
         df_2015_2019 = pd.read_csv(file_path_2015_2019)
         df_2018_2024 = pd.read_csv(file_path_2018_2024)
         df = pd.concat([df_2015_2019, df_2018_2024], ignore_index=True)
+        
+        print(f"Datos combinados: {len(df)} registros.")
 
     else:
         # concatenar csvs de delitos_bogota_theft, delitos_bogota_homicide, delitos_bogota_sexual, delitos_bogota_theft_to_vehicle, delitos_bogota_theft_to_motorbike
@@ -211,7 +215,43 @@ def create_dependent_variable(final_geometry="upz", frequency="anual", panel_typ
             crime_panel = crime_panel.merge(population_df_gender, left_on=["AÑO", "codigo_upz"], right_on=["ANO", "COD_UPZ"], how="left")
             crime_panel = crime_panel.drop(columns=["ANO", "COD_UPZ"])
 
+        time_cols = [col for col in group_cols if col != geo_col]
             
+        # 1. Lista temporal para guardar los resultados de cada pedazo de tiempo
+        panel_list = []
+        
+        # 2. Procesamos bloque por bloque (ej: 2015-Q1, 2015-Q2...)
+        for period, group in crime_panel.groupby(time_cols):
+            
+            group = group.copy()
+            
+            # Definimos el denominador (población)
+            n = group["TOTAL_POBLACION"].fillna(0)
+            
+            if n.sum() > 0:
+                # Calculamos EB para el total
+                total_k = group[crime_vars].sum(axis=1)
+                group["crime_index_eb"] = Empirical_Bayes(total_k, n).r * 10000
+                
+                # Calculamos EB para cada delito individual
+                for crime in crime_vars:
+                    k = group[crime].fillna(0)
+                    # Aplicamos el suavizado de PySAL
+                    eb_result = Empirical_Bayes(k, n)
+                    group[f"{crime}_index_eb"] = eb_result.r * 10000
+            else:
+                # Si no hay población en este periodo, evitamos errores
+                group["crime_index_eb"] = np.nan
+                for crime in crime_vars:
+                    group[f"{crime}_index_eb"] = np.nan
+            
+            panel_list.append(group)
+        
+        # 3. CONCATENAMOS TODO: Aquí es donde vuelves a tener un solo panel
+        crime_panel = pd.concat(panel_list, ignore_index=True)   
+            
+            
+        
         crime_panel["crime_index"] = crime_panel[crime_vars].sum(axis=1) / crime_panel["TOTAL_POBLACION"] * 10000
                 
         #loop crime vars and create a new column for each one with the index of that crime (crime/population)
@@ -219,7 +259,6 @@ def create_dependent_variable(final_geometry="upz", frequency="anual", panel_typ
             crime_panel[f"{crime}_index"] = crime_panel[crime] / crime_panel["TOTAL_POBLACION"] * 10000
             
         # create gender variables
-        
         crime_panel["male_index"] = crime_panel["genero_MASCULINO"] / crime_panel["Hombre"] * 10000
         crime_panel["female_index"] = crime_panel["genero_FEMENINO"] / crime_panel["Mujer"] * 10000
         
@@ -341,6 +380,9 @@ def create_basic_panel(map=False, tienda_gdf = None, final_geometry = "upz", fre
     
     if panel_type == "2015_2019": 
         años= range(2015, 2019)  # years
+        
+    elif panel_type == "all":
+        años= range(2015, 2024)  # years
     else:
         años= range(2018, 2024)  # years
         

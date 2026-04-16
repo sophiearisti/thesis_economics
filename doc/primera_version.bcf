@@ -3128,6 +3128,13 @@
     <bcf:citekey order="40" intorder="2">Seong2022</bcf:citekey>
     <bcf:citekey order="41" intorder="1">delgado2024</bcf:citekey>
     <bcf:citekey order="41" intorder="2">jaramillo2021low</bcf:citekey>
+    <bcf:citekey order="42" intorder="1">deChaisemartin2023survey</bcf:citekey>
+    <bcf:citekey order="43" intorder="1">GoodmanBacon2021</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">GoodmanBacon2021</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">RiosAvila_Callaway_SantAnna_2021_csdid_slides</bcf:citekey>
+    <bcf:citekey order="45" intorder="2">Callaway_SantAnna_2021</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">RiosAvila_Callaway_SantAnna_2021_csdid_slides</bcf:citekey>
+    <bcf:citekey order="46" intorder="2">Callaway_SantAnna_2021</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

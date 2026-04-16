@@ -9,10 +9,13 @@ global dir_dofile "$global_dir/code" //dirección de los dofiles
 global dir_dofile_controls_analysis "$dir_dofile/controls_maps_panel"
 global dir_BDD_panel "$global_dir/data/panel"
 
-global panel 1
+global panel 0
 
 if $panel == 1 {
     global doc_panel "$dir_BDD_panel/panel_final_upz_trimestral.csv"
+}
+else if $panel == 0 {
+	    global doc_panel "$dir_BDD_panel/panel_final_all_upz_trimestral.csv"
 }
 else {
     global doc_panel "$dir_BDD_panel/panel_final_clean_new_upz_trimestral.csv"
@@ -59,6 +62,9 @@ global controles poblacion_urbana_2009 personas_por_localidad_2007 personas_por_
 if $panel == 1 {
 	local anos 2015 2016 2017 2018
 } 
+else if $panel == 0 {
+	local anos 2015 2016 2017 2018 2019 2020 2021 2022 2023
+}
 else {
 	local anos 2018 2019 2020 2021 2022 2023
 }
@@ -102,6 +108,9 @@ global staggered_controls dummy_jb dummy_d1 dummy_ara cantidad_jb cantidad_d1 ca
 if $panel == 1 {
 	local anos 2015 2016 2017 2018
 } 
+else if $panel == 0 {
+	local anos 2015 2016 2017 2018 2019 2020 2021 2022 2023
+}
 else {
 	local anos 2018 2019 2020 2021 2022 2023
 }
@@ -197,16 +206,15 @@ cd "$dir_dif_medias/dep_vars"
 *TABLA DE VAR DEP POR ANO POR TRATAMIENTO STAGGERED PREGUNTAR
 *por tratamiento (presencia oxxo)
 *********************************************************
-if $panel == 1 {
-	global depVar theft_to_vehicle_index theft_to_vehicle theft_to_people_index crime_index theft_to_motorbike_index theft_to_motorbike sexual_index homicide_index male_index female_index
-}
-else {
-	global depVar theft_to_people_index male_index female_index
-}
+
+global depVar theft_to_vehicle_index theft_to_vehicle theft_to_people_index crime_index theft_to_motorbike_index theft_to_motorbike sexual_index homicide_index male_index female_index
 
 if $panel== 1 {
 	local anos 2015 2016 2017 2018
 } 
+else if $panel == 0 {
+	local anos 2015 2016 2017 2018 2019 2020 2021 2022 2023
+}
 else {
 	local anos 2018 2019 2020 2021 2022 2023
 }

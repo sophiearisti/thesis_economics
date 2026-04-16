@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage{graphicx} % Required for inserting images
 \usepackage{float} % For [H] float placement
 \usepackage{booktabs}
@@ -12,6 +12,7 @@
 \usepackage[most]{tcolorbox} % paquete para cuadros
 \usepackage{xcolor}
 \usepackage{setspace}
+\usepackage{amssymb}
 
 %for citations
 \usepackage{csquotes}       % Requerido por biblatex para manejar comillas según el estilo
@@ -26,7 +27,7 @@
 %para tablas largas
 \usepackage{longtable}
 
-
+\onehalfspacing
 \title{Cuando OXXO llega a la cuadra: }
 \author{Sophia Aristizábal Flórez}
 \date{\small{\url{https://github.com/sophiearisti/proyecto_econometria_avanzada_real.git}}}
@@ -90,7 +91,6 @@ This represents an increment of over 368\% in only five years. Figure~\ref{fig:E
     \caption{
         \textbf{Yearly evolution of the number of OXXOs in Bogotá} 
         \newline
-        \footnotesize{\textit{Note:} BLAH BLAH }
      }   
     \label{fig:EVOLUTION_OXXO}
 \end{figure}
@@ -147,8 +147,16 @@ Currently, the only areas without OXXO establishments are in the far southern re
         \caption{2025}
         \label{fig:panelF1}
     \end{subfigure}
+
+    \vspace{0.3cm} % Vertical space between rows
+
+    \begin{subfigure}[b]{0.3\textwidth} 
+        \includegraphics[width=\linewidth]{figs_oxxo_maps/legend.png}
+        \label{fig:legend}
+    \end{subfigure}
     
     \caption{\textbf{Evolution of the presence of OXXO by UPZ}}
+    \footnotesize{\textit{Note:} This map only indicates which UPZs have OXXOs, it does not consider the number of locations present in each Unit}
     \label{fig:fourpanelOXXO_evolution_UPZ}
 \end{figure}
 
@@ -165,7 +173,6 @@ it shows that by 2025, OXXO locations tend to group along these major transport 
     \caption{
         \textbf{Bogota's OXXO stores, Transmilenio stations and main roads in 2025} 
         \newline
-        \footnotesize{\textit{Note:} BLAH BLAH }
      }   
     \label{fig:oxxo_transmilenio_vias}
 \end{figure}
@@ -195,13 +202,13 @@ Other characteristics that these zones have are high pedestrian throughput, the 
     \centering
     % Top row
     \begin{subfigure}[b]{0.3\textwidth} 
-        \includegraphics[width=\linewidth]{figs_dep_maps/mapa_upz_gpkg_2015_2018_2015_theft_to_people_index.png}
+        \includegraphics[width=\linewidth]{figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png}
         \caption{2015}
         \label{fig:panelA2}
     \end{subfigure}
     \hspace{0.5cm} 
     \begin{subfigure}[b]{0.3\textwidth} 
-        \includegraphics[width=\linewidth]{figs_dep_maps/mapa_upz_gpkg_2015_2018_2017_theft_to_people_index.png}
+        \includegraphics[width=\linewidth]{figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png}
         \caption{2017}
         \label{fig:panelB2}
     \end{subfigure} % <--- THIS WAS MISSING
@@ -210,19 +217,23 @@ Other characteristics that these zones have are high pedestrian throughput, the 
     
     % Bottom row
     \begin{subfigure}[b]{0.3\textwidth} 
-        \includegraphics[width=\linewidth]{figs_dep_maps/mapa_upz_gpkg_2018_2023_2019_theft_to_people_index.png}
+        \includegraphics[width=\linewidth]{figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_people_index_eb_edited.png}
         \caption{2019}
         \label{fig:panelC2} % Fixed label sequence (A, B, C, D)
     \end{subfigure}
     \hspace{0.5cm}
     \begin{subfigure}[b]{0.3\textwidth} 
-        \includegraphics[width=\linewidth]{figs_dep_maps/mapa_upz_gpkg_2018_2023_2021_theft_to_people_index.png}
+        \includegraphics[width=\linewidth]{figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_people_index_eb_edited.png}
         \caption{2021}
         \label{fig:panelD2}
     \end{subfigure}
     
     \caption{\textbf{Evolution of theft to people rates by UPZ}}
     \label{fig:fourpanelCrime}
+    \footnotesize{\textit{Note:} The theft rate per 10,000 inhabitants for each unit was calculated using rate smoothing techniques (Empirical Bayes smoothing).
+    This approach aimed to reduce the influence of outlier UPZs that had remarkably high rates due to their small populations rather than high theft activity.
+    Still,after this transformation, I had to exclude two UPZs and set their rates to zero, as they continued to show extreme values that overshadowed the crime activity of other areas. 
+    In fact, one UPZ is an airport, and the other is mainly rural and contains many storage facilities instead of dwellings.}
 \end{figure}
 
 Factors that favor crime clustering must be taken into account because if OXXO stores also locate in inherent high crime areas, it will be important to evaluate whether OXXO efectively causes an increment in crime or if both OXXO and criminals are simply attracted to the same high-activity "nodes."
@@ -343,8 +354,68 @@ And with Mapas-Bogotá I obtained the fixed variable socioeocnomic and environme
 
 \section{Empirical strategy}
 
+This research explores with two main econometric models the causal effect of the of OXXO openings on local crime activity in Bogotá. The first one I used is TWFE. 
+This econometric strategy takes into account that the the arrival of OXXO’s occurs in a staggered manner. 
+Additionally, it inherently controls for fixed effects for unit (UPZ) and time. 
+The former is useful for capturing time-invariant unobserved characteristics of each UPZ (such as geographic location, historical infrastructure or fixed socieconomic and urban characteristics during the period of analysis), while the latter absorbs common shocks that affect all units simultaneously (such as city-wide security policies or macroeconomic fluctuations). 
+Although TWFE is and adequate method for estimating the average treatement effect (ATT) of OXXO on crime activity, two identification assumptions are needed to prevent bias. 
+This ones will be considered later, but let us first introduce the basic regression form of TWFE:
+
+\begin{equation}
+Y_{i,t} = \alpha_i + \alpha_t  +\beta^{twfe} D_{i,t} + \varepsilon_{i}
+\label{eq:twfe}
+\end{equation}
+
+Where $ Y_{i,t} $ represents the crime rate for UPZ $i$ in quarter $t$. 
+This rate corresponds to either a specific crime category or the aggregate of all crimes analyzed in this study. 
+$D_{i,t}$ is a binary indicator that equals one if UPZ $i$  has at least one OXXO store in quarter $t$ , and zero otherwise. 
+Furthermore, as Figure \hl{XXXX} suggests that intensity of treatment may be a factor that influences crime. 
+Section \ref{sec:Results} also evaluated $D_{i,t}$ as the number of OXXO establishments that an UPZ has at a certain quarter. 
+Finally, $\alpha_i$ and  $\alpha_t$ are the unit and time fixed effects respectively.\\ 
+
+A critical identification assumption for the TWFE estimator is the homogeneity of treatment effects. 
+This implies that these effects must be constant among treatment cohorts and over time \parencite{deChaisemartin2023survey}. 
+This assumption may be violated if treatment effects vary based on UPZs’ characteristics or if the impact of an OXXO opening on crime evolves as the store becomes established in the area. 
+Consequently, to diagnose the potential bias arising from these heterogeneities, I employ the Goodman-Bacon decomposition \parencite{GoodmanBacon2021}.  
+This theorem decompoeses the $\beta^{twfe}$ as a weighted average of all possible 2×2 difference-in-differences comparisons among cohorts, and the primary concern in this decomposition is to avoid having negative weights as they indicate that the estimator may be biased from heterogeneous treatment effects \parencite{GoodmanBacon2021}.\\
+
+Parallel trends is the other condition to guarantee an unbiased ATT, as it ensures that, in the absence of treatment, the average outcomes of the treated and control groups would have followed the same trajectory over time. 
+To evaluate the validity of this assumption, I implement an Event Study design. This model requires no anticipation to treatment, and in this context it is highly unlikely that perpetrators or residents altered their behavior in expectation of an OXXO opening, as these commercial developments are typically not publicized far enough in advance to influence local criminal dynamics beforehand. 
+The Events Study is estimated by using the following equation:
+
+\begin{equation}
+Y_{i,t} = \alpha_i + \alpha_t 
++ \sum_{k=-K}^{-2} \gamma^{lead}_k D^k_{i,t} 
++ \sum_{k=0}^{L} \gamma^{lag}_k D^k_{i,t} 
++ \varepsilon_{i,t}
+\label{eq:eventstudy}
+\end{equation}
+
+Equation\eqref{eq:eventstudy} allows to analyze the significance of the coefficients  $\gamma^{lead}_k$  and suggests the existence of parallel trends before the arrival of OXXO. 
+Additionally, the coefficients $\gamma^{lag}_k$ reflect the temporal dynamics of the impact after the treatment.\\
+
+Finally, for robustness purposes, I will also estimate the Callaway \& Sant’Anna (CS) model. This approach accounts for treatment effect heterogeneity by estimating ATTs by cohort and period, subsequently combining these effects through a weighted average \parencite{RiosAvila_Callaway_SantAnna_2021_csdid_slides,Callaway_SantAnna_2021}. o achieve this, the model utilizes the following doubly robust estimator for the ATT of each cohort $g$ at time $t$:
+
+\begin{equation}
+ATT(g, t) = \mathbb{E} \left[ \left( \frac{G_g}{\mathbb{E}[G_g]} - \frac{\frac{p_{g,t}(X)(1 - D_t)}{1 - p_{g,t}(X)}}{\mathbb{E} \left[ \frac{p_{g,t}(X)(1 - D_t)}{1 - p_{g,t}(X)} \right]} \right) (Y_t - Y_{g-1}) \right]
+\end{equation}
+
+Where $t$ is a particular time period, $ G_g$ is a binary indicator for whether an observation belongs to cohort $g$, $ D_t $ treatment status at time $t$, and  $(1 - D_t)$ identifies observations that have not yet been treated, serving as the control group. 
+Additionally, the approach I chose uses Inverse Probability Weighting (IPW) to assign greater weight to control observations that more closely resemble the treated cohort $G_g$. 
+
+Subsequently, to aggregate all $ATT(g,t)$ estimates into a single summary parameter, the authors propose the following aggregation strategy:
+
+\begin{equation} 
+\theta = \sum_{g \in \mathcal{G}} \sum_{t=2}^{\mathcal{T}} w(g, t) \cdot ATT(g, t)
+\end{equation}
+
+Where $w(g,t)$ represents the weights determined by the researcher. 
+In this analysis, I employ a simple averaging scheme mwhere w(g,t) is the same for all treated periods. 
+The objective of this comparison is to determine if the Callaway \& Sant’Anna (CS) estimates an Events Studies align with the Two-Way Fixed Effects (TWFE) results. 
+A similar behavior between the two models would reinforce the validity of the TWFE estimates and suggest that the possible bias of heterogeneous effects is not a preoccupation \parencite{RiosAvila_Callaway_SantAnna_2021_csdid_slides,Callaway_SantAnna_2021}.
 
 \section{Results}
+\label{sec:Results}
 
 \section{Discussion}
 

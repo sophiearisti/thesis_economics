@@ -9,10 +9,13 @@ global dir_dofile "$global_dir/code" //dirección de los dofiles
 global dir_dofile_controls_analysis "$dir_dofile/controls_maps_panel"
 global dir_BDD_panel "$global_dir/data/panel"
 
-global panel 2
+global panel 0
 
 if $panel == 1 {
     global doc_panel "$dir_BDD_panel/panel_final_upz_trimestral.csv"
+}
+else if $panel == 0 {
+	    global doc_panel "$dir_BDD_panel/panel_final_all_upz_trimestral.csv"
 }
 else {
     global doc_panel "$dir_BDD_panel/panel_final_clean_new_upz_trimestral.csv"
@@ -70,6 +73,33 @@ if $panel == 2 {
 	drop if codigo_upz == 13
 	drop if codigo_upz == 99
 }
+else if $panel == 0 {
+		* Crear una variable de tiempo trimestral
+	gen tq = yq(year, quarter)
+	format tq %tq
+
+	*borrar duplicados
+	duplicates drop
+
+	* Declarar el panel
+	xtset codigo_upz tq
+
+	* Calcular la diferencia con el trimestre anterior
+	* Asumiendo que tu variable se llama 'cant_oxxo'
+	gen diff_oxxo = cantidad_oxxo - L.cantidad_oxxo
+
+	* Crear una bandera (flag) para las UPZ que tuvieron una disminución
+	gen disminuyo = 1 if diff_oxxo < 0 & !missing(diff_oxxo)
+
+	* Listar las UPZ, el periodo y el cambio para los casos donde disminuyó
+	list codigo_upz year quarter cantidad_oxxo diff_oxxo if disminuyo == 1
+
+	//upz 99 y 13
+	drop if codigo_upz == 13
+	drop if codigo_upz == 99
+	drop if codigo_upz == 108
+
+}
 else {
     drop if codigo_upz == 108
 }
@@ -82,14 +112,14 @@ cd "$dir_controls_results"
 
 *ssc install outreg2, replace
 
-if $panel == 1 {
+if $panel == 1 | $panel == 0 {
 	global dep_var crime_index theft_to_vehicle_index theft_to_vehicle theft_to_people_index theft_to_motorbike_index theft_to_motorbike sexual_index homicide_index male_index female_index
 }
 else {
     global dep_var crime_index theft_to_people_index male_index female_index
 }
 
-if $panel == 1 {
+if $panel == 1 | $panel == 0 {
 	global day_controls dia_viernes dia_sábado dia_miércoles dia_martes dia_lunes dia_jueves dia_domingo
 }
 
@@ -121,7 +151,7 @@ local first = 1
 
 foreach y of global dep_var {
 
-    reg `y' dummy_oxxo
+    //reg `y' dummy_oxxo
 
     if `first' == 1 {
 		reghdfe `y' dummy_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
@@ -473,12 +503,12 @@ preserve
     gen rel_time = tq - first_treat
 
 	* Leads (antes del tratamiento)
-	forvalues k = 2/24 {
+	forvalues k = 2/40 {
 		gen lead`k' = (rel_time == -`k')
 	}
 
 	* Lags (después del tratamiento)
-	forvalues k = 0/24 {
+	forvalues k = 0/40 {
 		gen lag`k' = (rel_time == `k')
 	}
 	
@@ -486,12 +516,12 @@ preserve
 	local evlist
 
 	* leads (-15 a -2)
-	forvalues k = 24(-1)2 {
+	forvalues k = 40(-1)2 {
 		local evlist `evlist' lead`k'
 	}
 
 	* lags (0 a 15)
-	forvalues k = 0/24 {
+	forvalues k = 0/40 {
 		local evlist `evlist' lag`k'
 	}
 
@@ -533,12 +563,12 @@ preserve
     gen rel_time = tq - first_treat
 
 	* Leads (antes del tratamiento)
-	forvalues k = 2/24 {
+	forvalues k = 2/40 {
 		gen lead`k' = (rel_time == -`k')
 	}
 
 	* Lags (después del tratamiento)
-	forvalues k = 0/24 {
+	forvalues k = 0/40 {
 		gen lag`k' = (rel_time == `k')
 	}
 	
@@ -546,12 +576,12 @@ preserve
 	local evlist
 
 	* leads (-15 a -2)
-	forvalues k = 24(-1)2 {
+	forvalues k = 40(-1)2 {
 		local evlist `evlist' lead`k'
 	}
 
 	* lags (0 a 15)
-	forvalues k = 0/24 {
+	forvalues k = 0/40 {
 		local evlist `evlist' lag`k'
 	}
 

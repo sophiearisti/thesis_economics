@@ -298,6 +298,8 @@ preserve
 
 	}
 	
+	estat all
+	
 	* Revisar los efectos promedio
 	estat pretrend
 
@@ -396,7 +398,7 @@ preserve
 	replace first_treat = 0 if missing(first_treat)  // 0 para codigo_upzs nunca tratadas
 
 	* Ejecutar el método de Callaway & Sant'Anna
-	csdid crime_index, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz)
+	csdid crime_index, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz) notyet
 
 	* Revisar los efectos promedio
 	estat pretrend

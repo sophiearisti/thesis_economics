@@ -48,7 +48,27 @@ destring icv_2007_localidad, replace
 
 gen accesibilidad_arterial_dummy = (accesibilidad_arterial>0)
 
+gen log_expenditure = log(gasto_promedio_mensual_2007_loca)
+
 *ssc install bacondecomp, replace
+
+//drop upz that are outliers
+
+drop if codigo_upz == 63 | codigo_upz == 117
+
+//ver si todos las UPZ estan todos los anos
+
+egen tiempo_id = group(year quarter)
+
+duplicates report codigo_upz tiempo_id
+
+duplicates list codigo_upz tiempo_id
+
+duplicates drop codigo_upz tiempo_id, force
+
+xtset codigo_upz tiempo_id
+
+xtdescribe
 
 cd "$dir_dif_medias/controls_vars"
 
@@ -56,7 +76,7 @@ cd "$dir_dif_medias/controls_vars"
 
 //se hace una tabla de diferencia de medias con los baselines entre tratados y nunca tratados
 
-global controles poblacion_urbana_2009 personas_por_localidad_2007 personas_por_hogar_2007_localida num_est_transmi icv_2007_localidad gasto_promedio_mensual_2007_loca estrato_mean acceso_transmi accesibilidad_arterial accesibilidad_arterial_dummy
+global controles poblacion_urbana_2009 personas_por_localidad_2007 personas_por_hogar_2007_localida log_expenditure num_est_transmi icv_2007_localidad estrato_mean acceso_transmi accesibilidad_arterial accesibilidad_arterial_dummy
 
 //recorrer por anos y trimestre
 if $panel == 1 {

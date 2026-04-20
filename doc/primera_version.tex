@@ -13,6 +13,7 @@
 \usepackage{xcolor}
 \usepackage{setspace}
 \usepackage{amssymb}
+\usepackage{booktabs}
 
 %for citations
 \usepackage{csquotes}       % Requerido por biblatex para manejar comillas según el estilo
@@ -28,9 +29,9 @@
 \usepackage{longtable}
 
 \onehalfspacing
-\title{Cuando OXXO llega a la cuadra: }
+\title{When OXXO Moves Into the Block: An Econometric Analysis of the Impact of OXXO on Criminal Activity in Bogotá}
 \author{Sophia Aristizábal Flórez}
-\date{\small{\url{https://github.com/sophiearisti/proyecto_econometria_avanzada_real.git}}}
+\date{\small{\url{https://github.com/sophiearisti/thesis_economics.git}}}
 
 
 \begin{document}
@@ -66,13 +67,9 @@ Despite extensive research on urban crime in Bogotá, no study has systematicall
 
 In the next section I briefly introduce OXXO’s expansion across Bogotá, and the city’s crime rates over the years. Then, in Section 3 I present the related literature about the spatial nexus of crime and convenience stores. In Sections 4 and 5 I describe the data sources used and the general descriptive statistics. After that I explain in Section 6 the econometric models used and in Section 7 I show the results obtained. In Section 8 I include some robustness checks related with the unit of analysis used, the control and treatment groups, and the specification of some variables. Finally, Section 9 discusses probable mechanisms that may influence the results obtained.
 
-hola
 \section{Background}
 \subsection{The expansion of OXXO in Bogotá}
-OXXO is one of the most prominent convenience store brands in Latin America, and since its arrival to Colombia in 2009 it has consolidated itself as one of the main convenience store chains in the country. 
-Although OXXO has been operating in Colombia for almost 17 years, it only gained momentum after the pandemic. 
-In fact, in Bogota the number of establishments skyrocketed from 82 in 2020 to 384 in 2025. 
-This represents an increment of over 368\% in only five years. Figure~\ref{fig:EVOLUTION_OXXO} depicts its accelerated growth in Bogotá, as it shows the number of OXXO locations in the capital by year since its arrival.\\
+Although OXXO has been operating in Colombia for almost 17 years (since 2009), it only consolidated itself as one of the main convenience store chains in the country after the pandemic \parencite{ElEconomista2026}. In fact, in Bogota the number of establishments skyrocketed from 82 in 2020 to 384 in 2025, this represents an increment of over 368\% in only five years. Figure~\ref{fig:EVOLUTION_OXXO} depicts this accelerated growth in Bogotá, as it shows the number of OXXO locations in the capital by year since its arrival. \\
 
 \begin{figure}
     \centering
@@ -84,16 +81,9 @@ This represents an increment of over 368\% in only five years. Figure~\ref{fig:E
     \label{fig:EVOLUTION_OXXO}
 \end{figure}
 
-OXXO’s main objective is to be part of people’s lifestyles by offering an ample variety of products and services that can be useful and practical for their daily lives \parencite{oxxo_quienes_somos}. 
-Another distinctive characteristic is that 95\% of its establishments function in a 24-hour format \parencite{oxxo_faqs}, providing a competitive advantage by being the primary option of consumers whenever they need to satisfy spontaneous consumption needs, regardless of the hour. 
-These well-defined competitive objectives and inherent brand characteristics have allowed OXXO to proliferate rapidly throughout Bogotá, where it has been widely embraced by the local population.\\
+OXXO’s main objective is “to be part of people’s lifestyles by offering an ample variety of products and services that can be useful and practical for their daily lives” \parencite{oxxo_quienes_somos}. Another distinctive characteristic is that 95\% of its establishments function in a 24-hour format \parencite{oxxo_faqs}, providing a competitive advantage by being the primary option of consumers whenever they need to satisfy spontaneous consumption needs. These competitive objectives and inherent brand characteristics have allowed OXXO to proliferate rapidly throughout Bogotá, where it has been widely embraced by the local population \parencite{LaRepublica2026}.\\
 
-In line with this strategy, this modern retail chain began its expansion in the northern part of the city, later expanding throughout the eastern region. 
-This strategic behavior responds to the inherent characteristics of the northeastern neighborhoods of Bogotá, where a higher concentration of formal employment and high-income residential clusters provide an ideal environment for the convenience store model  \hl{(citation)}.\\
-
-Figure~\ref{fig:fourpanelOXXO_evolution_UPZ} presents this evolution, and shows that now, OXXO is present in almost 70\% of all the city´s Zonal Planning Units (UPZ). 
-UPZs are analysis units that group neighborhoods based on their socioeconomic stratification, commercial, land use, and housing characteristics, and living conditions of their inhabitants \parencite{alcaldia_bogota_upz}. 
-Currently, the only areas without OXXO establishments are in the far southern reaches of Bogotá, which correspods to UPZs with low levels of economic performance, socioeconomic stratification, urban transport connection, and are blocks that continue to relly heavily in traditional neighborhood stores \hl{(citation)}.\\
+This OXXO proliferation began in the northern part of the city, later spreading throughout the eastern region. This strategic behavior responds to the inherent characteristics of the northeastern neighborhoods of Bogotá, where a higher concentration of formal employment and high-income residential clusters provide an ideal environment for the convenience store model hl{(citation)}. Figure~\ref{fig:fourpanelOXXO_evolution_UPZ} presents this evolution, and shows that now OXXO is present in almost 70\% of all the city´s Zonal Planning Units (UPZ). UPZs are analysis units that group neighborhoods based on their socioeconomic stratification, commercial, land use, and housing characteristics, and living conditions of their inhabitants \parencite{alcaldia_bogota_upz}. Currently, the only areas without OXXO establishments are in the far southern reaches of Bogotá, which correspods to UPZs with low levels of economic performance, socioeconomic stratification, urban transport connection, and are blocks that continue to relly heavily in traditional neighborhood stores hl{(citation)}. \\
 
 \begin{figure}
     \centering
@@ -149,12 +139,7 @@ Currently, the only areas without OXXO establishments are in the far southern re
     \label{fig:fourpanelOXXO_evolution_UPZ}
 \end{figure}
 
-As noted, OXXO’s stores are not randomly located. 
-They are centrally administered by FEMSA (meaning the brand does not operate under a franchise model) with the purpose of standardizing processes, logistics, services, and products \parencite{oxxo_faqs}. 
-This means that each location is carefully planned to respond to the overall interests of the company. In fact, if we attentively analyze how these establishments are clustered around Bogotá, we can identify that they tend to localize in areas where there is higher traffic and spatial accessibility. This helps OXXO to maximize its market reach and ensure high levels of consumer visibility.\\
-
-Figure~\ref{fig:oxxo_transmilenio_vias} graphically demonstrates this correlation by plotting the city’s arterial roads, main avenues, and Transmilenio stations (Bogotá's Bus Rapid Transit system); 
-it shows that by 2025, OXXO locations tend to group along these major transport corridors.\\
+OXXO’s stores are centrally administered by FEMSA with the purpose of standardizing processes, logistics, services, and products \parencite{oxxo_faqs}. This means that each location is carefully planned to respond to the overall interests of the company. In fact, if we attentively analyze how these establishments are clustered around Bogotá, we can identify that they tend to localize in areas where there is higher traffic and spatial accessibility. This helps OXXO to maximize its market reach and ensure high levels of consumer visibility. Figure~\ref{fig:oxxo_transmilenio_vias} graphically tries to show this correlation by plotting the city’s arterial roads, main avenues, and Transmilenio stations (Bogotá's Bus Rapid Transit system); it shows that by 2025, OXXO locations tend to group along these major transport corridors. Also, in section~\ref{sec:Statistics} I show the statistical positive  correlation of  these variables and OXXO locations.\\
 
 \begin{figure} [H]
     \centering
@@ -166,26 +151,15 @@ it shows that by 2025, OXXO locations tend to group along these major transport 
     \label{fig:oxxo_transmilenio_vias}
 \end{figure}
 
-With these in mind, it is reasonable to think there may be a correlation between urban crime and modern convenience stores chains, especially in the case of OXXO. 
-Locating in areas with high foot traffic means more potential targets for crimes such as robbery or assault. 
-Also, due to their 24-hour format and alcohol sales during the night, OXXO locations serve as  informal gathering points that may escalate into conflicts or provide opportunities for illicit activities. 
-Additionally, locations near major transit areas and public transport stops increase accessibility for both legitimate customers and offenders \parencite{Dugato2026, shin2024dollar, feng2019aggravating}.
+Considering the location strategies, spatial expansion, and neighborhood characteristics associated with OXXO stores, it is reasonable to hypothesize a potential correlation between their presence and patterns of urban crime.	 Their concentration in high foot-traffic areas increases the availability of potential targets for crimes such as robbery or assault \parencite{Dugato2026, shin2024dollar}. Moreover, due to their 24-hour format and alcohol sales during the night, OXXO locations may serve as informal gathering points which can, under certain conditions, escalate into conflicts or provide opportunities for illicit activities \parencite{Dugato2026}.\\
 
 \subsection{Criminality in Bogotá}
 
-Between the 80s and 90s Bogota was recognized as one of the most insecure cities of Colombia, in fact, in 1991 it reached an annual crime rate of 1,287 crimes for each 100 thousand inhabitants \parencite{rodriguez2017ciudad}. 
-During this time the capital lived an upswing of narcoterrorism and the assassination of political leaders. However, at the end of the 90s and beginning of the 2000s, crime started to decrease; for example, between 1993 and 2002 Bogotá saw an estimated 65\% decrease in the homicide rate, while robbery fell by about 33\%. 
-This shift was driven by citizen culture programs, large-scale urban renewal projects, and robust institutional reforms implemented by the majors of this period \parencite{Sanchez2003, mockus2012building}. 
-Finally, in past years urban crime has shown resistance to keep declining. After the 2019 covid pandemic criminality had a significant rebound, with personal theft surpassing pre-pandemic levels. By 2025, despite institutional efforts, the city's crime rates have shown resistance to reduce, particularly regarding homicides and robberies hl{(citation)}.\\
+During the 1980s and 1990s, Bogotá was among the most unsafe cities in the country, experiencing a surge in narcoterrorism and the assassination of political leaders; in fact, in 1991, it reached a rate of 1,287 crimes per 100,000 inhabitants, exceeding that of Medellín (1,160) and Cali (537) \parencite{rodriguez2017ciudad}. However, at the end of the 90s and beginning of the 2000s, crime started to decrease; for example, between 1993 and 2002 Bogotá saw an estimated 65\% decrease in the homicide rate, while robbery fell by about 33\%. This shift was driven by citizen culture programs, large-scale urban renewal projects, and robust institutional reforms implemented by the majors of this period \parencite{Sanchez2003, mockus2012building}. In recent years, however, urban crime has shown signs of stagnation, with declining trends slowing or reversing. Following the 2019 covid pandemic criminality had a significant rebound, with personal theft surpassing pre-pandemic levels. By 2025, despite continued institutional efforts, crime rates in Bogotá have proven difficult to reduce, particularly in relation to homicides and robberies \parencite{(add source)}.\\
 
-Currently, Bogota’s crime, as any other city, clusters in specific zones. 
-The most insecure Localities (a unit of territorial division that gathers many UPZ) are located in the southeastern region of Bogota, wich correlates with a high presence of criminal organizations, informality, and deficencies of human development \parencite{probogota2024indice}. 
-However, this concentration does not imply that all crime categories peak in the same areas. 
-While homicide rates tend to follow this general rule in the city, personal theft exhibits a distinct geographic distribution, primarily clustering in the city's northeastern sector \parencite{probogota2022informe}.\\ 
+Currently, crime in Bogotá, as in most cities, tends to cluster in specific zones. The most insecure Localities (a unit of territorial division that gathers many UPZ) are primarily located in the southeastern region of the city, a pattern associated with the presence of criminal organizations, high levels of informality, and deficiencies in human development \parencite{probogota2024indice}. However, this spatial concentration does not imply that all categories of crime peak in the same areas. While homicide rates generally follow this pattern, personal theft exhibits a distinct geographic distribution, with higher concentrations in the northeastern sector of the city \parencite{probogota2022informe}.\\ 
 
-Figure~\ref{fig:oxxo_transmilenio_vias} shows this behaviour as it displays how personal theft rates distribute throughout Bogotá´s UPZs over the years. 
-These maps also highlight that between 2015 and 2021 (and even later, as it can be noted in ProBogota’s annual security informs hl{(PIE DE PAGINA)}) this tendency has not drastically changed, meaning that there are environmental characteristics that keep favoring robberies or attracting offenders. 
-Other characteristics that these zones have are high pedestrian throughput, the density of commercial land use, and the proximity to the city's main transit arteries.\\ 
+Figure~\ref{fig:fourpanelCrime} illustrates this behaviour as it displays how personal theft rates distribute throughout Bogotá´s UPZs over the years. These maps also highlight that between 2015 and 2021 (and even later, as it can be noted in ProBogota’s annual security informs (\footnote{\hl{PIE DE PAGINA)}}) this tendency has not drastically changed. This persistence suggests that there are environmental characteristics that keep favoring robberies or attracting offenders. Among these characteristics are high pedestrian traffic, a dense concentration of commercial land use, and proximity to the city’s main transit corridors.\\
 
 \begin{figure}
     \centering
@@ -225,16 +199,11 @@ Other characteristics that these zones have are high pedestrian throughput, the 
     In fact, one UPZ is an airport, and the other is mainly rural and contains many storage facilities instead of dwellings.}
 \end{figure}
 
-Factors that favor crime clustering must be taken into account because if OXXO stores also locate in inherent high crime areas, it will be important to evaluate whether OXXO efectively causes an increment in crime or if both OXXO and criminals are simply attracted to the same high-activity "nodes."
+It is precisely within these high-activity environments that OXXO has focused its expansion. Consequently, for this research, factors that favor crime clustering must be taken into account. If OXXO stores tend to locate in inherently high-crime areas, it becomes essential to assess whether their presence contributes to an increase in crime or whether both the stores and offenders are are simply drawn to the same high-activity ‘nodes.’  In this sense, OXXO locations may function either as crime generators or as crime attractors.
 
 \section{Related Literature}
 
-In the context of urban economics, spatial econometrics and crime literature, various studies have explored how built environment features and infrastructure shape crime activity in cities. A number of empirical analyses have investigated this by exploring the causal impact of urban public transit on crime. 
-\cite{ijgi10100632}, for example, assessed the impact of two new subway lines implemented in 2017 in ZG city, China, on thefts in the surrounding areas. 
-By employing a Difference-in-Differences (DiD) framework, they found that in the short run, theft increased by 15\%.
-Others, on the other hand, have ventured to explore the paper of new urban policies and infrastructure interventions on this topic. 
-\cite{dominguez2022crimetime} paper is one case, as they study the causal effect of ambient light on crime in Santiago, Chile, by using the "Daylight Saving Time" policy as a natural experiment. Due to this policy, they could find that an increase of one hour of ambient light exposure between 7 and 9 reduced thefts by 30\%. 
-\hl{These studies empahsize on XXXXX (give emphasis on a crime literature concept)}\\ 
+In the context of urban economics, spatial econometrics and crime literature, various studies have explored how built environment features and infrastructure shape crime activity in cities. A number of empirical analyses have investigated this by exploring the causal impact of urban public transit on crime.  \cite{ijgi10100632}, for example, assessed the impact of two new subway lines implemented in 2017 in ZG city, China, on thefts in the surrounding areas. By employing a Difference-in-Differences (DiD) framework, they found that in the short run, theft increased by 15\%. Others, on the other hand, have ventured to explore the paper of new urban policies and infrastructure interventions on this topic. \cite{dominguez2022crimetime} paper is one case, as they study the causal effect of ambient light on crime in Santiago, Chile, by using the "Daylight Saving Time" policy as a natural experiment. Due to this policy, they could find that an increase of one hour of ambient light exposure between 7 and 9 reduced thefts by 30\%. These studies emphasize that urban interventions do not just shift crime spatially, but actively reshape the rational choice of offenders by creating or eliminating environmental opportunities for illicit activity.\\
 
 Retail chains can be considered as built environment features that may influence urban crime activity. 
 While different studies have extensively explored their role, these previous inquiries have their own limitations. 
@@ -244,62 +213,151 @@ They identified that stores that operated for longer hours at night were more li
 Others found that these types of stores were more prone to be robbed due to the lack of visible security such as police presence, security guards, or effective alarm systems \parencite{Wellford1997, Dugato2026}. 
 Although useful, they fail to account for convenience stores’ role on crime of their immediate surroundings.\\
 
-On the other hand, other recent publications have examined the influence of analogous commercial establishments on urban crime. 
-While some of these studies do not focus exclusively on convenience stores, they utilize other retail outlets with similar operational profiles which can serve as proxies for what this thesis aims to investigate. 
-\textcite{askey2018fast} is and example as the authors pooled data from fast-food restaurants and convenience stores in Seattle. They used sales revenue as a proxy for human activity to count the different levels of operational intensity across locations, and aimed to explain crime patterns in the immediate surroundings of these establishments. 
-Their results indicate that stores with higher average sales were associated with with a 7.4\% increase in expected crime counts. 
-Conversely, \cite{feng2019aggravating} contribute to this discussion by finding that alcohol outlets influenced the likelihood of aggravated assault and street robbery in New York City. 
-Their findings reveal differential impacts depending on the type of outlet (if it is a bar, a grocery store, or other similar establishment); for instance, the authors highlighted that in Manhattan and the Bronx, proximity within two blocks of a grocery store increased the relative risk of street robbery by more than sixfold.\\ 
+On the other hand, other recent publications have examined the influence of analogous commercial establishments on urban crime. While some of these studies do not focus exclusively on convenience stores, they utilize other retail outlets with similar operational profiles which can serve as proxies for what this thesis aims to investigate. \textcite{askey2018fast} is and example as the authors pooled data from fast-food restaurants and convenience stores in Seattle. They used sales revenue as a proxy for human activity to count the different levels of operational intensity across locations, and aimed to explain crime patterns in the immediate surroundings of these establishments. Their results indicate that stores with higher average sales were associated with with a 7.4\% increase in expected crime counts. Conversely, \cite{feng2019aggravating} contribute to this discussion by finding that alcohol outlets influenced the likelihood of aggravated assault and street robbery in New York City. Their findings reveal differential impacts depending on the type of outlet (if it is a bar, a grocery store, or other similar establishment); for instance, the authors highlighted that in Manhattan and the Bronx, proximity within two blocks of a grocery store increased the relative risk of street robbery by more than sixfold.\\ 
 
 Another relevant investigation is the one of \parencite{shin2024dollar}. 
 Shin used a DiD approach to invetigate the impact of dollar stores on localized violent crime patterns in Chicago. 
 To ensure the treatment and control groups were as homogeneous as possible, the author created localized areas using a 250-feet buffer for the treatment group and a 250-to-354-feet outer ring as the control. 
 At the end, this research found that store openings lead to a 21.\% increase in violent crime (0.17 incidents per quarter), a result primarily driven by a 38\% surge in robberies.\\
 
-Although these studies offer a useful baseline of how convenience stores, and specifically OXXO, impact nearby crime, they present an incomplete perspective as they exclusively explored this nexus in cities of high-income nations. 
-To build a more robust theory, these hypotheses must be tested within Latin American cities which have particular urban dynamics. Many papers argue that convenience stores are normally located in socio-economically disadvantaged areas where poverty, social disorganization, and lack of community resources exacerbate crime risks \parencite{shin2024dollar, Dugato2026}, but in cities like Bogotá the situation is not analogous. 
-OXXO in Bogotá, for instance, does not follow this rule as it instead prioritizes to open locations in middle to high income neighborhoods, and places with high commercial activity and influx of people.\\ 
+Although these studies offer a useful baseline of how convenience stores, and specifically OXXO, impact nearby crime, they present an incomplete perspective as they exclusively explored this nexus in cities of high-income nations. To build a more robust theory, these hypotheses must be tested within Latin American cities which have particular urban dynamics. Many papers argue that convenience stores are normally located in socio-economically disadvantaged areas where poverty, social disorganization, and lack of community resources exacerbate crime risks \parencite{shin2024dollar, Dugato2026}, but in cities like Bogotá the situation is not analogous. OXXO in Bogotá, for instance, does not follow this rule as it instead prioritizes to open locations in middle to high income neighborhoods, and places with high commercial activity and influx of people.\\ 
 
-In Latin America, the economic literature regarding convenience stores remains limited. Recent investigations have explored their causal role on various labor market indicators \parencite{delgado2024, marcos2022}. 
-However, despite this growing interest in labor dynamics, the spatial relationship between these establishments and urban security in the region has been largely overlooked. Specifically in Bogotá crime literature has primarily focused on public transport, general socioeconomic urban caracteristics, and policy intervention impact on crime \parencite{moreno2005impacto, bacares2013impact}.\\ 
+In Latin America, the economic literature regarding convenience stores remains limited. Recent investigations have explored their causal role on various labor market indicators \parencite{delgado2024, marcos2022}. However, despite this growing interest in labor dynamics, the spatial relationship between these establishments and urban security in the region has been largely overlooked. Specifically in Bogotá crime literature has primarily focused on public transport, general socioeconomic urban caracteristics, and policy intervention impact on crime \parencite{moreno2005impacto, bacares2013impact}.\\ 
 
-The investigations that have actually explored this topic are counted. 
-For example,  \cite{jaramillo2021low} used the same method as \parencite{shin2024dollar} to study the effect of D1 hard discount stores on the crime around the streets where they open in Bogotá. 
-Although D1s are not convenience stores per se, they attract a similar type of costumers and and often share similar spatial locations with OXXO outlets. By analyzing the period of 2016 to 2019 and employing the same information utilized in this thesis (SIEDCO), the authors found that D1 openings caused a 33.4\% average reduction in crime density per block. 
-They attributed this impact to the 'eyes on the street' phenomenon, suggesting that the increased pedestrian flow acts as a form of informal guardianship that deters criminal activity \parencite{ jacobs1961death, jaramillo2021low}.\\ 
+The investigations that have actually explored this topic are counted. For example,  \cite{jaramillo2021low} used the same method as \parencite{shin2024dollar} to study the effect of D1 hard discount stores on the crime around the areas where they open in Bogotá. Although D1s are not convenience stores per se, they attract a similar type of costumers and and often share similar spatial locations with OXXO outlets . By analyzing the period of 2016 to 2019 and employing the same information utilized in this thesis (within SIEDCO infromation system), the authors found that D1 openings caused a 33.4\% average reduction in crime density per block. They attributed this impact to the 'eyes on the street' phenomenon, suggesting that the increased pedestrian flow acts as a form of informal guardianship that deters criminal activity \parencite{jacobs1961death, jaramillo2021low}.\\ 
+
+As noted, the body of literature that explores the impact of convenience stores on crime in Latinamerica is reduced, and virtually non-existent in the Colombian context. In this thesis I aim to fill this gap by evaluating the impact of OXXO store openings on local crime in Bogotá. Given their rapid expansion and market dominance, OXXO stores serve as a primary actor and a representative proxy for modern convenience retail in the city. Additionally, this analisis is particularly relevant in a context where crime remains a public policy priority and a growing concern for Bogota’s inhabitants.
 
 \section{Data used and unit of analysis}
 
-For this thesis I use UPZs as the unit of analysis. UPZs work as a feasible division of Bogotá as the disctrict maintains continuity and consistency of data across the years, and security interventions are normally focalized by UPZ \hl{(cita)}. 
-Also, these Units maintain urbanistic and socioeconomic homogeneity by grouping similar neighborhoods, and are the middle point between Localities and Street blocks (manzanas).\\ 
+For this thesis I use UPZs as the unit of analysis. UPZs work as a feasible division of Bogotá as the city maintains continuity and consistency of data across the years, and security interventions are normally focalized by UPZ \hl{(cita}. Also, these Units maintain urbanistic and socioeconomic homogeneity by grouping similar neighborhoods, and are the middle point between Localities and Street blocks (manzanas).\\ 
 
-Meanwhile, the results of this study employ four main data sources (see appendix~\ref{sec:variables_descripcion_detallada}).
-For measuring crime rate in Bogotá I used the georeferenced crime events stored in SIEDCO \footnote{Access at \url{ https://oaiee.scj.gov.co/agc/rest/services/Tematicos_Pub/SIEDCO_Delitos_Pub/FeatureServer}} spanning from \hl{2018 to 2022}. 
-SIEDCO is Colombia’s official Police database that consolidate real-time citizen reports and administrative records of criminal activity. Here, for each incident recorded the system saves details including type of crime (e.g., homicide, personal robbery, commercial burglary, or cell phone theft), the precise geographic coordinates of the event, date and time of the incident, and the victim’s gender. 
-With this information, I aggregated the crime data at the UPZ-year level, categorizing incidents by offense type. To ensure comparability across years and Units, I normalized these counts using annual population estimates for each UPZ. This allowed for the construction of a crime rate per 10,000 inhabitants, as shown in this equation:\\
+Meanwhile, the results of this study employ four main data sources (see appendix~\ref{sec:variables_descripcion_detallada}). For measuring crime rate in Bogotá I used the georeferenced crime events stored in SIEDCO \footnote{Access at \url{ https://oaiee.scj.gov.co/agc/rest/services/Tematicos_Pub/SIEDCO_Delitos_Pub/FeatureServer}} spanning from 2015 to 2022. SIEDCO is Colombia’s official Police database that consolidate real-time citizen reports and administrative records of criminal activity. Here, for each incident recorded the system saves details including type of crime (e.g., homicide, personal robbery, commercial burglary, or cell phone theft), the precise geographic coordinates of the event, date and time of the incident, and the victim’s gender. With this information, I aggregated the crime data at the UPZ-year level, categorizing incidents by offense type. To ensure comparability across years and Units, I normalized these counts using annual population estimates for each UPZ. This allowed for the construction of a crime rate per 10,000 inhabitants, as shown in this equation:
 
 \begin{equation}
 crime\_type\_index_{upz,year}=\frac{total\_incidents_{upz,year}}{population_{upz,year}} ; \quad \forall upz,year
 \end{equation}
 
-The period 2018 to 2022 is adequate for the analysis as they englobe the years in which OXXO had its explosive expansion across Bogota. 
-This timeframe ensures sufficient temporal and spatial variability, meaing it allows for a higher proportion of UPZs to enter treatment during the study period compared to those always treated. 
-Prior to 2018, the lack of new store openings in other UPZ would result in an insufficient number of newly treated units, limiting the identifying variation necessary for using TWFE.\\ 
+Following this normalization, the rates were smoothed using an Empirical Bayes technique to reduce the influence of extreme values in UPZs with small populations, where rates tend to be more unstable; for example, UPZs like El Mochuelo and El Dorado had this particulatiries. 
 
-Additionally, from the Registro Único Empresarial y Social (RUES) \footnote{Access at \url{ https://www.rues.org.co}}, the central business information system in Colombia that contains all the records of companies and merchants registered by the chambers of commerce in the country, I identified the opening and closing year of each OXXO. 
-Additionally, with Google Maps API I obtained the precise georeferenced location of each store. Concerns may arise on how precise was this match of each store with its correct location, specially for the ones that no lorgers exist. 
-I manually checked the validity of each match with official OXXO publications, and as a result \hl{XX\%} of establishments were properly matched.\\ 
+The period from 2015 to 2022 is appropriate for this analysis, as it encompasses the years during which OXXO experienced its most significant expansion across Bogotá. This timeframe provides sufficient temporal and spatial variation, as a larger number of UPZs enter treatment during the study period rather than being treated prior to 2015. Prior to 2015, the lack of new store openings in other UPZs would result in an insufficient number of newly treated units, limiting the identifying variation necessary for using TWFE.\\ 
 
-I also did this same process with D1, Justo\&Bueno and ARA hard discount chains. The reason why I also took into account these brands is because they often share similar spatial locations with OXXO outlets; in fact, retailers tend to cluster in certain areas to take advantage of agglomeration benefits \parencite{Konishi2005, Seong2022}. 
-Given that prior research suggests these establishments may influence both crime and commercial activity \parencite{delgado2024, jaramillo2021low}, their inclusion as control variables is important to evaluate the validity of the results.\\
+Additionally, using data from the Registro Único Empresarial y Social (RUES)\footnote{Access at \url{https://www.rues.org.co}}, Colombia’s central business registry, I identified the opening and closing years of each OXXO store. Furthermore, with Google Maps API I obtained the precise georeferenced location of each store. Concerns may arise regarding the accuracy of this matching process, particularly for stores that are no longer in operation. To address this, I manually verified each location using official OXXO sources, and as a result 95\% of establishments were properly assigned.\\ 
 
-\hl{Finally, I used the Quality of Life Survey of Bogotá 2007 \footnote{Access at \url{https://www.dane.gov.co/index.php/estadisticas-por-tema/salud/calidad-de-vida-ecv/encuesta-nacional-de-calidad-de-vida-2007-bogota}} to analyze the initial socioeconomic characteristcs of never treated and treated UPZ before OXXO arrived in 2009. 
-And with Mapas-Bogotá I obtained the fixed variable socioeocnomic and environmental controls at the UPZ level just to explore how are OXXOs not randomly located, as these will be inhenrently controlled by TWFE.}
+I also did this same process with D1, Justo\&Bueno and ARA hard discount chains. The reason why I also took into account these brands is because they often share similar spatial locations with OXXO outlets; in fact, retailers tend to cluster in certain areas to take advantage of agglomeration benefits \parencite{Konishi2005, Seong2022}. Also, Given that prior research suggests these establishments may influence both crime and commercial activity \parencite{delgado2024, jaramillo2021low}, their inclusion as control variables is important to evaluate the validity of the results.\\
+
+Finally, I used the Quality of Life Survey of Bogotá (2007)\footnote{Access at \url{https://www.dane.gov.co/index.php/estadisticas-por-tema/salud/calidad-de-vida-ecv/encuesta-nacional-de-calidad-de-vida-2007-bogota}} to characterize the baseline socioeconomic conditions of treated and never-treated UPZs prior to the arrival of OXXO in 2009. Additionally, data from Mapas Bogotá were used to construct time-invariant socioeconomic and environmental controls at the UPZ level. These variables are included for descriptive purposes to assess the non-random spatial distribution of OXXO stores, although they are absorbed by the two-way fixed effects (TWFE) specification.
 
 \section{Descriptive Statistics} 
+\label{sec:Statistics}
 
+Before proceeding with the causal analysis, it is important to illustrate the preliminary differences between controlled and treated UPZs, not only in terms of crime activity, but also regarding socioeconomic and accessibility variables. Table~\ref{tab:treatment_distribution_years} presents the staggered arrival of OXXO stores across UPZs per year between 2015 to 2022. Although the panel was constructed quarterly, the arrival of locations do not variate drastically among quarters per year. This table shows that there was an increase in treated UPZs starting in 2019, while a substantial number of control units remained available for comparison over the years.\\
 
-\section{Control Variables}
+\begin{table}
+  \centering
+  \caption{Distribution of UPZs and OXXO stores over time}
+  \label{tab:treatment_distribution_years}
+  \small 
+  \begin{tabular}{l c c c}
+    \toprule
+    \textbf{Year} & \textbf{Not yet treated} & \textbf{Treated} & \textbf{Total OXXOs} \\
+    \midrule
+    \midrule
+    2015 & 90 & 20 & 38 \\
+    2016 & 89 & 21 & 46 \\
+    2017 & 87 & 23 & 46 \\
+    2018 & 87 & 23 & 55 \\
+    2019 & 81 & 29 & 74 \\
+    2020 & 72 & 38 & 81 \\
+    2021 & 70 & 40 & 108 \\
+    2022 & 51 & 59 & 173 \\
+    \midrule
+    \midrule
+    \textbf{Total UPZs} & \textbf{110} & \textbf{--} & \textbf{--} \\
+    \bottomrule
+  \end{tabular}
+  
+  \vspace{0.5em}
+  \begin{minipage}{0.65\textwidth} 
+    \footnotesize \textit{Note:} This table presents the annual count of UPZs by treatment status and the total number of OXXO stores in Bogotá. A UPZ is treated if it has at least one store.
+  \end{minipage}
+\end{table}
+
+This variation shown may not be as drastic as OXXO´s stores growth depicted in figure~\ref{fig:EVOLUTION_OXXO}. This suggests that some UPZs host a disproportionately higher number of establishments in order to account for the overall increase in OXXO stores across Bogotá. Moreover, this raises the question of whether treatment intensity should be explicitly considered in the analysis. Although Figure~\ref{fig:Treatment_intensity} does not provide a detailed spatial distribution of OXXO stores at the UPZ level over time, it illustrates the evolution of the average number of stores per cohort. The figure shows that, in early periods, differences between cohorts were relatively small (less than one store on average), whereas in later periods these differences became more pronounced. This pattern suggests that variation in treatment intensity may play a role in shaping the estimated relationship between OXXO presence and crime, and therefore warrants further evaluation.\\
+
+On the other hand, Figure~\ref{fig:Treatment_intensity} presents preliminary evidence on differences in aggregated crime and different types of crime rates across the periods. Specifically, they report the difference in mean crime rates between treated and not-yet-treated UPZs for each quarter, along with an indication of whether these differences are statistically significant at the 5\% level. For instance, Panel~\ref{fig:diff_people} shows that, for personal theft, there was a statistically significant difference between groups during the quarters from 2015-Q1 to 2019-Q1. This indicates that, on average, treated UPZs exhibited higher crime rates than those not yet treated.\\
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.9\linewidth]{other_figs/oxxos_intensidad_tratamiento.png}
+    \caption{\textbf{Treatment Intensity: Evolution of OXXO Quantity by Cohort}}
+    \label{fig:Treatment_intensity}
+    \vspace{0.1cm}
+    \begin{minipage}{0.9\linewidth} % Para que el texto no se desparrame
+        \footnotesize
+        \textit{Note:} The figure displays the average number of OXXO stores per UPZ, centered at the first quarter of entry ($t=0$). Each line represents a different opening cohort (quarter-year). The color gradient indicates the chronological order of the cohorts, where darker lines represent [older/newer] cohorts. The dashed vertical line marks the start of the treatment. 
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    % Primera fila: Crimen General y Personas
+    \begin{subfigure}[b]{0.48\textwidth} 
+        \includegraphics[width=\linewidth]{dif_meds/diff_means_crime_index.png}
+        \caption{Aggregated crime rate}
+        \label{fig:diff_crime}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth} 
+        \includegraphics[width=\linewidth]{dif_meds/diff_means_theft_to_people_index.png}
+        \caption{Theft rate}
+        \label{fig:diff_people}
+    \end{subfigure}
+
+    \vspace{0.5cm}
+
+    % Segunda fila: Homicidio y Sexual
+    \begin{subfigure}[b]{0.48\textwidth} 
+        \includegraphics[width=\linewidth]{dif_meds/diff_means_homicide_index.png}
+        \caption{Homicide rate}
+        \label{fig:diff_homicide}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth} 
+        \includegraphics[width=\linewidth]{dif_meds/diff_means_sexual_index.png}
+        \caption{Sexual Offenses rate}
+        \label{fig:diff_sexual}
+    \end{subfigure}
+    
+    \caption{\textbf{Difference in Means Analysis (Part I)}} 
+\end{figure}
+
+% --- CONTINUACIÓN EN LA SIGUIENTE PÁGINA ---
+\begin{figure}[ht]
+    \ContinuedFloat % <--- Esto mantiene el mismo número de figura
+    \centering
+    % Tercera fila: Vehículos y Motos
+    \begin{subfigure}[b]{0.48\textwidth} 
+        \includegraphics[width=\linewidth]{dif_meds/diff_means_theft_to_motorbike_index.png}
+        \caption{Theft to Motorbike rate}
+        \label{fig:diff_moto}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth} 
+        \includegraphics[width=\linewidth]{dif_meds/diff_means_theft_to_vehicle_index.png}
+        \caption{Theft to Vehicle rate}
+        \label{fig:diff_vehicle}
+    \end{subfigure}
+    
+    \caption{\textbf{Difference in Means Analysis (Part II)}}
+    \label{fig:sixpanelDifMed}
+    \vspace{0.2cm}
+    {\footnotesize \textit{Note:} This figure displays the difference-in-means tests for various crime categories across Bogota's UPZs. The confidence intervals represent 95\% significance. If the intervals do not cross the zero line (red), the difference between treated and control units is statistically significant.}
+\end{figure}
+
+These results are consistent with expectations, as theft is the crime category most likely to be positively associated with the presence of OXXO stores. This finding aligns with the hypothesis that such establishments may function as crime attractors by increasing the flow of suitable targets. However, this pattern may also reflect the possibility that OXXO stores are disproportionately located in UPZs with inherently higher theft rates. Moreover, the graphs indicate that differences for other types of crime are not generally statistically significant. This fits the pattern expected, as crimes such as sexual violence or vehicle and motorcycle theft are less likely to be influenced by OXXO presence. These offenses often rely on different spatial and social dynamics, such as secluded areas or long-term parking patterns, which remain largely unaffected by convenience retail expansion  \hl{cita}.\\
+
+Table~\ref{tab:diferencias_medias_controles_fijos} also shows preliminary differences between treated and never treated groups with fixed baseline controls. The variables chosen help to visualize that OXXOs are located in areas where there is higher traffic, accessibility, quality of life, and purchasing power. Moreover, these results indicate that potential market size may not be adequately captured by population measures alone (such as total inhabitants or household size in 2007), but rather by indicators of economic activity and consumption capacity. Since OXXO's product mix consists primarily of non-essential daily goods and convenience items rather than vital necessities, this retail chainprioritizes locations with high-income transit rather than just high residential density. These results are consistent with what was confirmed by \textcite{marcos2022}, where convenience store chains in Mexico were found to be distributed by similar characteristics.\\
 
 \begin{table} [H]
   \centering
@@ -313,26 +371,26 @@ And with Mapas-Bogotá I obtained the fixed variable socioeocnomic and environme
        \midrule
       \multicolumn{4}{l}{\textbf{Baseline}} \\
       \midrule
-      Inhabitants by locality in 2007 & 503.534 & 482.463 & -21.071 \\
-      & (38.331) & (43.823) & \\
-      Household size 2007 & 3.714 & 3.335 & $-0.380^{***}$ \\
-      & (0.049) & (0.048) & \\
-      Index of quality of life 2007 & 89.121 & 91.724 & $2.603^{***}$ \\
+      Inhabitants by locality in 2007 & 515.290 & 486.391 & -28.899 \\
+      & (41.522) & (44.392) & \\
+      Household size 2007 & 3.681 & 3.331 & $-0.350^{***}$ \\
+      & (0.051) & (0.048) & \\
+      Index of quality of life 2007 & 87.400 & 91.529 & $4.129^{***}$ \\
       & (0.151) & (0.216) & \\
-      Average monthly expenditure 2007 & $8.97e+05$ & $1.38e+06$ & $4.82e+05^{***}$ \\
-      & $(55836.359)$ & $(57218.217)$ & \\
+      Log of Average monthly expenditure 2007 & 13.652 & 14.086 & $0.434^{***}$\\
+      & $(0.533)$ & $(0.372)$ & \\
       \midrule
       \multicolumn{4}{l}{\textbf{Fixed controls}} \\
       \midrule
-      Average stratum & 2.162 & 3.352 & $1.190^{***}$ \\
+      Average socioeconomic classification (estrato) & 2.162 & 3.352 & $1.190^{***}$ \\
       & (0.135) & (0.119) & \\
-      Nearby transmilenio stations & 2.339 & 6.067 & $3.727^{***}$ \\
-      & (0.404) & (0.544) & \\
-      Access to arterial roads & 29.286 & 44.200 & $14.914^{***}$ \\
-      & (4.490) & (2.738) & \\
+      Nearby transmilenio stations & 2.667 & 6.034 & $3.367^{***}$ \\
+      & (0.445) & (0.552) & \\
+      Access to arterial roads & 29.549 & 43.831 & $14.281^{***}$ \\
+      & (3.893) & (2.759) & \\
       \midrule
       \midrule
-      UPZs & 56 & 60 & 116 \\
+      UPZs & 51 & 59 & 110 \\
       \bottomrule
     \end{tabular}
   \end{adjustbox}
@@ -340,6 +398,10 @@ And with Mapas-Bogotá I obtained the fixed variable socioeocnomic and environme
     \vspace{0.5em}
     \footnotesize{ \textit{Note:} Significance: *** p<0.01, ** p<0.05, * p<0.1.}}
 \end{table}
+
+I also evaluated whether there was indeed a tendency for hard discount stores, such as D1, Ara, and Justo \& Bueno, to locate near OXXO establishments. In Appendix~\ref{sec:controles_cadenas_descuento}, I show some of the results, and in general find that for all years these hard discount stores were significantly more prone to locate in UPZs treated with OXXO than in those without. With this evidence, I will include these chains as regressors mainly due to their probable influence on the dependent variables, as shown by \cite{jaramillo2021low} in their investigation. However, I considered them in the regression as baseline covariates, meaning that I only took into account their presence in the UPZ in the quarter before the analysis to avoid confounding effects.\\
+
+Although I considered hard discount chains as factors that may bias the estimation, other unobserved variables could also affect the results. For instance, public works can reduce pedestrian and vehicular traffic for certain periods within the analysis; a new park may attract different demographic flows; and the presence of other commercial establishments, such as bars, nightclubs, or grocery stores, may impact the estimation of the causal effect, especially if they open or close during the period of study. Nonetheless, some of these variables may remain constant from 2015 to 2022. Furthermore, other establishments may be controlled for by unit fixed effects, as they tend to be located in areas that maintain their core characteristics; for example, nightclubs often open in places already recognized as nightlife districts.
 
 \section{Empirical strategy}
 
@@ -409,13 +471,11 @@ A similar behavior between the two models would reinforce the validity of the TW
 \section{Discussion}
 
 \section{Robustness}
-spill over effects, placebo tests with other crime types, etc.
-Vary the buffers fo the spill over effects, etc.
-propensity score matching
+spill over effects
+buffers for the spill over effects, etc.
 treat controls and treated groups as buffers
 
 \section{Conclusions}
-
 
 \newpage
 \printbibliography
@@ -441,27 +501,33 @@ treat controls and treated groups as buffers
         \midrule
         \multicolumn{3}{l}{\textbf{Dependent Variable}} \\
         \midrule
-        Proportion of independents & Proportion of independents in the ZAT that year & Movility surveys (2011, 2015, 2019, 2023) \\
+        Aggregated Crime rate & Crime rate per 10,0000 inhabitants & SIEDCO \\
         \midrule
-        \multicolumn{3}{l}{\textbf{Variable de tratamiento escalonado}} \\
+        Theft Crime rate & Theft rate per 10,0000 inhabitants & SIEDCO \\
         \midrule
-        Tiene OXXO ($=1$) & Si el ZAT tiene OXXO(s) ese año & RUES y Google Maps API \\
+        Theft Crime rate & Theft rate per 10,0000 inhabitants & SIEDCO \\
         \midrule
-        \multicolumn{3}{l}{\textbf{Controles resagados de tiendas de cadena}} \\
+        Homicide rate & Homicide rate per 10,0000 inhabitants & SIEDCO \\
         \midrule
-        Tiene D1s (=1) & El ZAT tiene D1(s) el periodo anterior al año analizado & RUES y Google Maps API \\
+        Sexual violence crime rate & Sexual violence crime rate per 10,0000 inhabitants & SIEDCO \\
         \midrule
-        Tiene ARAs (=1) & El ZAT tiene ARA(s) el periodo anterior al año analizado & RUES y Google Maps API \\
+        Theft of Motorcycles crime rate & Theft of Motorcycles crime rate per 10,0000 inhabitants & SIEDCO \\
         \midrule
-        \multicolumn{3}{l}{\textbf{Controles variables por año}} \\
+        Theft of Vehicles crime rate & Theft of Vehicles crime rate per 10,0000 inhabitants & SIEDCO \\
         \midrule
-        Número de personas en el hogar por ZAT & Número promedio de personas en el hogar por ZAT en el año analizado & Encuestas de movilidad (2011, 2015, 2019, 2023) \\
+        \multicolumn{3}{l}{\textbf{Staggered Treatment Variable}} \\
         \midrule
-        Ingresos del hogar por ZAT & Ingreso promedio del hogar por ZAT en el año analizado & Encuestas de movilidad (2011, 2015, 2019, 2023) \\
+        Has OXXO ($=1$) & If the UPZ has OXXO(s) that quarter & RUES and Google Maps API \\
         \midrule
-        \multicolumn{3}{l}{\textbf{Controles de línea base}} \\
+        \multicolumn{3}{l}{\textbf{Staggered Controls of Hard Discount Stores}} \\
         \midrule
-        Habitantes por localidad en 2007 & Número de habitantes por localidad en el 2007 & Encuesta de Calidad de Vida de Bogotá 2007 \\
+        Has D1s (=1) & If the UPZ has D1(s) in the quarter before the quarter analyzed & RUES y Google Maps API \\
+        \midrule
+        Has ARAs (=1) & If the UPZ has ARA(s) in the quarter before the quarter analyzed  & RUES y Google Maps API \\
+        \midrule
+        \multicolumn{3}{l}{\textbf{Baseline Controls}} \\
+        \midrule
+        Inhabitatnsper locality in 2007 & Número de habitantes por localidad en el 2007 & Encuesta de Calidad de Vida de Bogotá 2007 \\
         \midrule
         Cantidad de personas por hogar 2007 & Número promedio de personas en el hogar por localidad en el 2007 & Encuesta de Calidad de Vida de Bogotá 2007 \\
         \midrule

@@ -11,78 +11,7 @@ library(ggplot2) # gráficos
 library(sf)        # Para manejar datos geoespaciales
 library(tidyverse)  # Para manipulación de datos y gráficos
 
-# --- Cargar datos ---
-
-# Cambiar al directorio deseado
-setwd("~/Desktop/1 economia/thesis_economics")
-
-#este es para la intensidad del tratamiento
-
-panelForIntensity <- read_dta("data/controles_results/paraR.dta")
-
-# Ver las primeras filas
-head(panelForIntensity)
-
-# Ver nombres de columnas
-names(panelForIntensity)
-
-# 1. Año de primera entrada de OXXO por ZAT
-panelForIntensity <- panelForIntensity %>%
-  group_by(zat) %>%
-  mutate(first_treat = if (any(dummy_oxxo == 1)) min(year[dummy_oxxo == 1]) else NA_real_) %>%
-  ungroup()
-
-panelForIntensity <- panelForIntensity %>% filter(!is.na(first_treat))
-
-panelForIntensity <- panelForIntensity %>% mutate(rel_time = (year - first_treat) / 4)
-
-
-panelForIntensity_summary <- panelForIntensity %>%
-  group_by(first_treat, rel_time) %>%
-  summarise(
-    cantidad_oxxo = mean(cantidad_oxxo, na.rm = TRUE),
-    dummy_jb = mean(dummy_jb, na.rm = TRUE),
-    dummy_d1 = mean(dummy_d1, na.rm = TRUE),
-    dummy_ara = mean(dummy_ara, na.rm = TRUE),
-    cantidad_jb = mean(cantidad_jb, na.rm = TRUE),
-    cantidad_d1 = mean(cantidad_d1, na.rm = TRUE),
-    cantidad_ara = mean(cantidad_ara, na.rm = TRUE)
-  ) %>%
-  ungroup()
-
-# 5. Graficar cada cohorte
-p <- ggplot(panelForIntensity_summary, 
-       aes(x = rel_time, y = cantidad_oxxo,
-           color = as.factor(first_treat),
-           shape = as.factor(first_treat))) +   # <- aquí asignamos la forma
-  geom_line(size = 1) +
-  geom_point(size = 3) +                   # <- puntos visibles con forma
-  geom_vline(xintercept = 0, linetype = "dashed") +
-  scale_x_continuous(breaks = min(panelForIntensity_summary$rel_time):
-                       max(panelForIntensity_summary$rel_time)) +
-  labs(
-    x = "Tiempo relativo (años/4)",
-    y = "Promedio cantidad de OXXOs en ZAT",
-    color = "Cohorte",
-    shape = "Cohorte"
-  ) +
-  theme_minimal(base_size = 14) +
-  scale_color_manual(values = c(
-    "2011" = "#D7BDE2",  # lila claro
-    "2015" = "#A569BD",  # morado medio
-    "2019" = "#F5B7B1",  # rosa suave
-    "2023" = "#7D3C98"   # morado intenso
-  )) +
-  scale_shape_manual(values = c(16,17,8,18))  # círculo, triángulo, estrella, diamante
-
-# Guardar el gráfico
-ggsave(filename = "data/controles_results/oxxos_intensidad_tratamiento.png",
-       plot = p,
-       width = 8, height = 6, dpi = 300)
-#title = "Evolución relativa de cantidad de OXXOs por cohorte",
-
-
-
+# --- Cargar datos --
 #esta grafica será para hacer el event study bonito con colores lindos en diferentes tinalidades de morado
 #es un csv
 

@@ -1,13 +1,13 @@
 		(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)
 VARIABLES	LABELS	TWFE crime_index	TWFE theft_to_vehicle_index	TWFE theft_to_vehicle	TWFE theft_to_people_index	TWFE theft_to_motorbike_index	TWFE theft_to_motorbike	TWFE sexual_index	TWFE homicide_index	TWFE male_index	TWFE female_index
 											
-dummy_oxxo	dummy_oxxo	9.071	-0.263	-1.017*	6.785	-0.372	0.323	1.556	1.364	0.758	10.18
-		(12.02)	(0.189)	(0.602)	(9.855)	(0.232)	(0.685)	(1.694)	(1.226)	(8.935)	(14.61)
-Constant	Constant	34.66***	2.946***	8.735***	25.01***	2.218***	9.862***	2.992***	1.497***	45.53***	28.91***
-		(3.792)	(0.0596)	(0.190)	(3.109)	(0.0732)	(0.216)	(0.535)	(0.387)	(2.819)	(4.611)
+dummy_oxxo	dummy_oxxo	-2.889	-0.211	-1.002*	-2.216	-0.204	0.335	-0.419	0.160*	-1.834	-5.695
+		(8.036)	(0.134)	(0.603)	(7.475)	(0.165)	(0.691)	(0.525)	(0.0812)	(8.342)	(8.645)
+Constant	Constant	28.09***	1.561***	8.884***	22.05***	1.629***	10.03***	2.353***	0.495***	32.91***	24.55***
+		(2.583)	(0.0429)	(0.194)	(2.402)	(0.0529)	(0.222)	(0.169)	(0.0261)	(2.681)	(2.778)
 											
-Observations		3,924	3,924	3,924	3,924	3,924	3,924	3,924	3,924	3,924	3,924
-R-squared		0.482	0.231	0.722	0.424	0.123	0.738	0.148	0.289	0.416	0.377
+Observations		3,852	3,852	3,852	3,852	3,852	3,852	3,852	3,852	3,852	3,852
+R-squared		0.500	0.291	0.721	0.479	0.375	0.737	0.368	0.288	0.507	0.479
 Chain stores		NO	NO	NO	NO	NO	NO	NO	NO	NO	NO
 Gender controles		NO	NO	NO	NO	NO	NO	NO	NO	NO	NO
 Day controls		NO	NO	NO	NO	NO	NO	NO	NO	NO	NO

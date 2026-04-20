@@ -718,6 +718,37 @@
       \verb 10.1016/j.jcrimjus.2025.102552
       \endverb
     \endentry
+    \entry{ElEconomista2026}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d426f9dc94565c873e84ca244168d1f4}{%
+           family={{El Economista}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{d426f9dc94565c873e84ca244168d1f4}
+      \strng{fullhash}{d426f9dc94565c873e84ca244168d1f4}
+      \strng{fullhashraw}{d426f9dc94565c873e84ca244168d1f4}
+      \strng{bibnamehash}{d426f9dc94565c873e84ca244168d1f4}
+      \strng{authorbibnamehash}{d426f9dc94565c873e84ca244168d1f4}
+      \strng{authornamehash}{d426f9dc94565c873e84ca244168d1f4}
+      \strng{authorfullhash}{d426f9dc94565c873e84ca244168d1f4}
+      \strng{authorfullhashraw}{d426f9dc94565c873e84ca244168d1f4}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{El Economista}
+      \field{title}{Oxxo se expande en Colombia: abre una tienda cada tres días}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://www.eleconomista.com.mx/empresas/oxxo-expande-colombia-abre-tienda-tres-dias-20260416-808982.html
+      \endverb
+      \verb{url}
+      \verb https://www.eleconomista.com.mx/empresas/oxxo-expande-colombia-abre-tienda-tres-dias-20260416-808982.html
+      \endverb
+    \endentry
     \entry{Enriquez2014}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -1141,12 +1172,12 @@
       \true{moreauthor}
       \true{morelabelname}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=c9f1957947fd74f4cae9e2c0ca905bd9}{%
+        {{un=1,uniquepart=given,hash=c9f1957947fd74f4cae9e2c0ca905bd9}{%
            family={López},
            familyi={L\bibinitperiod},
            given={David},
            giveni={D\bibinitperiod},
-           givenun=0}}%
+           givenun=1}}%
       }
       \list{institution}{1}{%
         {Universidad de los Andes}%
@@ -1163,7 +1194,6 @@
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Low-cost, lower crime?: impacto de los supermercados de bajo costo sobre la criminalidad en Bogotá. El caso de Tiendas D1}
@@ -1177,6 +1207,41 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.57784/1992/55764
+      \endverb
+    \endentry
+    \entry{LaRepublica2026}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=1,uniquepart=given,hash=953dda5fac240d4a662ae86b8fcf9e2c}{%
+           family={López},
+           familyi={L\bibinitperiod},
+           given={María\bibnamedelima Camila},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \strng{fullhash}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \strng{fullhashraw}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \strng{bibnamehash}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \strng{authorbibnamehash}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \strng{authornamehash}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \strng{authorfullhash}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \strng{authorfullhashraw}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Diario La República}
+      \field{note}{Entrevista sobre el plan de expansión en el mercado colombiano}
+      \field{title}{Entrevista con Andrés Morales, director general de OXXO Colombia}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.larepublica.co/empresas/entrevista-con-andres-morales-director-general-de-oxxo-colombia-4334424
+      \endverb
+      \verb{url}
+      \verb https://www.larepublica.co/empresas/entrevista-con-andres-morales-director-general-de-oxxo-colombia-4334424
       \endverb
     \endentry
     \entry{marcos2022}{article}{}{}
@@ -1589,10 +1654,10 @@
       \field{pages}{49\bibrangedash 64}
       \range{pages}{16}
       \verb{urlraw}
-      \verb http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S1794-31082017000200049
+      \verb http://www.scielo.org.co/scielo.php?pid=S1794-31082017000200049&script=sci_abstract&tlng=es
       \endverb
       \verb{url}
-      \verb http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S1794-31082017000200049
+      \verb http://www.scielo.org.co/scielo.php?pid=S1794-31082017000200049&script=sci_abstract&tlng=es
       \endverb
     \endentry
     \entry{Sanchez2003}{report}{}{}
@@ -2599,6 +2664,37 @@
       \verb 10.1016/j.jcrimjus.2025.102552
       \endverb
     \endentry
+    \entry{ElEconomista2026}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=d426f9dc94565c873e84ca244168d1f4}{%
+           family={{El Economista}},
+           familyi={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{d426f9dc94565c873e84ca244168d1f4}
+      \strng{fullhash}{d426f9dc94565c873e84ca244168d1f4}
+      \strng{fullhashraw}{d426f9dc94565c873e84ca244168d1f4}
+      \strng{bibnamehash}{d426f9dc94565c873e84ca244168d1f4}
+      \strng{authorbibnamehash}{d426f9dc94565c873e84ca244168d1f4}
+      \strng{authornamehash}{d426f9dc94565c873e84ca244168d1f4}
+      \strng{authorfullhash}{d426f9dc94565c873e84ca244168d1f4}
+      \strng{authorfullhashraw}{d426f9dc94565c873e84ca244168d1f4}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{El Economista}
+      \field{title}{Oxxo se expande en Colombia: abre una tienda cada tres días}
+      \field{year}{2026}
+      \verb{urlraw}
+      \verb https://www.eleconomista.com.mx/empresas/oxxo-expande-colombia-abre-tienda-tres-dias-20260416-808982.html
+      \endverb
+      \verb{url}
+      \verb https://www.eleconomista.com.mx/empresas/oxxo-expande-colombia-abre-tienda-tres-dias-20260416-808982.html
+      \endverb
+    \endentry
     \entry{Enriquez2014}{article}{}{}
       \true{moreauthor}
       \true{morelabelname}
@@ -3022,12 +3118,12 @@
       \true{moreauthor}
       \true{morelabelname}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=c9f1957947fd74f4cae9e2c0ca905bd9}{%
+        {{un=1,uniquepart=given,hash=c9f1957947fd74f4cae9e2c0ca905bd9}{%
            family={López},
            familyi={L\bibinitperiod},
            given={David},
            giveni={D\bibinitperiod},
-           givenun=0}}%
+           givenun=1}}%
       }
       \list{institution}{1}{%
         {Universidad de los Andes}%
@@ -3044,7 +3140,6 @@
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Low-cost, lower crime?: impacto de los supermercados de bajo costo sobre la criminalidad en Bogotá. El caso de Tiendas D1}
@@ -3058,6 +3153,41 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.57784/1992/55764
+      \endverb
+    \endentry
+    \entry{LaRepublica2026}{article}{}{}
+      \name{author}{1}{}{%
+        {{un=1,uniquepart=given,hash=953dda5fac240d4a662ae86b8fcf9e2c}{%
+           family={López},
+           familyi={L\bibinitperiod},
+           given={María\bibnamedelima Camila},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \strng{fullhash}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \strng{fullhashraw}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \strng{bibnamehash}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \strng{authorbibnamehash}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \strng{authornamehash}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \strng{authorfullhash}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \strng{authorfullhashraw}{953dda5fac240d4a662ae86b8fcf9e2c}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Diario La República}
+      \field{note}{Entrevista sobre el plan de expansión en el mercado colombiano}
+      \field{title}{Entrevista con Andrés Morales, director general de OXXO Colombia}
+      \field{year}{2026}
+      \field{dateera}{ce}
+      \verb{urlraw}
+      \verb https://www.larepublica.co/empresas/entrevista-con-andres-morales-director-general-de-oxxo-colombia-4334424
+      \endverb
+      \verb{url}
+      \verb https://www.larepublica.co/empresas/entrevista-con-andres-morales-director-general-de-oxxo-colombia-4334424
       \endverb
     \endentry
     \entry{marcos2022}{article}{}{}
@@ -3470,10 +3600,10 @@
       \field{pages}{49\bibrangedash 64}
       \range{pages}{16}
       \verb{urlraw}
-      \verb http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S1794-31082017000200049
+      \verb http://www.scielo.org.co/scielo.php?pid=S1794-31082017000200049&script=sci_abstract&tlng=es
       \endverb
       \verb{url}
-      \verb http://www.scielo.org.co/scielo.php?script=sci_arttext&pid=S1794-31082017000200049
+      \verb http://www.scielo.org.co/scielo.php?pid=S1794-31082017000200049&script=sci_abstract&tlng=es
       \endverb
     \endentry
     \entry{Sanchez2003}{report}{}{}
@@ -3780,6 +3910,7 @@
       \endverb
     \endentry
   \enddatalist
+  \missing{(add source)}
 \endrefsection
 \endinput
 

@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber primera_version"] 1776646219.48551 "primera_version.bcf" "primera_version.bbl" "primera_version" 1776653900.40815 0
-  "primera_version.bcf" 1776653900.1462 138623 87966f2e6735797624c0d4a3b5ee7697 "pdflatex"
-  "references.bib" 1776551898.08774 18101 c83ab6dff8fce88d0066ec1d7f4e3d12 ""
+["biber primera_version"] 1778447339.13076 "primera_version.bcf" "primera_version.bbl" "primera_version" 1778447499.96269 0
+  "primera_version.bcf" 1778447499.17336 139030 4854dc3110b6eadc1fb188ed1c53b75f "pdflatex"
+  "references.bib" 1778445571.04165 20658 cc084a8389e08512cd3eba6cc2127fc0 ""
   (generated)
   "primera_version.bbl"
   "primera_version.blg"
   (rewritten before read)
-["pdflatex"] 1776653882.27466 "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" "primera_version.pdf" "primera_version" 1776653900.40865 0
-  "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" 1776653881.96203 56417 df34715d1ee92b7e066961aa8875d39a ""
+["pdflatex"] 1778447476.21934 "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" "primera_version.pdf" "primera_version" 1778447499.96385 0
+  "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" 1778447475.87013 55821 3b90196e0ec0a3c8ee4614c23c59a9db ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -295,11 +295,11 @@
   "figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png" 1775271185.2315 678245 dcb4479885c523fb8a2eadcffc53b078 ""
   "other_figs/oxxos_intensidad_tratamiento.png" 1776576853.87374 218083 0e11d04f46eeedd8585ab5358fc685e1 ""
   "other_figs/oxxos_por_ano.png" 1775271185.2321 115534 bf28badacefdcedaeef91d90353f9ffa ""
-  "primera_version.aux" 1776653900.1308 24439 6856df705e9d2637376e8d3ca90bcd1e "pdflatex"
-  "primera_version.bbl" 1776646222.83231 165161 da461cead5d5a65ef13fdfa4a01555b7 "biber primera_version"
-  "primera_version.out" 1776653900.14076 2860 459fd992f60a7da7386fb76b88fc4966 "pdflatex"
-  "primera_version.run.xml" 1776653900.14767 2504 b76f80f3fb47b3613c578946be1337de "pdflatex"
-  "primera_version.tex" 1776653881.96203 56417 df34715d1ee92b7e066961aa8875d39a ""
+  "primera_version.aux" 1778447499.08223 24899 7b0351b241b5f8eab6a83fe10d487dbb "pdflatex"
+  "primera_version.bbl" 1778447342.39577 169163 d88ecf39424a38cbc84acb54e0c1f0b9 "biber primera_version"
+  "primera_version.out" 1778447499.14566 2860 459fd992f60a7da7386fb76b88fc4966 "pdflatex"
+  "primera_version.run.xml" 1778447499.17807 2504 b76f80f3fb47b3613c578946be1337de "pdflatex"
+  "primera_version.tex" 1778447475.87013 55821 3b90196e0ec0a3c8ee4614c23c59a9db ""
   (generated)
   "primera_version.aux"
   "primera_version.bcf"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  19 APR 2026 21:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  10 MAY 2026 16:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1127,6 +1127,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--57
 
 
 [3]
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
@@ -1142,18 +1147,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--65
  []
 
 
+
+[4]
 Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
 
-
-[4]
 Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
-<other_figs/oxxos_por_ano.png, id=175, 562.5015pt x 335.8146pt>
+
+
+[5]
+<other_figs/oxxos_por_ano.png, id=193, 562.5015pt x 335.8146pt>
 File: other_figs/oxxos_por_ano.png Graphic file (type png)
 <use other_figs/oxxos_por_ano.png>
 Package pdftex.def Info: other_figs/oxxos_por_ano.png  used on input line 76.
@@ -1164,280 +1172,272 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--85
  []
 
 
-
-[5]
 Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
 
-<figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png, id=198, 209.583pt x 357.2547pt>
+
+
+[6 <./other_figs/oxxos_por_ano.png>]
+<figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png, id=213, 209.583pt x 357.2547pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png>
 Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png  used on input line 92.
 (pdftex.def)             Requested size: 133.07489pt x 226.84329pt.
-<figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png, id=200, 210.0648pt x 360.8682pt>
+<figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png, id=215, 210.0648pt x 360.8682pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png>
 Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png  used on input line 98.
 (pdftex.def)             Requested size: 133.07489pt x 228.60913pt.
-<figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png, id=201, 208.6194pt x 360.8682pt>
+<figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png, id=216, 208.6194pt x 360.8682pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png>
 Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png  used on input line 104.
 (pdftex.def)             Requested size: 133.07489pt x 230.20047pt.
-<figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png, id=202, 209.583pt x 358.4592pt>
+<figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png, id=217, 209.583pt x 358.4592pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png>
 Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png  used on input line 113.
 (pdftex.def)             Requested size: 133.07489pt x 227.60811pt.
-<figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png, id=203, 208.8603pt x 358.941pt>
+<figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png, id=218, 208.8603pt x 358.941pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png>
 Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png  used on input line 119.
 (pdftex.def)             Requested size: 133.07489pt x 228.69725pt.
-<figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png, id=204, 210.3057pt x 359.1819pt>
+<figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png, id=219, 210.3057pt x 359.1819pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png>
 Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png  used on input line 125.
 (pdftex.def)             Requested size: 133.07489pt x 227.28326pt.
-<figs_oxxo_maps/legend.png, id=205, 196.8153pt x 21.9219pt>
+<figs_oxxo_maps/legend.png, id=220, 196.8153pt x 21.9219pt>
 File: figs_oxxo_maps/legend.png Graphic file (type png)
 <use figs_oxxo_maps/legend.png>
 Package pdftex.def Info: figs_oxxo_maps/legend.png  used on input line 133.
 (pdftex.def)             Requested size: 133.07489pt x 14.82239pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
-
- []
-
-
-
-[6{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./other_figs/oxxos_por_ano.png>]
-
-[7 <./figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png> <./figs_oxxo_maps/legend.png>]
-<figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png, id=233, 578.16pt x 433.62pt>
+<figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png, id=221, 578.16pt x 433.62pt>
 File: figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png  used on input line 146.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png  used on input line 144.
 (pdftex.def)             Requested size: 399.21791pt x 299.40985pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+LaTeX Warning: Citation '(add source)' on page 7 undefined on input line 155.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--156
 
  []
 
 
 
-[8 <./figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png>]
+[7 <./figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png>]
 
-LaTeX Warning: Citation '(add source)' on page 9 undefined on input line 158.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
+[8 <./figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png> <./figs_oxxo_maps/legend.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
-
- []
-
-
-
-[9]
-<figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png, id=260, 223.7961pt x 399.894pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png, id=252, 223.7961pt x 399.894pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png>
-Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png  used on input line 168.
+Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png  used on input line 165.
 (pdftex.def)             Requested size: 133.07489pt x 237.79648pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png, id=261, 231.7458pt x 400.3758pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png, id=253, 231.7458pt x 400.3758pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png>
-Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png  used on input line 174.
+Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png  used on input line 171.
 (pdftex.def)             Requested size: 133.07489pt x 229.91493pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_people_index_eb_edited.png, id=262, 224.037pt x 400.6167pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_people_index_eb_edited.png, id=254, 224.037pt x 400.6167pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_people_index_eb_edited.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_people_index_eb_edited.png>
-Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_people_index_eb_edited.png  used on input line 183.
+Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_people_index_eb_edited.png  used on input line 180.
 (pdftex.def)             Requested size: 133.07489pt x 237.96338pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_people_index_eb_edited.png, id=263, 222.5916pt x 400.6167pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_people_index_eb_edited.png, id=255, 222.5916pt x 400.6167pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_people_index_eb_edited.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_people_index_eb_edited.png>
-Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_people_index_eb_edited.png  used on input line 189.
+Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_people_index_eb_edited.png  used on input line 186.
 (pdftex.def)             Requested size: 133.07489pt x 239.51605pt.
 
-
-LaTeX Warning: Float too large for page by 7.88887pt on input line 200.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
-
- []
+LaTeX Warning: Float too large for page by 7.88887pt on input line 197.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--215
+
+[9{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
+[10 <./figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_people_index_eb_edited.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_people_index_eb_edited.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
 
 
-
-[10]
-
-[11 <./figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_people_index_eb_edited.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_people_index_eb_edited.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
+Underfull \hbox (badness 10000) in paragraph at lines 205--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--222
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
 
  []
 
 
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 227--228
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 
  []
 
 
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
-
+Underfull \hbox (badness 7649) in paragraph at lines 232--232
+[][][]\T1/cmr/m/n/10 Access at []$https : / / oaiee . scj . gov . co / agc / rest / services / Tematicos _ Pub / SIEDCO _ Delitos _ Pub /
  []
 
 
-Underfull \hbox (badness 7649) in paragraph at lines 235--235
-[][][]\T1/cmr/m/n/10 Access at []$https : / / oaiee . scj . gov . co / agc / rest / services / Tematicos _ Pub / SIEDCO _ Delitos _ Pub /
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
+
  []
 
 
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--246
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
 
  []
 
 
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 
  []
 
 
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 288--289
-
- []
-
-<other_figs/oxxos_intensidad_tratamiento.png, id=358, 577.9191pt x 402.0621pt>
+<other_figs/oxxos_intensidad_tratamiento.png, id=362, 577.9191pt x 402.0621pt>
 File: other_figs/oxxos_intensidad_tratamiento.png Graphic file (type png)
 <use other_figs/oxxos_intensidad_tratamiento.png>
-Package pdftex.def Info: other_figs/oxxos_intensidad_tratamiento.png  used on input line 292.
+Package pdftex.def Info: other_figs/oxxos_intensidad_tratamiento.png  used on input line 289.
 (pdftex.def)             Requested size: 399.21791pt x 277.74216pt.
-<dif_meds/diff_means_crime_index.png, id=359, 718.3638pt x 398.6895pt>
+<dif_meds/diff_means_crime_index.png, id=363, 718.3638pt x 398.6895pt>
 File: dif_meds/diff_means_crime_index.png Graphic file (type png)
 <use dif_meds/diff_means_crime_index.png>
-Package pdftex.def Info: dif_meds/diff_means_crime_index.png  used on input line 306.
+Package pdftex.def Info: dif_meds/diff_means_crime_index.png  used on input line 303.
 (pdftex.def)             Requested size: 212.91577pt x 118.16597pt.
-<dif_meds/diff_means_theft_to_people_index.png, id=360, 715.9548pt x 393.1488pt>
+<dif_meds/diff_means_theft_to_people_index.png, id=364, 715.9548pt x 393.1488pt>
 File: dif_meds/diff_means_theft_to_people_index.png Graphic file (type png)
 <use dif_meds/diff_means_theft_to_people_index.png>
-Package pdftex.def Info: dif_meds/diff_means_theft_to_people_index.png  used on input line 312.
+Package pdftex.def Info: dif_meds/diff_means_theft_to_people_index.png  used on input line 309.
 (pdftex.def)             Requested size: 212.91577pt x 116.91972pt.
-<dif_meds/diff_means_homicide_index.png, id=361, 716.4366pt x 392.9079pt>
+<dif_meds/diff_means_homicide_index.png, id=365, 716.4366pt x 392.9079pt>
 File: dif_meds/diff_means_homicide_index.png Graphic file (type png)
 <use dif_meds/diff_means_homicide_index.png>
-Package pdftex.def Info: dif_meds/diff_means_homicide_index.png  used on input line 321.
+Package pdftex.def Info: dif_meds/diff_means_homicide_index.png  used on input line 318.
 (pdftex.def)             Requested size: 212.91577pt x 116.76414pt.
-<dif_meds/diff_means_sexual_index.png, id=362, 713.5458pt x 396.5214pt>
+<dif_meds/diff_means_sexual_index.png, id=366, 713.5458pt x 396.5214pt>
 File: dif_meds/diff_means_sexual_index.png Graphic file (type png)
 <use dif_meds/diff_means_sexual_index.png>
-Package pdftex.def Info: dif_meds/diff_means_sexual_index.png  used on input line 327.
+Package pdftex.def Info: dif_meds/diff_means_sexual_index.png  used on input line 324.
 (pdftex.def)             Requested size: 212.91577pt x 118.31598pt.
-<dif_meds/diff_means_theft_to_motorbike_index.png, id=363, 719.3274pt x 395.3169pt>
+<dif_meds/diff_means_theft_to_motorbike_index.png, id=367, 719.3274pt x 395.3169pt>
 File: dif_meds/diff_means_theft_to_motorbike_index.png Graphic file (type png)
 <use dif_meds/diff_means_theft_to_motorbike_index.png>
-Package pdftex.def Info: dif_meds/diff_means_theft_to_motorbike_index.png  used on input line 341.
+Package pdftex.def Info: dif_meds/diff_means_theft_to_motorbike_index.png  used on input line 340.
 (pdftex.def)             Requested size: 212.91577pt x 117.00955pt.
-<dif_meds/diff_means_theft_to_vehicle_index.png, id=364, 720.291pt x 397.0032pt>
+<dif_meds/diff_means_theft_to_vehicle_index.png, id=368, 720.291pt x 397.0032pt>
 File: dif_meds/diff_means_theft_to_vehicle_index.png Graphic file (type png)
 <use dif_meds/diff_means_theft_to_vehicle_index.png>
-Package pdftex.def Info: dif_meds/diff_means_theft_to_vehicle_index.png  used on input line 347.
+Package pdftex.def Info: dif_meds/diff_means_theft_to_vehicle_index.png  used on input line 346.
 (pdftex.def)             Requested size: 212.91577pt x 117.35118pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--359
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
 
  []
 
 
 
 [17 <./other_figs/oxxos_intensidad_tratamiento.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 360--361
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
 
  []
 
 
 
 [18 <./dif_meds/diff_means_crime_index.png> <./dif_meds/diff_means_theft_to_people_index.png> <./dif_meds/diff_means_homicide_index.png> <./dif_meds/diff_means_sexual_index.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 402--403
+Underfull \hbox (badness 10000) in paragraph at lines 400--401
 
  []
 
 
 
 [19 <./dif_meds/diff_means_theft_to_motorbike_index.png> <./dif_meds/diff_means_theft_to_vehicle_index.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 418--424
+
+ []
+
+
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 420--426
+Underfull \hbox (badness 10000) in paragraph at lines 425--430
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 427--432
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--447
+Underfull \hbox (badness 10000) in paragraph at lines 443--445
 
  []
 
 
 
 [21]
+Underfull \hbox (badness 10000) in paragraph at lines 461--463
+
+ []
+
+
 
 [22]
 
@@ -1448,149 +1448,149 @@ Underfull \hbox (badness 10000) in paragraph at lines 445--447
 [25]
 
 [26]
-Overfull \hbox (26.42441pt too wide) in paragraph at lines 482--482
+
+[27]
+Overfull \hbox (26.42441pt too wide) in paragraph at lines 481--481
 \T1/cmr/m/it/12 Ur-ban Af-fairs Re-view\T1/cmr/m/n/12 , \T1/cmr/m/it/12 60\T1/cmr/m/n/12 (5), 1540^^U1576. []$https : / / doi . org / 10 . 1177 / 10780874241226875$[] 
  []
 
 
 
-[27]
-
 [28]
-Overfull \hbox (13.81969pt too wide) in alignment at lines 493--500
+Overfull \hbox (13.81969pt too wide) in alignment at lines 492--499
  [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--504
+Underfull \hbox (badness 10000) in paragraph at lines 503--503
 []|\T1/cmr/m/n/12 Aggregated Crime
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 516--516
+Underfull \hbox (badness 10000) in paragraph at lines 515--515
 []|\T1/cmr/m/n/12 Theft of Ve-hi-cles
  []
 
 
-Underfull \hbox (badness 7963) in paragraph at lines 520--521
+Underfull \hbox (badness 7963) in paragraph at lines 519--520
 []|\T1/cmr/m/n/12 RUES and Google
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 530--531
+Underfull \hbox (badness 1596) in paragraph at lines 529--530
 \T1/cmr/m/n/12 de Vida de Bo-gotá
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 532--533
+Underfull \hbox (badness 1596) in paragraph at lines 531--532
 \T1/cmr/m/n/12 de Vida de Bo-gotá
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 534--535
+Underfull \hbox (badness 1596) in paragraph at lines 533--534
 \T1/cmr/m/n/12 de Vida de Bo-gotá
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 536--537
+Underfull \hbox (badness 1596) in paragraph at lines 535--536
 \T1/cmr/m/n/12 de Vida de Bo-gotá
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--541
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
 []|\T1/cmr/m/n/12 Mapas Bo-gotá -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--541
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
 \T1/cmr/m/n/12 In-fraestruc-tura de
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 540--541
+Underfull \hbox (badness 1168) in paragraph at lines 539--540
 \T1/cmr/m/n/12 Datos Es-pa-ciales de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--543
+Underfull \hbox (badness 10000) in paragraph at lines 541--542
 []|\T1/cmr/m/n/12 Mapas Bo-gotá -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 542--543
+Underfull \hbox (badness 10000) in paragraph at lines 541--542
 \T1/cmr/m/n/12 In-fraestruc-tura de
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 542--543
+Underfull \hbox (badness 1168) in paragraph at lines 541--542
 \T1/cmr/m/n/12 Datos Es-pa-ciales de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 544--544
+Underfull \hbox (badness 10000) in paragraph at lines 543--543
 []|\T1/cmr/m/n/12 Cantidad ac-ceso a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 544--545
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
 []|\T1/cmr/m/n/12 Mapas Bo-gotá -
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 544--545
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
 \T1/cmr/m/n/12 In-fraestruc-tura de
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 544--545
+Underfull \hbox (badness 1168) in paragraph at lines 543--544
 \T1/cmr/m/n/12 Datos Es-pa-ciales de
  []
 
 
-Underfull \hbox (badness 2837) in paragraph at lines 548--548
+Underfull \hbox (badness 2837) in paragraph at lines 547--547
 []|\T1/cmr/m/n/12 Cantidad de Oxxos
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 548--548
+Underfull \hbox (badness 10000) in paragraph at lines 547--547
 \T1/cmr/m/n/12 cer-canos fuera del
  []
 
 
-Overfull \hbox (13.81969pt too wide) in alignment at lines 500--553
+Overfull \hbox (13.81969pt too wide) in alignment at lines 499--552
  [] [] [] 
  []
 
 [29] [30]
-<figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png, id=520, 208.8603pt x 364.9635pt>
+<figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png, id=523, 208.8603pt x 364.9635pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png  used on input line 561.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2009.png  used on input line 560.
 (pdftex.def)             Requested size: 133.07489pt x 232.53445pt.
-<figs_oxxo_maps/mapa_oxxos_binary_zat_2011.png, id=521, 209.8239pt x 367.8543pt>
+<figs_oxxo_maps/mapa_oxxos_binary_zat_2011.png, id=524, 209.8239pt x 367.8543pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_zat_2011.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_zat_2011.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2011.png  used on input line 567.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2011.png  used on input line 566.
 (pdftex.def)             Requested size: 133.07489pt x 233.30983pt.
-<figs_oxxo_maps/mapa_oxxos_binary_zat_2015.png, id=522, 212.7147pt x 359.1819pt>
+<figs_oxxo_maps/mapa_oxxos_binary_zat_2015.png, id=525, 212.7147pt x 359.1819pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_zat_2015.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_zat_2015.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2015.png  used on input line 573.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2015.png  used on input line 572.
 (pdftex.def)             Requested size: 133.07489pt x 224.71283pt.
-<figs_oxxo_maps/mapa_oxxos_binary_zat_2019.png, id=523, 208.1376pt x 360.6273pt>
+<figs_oxxo_maps/mapa_oxxos_binary_zat_2019.png, id=526, 208.1376pt x 360.6273pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_zat_2019.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_zat_2019.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2019.png  used on input line 582.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2019.png  used on input line 581.
 (pdftex.def)             Requested size: 133.07489pt x 230.58057pt.
-<figs_oxxo_maps/mapa_oxxos_binary_zat_2023.png, id=524, 206.6922pt x 358.941pt>
+<figs_oxxo_maps/mapa_oxxos_binary_zat_2023.png, id=527, 206.6922pt x 358.941pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_zat_2023.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_zat_2023.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2023.png  used on input line 588.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2023.png  used on input line 587.
 (pdftex.def)             Requested size: 133.07489pt x 231.10164pt.
-<figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png, id=525, 210.3057pt x 365.6862pt>
+<figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png, id=528, 210.3057pt x 365.6862pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png  used on input line 594.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_zat_2025.png  used on input line 593.
 (pdftex.def)             Requested size: 133.07489pt x 231.39906pt.
 
 
@@ -1614,18 +1614,18 @@ Package logreq Info: Writing requests to 'primera_version.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 39731 strings out of 473190
- 803814 string characters out of 5715801
- 1745335 words of memory out of 5000000
- 62273 multiletter control sequences out of 15000+600000
+ 39734 strings out of 473190
+ 803843 string characters out of 5715801
+ 1744342 words of memory out of 5000000
+ 62276 multiletter control sequences out of 15000+600000
  580307 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,11n,105p,1486b,5183s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on primera_version.pdf (33 pages, 6141014 bytes).
+Output written on primera_version.pdf (33 pages, 6141256 bytes).
 PDF statistics:
- 681 PDF objects out of 1000 (max. 8388607)
- 524 compressed objects within 6 object streams
+ 684 PDF objects out of 1000 (max. 8388607)
+ 527 compressed objects within 6 object streams
  121 named destinations out of 1000 (max. 500000)
  431 words of extra memory for PDF output out of 10000 (max. 10000000)
 

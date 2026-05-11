@@ -31,8 +31,16 @@ for nombre_delito, url in delitos_urls.items():
         r.raise_for_status()
         original_data = r.json()
         
+        print(f"Datos descargados para {nombre_delito}. Iniciando limpieza y transformación...")
+        print(f"Total registros obtenidos: {len(original_data.get('features', []))}")
+        
         features = original_data.get("features", [])
         total_inicial = len(features)
+        
+        #print features todos los registros para verificar estructura (descomentar si se necesita)
+        for i, feature in enumerate(features[:30]):  # Mostrar solo los primeros 3 para no saturar la salida
+            print(f"Registro {i+1}: {feature}")
+        
         
         if total_inicial == 0:
             print(f"⚠️ No se encontraron datos para {nombre_delito}. Saltando...")

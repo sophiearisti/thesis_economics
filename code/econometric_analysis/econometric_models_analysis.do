@@ -48,61 +48,31 @@ gen accesibilidad_arterial_dummy = (accesibilidad_arterial>0)
 
 
 
-if $panel == 2 {
-	* Crear una variable de tiempo trimestral
-	gen tq = yq(year, quarter)
-	format tq %tq
+* Crear una variable de tiempo trimestral
+gen tq = yq(year, quarter)
+format tq %tq
 
-	*borrar duplicados
-	duplicates drop
+*borrar duplicados
+duplicates drop
 
-	* Declarar el panel
-	xtset codigo_upz tq
+* Declarar el panel
+xtset codigo_upz tq
 
-	* Calcular la diferencia con el trimestre anterior
-	* Asumiendo que tu variable se llama 'cant_oxxo'
-	gen diff_oxxo = cantidad_oxxo - L.cantidad_oxxo
+* Calcular la diferencia con el trimestre anterior
+* Asumiendo que tu variable se llama 'cant_oxxo'
+gen diff_oxxo = cantidad_oxxo - L.cantidad_oxxo
 
-	* Crear una bandera (flag) para las UPZ que tuvieron una disminución
-	gen disminuyo = 1 if diff_oxxo < 0 & !missing(diff_oxxo)
+* Crear una bandera (flag) para las UPZ que tuvieron una disminución
+gen disminuyo = 1 if diff_oxxo < 0 & !missing(diff_oxxo)
 
-	* Listar las UPZ, el periodo y el cambio para los casos donde disminuyó
-	list codigo_upz year quarter cantidad_oxxo diff_oxxo if disminuyo == 1
+* Listar las UPZ, el periodo y el cambio para los casos donde disminuyó
+list codigo_upz year quarter cantidad_oxxo diff_oxxo if disminuyo == 1
 
-	//upz 99 y 13
-	drop if codigo_upz == 13
-	drop if codigo_upz == 99
-}
-else if $panel == 0 {
-		* Crear una variable de tiempo trimestral
-	gen tq = yq(year, quarter)
-	format tq %tq
+//upz 99 y 13
+drop if codigo_upz == 13
+drop if codigo_upz == 99
+drop if codigo_upz == 108
 
-	*borrar duplicados
-	duplicates drop
-
-	* Declarar el panel
-	xtset codigo_upz tq
-
-	* Calcular la diferencia con el trimestre anterior
-	* Asumiendo que tu variable se llama 'cant_oxxo'
-	gen diff_oxxo = cantidad_oxxo - L.cantidad_oxxo
-
-	* Crear una bandera (flag) para las UPZ que tuvieron una disminución
-	gen disminuyo = 1 if diff_oxxo < 0 & !missing(diff_oxxo)
-
-	* Listar las UPZ, el periodo y el cambio para los casos donde disminuyó
-	list codigo_upz year quarter cantidad_oxxo diff_oxxo if disminuyo == 1
-
-	//upz 99 y 13
-	drop if codigo_upz == 13
-	drop if codigo_upz == 99
-	drop if codigo_upz == 108
-
-}
-else {
-    drop if codigo_upz == 108
-}
 
 ***************************************************************
 *REGRESIONES PARA LA ENTREGA
@@ -131,20 +101,6 @@ global harddiscount_controls cantidad_d1 cantidad_ara cantidad_jb
 *********************************************************
 *TWO WAY FIXED EFFECTS
 *********************************************************
-if ${panel} == 1 {
-	
-	gen tq = yq(year, quarter)
-	format tq %tq
-
-	duplicates report codigo_upz tq
-
-	duplicates list codigo_upz tq
-
-	duplicates drop codigo_upz tq, force //todas las observaciones son identicas
-
-	xtset codigo_upz tq
-	
-}
  
 	
 local first = 1

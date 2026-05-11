@@ -444,7 +444,6 @@ INPUT ./other_figs/oxxos_por_ano.png
 INPUT ./other_figs/oxxos_por_ano.png
 INPUT ./other_figs/oxxos_por_ano.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
 INPUT ./figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png
 INPUT ./figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png
 INPUT ./figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png
@@ -482,12 +481,12 @@ INPUT ./figs_oxxo_maps/legend.png
 INPUT ./figs_oxxo_maps/legend.png
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecti1000.tfm
-INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT ./figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png
 INPUT ./figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png
 INPUT ./figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png
 INPUT ./figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png
 INPUT ./figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
@@ -518,6 +517,7 @@ INPUT ./figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_people_index_eb_edit
 INPUT ./figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_people_index_eb_edited.png
 INPUT ./figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_people_index_eb_edited.png
 INPUT ./figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_people_index_eb_edited.png
+INPUT /usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
 INPUT /usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1095.tfm
 INPUT ./other_figs/oxxos_intensidad_tratamiento.png

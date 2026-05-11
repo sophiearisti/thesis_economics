@@ -28,6 +28,10 @@
 %para tablas largas
 \usepackage{longtable}
 
+% for horizontal tables
+\usepackage{pdflscape}
+\usepackage{afterpage} % Opcional, ayuda a que la tabla no deje huecos blancos
+
 \onehalfspacing
 \title{When OXXO Moves Into the Block: An Econometric Analysis of the Impact of OXXO on Criminal Activity in Bogotá}
 \author{Sophia Aristizábal Flórez}
@@ -81,9 +85,9 @@ Although OXXO has been operating in Colombia for almost 17 years, it only consol
     \label{fig:EVOLUTION_OXXO}
 \end{figure}
 
-The proliferation of OXXO stores began in the northern part of the city before spreading throughout the eastern region. Figure~\ref{fig:fourpanelOXXO_evolution_UPZ} illustrates this evolution, showing that OXXO is now present in nearly 70\% of the city’s Zonal Planning Units (UPZ , these being units that group neighborhoods based on socioeconomic stratification, land use, housing characteristics, and the living conditions of their inhabitants \parencite{alcaldia_bogota_upz}. Furthermore, it can be observed that OXXO presence has a primary concentration in the northeastern neighborhoods of Bogotá. \\
+The proliferation of OXXO stores began in the northern part of the city before spreading throughout the eastern region. Figure~\ref{fig:fourpanelOXXO_evolution_UPZ} illustrates this evolution, showing that OXXO is now present in nearly 70\% of the city’s Zonal Planning Units (UPZ) , these being units that group neighborhoods based on socioeconomic stratification, land use, housing characteristics, and the living conditions of their inhabitants \parencite{alcaldia_bogota_upz}. Furthermore, it can be observed that OXXO presence has a primary concentration in the northeastern neighborhoods of Bogotá. Currently, the only areas lacking OXXO establishments are in the far southern reaches of the city. These places correspond to UPZs with lower levels of economic performance, socioeconomic stratification, and urban transport connectivity \parencite{Guzman2017, Bocarejo2013, PRISMBogota}, where residents continue to rely heavily on traditional neighborhood stores \parencite{RicoPencue2021}. \\
 
-This expansion correlates positively with the inherent characteristics of northeastern Bogotá, where high traffic, spatial accessibility, and high-income residential clusters provide an ideal environment for the convenience store model \hl{(citation)}. Currently, the only areas lacking OXXO establishments are in the far southern reaches of Bogotá. These areas correspond to UPZs with lower levels of economic performance, socioeconomic stratification, and urban transport connectivity \parencite{Guzman2017, Bocarejo2013, PRISMBogota}, where residents continue to rely heavily on traditional neighborhood stores \parencite{RicoPencue2021}. Figure~\ref{fig:oxxo_transmilenio_vias} illustrates this behavior by mapping the city’s arterial roads, main avenues, and Transmilenio stations (Bogotá's Bus Rapid Transit system); it demonstrates that by 2025, OXXO locations tended to cluster along these major transport corridors. Furthermore, Section~\ref{sec:Statistics} provides a statistical analysis confirming the positive correlation between these variables and store locations. \\
+This expansion across the years positively correlates with the inherent characteristics of northeastern Bogotá, where high traffic, spatial accessibility, and high-income residential clusters provide an ideal environment for the convenience store model \hl{(citation)}. Figure~\ref{fig:oxxo_transmilenio_vias} illustrates this behavior by mapping the city’s arterial roads, main avenues, and Transmilenio stations (Bogotá's Bus Rapid Transit system); it demonstrates that by 2025, OXXO locations tended to cluster along these major transport corridors. Furthermore, Section~\ref{sec:Statistics} provides a statistical analysis confirming the positive correlation between these variables and store locations. \\
 
 \begin{figure}
     \centering
@@ -149,15 +153,17 @@ This expansion correlates positively with the inherent characteristics of northe
     \label{fig:oxxo_transmilenio_vias}
 \end{figure}
 
+OXXO locations are centrally administered by FEMSA with the purpose of standardizing processes, logistics, services, and products \parencite{oxxo_faqs}. This implies that store placement is strategically determined according to the company’s broader commercial objectives rather than being randomly distributed across space. Such non-aleatory allocation may complicate econometric identification, since the characteristics that attract OXXO establishments may also affect crime behavior.\\
+
+The concern about endogenous OXXO placement, however, may be mitigated through the use of TWFE estimators, because many determinants of store location are either time-invariant or evolve only gradually over the sample period, allowing UPZ fixed effects to absorb a substantial portion of the selection process. Nonetheless, some bias may persist if OXXO entry responds to time-varying local trends correlated with the outcome. For example, FEMSA may prioritize expansion into UPZs experiencing increases in commercial activity, population density, household income, pedestrian flows, or improvements in public security, all of which could independently influence the dependent variable. In such cases, TWFE estimates could partly capture these underlying trends rather than the causal effect of OXXO entry alone.
 
 \subsection{Criminality in Bogotá}
 
-During the 1980s and 1990s, Bogotá was among the most unsafe cities in the country, experiencing a surge in narcoterrorism and the assassination of political leaders; in fact, in 1991, it reached a rate of 1,287 crimes per 100,000 inhabitants, exceeding that of Medellín (1,160) and Cali (537) \parencite{rodriguez2017ciudad}. However, at the end of the 90s and beginning of the 2000s, crime started to decrease; for example, between 1993 and 2002 Bogotá saw an estimated 65\% decrease in the homicide rate, while robbery fell by about 33\%. This shift was driven by citizen culture programs, large-scale urban renewal projects, and robust institutional reforms implemented by the majors of this period \parencite{Sanchez2003, mockus2012building}. In recent years, however, urban crime has shown signs of stagnation, with declining trends slowing or reversing. Following the 2019 covid pandemic criminality had a significant rebound, with personal theft surpassing pre-pandemic levels. By 2025, despite continued institutional efforts, crime rates in Bogotá have proven difficult to reduce, particularly in relation to homicides and robberies \parencite{(add source)}.\\
+During the 1980s and 1990s, Bogotá was among the most unsafe cities in Colombia, experiencing a surge in narcoterrorism and the assassination of political leaders; in fact, in 1991, it reached a rate of 1,287 crimes per 100,000 inhabitants, exceeding that of Medellín (1,160) and Cali (537) \parencite{rodriguez2017ciudad}. However, at the end of the 90s and beginning of the 2000s, crime started to decrease; for example, between 1993 and 2002 Bogotá saw an estimated 65\% decrease in the homicide rate, while robbery fell by about 33\%. This shift was driven by citizen culture programs, large-scale urban renewal projects, and institutional reforms implemented by the majors of this period \parencite{Sanchez2003, mockus2012building}. In recent years, however, urban crime has shown a fluctuating behavior. Following the 2019 covid pandemic, criminality had a rebound, with personal theft surpassing pre-pandemic levels in 2022 and 2023 \parencite{siedco_portal}. By 2024, despite continued institutional efforts and a decrease in crime rates in the city \parencite{siedco_portal},  69.3\% of households believed insecurity had raised \parencite{ccb_security_perception_2025}.\\
 
-Currently, crime in Bogotá, as in most cities, tends to cluster in specific zones. The most insecure Localities (a unit of territorial division that gathers many UPZ) are primarily located in the southeastern region of the city, a pattern associated with the presence of criminal organizations, high levels of informality, and deficiencies in human development \parencite{probogota2024indice}. However, this spatial concentration does not imply that all categories of crime peak in the same areas. While homicide rates generally follow this pattern, personal theft exhibits a distinct geographic distribution, with higher concentrations in the northeastern sector of the city \parencite{probogota2022informe}.\\ 
+Currently, crime in Bogotá, as in most cities, tends to cluster in specific zones \parencite{Enriquez2014,GimenezSantana2018}. The most insecure Localities (a unit of territorial division that gathers many UPZ) are primarily located in the southeastern region of the city, a pattern associated with the presence of criminal organizations, high levels of informality, and deficiencies in human development \parencite{probogota2024indice}. However, this spatial concentration does not imply that all categories of crime peak in the same areas. While homicide rates generally follow this pattern, personal theft exhibits a distinct geographic distribution, with higher concentrations in the northeastern sector of the city \parencite{probogota2022informe}.\\ 
 
-Figure~\ref{fig:fourpanelCrime} illustrates this behaviour as it displays how personal theft rates distribute throughout Bogotá´s UPZs over the years. These maps also highlight that between 2015 and 2021 (and even later, as it can be noted in ProBogota’s annual security informs (\footnote{\hl{PIE DE PAGINA)}}) this tendency has not drastically changed. This persistence suggests that there are environmental characteristics that keep favoring robberies or attracting offenders. Among these characteristics are high pedestrian traffic, a dense concentration of commercial land use, and proximity to the city’s main transit corridors.\\
-
+Figure~\ref{fig:fourpanelCrime} illustrates this behaviour as it displays how personal theft rates distribute throughout Bogotá´s UPZs over the years (Appendix~\ref{sec:othercrimemaps}  shows how other crimes distribute). These maps also highlight that between 2015 and 2021 (and even later, as it can be noted in ProBogota’s annual security reports) this tendency has not drastically changed. This persistence suggests that there are environmental characteristics that keep favoring robberies or attracting offenders. Among these characteristics are high pedestrian traffic, a dense concentration of commercial land use, and proximity to the city’s main transit corridors.\\
 \begin{figure}
     \centering
     % Top row
@@ -282,7 +288,7 @@ Before proceeding with the causal analysis, it is important to illustrate the pr
 
 This variation shown may not be as drastic as OXXO´s stores growth depicted in figure~\ref{fig:EVOLUTION_OXXO}. This suggests that some UPZs host a disproportionately higher number of establishments in order to account for the overall increase in OXXO stores across Bogotá. Moreover, this raises the question of whether treatment intensity should be explicitly considered in the analysis. Although Figure~\ref{fig:Treatment_intensity} does not provide a detailed spatial distribution of OXXO stores at the UPZ level over time, it illustrates the evolution of the average number of stores per cohort. The figure shows that, in early periods, differences between cohorts were relatively small (less than one store on average), whereas in later periods these differences became more pronounced. This pattern suggests that variation in treatment intensity may play a role in shaping the estimated relationship between OXXO presence and crime, and therefore warrants further evaluation.\\
 
-On the other hand, Figure~\ref{fig:sixpanelDifMed} presents preliminary evidence on differences in aggregated crime and different types of crime rates across periods. Specifically, they report the difference in mean crime rates between treated and not-yet-treated UPZs for each quarter, along with an indication of whether these differences are statistically significant at the 5\% level. For instance, Panel~\ref{fig:diff_people} shows that, for personal theft, there was a statistically significant difference between groups during the quarters from 2015-Q1 to 2019-Q1. This indicates that, on average, treated UPZs exhibited higher crime rates than those not yet treated.\\
+On the other hand, Figure~\ref{fig:Treatment_intensity} presents preliminary evidence the behavior of different types of crime rates across the periods. Specifically, they report the difference in mean crime rates between treated and not-yet-treated UPZs for each quarter, along with an indication of whether these differences are statistically significant at the 5\% level. For instance, Panel~\ref{fig:diff_people} shows that, for personal theft, there was a statistically significant difference between groups during the quarters from 2015-Q1 to 2019-Q1. This indicates that, on average, treated UPZs exhibited higher crime rates than those not yet treated.\\
 
 \begin{figure}[htbp]
     \centering
@@ -298,13 +304,6 @@ On the other hand, Figure~\ref{fig:sixpanelDifMed} presents preliminary evidence
 
 \begin{figure}[ht]
     \centering
-    % Primera fila: Crimen General y Personas
-    \begin{subfigure}[b]{0.48\textwidth} 
-        \includegraphics[width=\linewidth]{dif_meds/diff_means_crime_index.png}
-        \caption{Aggregated crime rate}
-        \label{fig:diff_crime}
-    \end{subfigure}
-    \hfill
     \begin{subfigure}[b]{0.48\textwidth} 
         \includegraphics[width=\linewidth]{dif_meds/diff_means_theft_to_people_index.png}
         \caption{Theft rate}
@@ -467,12 +466,96 @@ A similar behavior between the two models would reinforce the validity of the TW
 \section{Results}
 \label{sec:Results}
 
-\section{Discussion}
+
+\begin{table}[H]
+\centering
+\caption{Effect of the opening of OXXO stores on crime rates}
+\label{tab:resultados_regresion}
+
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccc}
+\hline
+\hline
+Crime rates & Theft to People & Sexual Offenses & Homicide & Theft to Motorbike & Theft to Vehicle  \\
+ & (1) & (2) & (3) & (4) & (5) \\
+\hline
+Has OXXO & 0.017 & -0.011 & -0.0206 & -0.0022 & -0.015 \\
+ & (0.019) & (0.014) & (0.013) & (0.014) & (0.015) \\
+Constant & 0.301*** & 0.006 & 0.012 & 0.02 & 0.018 \\
+ & (0.008) & (0.010) & (0.022) & (0.016) & (0.017) \\
+\hline
+Chain Stores & no & no & no & no & no \\
+Observations & 3,584 & 3,584 & 3,584 & 3,584 & 3,584 \\
+R-squared & 0.000 & 0.222 & 0.375 & 0.460 & 0.480 \\
+Mean never treated & 0.259 & 0.259 & 0.259 & 0.259 & 0.259 \\
+\hline
+\end{tabular}
+}
+
+\parbox[t]{\textwidth}{%
+\vspace{0.5em}
+\footnotesize{\textit{Note:} Standard errors in parentheses. *** p$<$0.01, ** p$<$0.05, * p$<$0.1.  
+TWFE considers fixed effects by unit and time, with standard errors clustered by UPZ. 
+The dependent variable is the crime rate per 10,000 inhabitants per UPZ.
+Moreover, the treatment variable is binary and indicates if the UPZ has at least one OXXO in its area.
+}}
+\end{table}
+
+
+\newpage
+\afterpage{ % El comando afterpage asegura que la tabla se coloque en la siguiente página disponible sin romper el flujo del texto
+    \begin{landscape}
+        \begin{table}[p] % [p] para que ocupe una página completa
+            \centering
+            \caption{Events Studies of TWFE and CS on different types of crime rates}
+            \label{tab:resultados_ES}
+            \resizebox{\linewidth}{!}{% Ajustado a \linewidth para que use el ancho total de la hoja horizontal
+            \begin{tabular}{lcccccccccc} % Definidas las 11 columnas
+            \hline\hline
+            Crime rates & \multicolumn{2}{c}{Theft People} & \multicolumn{2}{c}{Sexual Offenses} & \multicolumn{2}{c}{Homicide} & \multicolumn{2}{c}{Theft Motorbike} & \multicolumn{2}{c}{Theft Vehicle} \\
+            Method & TWFE & CS & TWFE & CS & TWFE & CS & TWFE & CS & TWFE & CS \\
+            \hline
+            & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10) \\
+            \hline
+            Year after treatment = -3 & -0.0216 & ... & 0.0330 & ... & 0.006 & ... & 0.040 & ... & ... & ... \\
+             & (0.0232) & & (0.0334) & & (0.024) & & (0.016) & & & \\
+            Year after treatment = -2 & 0.0195 & ... & 0.0459 & ... & -0.012 & ... & 0.007 & ... & ... & ... \\
+             & (0.0229) & & (0.0267) & & (0.021) & & (0.020) & & & \\
+            Year after treatment = 0 & 0.0103 & ... & 0.0215 & ... & -0.013 & ... & 0.006 & ... & ... & ... \\
+             & (0.0166) & & (0.0180) & & (0.017) & & (0.027) & & & \\
+            Year after treatment = 1 & -0.0130 & ... & -0.0252 & ... & -0.029 & ... & 0.003 & ... & ... & ... \\
+             & (0.0135) & & (0.0192) & & (0.023) & & (0.023) & & & \\
+            Year after treatment = 2 & -0.0356* & ... & -0.0605* & ... & -0.071** & ... & -0.034 & ... & ... & ... \\
+             & (0.0261) & & (0.0299) & & (0.033) & & (0.020) & & & \\
+            Year after treatment = 3 & -0.0690** & ... & -0.118*** & ... & -- & ... & -- & ... & ... & ... \\
+             & (0.0273) & & (0.0409) & & -- & & -- & & & \\
+            \hline
+            ATT & -0.0206 & ... & -0.0022 & ... & -0.0214 & ... & 0.0014 & ... & ... & ... \\
+            SE ATT & (0.0193) & ... & (0.0195) & ... & (0.019) & ... & (0.018) & ... & ... & ... \\
+            Observations & 684 & ... & 684 & ... & 3,520 & ... & 3,520 & ... & ... & ... \\
+            \hline
+            \end{tabular}
+            }
+            
+            \vspace{1em}
+            \begin{minipage}{\linewidth} % Minipage para que las notas tengan el mismo ancho que la tabla rotada
+                \footnotesize
+                \textit{Note:} Standard errors in parentheses. *** p$<$0.01, ** p$<$0.05, * p$<$0.1. 
+                ATT is the average effect of the treatment on the treated. For TWFE, this is the coefficient presented in Table~\ref{tab:resultados_regresion} and for CS is the weighted average of the ATTs by cohort.
+            \end{minipage}
+        \end{table}
+    \end{landscape}
+}
+\newpage
 
 \section{Robustness}
 spill over effects
 buffers for the spill over effects, etc.
 treat controls and treated groups as buffers
+
+
+\section{Discussion}
+
 
 \section{Conclusions}
 
@@ -664,5 +747,8 @@ treat controls and treated groups as buffers
     \vspace{0.5em}
     \footnotesize{ \textit{Nota:} Significancia: *** p<0.01, ** p<0.05, * p<0.1.}}
 \end{table}
+
+\section{Distribution of other crimes in Bogotá over time}
+\label{sec:othercrimemaps}
 
 \end{document}

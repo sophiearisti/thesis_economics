@@ -412,6 +412,45 @@
       \verb https://doi.org/10.1016/j.jeconom.2020.12.001
       \endverb
     \endentry
+    \entry{ccb_security_perception_2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6c0f8f989973d981a19f035de5266566}{%
+           family={{Cámara de Comercio de Bogotá}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Cámara de Comercio de Bogotá}%
+      }
+      \strng{namehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{fullhash}{6c0f8f989973d981a19f035de5266566}
+      \strng{fullhashraw}{6c0f8f989973d981a19f035de5266566}
+      \strng{bibnamehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authorbibnamehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authornamehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authorfullhash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authorfullhashraw}{6c0f8f989973d981a19f035de5266566}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{title}{Decreasing Perception of Insecurity and Victimization in Bogota}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ccb.org.co/en/of-interest/communications/decreasing-perception-of-insecurity-and-victimization-in-bogota
+      \endverb
+      \verb{url}
+      \verb https://www.ccb.org.co/en/of-interest/communications/decreasing-perception-of-insecurity-and-victimization-in-bogota
+      \endverb
+    \endentry
     \entry{CCB2026}{online}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=6c0f8f989973d981a19f035de5266566}{%
@@ -426,6 +465,7 @@
       \strng{authornamehash}{6c0f8f989973d981a19f035de5266566}
       \strng{authorfullhash}{6c0f8f989973d981a19f035de5266566}
       \strng{authorfullhashraw}{6c0f8f989973d981a19f035de5266566}
+      \field{extraname}{2}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{extradatescope}{labelyear}
@@ -762,6 +802,42 @@
       \verb https://www.eleconomista.com.mx/empresas/oxxo-expande-colombia-abre-tienda-tres-dias-20260416-808982.html
       \endverb
     \endentry
+    \entry{Enriquez2014}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=719b6e73f981c3e94a4e8e1e47e0a1ec}{%
+           family={Enriquez},
+           familyi={E\bibinitperiod},
+           given={Juan\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0b899613bc2a50c65b0603edc03b37d3}
+      \strng{fullhash}{0b899613bc2a50c65b0603edc03b37d3}
+      \strng{fullhashraw}{0b899613bc2a50c65b0603edc03b37d3}
+      \strng{bibnamehash}{0b899613bc2a50c65b0603edc03b37d3}
+      \strng{authorbibnamehash}{0b899613bc2a50c65b0603edc03b37d3}
+      \strng{authornamehash}{0b899613bc2a50c65b0603edc03b37d3}
+      \strng{authorfullhash}{0b899613bc2a50c65b0603edc03b37d3}
+      \strng{authorfullhashraw}{0b899613bc2a50c65b0603edc03b37d3}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Desarrollo y Sociedad}
+      \field{title}{Neighborhood characteristics and the spatial concentration of crime: Evidence for Bogotá}
+      \field{volume}{74}
+      \field{year}{2014}
+      \field{pages}{131\bibrangedash 170}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.13043/DYS.74.4
+      \endverb
+    \endentry
     \entry{Escobar2012}{article}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=ff61112575d62827489b6daa77890a03}{%
@@ -894,6 +970,53 @@
       \field{title}{Impacto de Transmilenio en el crimen de la Avenida Caracas y sus vecindades}
       \field{type}{Working Paper}
       \field{year}{{2005}}
+    \endentry
+    \entry{GimenezSantana2018}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=987bfa76c40d4e9ea9e61e088d97d57b}{%
+           family={Giménez-Santana},
+           familyi={G\bibinithyphendelim S\bibinitperiod},
+           given={Alejandro},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7bd50863cd5bcae42dd1e1f56895232f}{%
+           family={Caplan},
+           familyi={C\bibinitperiod},
+           given={Joel\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4b4a941bca4af203e1632ff6c99d593b}{%
+           family={Drawve},
+           familyi={D\bibinitperiod},
+           given={Grant},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7d5bd2425c66040bcd0f7c0720cb1ce3}
+      \strng{fullhash}{93dfffb6a0b9b32a1a93d8836008a392}
+      \strng{fullhashraw}{93dfffb6a0b9b32a1a93d8836008a392}
+      \strng{bibnamehash}{93dfffb6a0b9b32a1a93d8836008a392}
+      \strng{authorbibnamehash}{93dfffb6a0b9b32a1a93d8836008a392}
+      \strng{authornamehash}{7d5bd2425c66040bcd0f7c0720cb1ce3}
+      \strng{authorfullhash}{93dfffb6a0b9b32a1a93d8836008a392}
+      \strng{authorfullhashraw}{93dfffb6a0b9b32a1a93d8836008a392}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{European Journal on Criminal Policy and Research}
+      \field{number}{4}
+      \field{title}{Risk Terrain Modeling and Socio-Economic Stratification: Identifying Risky Places for Violent Crime Victimization in Bogotá, Colombia}
+      \field{volume}{24}
+      \field{year}{2018}
+      \field{pages}{457\bibrangedash 476}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1007/S10610-018-9374-5
+      \endverb
     \endentry
     \entry{godoy2018security}{report}{}{}
       \name{author}{3}{}{%
@@ -1378,10 +1501,10 @@
       \field{title}{Building ``{C}itizenship {C}ulture'' in {B}ogotá}
       \field{year}{2012}
       \verb{urlraw}
-      \verb https://www.americasquarterly.org/fulltextarticle/building-citizenship-culture-in-bogota/
+      \verb https://jia.sipa.columbia.edu/news/building-citizenship-culture-bogota
       \endverb
       \verb{url}
-      \verb https://www.americasquarterly.org/fulltextarticle/building-citizenship-culture-in-bogota/
+      \verb https://jia.sipa.columbia.edu/news/building-citizenship-culture-bogota
       \endverb
     \endentry
     \entry{moreno2005impacto}{report}{}{}
@@ -1503,6 +1626,43 @@
       \endverb
       \verb{url}
       \verb https://oxxo.co/faqs
+      \endverb
+    \endentry
+    \entry{siedco_portal}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=34a00c3f898896b172a7f2744f08be05}{%
+           family={{Policía Nacional de Colombia}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Policía Nacional de Colombia}%
+      }
+      \strng{namehash}{34a00c3f898896b172a7f2744f08be05}
+      \strng{fullhash}{34a00c3f898896b172a7f2744f08be05}
+      \strng{fullhashraw}{34a00c3f898896b172a7f2744f08be05}
+      \strng{bibnamehash}{34a00c3f898896b172a7f2744f08be05}
+      \strng{authorbibnamehash}{34a00c3f898896b172a7f2744f08be05}
+      \strng{authornamehash}{34a00c3f898896b172a7f2744f08be05}
+      \strng{authorfullhash}{34a00c3f898896b172a7f2744f08be05}
+      \strng{authorfullhashraw}{34a00c3f898896b172a7f2744f08be05}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Portal Público de Indicadores del Sistema de Información Estadístico, Delincuencial, Contravencional y Operativo (SIEDCO)}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://portalsiedco.policia.gov.co:4443/extensions/PortalPublico/index.html#/Indicadores/Delito
+      \endverb
+      \verb{url}
+      \verb https://portalsiedco.policia.gov.co:4443/extensions/PortalPublico/index.html#/Indicadores/Delito
       \endverb
     \endentry
     \entry{PRISMBogota}{misc}{}{}
@@ -2403,6 +2563,45 @@
       \verb https://doi.org/10.1016/j.jeconom.2020.12.001
       \endverb
     \endentry
+    \entry{ccb_security_perception_2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6c0f8f989973d981a19f035de5266566}{%
+           family={{Cámara de Comercio de Bogotá}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Cámara de Comercio de Bogotá}%
+      }
+      \strng{namehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{fullhash}{6c0f8f989973d981a19f035de5266566}
+      \strng{fullhashraw}{6c0f8f989973d981a19f035de5266566}
+      \strng{bibnamehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authorbibnamehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authornamehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authorfullhash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authorfullhashraw}{6c0f8f989973d981a19f035de5266566}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{title}{Decreasing Perception of Insecurity and Victimization in Bogota}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.ccb.org.co/en/of-interest/communications/decreasing-perception-of-insecurity-and-victimization-in-bogota
+      \endverb
+      \verb{url}
+      \verb https://www.ccb.org.co/en/of-interest/communications/decreasing-perception-of-insecurity-and-victimization-in-bogota
+      \endverb
+    \endentry
     \entry{CCB2026}{online}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=6c0f8f989973d981a19f035de5266566}{%
@@ -2417,6 +2616,7 @@
       \strng{authornamehash}{6c0f8f989973d981a19f035de5266566}
       \strng{authorfullhash}{6c0f8f989973d981a19f035de5266566}
       \strng{authorfullhashraw}{6c0f8f989973d981a19f035de5266566}
+      \field{extraname}{2}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{extradatescope}{labelyear}
@@ -2753,6 +2953,42 @@
       \verb https://www.eleconomista.com.mx/empresas/oxxo-expande-colombia-abre-tienda-tres-dias-20260416-808982.html
       \endverb
     \endentry
+    \entry{Enriquez2014}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=719b6e73f981c3e94a4e8e1e47e0a1ec}{%
+           family={Enriquez},
+           familyi={E\bibinitperiod},
+           given={Juan\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{0b899613bc2a50c65b0603edc03b37d3}
+      \strng{fullhash}{0b899613bc2a50c65b0603edc03b37d3}
+      \strng{fullhashraw}{0b899613bc2a50c65b0603edc03b37d3}
+      \strng{bibnamehash}{0b899613bc2a50c65b0603edc03b37d3}
+      \strng{authorbibnamehash}{0b899613bc2a50c65b0603edc03b37d3}
+      \strng{authornamehash}{0b899613bc2a50c65b0603edc03b37d3}
+      \strng{authorfullhash}{0b899613bc2a50c65b0603edc03b37d3}
+      \strng{authorfullhashraw}{0b899613bc2a50c65b0603edc03b37d3}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Desarrollo y Sociedad}
+      \field{title}{Neighborhood characteristics and the spatial concentration of crime: Evidence for Bogotá}
+      \field{volume}{74}
+      \field{year}{2014}
+      \field{pages}{131\bibrangedash 170}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.13043/DYS.74.4
+      \endverb
+    \endentry
     \entry{Escobar2012}{article}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=ff61112575d62827489b6daa77890a03}{%
@@ -2885,6 +3121,53 @@
       \field{title}{Impacto de Transmilenio en el crimen de la Avenida Caracas y sus vecindades}
       \field{type}{Working Paper}
       \field{year}{{2005}}
+    \endentry
+    \entry{GimenezSantana2018}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=987bfa76c40d4e9ea9e61e088d97d57b}{%
+           family={Giménez-Santana},
+           familyi={G\bibinithyphendelim S\bibinitperiod},
+           given={Alejandro},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7bd50863cd5bcae42dd1e1f56895232f}{%
+           family={Caplan},
+           familyi={C\bibinitperiod},
+           given={Joel\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4b4a941bca4af203e1632ff6c99d593b}{%
+           family={Drawve},
+           familyi={D\bibinitperiod},
+           given={Grant},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{7d5bd2425c66040bcd0f7c0720cb1ce3}
+      \strng{fullhash}{93dfffb6a0b9b32a1a93d8836008a392}
+      \strng{fullhashraw}{93dfffb6a0b9b32a1a93d8836008a392}
+      \strng{bibnamehash}{93dfffb6a0b9b32a1a93d8836008a392}
+      \strng{authorbibnamehash}{93dfffb6a0b9b32a1a93d8836008a392}
+      \strng{authornamehash}{7d5bd2425c66040bcd0f7c0720cb1ce3}
+      \strng{authorfullhash}{93dfffb6a0b9b32a1a93d8836008a392}
+      \strng{authorfullhashraw}{93dfffb6a0b9b32a1a93d8836008a392}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{European Journal on Criminal Policy and Research}
+      \field{number}{4}
+      \field{title}{Risk Terrain Modeling and Socio-Economic Stratification: Identifying Risky Places for Violent Crime Victimization in Bogotá, Colombia}
+      \field{volume}{24}
+      \field{year}{2018}
+      \field{pages}{457\bibrangedash 476}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1007/S10610-018-9374-5
+      \endverb
     \endentry
     \entry{godoy2018security}{report}{}{}
       \name{author}{3}{}{%
@@ -3369,10 +3652,10 @@
       \field{title}{Building ``{C}itizenship {C}ulture'' in {B}ogotá}
       \field{year}{2012}
       \verb{urlraw}
-      \verb https://www.americasquarterly.org/fulltextarticle/building-citizenship-culture-in-bogota/
+      \verb https://jia.sipa.columbia.edu/news/building-citizenship-culture-bogota
       \endverb
       \verb{url}
-      \verb https://www.americasquarterly.org/fulltextarticle/building-citizenship-culture-in-bogota/
+      \verb https://jia.sipa.columbia.edu/news/building-citizenship-culture-bogota
       \endverb
     \endentry
     \entry{moreno2005impacto}{report}{}{}
@@ -3494,6 +3777,43 @@
       \endverb
       \verb{url}
       \verb https://oxxo.co/faqs
+      \endverb
+    \endentry
+    \entry{siedco_portal}{online}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=34a00c3f898896b172a7f2744f08be05}{%
+           family={{Policía Nacional de Colombia}},
+           familyi={P\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Policía Nacional de Colombia}%
+      }
+      \strng{namehash}{34a00c3f898896b172a7f2744f08be05}
+      \strng{fullhash}{34a00c3f898896b172a7f2744f08be05}
+      \strng{fullhashraw}{34a00c3f898896b172a7f2744f08be05}
+      \strng{bibnamehash}{34a00c3f898896b172a7f2744f08be05}
+      \strng{authorbibnamehash}{34a00c3f898896b172a7f2744f08be05}
+      \strng{authornamehash}{34a00c3f898896b172a7f2744f08be05}
+      \strng{authorfullhash}{34a00c3f898896b172a7f2744f08be05}
+      \strng{authorfullhashraw}{34a00c3f898896b172a7f2744f08be05}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Portal Público de Indicadores del Sistema de Información Estadístico, Delincuencial, Contravencional y Operativo (SIEDCO)}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2026}
+      \field{year}{2026}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://portalsiedco.policia.gov.co:4443/extensions/PortalPublico/index.html#/Indicadores/Delito
+      \endverb
+      \verb{url}
+      \verb https://portalsiedco.policia.gov.co:4443/extensions/PortalPublico/index.html#/Indicadores/Delito
       \endverb
     \endentry
     \entry{PRISMBogota}{misc}{}{}
@@ -4000,7 +4320,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{(add source)}
 \endrefsection
 \endinput
 

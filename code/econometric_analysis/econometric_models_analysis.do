@@ -72,7 +72,8 @@ list codigo_upz year quarter cantidad_oxxo diff_oxxo if disminuyo == 1
 drop if codigo_upz == 13
 drop if codigo_upz == 99
 drop if codigo_upz == 108
-
+drop if codigo_upz == 63
+drop if codigo_upz == 117
 
 ***************************************************************
 *REGRESIONES PARA LA ENTREGA

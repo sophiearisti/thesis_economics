@@ -1,5 +1,6 @@
 # Data files
 data/municipalities/crime_fiscalia/victimas_fiscalia.csv
+data/crime/llamadas123.csv
 
 # Map outputs
 *.gpkg

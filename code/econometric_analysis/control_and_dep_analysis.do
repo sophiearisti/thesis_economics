@@ -15,10 +15,12 @@ if $panel == 1 {
     global doc_panel "$dir_BDD_panel/panel_final_upz_trimestral.csv"
 }
 else if $panel == 0 {
-	    global doc_panel "$dir_BDD_panel/panel_final_all_upz_trimestral.csv"
+	//global doc_panel "$dir_BDD_panel/panel_final_all_upz_trimestral.csv"
+	global doc_panel "$dir_BDD_panel/panel_final_con_llamadas.csv" 
+
 }
 else {
-    global doc_panel "$dir_BDD_panel/panel_final_clean_new_upz_trimestral.csv"
+    global doc_panel "$dir_BDD_panel/panel_final_clean_new_upz_trimestral.csv" 
 }
 
 global dir_controls_results "$global_dir/data/controles_results"
@@ -233,7 +235,7 @@ if $panel== 1 {
 	local anos 2015 2016 2017 2018
 } 
 else if $panel == 0 {
-	local anos 2015 2016 2017 2018 2019 2020 2021 2022 2023
+	local anos 2015 2016 2017 2018 2019 2020 2021 2022
 }
 else {
 	local anos 2018 2019 2020 2021 2022 2023
@@ -265,3 +267,42 @@ foreach a of local anos {
 
 *total entre tratados y controles
 iebaltab $depVar , groupvar(dummy_oxxo) control(0) savexlsx(difmedias_dep_vars_tot_$panel) replace 
+
+global depVar2 tasa_total_violacion_maltrato tasa_total_violacion_domicilio tasa_total_tendida tasa_total_sospechoso tasa_total_rapto_secuestro tasa_total_pandillas_drogas tasa_total_hurto tasa_total_homicidio tasa_total_auxilio tasa_total_atraco tasa_total_armas tasa_total_alteracion_orden tasa_total_alcohol_menores
+
+if $panel== 1 {
+	local anos 2015 2016 2017 2018
+} 
+else if $panel == 0 {
+	local anos 2015 2016 2017 2018 2019 2020 2021 2022
+}
+else {
+	local anos 2018 2019 2020 2021 2022 2023
+}
+
+local trimestres 1 2 3 4
+
+*para ir comparando cada ano
+foreach a of local anos {
+    
+    foreach t of local trimestres {
+        
+        preserve
+        
+        keep if year == `a' & quarter == `t'
+        
+        iebaltab $depVar2, ///
+            groupvar(dummy_oxxo) ///
+            control(0) ///
+            savexlsx(ddifmedias_dep_vars2_`a'_T`t'_$panel) ///
+            replace
+			
+        ttest crime_index, by(dummy_oxxo)
+		
+        restore
+    }
+}
+
+
+*total entre tratados y controles
+iebaltab $depVar2 , groupvar(dummy_oxxo) control(0) savexlsx(difmedias_dep_vars2_tot_$panel) replace 

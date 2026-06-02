@@ -23,6 +23,8 @@ plot_oxxo_map <- function(year, geometry) {
   gdf <- st_read(paste0("data/maps_data/gpkg_all_years/joined_all_",geometry,"_years.gpkg"),
                  layer = paste0("joined_", year))
   
+  "~/Desktop/1 economia/thesis_economics/data/maps_data/gpkg_all_years/joined_all_stores_years_upz.gpkg"
+  
   # Quitar ZAT 796 y 798 porque nunca son tratado y la verdad no se ve nada
   if (geometry == "zat") {
     # delete all zats that have codigo_upz as NA
@@ -59,7 +61,7 @@ plot_oxxo_map <- function(year, geometry) {
 #"Se quitaron ZAT 796 y 798 (zonas rurales o reservas naturales)
 
 anos <- c(2009, 2011, 2015, 2019,2023, 2025)
-geometries <- c("zat", "upz")
+geometries <- c("upz")
 
 # Mapas por año
 for (geometry in geometries) {
@@ -128,25 +130,14 @@ plot_dep_map <- function(year, geometry, folder, depVar) {
       filter(!ZAT %in% c(796, 798, 824, 822, 821, 820, 819, 812, 1845, 801, 811, 800, 810, 795, 791, 823,808))
     title= "Total crimes "
   }
-  else if (depVar == "theft_to_people_index_eb")
+  else 
   {
-    title= "Theft to people crime rate per 10k inhabitants "
+    title= crime_dict[[depVar]]
     #codigo_upz 63 o 117 asignarles al depVar zero porque son valores muy extremos
     # 2. ASIGNAR CERO A VALORES EXTREMOS (UPZ 63 y 117)
     # Usamos sym(depVar) para que dplyr entienda que es el nombre de una columna dinámica
-    #gdf <- gdf %>%
-      #mutate(!!sym(depVar) := ifelse(codigo_upz %in% c(63, 117), 0, !!sym(depVar)))
-    
-  }
-  else
-  {
-    title= "Crime rate per 10k inhabitants "
-    #codigo_upz 63 o 117 asignarles al depVar zero porque son valores muy extremos
-    # 2. ASIGNAR CERO A VALORES EXTREMOS (UPZ 63 y 117)
-    # Usamos sym(depVar) para que dplyr entienda que es el nombre de una columna dinámica
-    #gdf <- gdf %>%
-      #mutate(!!sym(depVar) := ifelse(codigo_upz %in% c(63, 117), 0, !!sym(depVar)))
-    
+    gdf <- gdf %>%
+      mutate(!!sym(depVar) := ifelse(codigo_upz %in% c(63, 117), 0, !!sym(depVar)))
     
   }
 
@@ -178,10 +169,22 @@ periodos <- list(
 )
 
 geometries <- list(
-  list(name = "upz", depVar = "crime_index_eb"),
   list(name = "upz", depVar = "theft_to_people_index_eb"),
-  list(name = "zat", depVar = "theft_to_people_eb")
+  list(name = "upz", depVar = "theft_to_vehicle_index_eb"),
+  list(name = "upz", depVar = "theft_to_motorbike_index_eb"),
+  list(name = "upz", depVar = "sexual_index_eb"),
+  list(name = "upz", depVar = "homicide_index_eb")
 )
+
+crimes <- c("theft_to_vehicle_index_eb", 
+            "theft_to_people_index_eb", 
+            "theft_to_motorbike_index_eb", 
+            "sexual_index_eb", 
+            "homicide_index_eb")
+
+# 1. Diccionario estético para gráficos
+clean_names <- tools::toTitleCase(gsub("_", " ", gsub("_eb", "", crimes)))
+crime_dict  <- setNames(clean_names, crimes)
 
 # 2. Recorremos con un bucle triple (Geometría -> Bloque -> Año)
 for (geom in geometries) {

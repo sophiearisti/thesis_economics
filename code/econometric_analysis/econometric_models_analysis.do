@@ -24,6 +24,7 @@ else {
 global dir_controls_results "$global_dir/data/controles_results"
 
 *----------------------------------------------------------------------*
+//global doc_panel "$dir_BDD_panel/panel_final_con_llamadas.csv"
 
 import delimited "$doc_panel", clear
 
@@ -75,6 +76,7 @@ drop if codigo_upz == 108
 drop if codigo_upz == 63
 drop if codigo_upz == 117
 
+
 ***************************************************************
 *REGRESIONES PARA LA ENTREGA
 ***************************************************************
@@ -84,7 +86,7 @@ cd "$dir_controls_results"
 *ssc install outreg2, replace
 
 if $panel == 1 | $panel == 0 {
-	global dep_var crime_index theft_to_vehicle_index theft_to_vehicle theft_to_people_index theft_to_motorbike_index theft_to_motorbike sexual_index homicide_index male_index female_index
+	global dep_var crime_index_eb theft_to_vehicle_index_eb theft_to_people_index_eb theft_to_motorbike_index_eb sexual_index_eb homicide_index_eb male_index female_index
 }
 else {
     global dep_var crime_index theft_to_people_index male_index female_index
@@ -130,14 +132,58 @@ foreach y of global dep_var {
 		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
 		
     }
-} 
+}
+
+preserve
+
+	drop if year>2018
+	
+	reghdfe theft_to_people_index_eb dummy_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+	outreg2 using tabla_regresiones_${panel}.xls, append label ///
+		ctitle("TWFE `y'") ///
+		keep(dummy_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		
+		
+	drop if tq != tq(2018q4)
+
+	count if dummy_oxxo ==1
+
+	count if dummy_oxxo ==0
+	
+	count
+	
+	count if dummy_oxxo ==1 & tq == tq(2018q4)
+	
+	count if dummy_oxxo ==1 & tq == tq(2015q1)
+
+	
+	sum theft_to_people_index if dummy_oxxo ==0
+	
+restore
 
 
-bys codigo_upz (tq): gen change = dummy_oxxo - dummy_oxxo[_n-1]
+preserve 
 
-list codigo_upz tq dummy_oxxo if change < 0
+	drop if tq != tq(2022q4)
 
-bacondecomp crime_index dummy_oxxo, ddetail vce(cluster codigo_upz)
+	
+	count if dummy_oxxo ==1
+
+	count if dummy_oxxo ==0
+	
+	count
+	
+	foreach y of global dep_var {
+		sum `y'  if dummy_oxxo ==0
+	}
+	
+restore
+
+bysort dummy_oxxo: sum sexual_index
+
+//bacondecomp crime_index dummy_oxxo, ddetail vce(cluster codigo_upz)
 
 
 foreach y of global dep_var {
@@ -151,21 +197,21 @@ foreach y of global dep_var {
 	keep(dummy_oxxo) ///
 	addtext(Chain stores, SI, Day controls, NO, Control spillover, NO)
 		
-	if "`y'" == "crime_index" {
+	/*if "`y'" == "crime_index" {
 		bacondecomp crime_index dummy_oxxo $harddiscount_controls, ddetail vce(cluster codigo_upz)
-	}
+	}*/
 	
 	reghdfe `y' dummy_oxxo $access_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 	
 		
 	outreg2 using tabla_regresiones_${panel}.xls, append label ///
-	ctitle("TWFE `y' H") ///
+	ctitle("TWFE `y' S") ///
 	keep(dummy_oxxo) ///
 	addtext(Chain stores, NO, Day controls, NO, Control spillover, SI)
 		
-	if "`y'" == "crime_index" {
+	/*if "`y'" == "crime_index" {
 		bacondecomp crime_index dummy_oxxo  $access_controlss, ddetail vce(cluster codigo_upz)
-	}
+	}*/
 		
 	if $panel == 1 {
 			
@@ -219,348 +265,650 @@ foreach y of global dep_var {
 	reghdfe `y' dummy_oxxo $harddiscount_controls $access_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 	
 		
-	outreg2 using tabla_regresiones_multiples_${panel}.xls, append label ///
+	outreg2 using tabla_regresiones_${panel}.xls, append label ///
 	ctitle("TWFE `y' H A") ///
 	keep(dummy_oxxo) ///
 	addtext(Chain stores, SI,  Day controls, NO, Control spillover, SI)	
 	
 	
 }
+
+preserve
+
+	drop if year>2018
+
+	reghdfe theft_to_people_index_eb dummy_oxxo $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	
 		
+	outreg2 using tabla_regresiones_${panel}.xls, append label ///
+	ctitle("TWFE `y' H") ///
+	keep(dummy_oxxo) ///
+	addtext(Chain stores, SI,  Day controls, NO, Control spillover, NO)	
+
+	
+restore 
+
+
+*********************************************************
+*TWO WAY FIXED EFFECTS INTENSITY OF TREATMENT
+*********************************************************
+ 
+local first = 1
+
+foreach y of global dep_var {
+
+    //reg `y' dummy_oxxo
+
+    if `first' == 1 {
+		reghdfe `y' cantidad_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+		outreg2 using tabla_regresiones_intensity_${panel}.xls, replace label ///
+		ctitle("TWFE `y'") ///
+		keep(cantidad_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		
+
+        local first = 0
+    }
+    else {
+        reghdfe `y' cantidad_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+		outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
+		ctitle("TWFE `y'") ///
+		keep(cantidad_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		
+    }
+}
+
+preserve
+
+	drop if year>2018
+	
+	reghdfe theft_to_people_index_eb cantidad_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+		outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
+		ctitle("TWFE `y'") ///
+		keep(cantidad_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		
+		
+	drop if tq != tq(2018q4)
+
+	count if dummy_oxxo ==1
+
+	count if dummy_oxxo ==0
+	
+	count
+	
+	sum theft_to_people_index if dummy_oxxo ==0
+	
+restore
+
+
+//bacondecomp crime_index dummy_oxxo, ddetail vce(cluster codigo_upz)
+preserve
+
+drop if cantidad_oxxo ==0
+
+sum theft_to_people_index
+
+restore
+
+
+preserve
+
+drop if cantidad_oxxo !=0
+
+sum theft_to_people_index
+
+restore
+
+
+foreach y of global dep_var {
+
+	
+	reghdfe `y' cantidad_oxxo $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	
+		
+	outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
+	ctitle("TWFE `y' H") ///
+	keep(cantidad_oxxo) ///
+	addtext(Chain stores, SI, Day controls, NO, Control spillover, NO)
+		
+	/*if "`y'" == "crime_index" {
+		bacondecomp crime_index dummy_oxxo $harddiscount_controls, ddetail vce(cluster codigo_upz)
+	}*/
+	
+	reghdfe `y' cantidad_oxxo $access_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	
+		
+	outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
+	ctitle("TWFE `y' S") ///
+	keep(cantidad_oxxo) ///
+	addtext(Chain stores, NO, Day controls, NO, Control spillover, SI)
+		
+	/*if "`y'" == "crime_index" {
+		bacondecomp crime_index dummy_oxxo  $access_controlss, ddetail vce(cluster codigo_upz)
+	}*/
+		
+
+	reghdfe `y' cantidad_oxxo $harddiscount_controls $access_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	
+		
+	outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
+	ctitle("TWFE `y' H A") ///
+	keep(cantidad_oxxo) ///
+	addtext(Chain stores, SI,  Day controls, NO, Control spillover, SI)	
+	
+	
+}
+
+preserve
+
+	drop if year>2018
+
+	reghdfe theft_to_people_index_eb cantidad_oxxo $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	
+		
+	outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
+	ctitle("TWFE `y' H") ///
+	keep(cantidad_oxxo) ///
+	addtext(Chain stores, SI,  Day controls, NO, Control spillover, NO)	
+	
+restore 
 
 
 ********************************************************
 *C&S
 *********************************************************
 
-cd "$dir_controls_results/events study"
-
-preserve
-	* Let's first install drdid
-	*ssc install drdid, all replace
-	* Now let's install csdid
-	*ssc install csdid, all replace
-
-	* Asegúrate de tener la variable del año de tratamiento
-	bysort codigo_upz: egen first_treat = min(cond(dummy_oxxo==1, tq, .))
-	replace first_treat = 0 if missing(first_treat)  // 0 para codigo_upzs nunca tratadas
-
-	* Ejecutar el método de Callaway & Sant'Anna
-	if $panel == 1 {
-		csdid crime_index  $day_controls $access_controls $harddiscount_controls, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz)
-
-	}
-	else {
-		csdid crime_index $access_controls $harddiscount_controls, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz)
-
-	}
-	
-	estat all
-	
-	* Revisar los efectos promedio
-	estat pretrend
-
-	*ver el ATT
-	estat simple
-	
-	* Guardar los resultados en una matriz
-	matrix results = r(table)
-
-	* Extraer valores del ATT
-	local ATT     = results[1,1]
-	local SE      = results[2,1]
-	local zstat   = results[3,1]
-	local pvalue  = results[4,1]
-	local ll      = results[5,1]
-	local ul      = results[6,1]
-
-	* Mostrar para verificar
-	di "ATT = `ATT'"
-	di "SE = `SE'"
-	di "p-value = `pvalue'"
-
-	/*outreg2 using tabla_regresiones.xls, append label ///
-    ctitle("ATT Callaway & Sant'Anna Controles") ///
-    addstat("ATT", `ATT', "Std. Err.", `SE', "p(ATT)", `pvalue', "CI [95%]", "`ll' - `ul'") ///
-    addtext(Método, "CSDID", Controles, "Sí", Cluster, "codigo_upz")*/
 
 
-	* Estimar los efectos dinámicos (event study)
-	estat all
+cd "$dir_controls_results/events study/CS/multiple"
 
-	* Graficar el event study	
-	estat event, estore(cs1)
-	csdid_plot, title("ES de CS")
-	
-	graph export "event_study_csS_${panel}.png", replace width(1200) height(800)
+foreach y of global dep_var {
+	preserve
 
-	
-	* 1. Estimar los efectos dinámicos (event study)
-	estat event, window(-24 24) estore(cs1)
+		di "`y'"
+		
+		if "`y'" == "theft_to_people_index_eb" {
+			di "Estrategia especial: Filtrando datos para Theft to People (Solo hasta 2018)"
+			drop if year > 2018
+		}
+		
+		* Let's first install drdid
+		*ssc install drdid, all replace
+		* Now let's install csdid
+		*ssc install csdid, all replace
 
-	* 2. Extraer resultados y transponer
-	matrix M = r(table)'
-	matrix list M
+		* Asegúrate de tener la variable del año de tratamiento
+		bysort codigo_upz: egen first_treat = min(cond(dummy_oxxo==1, tq, .))
+		replace first_treat = 0 if missing(first_treat)  // 0 para codigo_upzs nunca tratadas
 
-	* 3. Convertir matriz a dataset sin borrar memoria
-	clear
-    * Convertir la matriz directamente a variables
-    svmat M, names(col)
-    
-    * Extraer los nombres de las filas (donde Stata guarda el periodo relativo)
-    gen rowname = ""
-    local names : rowfullnames M
-    forvalues i = 1/`: word count `names'' {
-        replace rowname = "`: word `i' of `names''" in `i'
-    }
+			* Ejecutar el método de Callaway & Sant'Anna
+		csdid `y' $harddiscount_controls, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz) notyet
 
-    * 4. Limpiar el periodo relativo (exp)
-    * Stata los llama "tm3" para -3, "tp2" para +2, "t0" para 0
-    gen exp = .
-    replace exp = real(substr(rowname, 3, .)) if strpos(rowname, "tp") // Post
-    replace exp = -real(substr(rowname, 3, .)) if strpos(rowname, "tm") // Pre
-    replace exp = 0 if rowname == "t0" | rowname == "T0"
+		* Revisar los efectos promedio
+		estat pretrend
 
-    * 5. Renombrar para que coincida con tu estructura
-    rename b crime_index1
-    rename se crime_index0
-    rename ll lb
-    rename ul ub
+		*ver el ATT
+		estat simple
+		
+		* Guardar los resultados en una matriz
+		matrix results = r(table)
 
-    * 6. Agregar el periodo de referencia (-1) que siempre es CERO
-    set obs `=_N + 1'
-    replace exp = -1 in L
-    foreach var in crime_index1 crime_index0 lb ub {
-        replace `var' = 0 in L
-    }
+		matrix list results
+		
+		* Extraer valores del ATT
+		local ATT     = results[1,1] 
+		local SE      = results[2,1]
+		local zstat   = results[3,1]
+		local pvalue  = results[4,1]
+		local ll      = results[5,1]
+		local ul      = results[6,1]
 
-    * 7. Limpieza final y exportación
-    drop if missing(exp) // Eliminar filas extra de la matriz que no sean periodos
-    sort exp
-    keep exp crime_index1 crime_index0 lb ub
-    
-    list, noobs
-    export delimited using "paraEventsStudyMultipleCS_${panel}.csv", replace
-	
-restore
+		* Mostrar para verificar
+		di "ATT = `ATT'"
+		di "SE = `SE'"
+		di "p-value = `pvalue'"
+		
+		/*local ci = string(`ll') + " - " + string(`ul')
 
-preserve
-	* Let's first install drdid
-	*ssc install drdid, all replace
-	* Now let's install csdid
-	*ssc install csdid, all replace
+		outreg2 using tabla_regresiones.xls, append label ///
+		ctitle("ATT Callaway & Sant'Anna") ///
+		addstat("ATT", `ATT', "Std. Err.", `SE', "p(ATT)", `pvalue', "CI [95%]", "`ci'") ///
+		addtext(Método, "CSDID", Controles, "Sí", Cluster, "codigo_upz")*/
+		
+		estat all
 
-	* Asegúrate de tener la variable del año de tratamiento
-	bysort codigo_upz: egen first_treat = min(cond(dummy_oxxo==1, tq, .))
-	replace first_treat = 0 if missing(first_treat)  // 0 para codigo_upzs nunca tratadas
+		* Graficar el event study	
+		estat event, estore(cs1)
+		csdid_plot, title("ES de CS")
+		
+		graph export "event_study_csM_${panel}_`y'.png", replace width(1200) height(800)
+		
+		
+		
+		* 1. Estimar los efectos dinámicos (event study)
+		estat event, window(-24 24) estore(cs1)
 
-	* Ejecutar el método de Callaway & Sant'Anna
-	csdid crime_index, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz) notyet
+		* 2. Extraer resultados y transponer
+		matrix M = r(table)'
+		di "revisar"
+		matrix list M
 
-	* Revisar los efectos promedio
-	estat pretrend
+		* 3. Convertir matriz a dataset sin borrar memoria
+		clear
+		* Convertir la matriz directamente a variables
+		svmat M, names(col)
+		
+		* Extraer los nombres de las filas (donde Stata guarda el periodo relativo)
+		gen rowname = ""
+		local names : rowfullnames M
+		forvalues i = 1/`: word count `names'' {
+			replace rowname = "`: word `i' of `names''" in `i'
+		}
 
-	*ver el ATT
-	estat simple
-	
-	* Guardar los resultados en una matriz
-	matrix results = r(table)
+		* 4. Limpiar el periodo relativo (exp)
+		* Stata los llama "tm3" para -3, "tp2" para +2, "t0" para 0
+		gen exp = .
+		replace exp = real(substr(rowname, 3, .)) if strpos(rowname, "Tp") // Post
+		replace exp = -real(substr(rowname, 3, .)) if strpos(rowname, "Tm") // Pre
+		replace exp = 0 if rowname == "t0" | rowname == "T0"
 
-	* Extraer valores del ATT
-	local ATT     = results[1,1]
-	local SE      = results[2,1]
-	local zstat   = results[3,1]
-	local pvalue  = results[4,1]
-	local ll      = results[5,1]
-	local ul      = results[6,1]
+		* 5. Renombrar para que coincida con tu estructura
+		rename b `y'1
+		rename se `y'0
+		rename ll lb
+		rename ul ub
 
-	* Mostrar para verificar
-	di "ATT = `ATT'"
-	di "SE = `SE'"
-	di "p-value = `pvalue'"
-	
-	/*local ci = string(`ll') + " - " + string(`ul')
+		* 6. Agregar el periodo de referencia (-1) que siempre es CERO
+		set obs `=_N + 1'
+		replace exp = -1 in L
+		foreach var in `y'1 `y'0 lb ub {
+			replace `var' = 0 in L
+		}
 
-	outreg2 using tabla_regresiones.xls, append label ///
-    ctitle("ATT Callaway & Sant'Anna") ///
-    addstat("ATT", `ATT', "Std. Err.", `SE', "p(ATT)", `pvalue', "CI [95%]", "`ci'") ///
-    addtext(Método, "CSDID", Controles, "Sí", Cluster, "codigo_upz")*/
-	
-	estat all
+		* 7. Limpieza final y exportación
+		drop if missing(exp) // Eliminar filas extra de la matriz que no sean periodos
+		sort exp
+		keep exp `y'1 `y'0 lb ub
+		
+		list, noobs
+		
 
-	* Graficar el event study	
-	estat event, estore(cs1)
-	csdid_plot, title("ES de CS")
-	
-	graph export "event_study_csM_${panel}.png", replace width(1200) height(800)
-	
-	
-	
-	* 1. Estimar los efectos dinámicos (event study)
-	estat event, window(-24 24) estore(cs1)
+		export delimited using "paraEventsStudyMultipleCS_${panel}_`y'.csv", replace
 
-	* 2. Extraer resultados y transponer
-	matrix M = r(table)'
-	matrix list M
+	restore
+}
 
-	* 3. Convertir matriz a dataset sin borrar memoria
-	clear
-    * Convertir la matriz directamente a variables
-    svmat M, names(col)
-    
-    * Extraer los nombres de las filas (donde Stata guarda el periodo relativo)
-    gen rowname = ""
-    local names : rowfullnames M
-    forvalues i = 1/`: word count `names'' {
-        replace rowname = "`: word `i' of `names''" in `i'
-    }
 
-    * 4. Limpiar el periodo relativo (exp)
-    * Stata los llama "tm3" para -3, "tp2" para +2, "t0" para 0
-    gen exp = .
-    replace exp = real(substr(rowname, 3, .)) if strpos(rowname, "tp") // Post
-    replace exp = -real(substr(rowname, 3, .)) if strpos(rowname, "tm") // Pre
-    replace exp = 0 if rowname == "t0" | rowname == "T0"
+cd "$dir_controls_results/events study/CS/simple"
 
-    * 5. Renombrar para que coincida con tu estructura
-    rename b crime_index1
-    rename se crime_index0
-    rename ll lb
-    rename ul ub
+foreach y of global dep_var {
+	preserve
 
-    * 6. Agregar el periodo de referencia (-1) que siempre es CERO
-    set obs `=_N + 1'
-    replace exp = -1 in L
-    foreach var in crime_index1 crime_index0 lb ub {
-        replace `var' = 0 in L
-    }
+		di "`y'"
+		
+		if "`y'" == "theft_to_people_index_eb" {
+			di "Estrategia especial: Filtrando datos para Theft to People (Solo hasta 2018)"
+			drop if year > 2018
+		}
+		
+		* Let's first install drdid
+		*ssc install drdid, all replace
+		* Now let's install csdid
+		*ssc install csdid, all replace
 
-    * 7. Limpieza final y exportación
-    drop if missing(exp) // Eliminar filas extra de la matriz que no sean periodos
-    sort exp
-    keep exp crime_index1 crime_index0 lb ub
-    
-    list, noobs
-	
+		* Asegúrate de tener la variable del año de tratamiento
+		bysort codigo_upz: egen first_treat = min(cond(dummy_oxxo==1, tq, .))
+		replace first_treat = 0 if missing(first_treat)  // 0 para codigo_upzs nunca tratadas
 
-	export delimited using "paraEventsStudySimpleCS_${panel}.csv", replace
+		* Ejecutar el método de Callaway & Sant'Anna
+		csdid theft_to_people_index, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz) notyet
 
-restore
+		* Revisar los efectos promedio
+		estat pretrend
+
+		*ver el ATT
+		estat simple
+		
+		* Guardar los resultados en una matriz
+		matrix results = r(table)
+
+		* Extraer valores del ATT
+		local ATT     = results[1,1]
+		local SE      = results[2,1]
+		local zstat   = results[3,1]
+		local pvalue  = results[4,1]
+		local ll      = results[5,1]
+		local ul      = results[6,1]
+
+		* Mostrar para verificar
+		di "ATT = `ATT'"
+		di "SE = `SE'"
+		di "p-value = `pvalue'"
+		
+		/*local ci = string(`ll') + " - " + string(`ul')
+
+		outreg2 using tabla_regresiones.xls, append label ///
+		ctitle("ATT Callaway & Sant'Anna") ///
+		addstat("ATT", `ATT', "Std. Err.", `SE', "p(ATT)", `pvalue', "CI [95%]", "`ci'") ///
+		addtext(Método, "CSDID", Controles, "Sí", Cluster, "codigo_upz")*/
+		
+		estat all
+
+		* Graficar el event study	
+		estat event, estore(cs1)
+		csdid_plot, title("ES de CS")
+		
+		graph export "event_study_csS_${panel}_`y'.png", replace width(1200) height(800)
+		
+		
+		
+		* 1. Estimar los efectos dinámicos (event study)
+		estat event, window(-24 24) estore(cs1)
+
+		* 2. Extraer resultados y transponer
+		matrix M = r(table)'
+		matrix list M
+
+		* 3. Convertir matriz a dataset sin borrar memoria
+		clear
+		* Convertir la matriz directamente a variables
+		svmat M, names(col)
+		
+		* Extraer los nombres de las filas (donde Stata guarda el periodo relativo)
+		gen rowname = ""
+		local names : rowfullnames M
+		forvalues i = 1/`: word count `names'' {
+			replace rowname = "`: word `i' of `names''" in `i'
+		}
+
+		* 4. Limpiar el periodo relativo (exp)
+		* Stata los llama "tm3" para -3, "tp2" para +2, "t0" para 0
+		gen exp = .
+		replace exp = real(substr(rowname, 3, .)) if strpos(rowname, "Tp") // Post
+		replace exp = -real(substr(rowname, 3, .)) if strpos(rowname, "Tm") // Pre
+		replace exp = 0 if rowname == "t0" | rowname == "T0"
+
+		* 5. Renombrar para que coincida con tu estructura
+		rename b `y'1
+		rename se `y'0
+		rename ll lb
+		rename ul ub
+
+		* 6. Agregar el periodo de referencia (-1) que siempre es CERO
+		set obs `=_N + 1'
+		replace exp = -1 in L
+		foreach var in `y'1 `y'0 lb ub {
+			replace `var' = 0 in L
+		}
+
+		* 7. Limpieza final y exportación
+		drop if missing(exp) // Eliminar filas extra de la matriz que no sean periodos
+		sort exp
+		keep exp `y'1 `y'0 lb ub
+		
+		list, noobs
+		
+
+		export delimited using "paraEventsStudySimpleCS_${panel}_`y'.csv", replace
+
+	restore
+
+}
 		
 *********************************************************
 *ESTUDIO DE EVENTOS
 *********************************************************
 
-preserve
-	* 1. Año de primera entrada de OXXO
-	bysort codigo_upz: egen first_treat = min(cond(dummy_oxxo==1, tq, .))
+cd "$dir_controls_results/events study/FE/multiple"
 
-	* 2. Quedarse solo con cohortes tratadas
-	drop if missing(first_treat)
+foreach y of global dep_var {
+    preserve
+        
+        * 1. Filtro especial por datos temporales si aplica
+        if `y' == "theft_to_people_index_eb" {
+            di "Estrategia especial: Filtrando datos para Theft to People (Solo hasta 2018)"
+            drop if year > 2018
+        }
+        
+        * 2. Año de primera entrada de OXXO
+        bysort codigo_upz: egen first_treat = min(cond(dummy_oxxo==1, tq, .))
 
-	* 3. Crear tiempo relativo (en períodos de 4 años)
-    gen rel_time = tq - first_treat
+        * 3. Quedarse solo con cohortes tratadas (Treated only)
+        drop if missing(first_treat)
 
-	* Leads (antes del tratamiento)
-	forvalues k = 2/40 {
-		gen lead`k' = (rel_time == -`k')
-	}
+        * 4. Crear tiempo relativo
+        gen rel_time = tq - first_treat
 
-	* Lags (después del tratamiento)
-	forvalues k = 0/40 {
-		gen lag`k' = (rel_time == `k')
-	}
+        * Generar Leads (antes del tratamiento)
+        forvalues k = 2/24 {
+            gen lead`k' = (rel_time == -`k')
+        }
+
+        * Generar Lags (después del tratamiento)
+        forvalues k = 0/24 {
+            gen lag`k' = (rel_time == `k')
+        }
+        
+        * 5. Armar la lista ordenada de variables para la regresión
+        local evlist
+        forvalues k = 24(-1)2 {
+            local evlist `evlist' lead`k'
+        }
+        forvalues k = 0/24 {
+            local evlist `evlist' lag`k'
+        }
+
+        di "Corriendo xtreg para la variable: `y'"
+            
+        * 6. Ejecutar la estimación según las macros globales del panel
+        if $panel == 1 {
+            xtreg `y' $day_controls $access_controls $harddiscount_controls `evlist' i.tq, fe vce(cluster codigo_upz)
+			
+			* Mostrar en la consola
+		}
+        else {
+            xtreg `y' $harddiscount_controls `evlist' i.tq, fe vce(cluster codigo_upz)
+
+        }
 	
-	* lista de variables para la regresión
-	local evlist
-
-	* leads (-15 a -2)
-	forvalues k = 40(-1)2 {
-		local evlist `evlist' lead`k'
-	}
-
-	* lags (0 a 15)
-	forvalues k = 0/40 {
-		local evlist `evlist' lag`k'
-	}
-
-	display "`evlist'"
+		matrix M = r(table)'
 		
-	*check hard discound controls
-	if $panel == 1 {
-		xtreg crime_index ///
-		 $day_controls $access_controls $harddiscount_controls ///
-		`evlist' i.tq, fe vce(cluster codigo_upz)
+		* 2. Extraer el Coeficiente (fila 1) y el Error Estándar (fila 2) del primer Lag
+		matrix list M
+        
+        * 7. Graficar con Coefplot (Opcional pero recomendado para control rápido)
+        coefplot, keep(`evlist') ///
+            xlabel(, angle(vertical)) yline(0) vertical msymbol(E) mfcolor(white) ///
+            ciopts(lwidth(*3) lcolor(purple*0.3)) mlabel format(%9.3f) ///
+            mcolor(purple) title("Tasa de crimen `y'") 
 
-	}
-	else {
-				xtreg crime_index ///
-		  $access_controls $harddiscount_controls ///
-		`evlist' i.tq, fe vce(cluster codigo_upz)
+        graph export "event_study_feoM_${panel}_`y'.png", replace
 
-	}
-	
-	coefplot, keep(`evlist') ///
-		xlabel(, angle(vertical)) yline(0) vertical msymbol(E) mfcolor(white) ///
-		ciopts(lwidth(*3) lcolor(purple*0.3)) mlabel format(%9.3f) ///
-		mcolor(purple) title("Tasa de crimen") 
-
-restore
-
-
-
-preserve
-	* 1. Año de primera entrada de OXXO
-	bysort codigo_upz: egen first_treat = min(cond(dummy_oxxo==1, tq, .))
-	
-	summarize crime_index if first_treat==2018 
-
-	* 2. Quedarse solo con cohortes tratadas
-	drop if missing(first_treat)
-
-	* 3. Crear tiempo relativo (en períodos de 4 años)
-    gen rel_time = tq - first_treat
-
-	* Leads (antes del tratamiento)
-	forvalues k = 2/40 {
-		gen lead`k' = (rel_time == -`k')
-	}
-
-	* Lags (después del tratamiento)
-	forvalues k = 0/40 {
-		gen lag`k' = (rel_time == `k')
-	}
-	
-	* lista de variables para la regresión
-	local evlist
-
-	* leads (-15 a -2)
-	forvalues k = 40(-1)2 {
-		local evlist `evlist' lead`k'
-	}
-
-	* lags (0 a 15)
-	forvalues k = 0/40 {
-		local evlist `evlist' lag`k'
-	}
-
-	display "`evlist'"
+        * =====================================================================
+        * ¡INICIA EL PROCESO DE EXTRACCIÓN Y LIMPIEZA DE MATRIZ PARA TWFE FEO!
+        * =====================================================================
+        
+        * 8. Guardar la matriz de resultados de xtreg y transponerla
 		
+		matrix list M
 
-	xtreg crime_index ///
-		`evlist' i.year, fe vce(cluster codigo_upz)
+        
+        * 9. Limpiar memoria actual (el "preserve" del inicio protege tus datos)
+        clear
+        
+        * Convertir matriz a variables en un dataset nuevo
+        svmat M, names(col)
+        
+        * Obtener los nombres de las filas originales (lead24, lead23..., lag0...)
+        gen rowname = ""
+        local names : rowfullnames M
+        forvalues i = 1/`: word count `names'' {
+            replace rowname = "`: word `i' of `names''" in `i'
+        }
+        
+        * 10. Procesar y traducir el periodo relativo numérico (exp)
+        gen exp = .
+        
+        * Si el nombre de la fila contiene "lead", el periodo es negativo
+        replace exp = -real(substr(rowname, 5, .)) if strpos(rowname, "lead")
+        
+        * Si el nombre de la fila contiene "lag", el periodo es positivo
+        replace exp = real(substr(rowname, 4, .)) if strpos(rowname, "lag")
+        
+        * 11. Eliminar filas que no correspondan a los Leads o Lags (ej: controles o la constante)
+        drop if missing(exp)
+        
+        * 12. Renombrar las columnas para mantener tus nombres dinámicos de crímenes
+        rename b `y'1
+        rename se `y'0
+        rename ll lb
+        rename ul ub
+        
+        * 13. AGREGAR EL PERIODO DE REFERENCIA (-1) EN CERO ABSOLUTO
+        set obs `=_N + 1'
+        replace exp = -1 in L
+        foreach var in `y'1 `y'0 lb ub {
+            replace `var' = 0 in L
+        }
+        
+        * 14. Ordenar cronológicamente y limpiar
+        sort exp
+        keep exp `y'1 `y'0 lb ub
+        
+        * Mostrar en consola para verificar pretrends visualmente
+        list exp `y'1 `y'0, noobs
+        
+        * 15. Exportar el CSV idéntico (cambiando el prefijo a MultipleFE para diferenciarlo de CS)
+        export delimited using "paraEventsStudyMultipleFE_${panel}_`y'.csv", replace
 
-	*ssc install coefplot
+    * Recupera el dataset original intacto para la siguiente variable del loop
+    restore
+}
+
+cd "$dir_controls_results/events study/FE/simple"
 
 
-	* Plot the coefficients using coefplot
+foreach y of global dep_var {
+    preserve
+        
+        * 1. Filtro especial por datos temporales si aplica
+        if "`y'" == "theft_to_people_index_eb" {
+            di "Estrategia especial: Filtrando datos para Theft to People (Solo hasta 2018)"
+            drop if year > 2018
+        }
+        
+        * 2. Año de primera entrada de OXXO
+        bysort codigo_upz: egen first_treat = min(cond(dummy_oxxo==1, tq, .))
 
-	coefplot, keep(`evlist') ///
-		xlabel(, angle(vertical)) yline(0) vertical msymbol(E) mfcolor(white) ///
-		ciopts(lwidth(*3) lcolor(purple*0.3)) mlabel format(%9.3f) ///
-		mcolor(purple) title("Tasa de crimen") 
+        * 3. Quedarse solo con cohortes tratadas (Treated only)
+        drop if missing(first_treat)
+
+        * 4. Crear tiempo relativo
+        gen rel_time = tq - first_treat
+
+        * Generar Leads (antes del tratamiento)
+        forvalues k = 2/24 {
+            gen lead`k' = (rel_time == -`k')
+        }
+
+        * Generar Lags (después del tratamiento)
+        forvalues k = 0/24 {
+            gen lag`k' = (rel_time == `k')
+        }
+        
+        * 5. Armar la lista ordenada de variables para la regresión
+        local evlist
+        forvalues k = 24(-1)2 {
+            local evlist `evlist' lead`k'
+        }
+        forvalues k = 0/24 {
+            local evlist `evlist' lag`k'
+        }
+
+        di "Corriendo xtreg para la variable: `y'"
+            
+     
+        xtreg `y' `evlist' i.tq, fe vce(cluster codigo_upz)
+
 		
 		
-	 graph export "event_study_feoS_${panel}.png", replace
+		matrix M = r(table)'
+		
+		* 2. Extraer el Coeficiente (fila 1) y el Error Estándar (fila 2) del primer Lag
+		matrix list M
+        
+        * 7. Graficar con Coefplot (Opcional pero recomendado para control rápido)
+        coefplot, keep(`evlist') ///
+            xlabel(, angle(vertical)) yline(0) vertical msymbol(E) mfcolor(white) ///
+            ciopts(lwidth(*3) lcolor(purple*0.3)) mlabel format(%9.3f) ///
+            mcolor(purple) title("Tasa de crimen `y'") 
 
-restore
+        graph export "event_study_feoS_${panel}_`y'.png", replace
+
+        * =====================================================================
+        * ¡INICIA EL PROCESO DE EXTRACCIÓN Y LIMPIEZA DE MATRIZ PARA TWFE FEO!
+        * =====================================================================
+        
+        * 8. Guardar la matriz de resultados de xtreg y transponerla
+		
+		matrix list M
+
+        
+        * 9. Limpiar memoria actual (el "preserve" del inicio protege tus datos)
+        clear
+        
+        * Convertir matriz a variables en un dataset nuevo
+        svmat M, names(col)
+        
+        * Obtener los nombres de las filas originales (lead24, lead23..., lag0...)
+        gen rowname = ""
+        local names : rowfullnames M
+        forvalues i = 1/`: word count `names'' {
+            replace rowname = "`: word `i' of `names''" in `i'
+        }
+        
+        * 10. Procesar y traducir el periodo relativo numérico (exp)
+        gen exp = .
+        
+        * Si el nombre de la fila contiene "lead", el periodo es negativo
+        replace exp = -real(substr(rowname, 5, .)) if strpos(rowname, "lead")
+        
+        * Si el nombre de la fila contiene "lag", el periodo es positivo
+        replace exp = real(substr(rowname, 4, .)) if strpos(rowname, "lag")
+        
+        * 11. Eliminar filas que no correspondan a los Leads o Lags (ej: controles o la constante)
+        drop if missing(exp)
+        
+        * 12. Renombrar las columnas para mantener tus nombres dinámicos de crímenes
+        rename b `y'1
+        rename se `y'0
+        rename ll lb
+        rename ul ub
+        
+        * 13. AGREGAR EL PERIODO DE REFERENCIA (-1) EN CERO ABSOLUTO
+        set obs `=_N + 1'
+        replace exp = -1 in L
+        foreach var in `y'1 `y'0 lb ub {
+            replace `var' = 0 in L
+        }
+        
+        * 14. Ordenar cronológicamente y limpiar
+        sort exp
+        keep exp `y'1 `y'0 lb ub
+        
+        * Mostrar en consola para verificar pretrends visualmente
+        list exp `y'1 `y'0, noobs
+        
+        * 15. Exportar el CSV idéntico (cambiando el prefijo a MultipleFE para diferenciarlo de CS)
+        export delimited using "paraEventsStudySimpleFE_${panel}_`y'.csv", replace
+
+    * Recupera el dataset original intacto para la siguiente variable del loop
+    restore
+}
+
+

@@ -88,7 +88,7 @@ df_filtrado <- df_filtrado %>%
     dummy_atraco = if_else(TIPO_DETALLE == "ATRACO / HURTO EN PROCESO", 1, 0),
     
     # 2. HURTO
-    dummy_hurto = if_else(TIPO_DETALLE %in% c("VEHÍCULO HURTADO", "ATRACO / HURTO EN PROCESO"), 1, 0),
+    dummy_VEHICULO = if_else(TIPO_DETALLE %in% c("VEHÍCULO HURTADO"), 1, 0),
     
     # 3. VIOLACIÓN DOMICILIO
     dummy_violacion_domicilio = if_else(TIPO_DETALLE %in% c("INTENTO O VIOLACIÓN DE DOMICILIO", "INTENTO/VIOLACIÓN DE DOMICILIO"), 1, 0),
@@ -186,7 +186,7 @@ df_agrupado <- df_filtrado %>%
   group_by(COD_UPZ_NUM, quarter, ANIO) %>%
   summarise(
     total_atraco = sum(dummy_atraco, na.rm = TRUE),
-    total_hurto = sum(dummy_hurto, na.rm = TRUE),
+    total_VEHICULO = sum(dummy_VEHICULO, na.rm = TRUE),
     total_violacion_domicilio = sum(dummy_violacion_domicilio, na.rm = TRUE),
     total_alteracion_orden = sum(dummy_alteracion_orden, na.rm = TRUE),
     total_violacion_maltrato = sum(dummy_violacion_maltrato, na.rm = TRUE),
@@ -260,7 +260,7 @@ df_agrupado <- df_filtrado %>%
   group_by(COD_UPZ_NUM, ANIO) %>%
   summarise(
     total_atraco = sum(dummy_atraco, na.rm = TRUE),
-    total_hurto = sum(dummy_hurto, na.rm = TRUE),
+    total_VEHICULO = sum(dummy_VEHICULO, na.rm = TRUE),
     total_violacion_domicilio = sum(dummy_violacion_domicilio, na.rm = TRUE),
     total_alteracion_orden = sum(dummy_alteracion_orden, na.rm = TRUE),
     total_violacion_maltrato = sum(dummy_violacion_maltrato, na.rm = TRUE),

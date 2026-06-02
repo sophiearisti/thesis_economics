@@ -1,0 +1,265 @@
+install.packages("haven")
+install.packages("sf")
+install.packages("ggplot2")
+install.packages("dplyr")
+
+
+# Cargar librerías
+library(haven)   # leer archivos .dta
+library(dplyr)   # manipulación de datos
+library(ggplot2) # gráficos
+library(sf)        # Para manejar datos geoespaciales
+library(tidyverse)  # Para manipulación de datos y gráficos
+
+setwd("~/Desktop/1 economia/thesis_economics")
+
+# --- Cargar datos --
+#esta grafica será para hacer el event study bonito con colores lindos en diferentes tinalidades de morado
+#es un csv
+# 1. Tus vectores base'
+crimes <- c("tasa_total_atraco", 
+            "tasa_total_violacion_maltrato", 
+            "tasa_total_homicidio", 
+            "tasa_total_vehiculo")
+
+# 1. Diccionario estético para gráficos
+clean_names <- tools::toTitleCase(gsub("_", " ", gsub("_eb", "", crimes)))
+crime_dict  <- setNames(clean_names, crimes)
+
+# 2. Definimos los componentes por separado para la permutación completa
+tipos_metodo   <- c("CS", "FE")
+carpetas_specs <- c("simple", "multiple")
+
+# Creamos las combinaciones de especificación (Simple con Simple, Multiple con Multiple)
+especificaciones <- data.frame(
+  regType = c("Simple", "Multiple"),
+  folder  = c("simple", "multiple"),
+  stringsAsFactors = FALSE
+)
+
+# Cruzamos cada crimen con cada nivel de especificación
+grid_comparacion <- expand.grid(crime = crimes, folder = c("simple", "multiple"), stringsAsFactors = FALSE)
+
+# Acoplamos el regType y armamos las rutas de archivos exactas
+comparison_mapping <- grid_comparacion %>%
+  left_join(especificaciones, by = "folder") %>%
+  mutate(
+    # Ruta CS: Usa su respectiva carpeta (simple o multiple) y su respectivo prefijo (SimpleCS o MultipleCS)
+    ruta_cs = paste0("data/controles_results/events study/CS/", folder, "/paraEventsStudy", regType, "CS_123calls_0_", crime, ".csv"),
+    
+    # Ruta FE: Lo mismo, apuntando a su carpeta y prefijo correspondiente
+    ruta_fe = paste0("data/controles_results/events study/FE/", folder, "/paraEventsStudy", regType, "FE_123calls_0_", crime, ".csv"),
+    
+    # Ruta del gráfico final comparado
+    ruta_grafico_out = paste0("data/controles_results/events study/events_study_comparado_", folder, "_123calls_0_", crime, ".png")
+  )
+
+
+# Colores unificados
+colores_metodo <- c("TWFE" = "#E75480", 
+                    "CS" = "#8E44AD")
+
+for (i in 1:nrow(comparison_mapping)) {
+  
+  crime_actual   <- comparison_mapping$crime[i]
+  folder_actual  <- comparison_mapping$folder[i]
+  regType_actual <- comparison_mapping$regType[i]
+  file_cs        <- comparison_mapping$ruta_cs[i]
+  file_fe        <- comparison_mapping$ruta_fe[i]
+  file_out       <- comparison_mapping$ruta_grafico_out[i]
+  
+  # Verificación por si acaso algún modelo no se ha corrido en Stata
+  if (!file.exists(file_cs) | !file.exists(file_fe)) {
+    cat("Saltando:", crime_actual, "(", regType_actual, ") - Falta uno de los archivos CSV.\n")
+    next
+  }
+  
+  # 1. Cargar datos de la especificación actual
+  data_cs <- read.csv(file_cs)
+  data_fe <- read.csv(file_fe)
+  
+  col_b  <- paste0(crime_actual, "1")
+  col_se <- paste0(crime_actual, "0")
+  
+  # 2. Estandarizar CS
+  data_cs_clean <- data_cs %>%
+    mutate(
+      b      = .data[[col_b]],
+      se     = .data[[col_se]],
+      ymin   = b - 1.96 * se,
+      ymax   = b + 1.96 * se,
+      metodo = "CS"
+    ) %>%
+    select(exp, b, se, ymin, ymax, metodo)
+  
+  # 3. Estandarizar FE (Misma carpeta y especificación)
+  data_fe_clean <- data_fe %>%
+    mutate(
+      b      = .data[[col_b]],
+      se     = .data[[col_se]],
+      ymin   = b - 1.96 * se,
+      ymax   = b + 1.96 * se,
+      metodo = "TWFE"
+    ) %>%
+    select(exp, b, se, ymin, ymax, metodo)
+  
+  # 4. Unir los datos para el gráfico espejo
+  event_both <- bind_rows(data_cs_clean, data_fe_clean)
+  
+  # Título estético del crimen
+  titulo_limpio <- crime_dict[[crime_actual]]
+  
+  # 5. Calcular límites del eje Y dinámicos combinados
+  ymin_global <- min(event_both$ymin, na.rm = TRUE)
+  ymax_global <- max(event_both$ymax, na.rm = TRUE)
+  y_breaks    <- pretty(c(ymin_global, ymax_global), n = 5)
+  y_labels    <- function(x) sprintf("%.4f", x)
+  
+  # 6. Construir el gráfico
+  comparative_plot <- ggplot(event_both, aes(x = exp, y = b, color = metodo)) +
+    geom_hline(yintercept = 0, color = "gray50", size = 0.6) +
+    geom_vline(xintercept = -1, color = "black", linetype = "dashed", alpha = 0.7) +
+    
+    # Intervalos de confianza con Dodge para que no se pisen
+    geom_errorbar(aes(ymin = ymin, ymax = ymax), width = 0.3, size = 0.8, 
+                  position = position_dodge(width = 0.4)) +
+    geom_point(size = 2, position = position_dodge(width = 0.4)) +
+    geom_line(aes(group = metodo), size = 0.4, alpha = 0.4,
+              position = position_dodge(width = 0.4)) +
+    
+    # Ejes
+    scale_y_continuous(breaks = y_breaks, labels = y_labels) +
+    scale_x_continuous(breaks = seq(min(event_both$exp, na.rm = TRUE),
+                                    max(event_both$exp, na.rm = TRUE), by = 2)) +
+    scale_color_manual(values = colores_metodo) +
+    
+    theme_minimal(base_size = 14) +
+    xlab("Time relative to OXXO arrival (Quarters before and after)") +
+    ylab(titulo_limpio) +
+    labs(
+      title = paste0("Methodology Comparison: ", titulo_limpio),
+      subtitle = paste0("Specification type: ", regType_actual, " (", folder_actual, ")")
+    ) +
+    theme(
+      legend.title = element_blank(),
+      legend.position = "top",
+      panel.grid.minor = element_blank(),
+      panel.grid.major = element_line(color = "gray93"),
+      plot.background = element_rect(fill = "white", color = NA)
+    )
+  
+  print(comparative_plot)
+  
+  # 7. Guardar la imagen en su respectivo destino comparado
+  ggsave(filename = file_out, plot = comparative_plot, width = 9, height = 6, dpi = 300)
+  
+  cat("¡Gráfico comparado guardado con éxito (", regType_actual, ") para:", crime_actual, "!\n")
+}
+
+for (i in 1:nrow(comparison_mapping)) {
+  
+  # Extraer datos de la fila actual del mapeo de comparación
+  crime_actual   <- comparison_mapping$crime[i]
+  folder_actual  <- comparison_mapping$folder[i]
+  regType_actual <- comparison_mapping$regType[i]
+  file_cs        <- comparison_mapping$ruta_cs[i]
+  file_fe        <- comparison_mapping$ruta_fe[i]
+  file_out       <- comparison_mapping$ruta_grafico_out[i]
+  
+  # Verificación por si acaso algún modelo no se ha corrido en Stata
+  if (!file.exists(file_cs) | !file.exists(file_fe)) {
+    cat("Saltando:", crime_actual, "(", regType_actual, ") - Falta uno de los archivos CSV.\n")
+    next
+  }
+  
+  # 1. Cargar datos de la especificación actual
+  data_cs <- read.csv(file_cs)
+  data_fe <- read.csv(file_fe)
+  
+  col_b  <- paste0(crime_actual, "1")
+  col_se <- paste0(crime_actual, "0")
+  
+  # 2. Estandarizar CS con cálculo de intervalos planos
+  data_cs_clean <- data_cs %>%
+    mutate(
+      b      = .data[[col_b]],
+      se     = .data[[col_se]],
+      ymin   = b - 1.96 * se,
+      ymax   = b + 1.96 * se,
+      metodo = "CS"
+    ) %>%
+    select(exp, b, se, ymin, ymax, metodo)
+  
+  # 3. Estandarizar FE (Misma carpeta y especificación)
+  data_fe_clean <- data_fe %>%
+    mutate(
+      b      = .data[[col_b]],
+      se     = .data[[col_se]],
+      ymin   = b - 1.96 * se,
+      ymax   = b + 1.96 * se,
+      metodo = "TWFE"
+    ) %>%
+    select(exp, b, se, ymin, ymax, metodo)
+  
+  # 4. Unir los datos para el gráfico espejo
+  event_both <- bind_rows(data_cs_clean, data_fe_clean)
+  
+  # Título estético del crimen usando tu diccionario
+  titulo_limpio <- crime_dict[[crime_actual]]
+  
+  # 5. Calcular límites del eje Y dinámicos combinados
+  ymin_global <- min(event_both$ymin, na.rm = TRUE)
+  ymax_global <- max(event_both$ymax, na.rm = TRUE)
+  y_breaks    <- pretty(c(ymin_global, ymax_global), n = 5)
+  y_labels    <- function(x) sprintf("%.4f", x)
+  
+  # 6. Construir el gráfico con la estética exacta de la gráfica morada
+  comparative_plot <- ggplot(event_both, aes(x = exp, y = b, color = metodo, fill = metodo)) +
+    
+    # Capa de sombreado (Ribbon) heredando el color del método con transparencia
+    geom_ribbon(aes(ymin = ymin, ymax = ymax, group = metodo), alpha = 0.15, color = NA) +
+    
+    # Bordes superiores e inferiores punteados del intervalo (Dotted)
+    geom_line(aes(y = ymax, group = metodo), linetype = "dotted", size = 0.6, alpha = 0.7) +
+    geom_line(aes(y = ymin, group = metodo), linetype = "dotted", size = 0.6, alpha = 0.7) +
+    
+    # Líneas base de referencia macro
+    geom_hline(yintercept = 0, color = "black", alpha = 0.5) +
+    geom_vline(xintercept = -1, color = "black", linetype = "dashed", alpha = 0.5) +
+    
+    # Línea principal y puntos estimados
+    geom_line(aes(group = metodo), size = 0.9) +
+    geom_point(size = 1.8) +
+    
+    # Configuración de Ejes y Escalas
+    scale_y_continuous(breaks = y_breaks, labels = y_labels) +
+    scale_x_continuous(breaks = seq(min(event_both$exp, na.rm = TRUE),
+                                    max(event_both$exp, na.rm = TRUE), by = 2)) +
+    
+    # Paletas de color personalizadas de tu script maestro
+    scale_color_manual(values = colores_metodo) +
+    scale_fill_manual(values = colores_metodo) +
+    
+    # Configuración del Tema Limpio (Igual al de tu ejemplo)
+    theme_minimal(base_size = 14) +
+    xlab("Time relative to OXXO arrival (Quarters before and after)") +
+    ylab(titulo_limpio) +
+    labs(
+      title = paste0("Methodology Comparison: ", titulo_limpio),
+      subtitle = paste0("Specification type: ", regType_actual, " (", folder_actual, ")")
+    ) +
+    theme(
+      legend.title = element_blank(),
+      legend.position = "top",
+      panel.grid.minor = element_blank(),
+      panel.grid.major = element_line(color = "gray90"),
+      plot.background = element_rect(fill = "white", color = NA)
+    )
+  
+  print(comparative_plot)
+  
+  # 7. Guardar la imagen con las dimensiones de tu setup anterior
+  ggsave(filename = file_out, plot = comparative_plot, width = 9, height = 6, dpi = 300)
+  
+  cat("¡Gráfico comparado guardado con éxito estilo Ribbon (", regType_actual, ") para:", crime_actual, "!\n")
+}

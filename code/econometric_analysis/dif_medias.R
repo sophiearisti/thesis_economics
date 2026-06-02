@@ -4,7 +4,7 @@ install.packages("readxl")
 library(tidyverse)
 library(readxl)
 archivos <- list.files(
-  path = "~/Desktop/1 economia/thesis_economics/data/controles_results/dif_medias/dep_vars",
+  path = "~/Desktop/1 economia/thesis_economics/data/controles_results/dif_medias/dep_vars/version_crime",
   pattern = "\\.xlsx$",   # solo archivos Excel
   full.names = TRUE       # devuelve rutas completas
 )
@@ -69,6 +69,8 @@ for (v in variables_tesis) {
       theme_minimal() +
       theme(axis.text.x = element_text(angle = 45, hjust = 1))
     
+    print(p)
+    
     # 3. Guardar con nombre dinámico
     nombre_archivo <- paste0("diff_means_", v, ".png")
     ruta_final <- file.path("~/Desktop/1 economia/thesis_economics/data/controles_results/graficas", nombre_archivo)
@@ -81,6 +83,7 @@ for (v in variables_tesis) {
 
 
 extraer_datos_medias <- function(ruta, target_var) {
+  
   df <- read_excel(ruta, col_names = FALSE, col_types = "text")
   fila_idx <- which(df[[1]] == target_var)
   
@@ -131,6 +134,8 @@ for (v in variables_tesis) {
     ruta_final <- file.path("~/Desktop/1 economia/thesis_economics/data/controles_results/graficas", nombre_archivo)
     
     ggsave(ruta_final, plot = p, width = 10, height = 6, dpi = 300, bg = "white")
+    
+    print(p)
     
     print(paste("Guardada:", nombre_archivo))
   }

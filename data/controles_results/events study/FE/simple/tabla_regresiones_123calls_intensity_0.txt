@@ -1,0 +1,17 @@
+		(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)
+VARIABLES	LABELS	TWFE tasa_total_atraco	TWFE tasa_total_violacion_maltrato	TWFE tasa_total_homicidio	TWFE tasa_total_vehiculo	TWFE tasa_total_atraco H	TWFE tasa_total_violacion_maltrato H	TWFE tasa_total_homicidio H	TWFE tasa_total_vehiculo H
+									
+cantidad_oxxo	cantidad_oxxo	0.133	0.0434	-0.0214**	0.0289	0.0136	-0.0737	-0.0242**	-0.0497
+		(0.0983)	(0.0759)	(0.0106)	(0.0695)	(0.0849)	(0.0781)	(0.00999)	(0.0591)
+Constant	Constant	0.794***	2.610***	0.273***	0.613***	0.444***	2.259***	0.266***	0.380***
+		(0.0547)	(0.0422)	(0.00590)	(0.0386)	(0.153)	(0.145)	(0.0119)	(0.111)
+									
+Observations		3,424	3,424	3,424	3,424	3,424	3,424	3,424	3,424
+R-squared		0.609	0.835	0.590	0.547	0.619	0.838	0.590	0.556
+Chain stores		NO	NO	NO	NO	SI	SI	SI	SI
+Gender controles		NO	NO	NO	NO				
+Day controls		NO	NO	NO	NO	NO	NO	NO	NO
+Control spillover		NO	NO	NO	NO	NO	NO	NO	NO
+Access controles		NO	NO	NO	NO				
+Robust standard errors in parentheses									
+*** p<0.01, ** p<0.05, * p<0.1									

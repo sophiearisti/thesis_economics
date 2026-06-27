@@ -876,7 +876,7 @@ def createPanel(map, final_geometry="upz", frequency="anual", panel_type="2015_2
             
         #crear geopackage con el panel y la geometria
         create_geopackage_with_panel(panel_cleaned, joined_zat_tiendas_list, tienda_counts_by_geometry_list, final_geometry=final_geometry, panel_type=panel_type)
-    
+   
 #pedir por consola si mapa o panel
 # <nombre_del_script>.py map
 if __name__ == "__main__":

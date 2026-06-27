@@ -45,7 +45,7 @@ drop if codigo_upz == 108
 drop if codigo_upz == 63
 drop if codigo_upz == 117
 
-global dep_var tasa_total_atraco tasa_total_violacion_maltrato tasa_total_homicidio tasa_total_hurto
+global dep_var tasa_total_atraco tasa_total_violacion_maltrato tasa_total_homicidio tasa_total_vehiculo
 
 global access_controls spillover_oxxo
  
@@ -133,6 +133,45 @@ foreach y of global dep_var {
 		
 	
 }
+
+********************************************************
+*Never treated means
+*********************************************************
+
+preserve 
+
+	drop if tq != tq(2019q4)
+
+	
+	count if dummy_oxxo ==1
+
+	count if dummy_oxxo ==0
+	
+	count
+	
+	foreach y of global dep_var {
+		sum `y'  if dummy_oxxo ==0
+	}
+	
+restore
+
+preserve 
+
+	drop if tq != tq(2018q4)
+
+	
+	count if dummy_oxxo ==1
+
+	count if dummy_oxxo ==0
+	
+	count
+	
+	foreach y of global dep_var {
+		sum `y'  if dummy_oxxo ==0
+	}
+	
+restore
+
 
 ********************************************************
 *C&S
@@ -264,10 +303,6 @@ foreach y of global dep_var {
 
 		di "`y'"
 		
-		if "`y'" == "theft_to_people_index_eb" {
-			di "Estrategia especial: Filtrando datos para Theft to People (Solo hasta 2018)"
-			drop if year > 2018
-		}
 		
 		* Let's first install drdid
 		*ssc install drdid, all replace
@@ -279,7 +314,7 @@ foreach y of global dep_var {
 		replace first_treat = 0 if missing(first_treat)  // 0 para codigo_upzs nunca tratadas
 
 		* Ejecutar el método de Callaway & Sant'Anna
-		csdid theft_to_people_index, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz) notyet
+		csdid `y', ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz) notyet
 
 		* Revisar los efectos promedio
 		estat pretrend
@@ -503,13 +538,7 @@ cd "$dir_controls_results/events study/FE/simple"
 
 foreach y of global dep_var {
     preserve
-        
-        * 1. Filtro especial por datos temporales si aplica
-        if "`y'" == "theft_to_people_index_eb" {
-            di "Estrategia especial: Filtrando datos para Theft to People (Solo hasta 2018)"
-            drop if year > 2018
-        }
-        
+
         * 2. Año de primera entrada de OXXO
         bysort codigo_upz: egen first_treat = min(cond(dummy_oxxo==1, tq, .))
 
@@ -618,6 +647,34 @@ foreach y of global dep_var {
     * Recupera el dataset original intacto para la siguiente variable del loop
     restore
 }
+
+
+bysort cantidad_oxxo: sum theft_to_people_index_eb
+
+levelsof cantidad_oxxo 
+
+list theft_to_people_index_eb codigo_upz tq if cantidad_oxxo == 9
+
+list theft_to_people_index_eb codigo_upz tq if cantidad_oxxo == 5
+
+
+sort codigo_upz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

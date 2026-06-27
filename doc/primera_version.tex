@@ -370,7 +370,7 @@ Table~\ref{tab:diferencias_medias_controles_fijos} also shows preliminary differ
        \midrule
       \multicolumn{4}{l}{\textbf{Baseline}} \\
       \midrule
-      Inhabitants by locality in 2007 & 515.290 & 486.391 & -28.899 \\
+      Inhabitants by locality in 2007 & 515.290 & 486.391 & $-28.899$ \\
       & (41.522) & (44.392) & \\
       Household size 2007 & 3.681 & 3.331 & $-0.350^{***}$ \\
       & (0.051) & (0.048) & \\
@@ -491,7 +491,6 @@ Has OXXO & -7.336 & -0.399 & $0.0699^{**}$ & -0.067 & -0.115 \\
 Constant & $42.23^{***}$ & $2.197^{***}$ & $0.461^{***}$ & $1.524^{***}$ & $1.588^{***}$ \\
  & (1.481) & (0.0746) & (0.00901) & (0.0226) & (0.026) \\
 \hline
-Chain Stores & no & no & no & no & no \\
 Observations & 1,712 & 3,424 & 3,424 & 3,424 & 3,424 \\
 Treated (UPZ) & 26 & 57 & 57 & 57 & 57 \\
 Never treated & 81 & 50 & 50 & 50 & 50 \\
@@ -693,8 +692,8 @@ As an additional robustness check, I included the presence of other convenience 
 
 \begin{table}[H]
 \centering
-\caption{Effect of OXXO Store Openings on Different Types of Incidents Reported through the 123 Emergency Call System}
-\label{tab:resultados_regresion_calls123}
+\caption{Effect of OXXO Store Openings on Different Types of Crime Rates}
+\label{tab:resultados_regresion_area}
 \small
 
 % Definimos columnas de ancho fijo con alineación centrada (C) o derecha (R) para los números
@@ -702,20 +701,19 @@ As an additional robustness check, I included the presence of other convenience 
 
 \begin{tabularx}{\textwidth}{l C C C C C}
 \hline\hline
-\textbf{Crime rates} & personal theft & Sexual Violence & Homicide & Theft to Vehicle \\
- & (1) & (2) & (3) & (4) \\
+\textbf{Crime rates} & Personal Theft & Sexual Violence & Homicide & Theft to Motorbike & Theft to Vehicle \\
+ & (1) & (2) & (3) & (4) & (5) \\
 \hline
-Has OXXO & 0.0479 & -0.238 & $-0.0579^{*}$ & -0.0962 \\
- & (0.414) & (0.425) & (0.0347) & (0.278) \\
-Constant & $0.854^{***}$ & $2.703^{***}$ & $0.278^{***}$ & $0.656^{***}$ \\
- & (0.120) & (0.123) & (0.0100)  & (0.0801) \\
+Has OXXO & 2.331 & 0.591 & $0.116^{***}$ & 0.0764 & $-0.103$ \\
+ & (7.141) & (0.454) & (0.0407) & (0.0662) & (0.0648) \\
+Constant & $30.96^{***}$ & $2.197^{***}$ & $1.406^{***}$ & $1.524^{***}$ & $1.588^{***}$ \\
+ & (0.263) & (0.0746) & (0.0143) & (0.0226) & (0.026) \\
 \hline
-Chain Stores & no & no & no & no \\
-Observations & 1,712 & 3,424 & 3,424 & 3,424 \\
-Treated (UPZ) & 26 & 57 & 57 & 57 \\
-Never treated & 81 & 50 & 50 & 50 \\
-R-squared & 0.608 & 0.835 & 0.590 & 0.547 \\
-Mean never treated &  1.574 & 2.141 & 0.145 & 0.512 \\
+Observations & 1,440 & 3,240 & 3,240 & 3,240 & 3,240 \\
+Treated (UPZ) & 26 & 57 & 57 & 57 & 57 \\
+Never treated & 81 & 50 & 50 & 50 & 50 \\
+R-squared & 0.660 & 0.414 & 0.481 & 0.410 & 0.552 \\
+Mean never treated & 55.531 & 2.501 & 0.722 & 0.603 & 1.176 \\
 \hline\hline
 \end{tabularx}
 
@@ -723,9 +721,9 @@ Mean never treated &  1.574 & 2.141 & 0.145 & 0.512 \\
 \parbox{\textwidth}{\footnotesize
     \textit{Note:} Standard errors in parentheses. $^{***}$ $p<0.01$, $^{**}$ $p<0.05$, $^{*}$ $p<0.1$. \\
     TWFE considers fixed effects by unit and time, with standard errors clustered by UPZ. 
-    The dependent variable is the crime type rate per 10,000 inhabitants per UPZ. 
+    The dependent variable is the smoothed crime type rate per 10,000 inhabitants per UPZ. 
     Moreover, the treatment variable is binary and indicates if the UPZ has at least one OXXO in its area. 
-    personal theft is only calculated for the period from 2015 to 2018, as I was unable to obtain data from the SIEDCO system after 2018.
+    Personal theft is only calculated for the period from 2015 to 2018, as I was unable to obtain data from the SIEDCO system after 2018.
 }
 \end{table}
 
@@ -733,39 +731,83 @@ Mean never treated &  1.574 & 2.141 & 0.145 & 0.512 \\
     \centering
     % === FILA 1 ===
     \begin{subfigure}[b]{0.49\textwidth} 
-        \includegraphics[width=\linewidth]{events_study/all/simple/events_study_comparado_simple_123calls_0_tasa_total_atraco.png}
-        \caption{personal theft}
-        \label{fig:panelAESTheftC123calls}
+        \includegraphics[width=\linewidth]{robustness/people.png}
+        \caption{Personal Theft}
+        \label{fig:panelESRobustnessTheft}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth} 
-        \includegraphics[width=\linewidth]{events_study/all/simple/events_study_comparado_simple_123calls_0_tasa_total_violacion_maltrato.png}
+        \includegraphics[width=\linewidth]{robustness/sexual.png}
         \caption{Sexual Violence}
-        \label{fig:panelBESSexualC123calls}
+        \label{fig:panelESRobustnessSexual}
     \end{subfigure}
 
     \vspace{0.4cm} % Espacio entre fila 1 y fila 2
 
     % === FILA 2 ===
     \begin{subfigure}[b]{0.49\textwidth} 
-        \includegraphics[width=\linewidth]{events_study/all/simple/events_study_comparado_simple_123calls_0_tasa_total_homicidio.png}
+        \includegraphics[width=\linewidth]{robustness/homicide.png}
         \caption{Homicide}
-        \label{fig:panelCESHomicideC123calls}
+        \label{fig:panelESRobustnessHomicide}
     \end{subfigure}
     \hfill
-    % === FILA 3: Gráfica restante centrada ===
     \begin{subfigure}[b]{0.49\textwidth} 
-        \includegraphics[width=\linewidth]{events_study/all/simple/events_study_comparado_simple_123calls_0_tasa_total_vehiculo.png}
-        \caption{Theft to Vehicles}
-        \label{fig:panelDESVehicleC123calls}
+        \includegraphics[width=\linewidth]{robustness/motorbike.png}
+        \caption{Theft to Motorbike}
+        \label{fig:panelESRobustnessMotorbike}
     \end{subfigure}
 
-    \caption{\textbf{Event Study Analysis: TWFE vs. Callaway \& Sant’Anna (C\&S) Estimates}}
-    \label{fig:fourpanelESCompared123calls}
-    \vspace{0.1cm}
-    \footnotesize{\textit{Note:} The rate of each type is per 10,000 inhabitants.}
+    \vspace{0.4cm} % Espacio entre fila 2 y fila 3
 
+    % === FILA 3: Gráfica restante centrada ===
+    \begin{subfigure}[b]{0.49\textwidth} 
+        \includegraphics[width=\linewidth]{robustness/vehicle.png}
+        \caption{Theft to Vehicles}
+        \label{fig:panelESRobustnessVehicle}
+    \end{subfigure}
+
+    \caption{\textbf{Event Study Analysis: TWFE vs C\&S Estimates}}
+    \label{fig:fourpanelESRobustness}
+    \vspace{0.1cm}
+    \footnotesize{\textit{Note:} The rate of each crime number is per $Km^2$.}
 \end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Effect of OXXO Store Openings on Different Types of Crime Rates}
+\label{tab:resultados_regresion_intensity}
+\small
+
+% Definimos columnas de ancho fijo con alineación centrada (C) o derecha (R) para los números
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+\begin{tabularx}{\textwidth}{l C C C C C}
+\hline\hline
+\textbf{Crime rates} & Personal Theft & Sexual Violence & Homicide & Theft to Motorbike & Theft to Vehicle \\
+ & (1) & (2) & (3) & (4) & (5) \\
+\hline
+Has OXXO & 2.331 & 0.591 & $0.116^{***}$ & 0.0764 & $-0.103$ \\
+ & (7.141) & (0.454) & (0.0407) & (0.0662) & (0.0648) \\
+Constant & $30.96^{***}$ & $2.197^{***}$ & $1.406^{***}$ & $1.524^{***}$ & $1.588^{***}$ \\
+ & (0.263) & (0.0746) & (0.0143) & (0.0226) & (0.026) \\
+\hline
+Observations & 1,440 & 3,240 & 3,240 & 3,240 & 3,240 \\
+Treated (UPZ) & 26 & 57 & 57 & 57 & 57 \\
+Never treated & 81 & 50 & 50 & 50 & 50 \\
+R-squared & 0.696 & 0.414 & 0.481 & 0.410 & 0.552 \\
+Mean never treated & 55.531 & 2.501 & 0.722 & 0.603 & 1.176 \\
+\hline\hline
+\end{tabularx}
+
+\vspace{0.5em}
+\parbox{\textwidth}{\footnotesize
+    \textit{Note:} Standard errors in parentheses. $^{***}$ $p<0.01$, $^{**}$ $p<0.05$, $^{*}$ $p<0.1$. \\
+    TWFE considers fixed effects by unit and time, with standard errors clustered by UPZ. 
+    The dependent variable is the smoothed crime type rate per 10,000 inhabitants per UPZ. 
+    Moreover, the treatment variable is binary and indicates if the UPZ has at least one OXXO in its area. 
+    Personal theft is only calculated for the period from 2015 to 2018, as I was unable to obtain data from the SIEDCO system after 2018.
+}
+\end{table}
 
 \section{Discussion}
 
@@ -1088,9 +1130,6 @@ Mean never treated &  1.574 & 2.141 & 0.145 & 0.512 \\
     \label{fig:fourpanelMotorbike}
 \end{figure}
 
-\section{123 calls detailed results}
-\label{sec:123calls}
-
 \section{Other results tables}
 \label{sec:otherresultstable}
 
@@ -1176,13 +1215,13 @@ Mean never treated & 55.531 & 2.501 & 0.292 & 1.819 & 1.176 \\
     \centering
     % === FILA 1 ===
     \begin{subfigure}[b]{0.49\textwidth} 
-        \includegraphics[width=\linewidth]{events_study/FE/multiple/events_study_lindo_MultipleFE_0_theft_to_people_index_eb.png}
+        \includegraphics[width=\linewidth]{events_study/all/multiple/events_study_comparado_multiple_0_theft_to_people_index_eb.png}
         \caption{Personal Theft}
         \label{fig:panelAESTheft}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth} 
-        \includegraphics[width=\linewidth]{events_study/FE/multiple/events_study_lindo_MultipleFE_0_sexual_index_eb.png}
+        \includegraphics[width=\linewidth]{events_study/all/multiple/events_study_comparado_multiple_0_sexual_index_eb.png}
         \caption{Sexual Violence}
         \label{fig:panelBESSexual}
     \end{subfigure}
@@ -1191,13 +1230,13 @@ Mean never treated & 55.531 & 2.501 & 0.292 & 1.819 & 1.176 \\
 
     % === FILA 2 ===
     \begin{subfigure}[b]{0.49\textwidth} 
-        \includegraphics[width=\linewidth]{events_study/FE/multiple/events_study_lindo_MultipleFE_0_homicide_index_eb.png}
+        \includegraphics[width=\linewidth]{events_study/all/multiple/events_study_comparado_multiple_0_homicide_index_eb.png}
         \caption{Homicide}
         \label{fig:panelCESHomicide}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth} 
-        \includegraphics[width=\linewidth]{events_study/FE/multiple/events_study_lindo_MultipleFE_0_theft_to_motorbike_index_eb.png}
+        \includegraphics[width=\linewidth]{events_study/all/multiple/events_study_comparado_multiple_0_theft_to_motorbike_index_eb.png}
         \caption{Theft to Motorbike}
         \label{fig:panelDESMotorbike}
     \end{subfigure}
@@ -1206,7 +1245,7 @@ Mean never treated & 55.531 & 2.501 & 0.292 & 1.819 & 1.176 \\
 
     % === FILA 3: Gráfica restante centrada ===
     \begin{subfigure}[b]{0.49\textwidth} 
-        \includegraphics[width=\linewidth]{events_study/FE/multiple/events_study_lindo_MultipleFE_0_theft_to_vehicle_index_eb.png}
+        \includegraphics[width=\linewidth]{events_study/all/multiple/events_study_comparado_multiple_0_theft_to_vehicle_index_eb.png}
         \caption{Theft to Vehicles}
         \label{fig:panelDESVehicle}
     \end{subfigure}
@@ -1217,49 +1256,159 @@ Mean never treated & 55.531 & 2.501 & 0.292 & 1.819 & 1.176 \\
     \footnotesize{\textit{Note:} The rate of each crime is per 10,000 inhabitants.}
 \end{figure}
 
+\section{Results with always treated UPZs}
+
+\begin{table}[H]
+\centering
+\caption{Effect of OXXO Store Openings on Different Types of Crime Rates}
+\label{tab:resultados_regresion}
+\small
+
+% Definimos columnas de ancho fijo con alineación centrada (C) o derecha (R) para los números
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+\begin{tabularx}{\textwidth}{l C C C C C}
+\hline\hline
+\textbf{Crime rates} & Personal Theft & Sexual Violence & Homicide & Theft to Motorbike & Theft to Vehicle \\
+ & (1) & (2) & (3) & (4) & (5) \\
+\hline
+Has OXXO & -7.336 & -0.399 & $0.0699^{**}$ & -0.067 & -0.115 \\
+ & (7.804) & (0.259) & (0.0312) & (0.0783) & (0.089) \\
+Constant & $42.23^{***}$ & $2.197^{***}$ & $0.461^{***}$ & $1.524^{***}$ & $1.588^{***}$ \\
+ & (1.481) & (0.0746) & (0.00901) & (0.0226) & (0.026) \\
+\hline
+Observations & 1,712 & 3,424 & 3,424 & 3,424 & 3,424 \\
+Treated (UPZ) & 26 & 57 & 57 & 57 & 57 \\
+Never treated & 81 & 50 & 50 & 50 & 50 \\
+R-squared & 0.696 & 0.414 & 0.486 & 0.410 & 0.552 \\
+Mean never treated & 55.531 & 2.501 & 0.722 & 0.603 & 1.176 \\
+\hline\hline
+\end{tabularx}
+
+\vspace{0.5em}
+\parbox{\textwidth}{\footnotesize
+    \textit{Note:} Standard errors in parentheses. $^{***}$ $p<0.01$, $^{**}$ $p<0.05$, $^{*}$ $p<0.1$. \\
+    TWFE considers fixed effects by unit and time, with standard errors clustered by UPZ. 
+    The dependent variable is the smoothed crime type rate per 10,000 inhabitants per UPZ. 
+    Moreover, the treatment variable is binary and indicates if the UPZ has at least one OXXO in its area. 
+    Personal theft is only calculated for the period from 2015 to 2018, as I was unable to obtain data from the SIEDCO system after 2018.
+}
+\end{table}
+
+\afterpage{ % El comando afterpage asegura que la tabla se coloque en la siguiente página disponible sin romper el flujo del texto
+    \begin{landscape}
+        \begin{table}[p] % [p] para que ocupe una página completa
+            \centering
+            \caption{Comparison of ATT Estimates from TWFE and C\&S Across Different Crime Types}
+            \label{tab:resultados_ES}
+            \resizebox{\linewidth}{!}{% Ajustado a \linewidth para que use el ancho total de la hoja horizontal
+            \begin{tabular}{lcccccccccc} % Definidas las 11 columnas
+            \hline\hline
+            \textbf{Crime rates} & \multicolumn{2}{c}{Personal Theft} & \multicolumn{2}{c}{Sexual Violence} & \multicolumn{2}{c}{Homicide} & \multicolumn{2}{c}{Theft to Motorbike} & \multicolumn{2}{c}{Theft to Vehicle} \\
+            Method & TWFE & C\&S & TWFE & C\&S & TWFE & C\&S & TWFE & C\&S & TWFE & C\&S \\
+            \hline
+            & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10) \\
+            \hline
+            ATT & -7.435 & -1.917 & -0.399 & 0.114 & $0.0699^{**}$ & 0.0799 & -0.067 &  -0.029 & -0.115 & -0.058 \\
+            SE ATT & (7.837) & (6.699) & (0.0312) & (0.206) & (0.0783) & (0.058) & (0.0783) & (0.165) & (0.089) & (0.119) \\
+            Observations & 3,424 & 2,880 & 3,424 & 2,880 & 3,424 & 2,880 & 3,424 & 2,880 & 3,424 & 2,880 \\
+            \hline
+            \end{tabular}
+            }
+            
+            \vspace{1em}
+            \begin{minipage}{\linewidth} % Minipage para que las notas tengan el mismo ancho que la tabla rotada
+                \footnotesize
+                \textit{Note:} Standard errors in parentheses. *** p$<$0.01, ** p$<$0.05, * p$<$0.1. 
+                ATT is the average effect of the treatment on the treated. For TWFE, this is the coefficient presented in Table~\ref{tab:resultados_regresion} and for C\&S is the weighted average of the ATTs by cohort.
+                In total, there are 32 trimesters that represent the totality of the period of analysis. 
+
+            \end{minipage}
+        \end{table}
+    \end{landscape}
+}
+
 \begin{figure}[htbp]
     \centering
     % === FILA 1 ===
     \begin{subfigure}[b]{0.49\textwidth} 
-        \includegraphics[width=\linewidth]{events_study/CS/multiple/events_study_lindo_MultipleCS_0_theft_to_people_index_eb.png}
+        \includegraphics[width=\linewidth]{events_study/all/simple/events_study_comparado_simple_0_theft_to_people_index_eb.png}
         \caption{Personal Theft}
-        \label{fig:panelAESTheft}
+        \label{fig:panelAESTheftC}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth} 
-        \includegraphics[width=\linewidth]{events_study/CS/multiple/events_study_lindo_MultipleCS_0_homicide_index_eb.png}
+        \includegraphics[width=\linewidth]{events_study/all/simple/events_study_comparado_simple_0_sexual_index_eb.png}
         \caption{Sexual Violence}
-        \label{fig:panelBESSexual}
+        \label{fig:panelBESSexualC}
     \end{subfigure}
 
     \vspace{0.4cm} % Espacio entre fila 1 y fila 2
 
     % === FILA 2 ===
     \begin{subfigure}[b]{0.49\textwidth} 
-        \includegraphics[width=\linewidth]{events_study/CS/multiple/events_study_lindo_MultipleCS_0_homicide_index_eb.png}
+        \includegraphics[width=\linewidth]{events_study/all/simple/events_study_comparado_simple_0_homicide_index_eb.png}
         \caption{Homicide}
-        \label{fig:panelCESHomicide}
+        \label{fig:panelCESHomicideC}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.49\textwidth} 
-        \includegraphics[width=\linewidth]{events_study/CS/multiple/events_study_lindo_MultipleCS_0_theft_to_motorbike_index_eb.png}
+        \includegraphics[width=\linewidth]{events_study/all/simple/events_study_comparado_simple_0_theft_to_motorbike_index_eb.png}
         \caption{Theft to Motorbike}
-        \label{fig:panelDESMotorbike}
+        \label{fig:panelDESMotorbikeC}
     \end{subfigure}
 
     \vspace{0.4cm} % Espacio entre fila 2 y fila 3
 
     % === FILA 3: Gráfica restante centrada ===
     \begin{subfigure}[b]{0.49\textwidth} 
-        \includegraphics[width=\linewidth]{events_study/CS/multiple/events_study_lindo_MultipleCS_0_theft_to_vehicle_index_eb.png}
+        \includegraphics[width=\linewidth]{events_study/all/simple/events_study_comparado_simple_0_theft_to_vehicle_index_eb.png}
         \caption{Theft to Vehicles}
-        \label{fig:panelDESVehicle}
+        \label{fig:panelDESVehicleC}
     \end{subfigure}
 
-    \caption{\textbf{Event Study Analysis: C\&S Estimates}}
-    \label{fig:fourpanelES}
+    \caption{\textbf{Event Study Analysis: TWFE vs. Callaway \& Sant’Anna (C\&S) Estimates}}
+    \label{fig:fourpanelESCompared}
     \vspace{0.1cm}
     \footnotesize{\textit{Note:} The rate of each crime is per 10,000 inhabitants.}
 \end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Effects of OXXO Store Openings on Different Crime Rates under the Treatment-Intensity Specification}
+\label{tab:resultados_regresion_intensity}
+\small
+
+% Definimos columnas de ancho fijo con alineación centrada (C) o derecha (R) para los números
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+\begin{tabularx}{\textwidth}{l C C C C C}
+\hline\hline
+\textbf{Crime rates} & personal theft & Sexual Violence & Homicide & Theft to Motorbike & Theft to Vehicle \\
+ & (1) & (2) & (3) & (4) & (5) \\
+\hline
+Has OXXO & $50.33^{**}$ & 0.066 & 0.047 & $-0.0763^{*}$ & 0.0404 \\
+ & (21.58) & (0.178) & (0.035) & (0.0432) & (0.033) \\
+Constant & $25.43^{***}$ & $2.459^{***}$ & $0.547^{***}$ & $1..642^{***}$ & $1.510^{***}$ \\
+ & (6.607) & (0.099) & (0.0196) & (0.024) & (0.0182) \\
+\hline
+Chain Stores & no & no & no & no & no \\
+Observations & 1,712 & 3,424 & 3,424 & 3,424 & 3,424 \\
+Treated (UPZ) & 26 & 57 & 57 & 57 & 57 \\
+Never treated & 81 & 50 & 50 & 50 & 50 \\
+R-squared & 0.714 & 0.393 & 0.292 & 0.41 & 0.288 \\
+Mean never treated & 55.531 & 2.501 & 0.292 & 1.819 & 1.176 \\
+\hline\hline
+\end{tabularx}
+
+\vspace{0.5em}
+\parbox{\textwidth}{\footnotesize
+    \textit{Note:} Standard errors in parentheses. $^{***}$ $p<0.01$, $^{**}$ $p<0.05$, $^{*}$ $p<0.1$. \\
+    TWFE considers fixed effects by unit and time, with standard errors clustered by UPZ. 
+    The dependent variable is the crime type rate per 10,000 inhabitants per UPZ. 
+    Moreover, the treatment variable is binary and indicates if the UPZ has at least one OXXO in its area. 
+    personal theft is only calculated for the period from 2015 to 2018, as I was unable to obtain data from the SIEDCO system after 2018.
+}
+\end{table}
 
 \end{document}

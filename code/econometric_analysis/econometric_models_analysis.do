@@ -77,6 +77,27 @@ drop if codigo_upz == 63
 drop if codigo_upz == 117
 
 
+* 1. Creamos una variable que marque con 1 a la UPZ si en 2015q1 ya tenía Oxxo
+gen siempre_tratada = 0
+replace siempre_tratada = 1 if tq == tq(2015q1) & dummy_oxxo == 1
+
+* 2. Extendemos esa marca a todos los trimestres de esas mismas UPZ
+by codigo_upz: egen max_siempre = max(siempre_tratada)
+
+* 3. Eliminamos por completo esas UPZ de la base de datos
+drop if max_siempre == 1
+
+* 4. Limpiamos las variables temporales que creamos
+drop siempre_tratada max_siempre
+
+//listar los always treated y esos tratar quitandolos o poniendolos como outliers
+
+//mark the outliers in a variable
+gen outliers = 0 
+
+//replace outliers = 1 if codigo_upz == 97 | codigo_upz == 91 | codigo_upz == 93 | theft_to_people_index_eb > 400 
+
+
 ***************************************************************
 *REGRESIONES PARA LA ENTREGA
 ***************************************************************
@@ -86,7 +107,8 @@ cd "$dir_controls_results"
 *ssc install outreg2, replace
 
 if $panel == 1 | $panel == 0 {
-	global dep_var crime_index_eb theft_to_vehicle_index_eb theft_to_people_index_eb theft_to_motorbike_index_eb sexual_index_eb homicide_index_eb male_index female_index
+	global dep_var crime_index_eb theft_to_vehicle_index_eb theft_to_people_index_eb theft_to_motorbike_index_eb sexual_index_eb homicide_index_eb 
+	
 }
 else {
     global dep_var crime_index theft_to_people_index male_index female_index
@@ -113,7 +135,7 @@ foreach y of global dep_var {
     //reg `y' dummy_oxxo
 
     if `first' == 1 {
-		reghdfe `y' dummy_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+		reghdfe `y' dummy_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
 		outreg2 using tabla_regresiones_${panel}.xls, replace label ///
 		ctitle("TWFE `y'") ///
@@ -124,7 +146,7 @@ foreach y of global dep_var {
         local first = 0
     }
     else {
-        reghdfe `y' dummy_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+        reghdfe `y' dummy_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
 		outreg2 using tabla_regresiones_${panel}.xls, append label ///
 		ctitle("TWFE `y'") ///
@@ -132,20 +154,23 @@ foreach y of global dep_var {
 		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
 		
     }
+	
+	//bacondecomp `y' dummy_oxxo outliers, ddetail vce(cluster codigo_upz)
 }
 
 preserve
 
 	drop if year>2018
 	
-	reghdfe theft_to_people_index_eb dummy_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe theft_to_people_index_eb dummy_oxxo outliers ,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
 	outreg2 using tabla_regresiones_${panel}.xls, append label ///
 		ctitle("TWFE `y'") ///
 		keep(dummy_oxxo) ///
 		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
 		
-		
+	//bacondecomp theft_to_people_index_eb dummy_oxxo outliers, ddetail vce(cluster codigo_upz)
+
 	drop if tq != tq(2018q4)
 
 	count if dummy_oxxo ==1
@@ -183,25 +208,26 @@ restore
 
 bysort dummy_oxxo: sum sexual_index
 
-//bacondecomp crime_index dummy_oxxo, ddetail vce(cluster codigo_upz)
-
 
 foreach y of global dep_var {
 
 	
-	reghdfe `y' dummy_oxxo $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe `y' dummy_oxxo $harddiscount_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 	
 		
 	outreg2 using tabla_regresiones_${panel}.xls, append label ///
 	ctitle("TWFE `y' H") ///
 	keep(dummy_oxxo) ///
 	addtext(Chain stores, SI, Day controls, NO, Control spillover, NO)
-		
+	
+	//bacondecomp `y' dummy_oxxo  $harddiscount_controls outliers, ddetail vce(cluster codigo_upz)
+
+	/*
 	/*if "`y'" == "crime_index" {
 		bacondecomp crime_index dummy_oxxo $harddiscount_controls, ddetail vce(cluster codigo_upz)
 	}*/
 	
-	reghdfe `y' dummy_oxxo $access_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe `y' dummy_oxxo $access_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 	
 		
 	outreg2 using tabla_regresiones_${panel}.xls, append label ///
@@ -216,7 +242,7 @@ foreach y of global dep_var {
 	if $panel == 1 {
 			
 		
-		reghdfe `y' dummy_oxxo $day_controls $harddiscount_controls ,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+		reghdfe `y' dummy_oxxo $day_controls $harddiscount_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
 			
 		outreg2 using tabla_regresiones_${panel}.xls, append label ///
@@ -225,11 +251,11 @@ foreach y of global dep_var {
 		addtext(Chain stores, SI, Day controls, SI, Control spillover, NO)
 		
 		if "`y'" == "crime_index" {
-			bacondecomp crime_index dummy_oxxo $day_controls $harddiscount_controls , ddetail vce(cluster codigo_upz)
+			bacondecomp crime_index dummy_oxxo $day_controls $harddiscount_controls outliers , ddetail vce(cluster codigo_upz)
 		}
 
 			
-		reghdfe `y' dummy_oxxo $day_controls  ,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+		reghdfe `y' dummy_oxxo $day_controls  outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 		
 			
 		outreg2 using tabla_regresiones_${panel}.xls, append label ///
@@ -238,10 +264,10 @@ foreach y of global dep_var {
 		addtext(Chain stores, NO, Day controls, SI, Control spillover, NO)
 		
 		if "`y'" == "crime_index" {
-			bacondecomp crime_index dummy_oxxo $day_controls , ddetail vce(cluster codigo_upz)
+			bacondecomp crime_index dummy_oxxo $day_controls outliers, ddetail vce(cluster codigo_upz)
 		}
 		
-		reghdfe `y' dummy_oxxo $day_controls $access_controls ,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+		reghdfe `y' dummy_oxxo $day_controls $access_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
 			
 		outreg2 using tabla_regresiones_${panel}.xls, append label ///
@@ -250,7 +276,7 @@ foreach y of global dep_var {
 		addtext(Chain stores, NO, Day controls, SI, Control spillover, SI)
 		
 		
-		reghdfe `y' dummy_oxxo $day_controls $access_controls $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+		reghdfe `y' dummy_oxxo $day_controls $access_controls $harddiscount_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
 			
 		outreg2 using tabla_regresiones_${panel}.xls, append label ///
@@ -262,7 +288,7 @@ foreach y of global dep_var {
 	}	
 
 	
-	reghdfe `y' dummy_oxxo $harddiscount_controls $access_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe `y' dummy_oxxo $harddiscount_controls $access_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 	
 		
 	outreg2 using tabla_regresiones_${panel}.xls, append label ///
@@ -270,23 +296,23 @@ foreach y of global dep_var {
 	keep(dummy_oxxo) ///
 	addtext(Chain stores, SI,  Day controls, NO, Control spillover, SI)	
 	
-	
+	*/
 }
 
 preserve
 
 	drop if year>2018
-
-	reghdfe theft_to_people_index_eb dummy_oxxo $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 	
-		
+	reghdfe theft_to_people_index_eb dummy_oxxo outliers $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
 	outreg2 using tabla_regresiones_${panel}.xls, append label ///
-	ctitle("TWFE `y' H") ///
-	keep(dummy_oxxo) ///
-	addtext(Chain stores, SI,  Day controls, NO, Control spillover, NO)	
+		ctitle("TWFE `y'") ///
+		keep(dummy_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		
+	//bacondecomp theft_to_people_index_eb dummy_oxxo outliers $harddiscount_controls, ddetail vce(cluster codigo_upz)
 
-	
-restore 
+restore
 
 
 *********************************************************
@@ -300,7 +326,7 @@ foreach y of global dep_var {
     //reg `y' dummy_oxxo
 
     if `first' == 1 {
-		reghdfe `y' cantidad_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+		reghdfe `y' cantidad_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
 		outreg2 using tabla_regresiones_intensity_${panel}.xls, replace label ///
 		ctitle("TWFE `y'") ///
@@ -319,13 +345,14 @@ foreach y of global dep_var {
 		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
 		
     }
+	
 }
 
 preserve
 
 	drop if year>2018
 	
-	reghdfe theft_to_people_index_eb cantidad_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe theft_to_people_index_eb cantidad_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
 		outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
 		ctitle("TWFE `y'") ///
@@ -342,11 +369,10 @@ preserve
 	count
 	
 	sum theft_to_people_index if dummy_oxxo ==0
-	
+
 restore
 
 
-//bacondecomp crime_index dummy_oxxo, ddetail vce(cluster codigo_upz)
 preserve
 
 drop if cantidad_oxxo ==0
@@ -368,19 +394,19 @@ restore
 foreach y of global dep_var {
 
 	
-	reghdfe `y' cantidad_oxxo $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe `y' cantidad_oxxo $harddiscount_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 	
 		
 	outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
 	ctitle("TWFE `y' H") ///
 	keep(cantidad_oxxo) ///
 	addtext(Chain stores, SI, Day controls, NO, Control spillover, NO)
-		
+	/*	
 	/*if "`y'" == "crime_index" {
 		bacondecomp crime_index dummy_oxxo $harddiscount_controls, ddetail vce(cluster codigo_upz)
 	}*/
 	
-	reghdfe `y' cantidad_oxxo $access_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe `y' cantidad_oxxo $access_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 	
 		
 	outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
@@ -393,7 +419,7 @@ foreach y of global dep_var {
 	}*/
 		
 
-	reghdfe `y' cantidad_oxxo $harddiscount_controls $access_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe `y' cantidad_oxxo $harddiscount_controls $access_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 	
 		
 	outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
@@ -401,14 +427,14 @@ foreach y of global dep_var {
 	keep(cantidad_oxxo) ///
 	addtext(Chain stores, SI,  Day controls, NO, Control spillover, SI)	
 	
-	
+	*/
 }
 
 preserve
 
 	drop if year>2018
 
-	reghdfe theft_to_people_index_eb cantidad_oxxo $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe theft_to_people_index_eb cantidad_oxxo $harddiscount_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 	
 		
 	outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
@@ -418,12 +444,101 @@ preserve
 	
 restore 
 
+*********************************************************
+*TWO WAY FIXED EFFECTS INTENSITY OF TREATMENT AS DUMMIES
+*********************************************************
+
+local first = 1
+
+foreach y of global dep_var {
+
+    //reg `y' dummy_oxxo
+
+    if `first' == 1 {
+		reghdfe `y' i.cantidad_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+		outreg2 using tabla_regresiones_intensity_${panel}.xls, replace label ///
+		ctitle("TWFE `y'") ///
+		keep(cantidad_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		
+
+        local first = 0
+    }
+    else {
+        reghdfe `y' i.cantidad_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+		outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
+		ctitle("TWFE `y'") ///
+		keep(cantidad_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		
+    }
+	
+}
+
+preserve
+
+	drop if year>2018
+	
+	reghdfe theft_to_people_index_eb i.cantidad_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+		outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
+		ctitle("TWFE `y'") ///
+		keep(cantidad_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		
+
+restore
+
+
+preserve
+
+drop if cantidad_oxxo ==0
+
+sum theft_to_people_index
+
+restore
+
+
+preserve
+
+drop if cantidad_oxxo !=0
+
+sum theft_to_people_index
+
+restore
+
+
+foreach y of global dep_var {
+
+	
+	reghdfe `y' i.cantidad_oxxo $harddiscount_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	
+		
+	outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
+	ctitle("TWFE `y' H") ///
+	keep(cantidad_oxxo) ///
+	addtext(Chain stores, SI, Day controls, NO, Control spillover, NO)
+}
+
+preserve
+
+	drop if year>2018
+
+	reghdfe theft_to_people_index_eb i.cantidad_oxxo $harddiscount_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	
+		
+	outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
+	ctitle("TWFE `y' H") ///
+	keep(cantidad_oxxo) ///
+	addtext(Chain stores, SI,  Day controls, NO, Control spillover, NO)	
+	
+restore 
 
 ********************************************************
 *C&S
 *********************************************************
-
-
 
 cd "$dir_controls_results/events study/CS/multiple"
 
@@ -447,7 +562,7 @@ foreach y of global dep_var {
 		replace first_treat = 0 if missing(first_treat)  // 0 para codigo_upzs nunca tratadas
 
 			* Ejecutar el método de Callaway & Sant'Anna
-		csdid `y' $harddiscount_controls, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz) notyet
+		csdid `y' $harddiscount_controls outliers, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz) notyet
 
 		* Revisar los efectos promedio
 		estat pretrend
@@ -566,7 +681,7 @@ foreach y of global dep_var {
 		replace first_treat = 0 if missing(first_treat)  // 0 para codigo_upzs nunca tratadas
 
 		* Ejecutar el método de Callaway & Sant'Anna
-		csdid theft_to_people_index, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz) notyet
+		csdid `y' outliers, ivar(codigo_upz) time(tq) gvar(first_treat) vce(cluster codigo_upz) notyet
 
 		* Revisar los efectos promedio
 		estat pretrend
@@ -670,7 +785,7 @@ foreach y of global dep_var {
     preserve
         
         * 1. Filtro especial por datos temporales si aplica
-        if `y' == "theft_to_people_index_eb" {
+        if "`y'" == "theft_to_people_index_eb" {
             di "Estrategia especial: Filtrando datos para Theft to People (Solo hasta 2018)"
             drop if year > 2018
         }
@@ -712,7 +827,7 @@ foreach y of global dep_var {
 			* Mostrar en la consola
 		}
         else {
-            xtreg `y' $harddiscount_controls `evlist' i.tq, fe vce(cluster codigo_upz)
+            xtreg `y' $harddiscount_controls `evlist' i.tq outliers, fe vce(cluster codigo_upz)
 
         }
 	
@@ -833,7 +948,7 @@ foreach y of global dep_var {
         di "Corriendo xtreg para la variable: `y'"
             
      
-        xtreg `y' `evlist' i.tq, fe vce(cluster codigo_upz)
+        xtreg `y' `evlist' i.tq outliers, fe vce(cluster codigo_upz)
 
 		
 		

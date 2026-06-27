@@ -29,6 +29,10 @@ names(panelForIntensity)
 #quitar obseraciones del 2023
 panelForIntensity <- panelForIntensity %>% filter(year < 2023)
 
+#drop all observations if codigo_upz is = to any of these numbers 12 19 20 22 24 25 27 29 39 91 93 94 97 100 101 102 116
+panelForIntensity <- panelForIntensity %>% filter(!codigo_upz %in% c(12, 19, 20, 22, 24, 25, 27, 29, 39, 91, 93, 94, 97, 100, 101, 102, 116))
+
+
 panelForIntensity <- panelForIntensity %>%
   group_by(codigo_upz) %>%
   mutate(
@@ -77,6 +81,8 @@ p <- ggplot(panelForIntensity_summary,
   ) +
   theme_minimal(base_size = 14) +
   theme(legend.position = "right")
+
+  print(p)
 
 # Nota: Quitamos los 'shape' porque con 40 grupos los símbolos se amontonan
 

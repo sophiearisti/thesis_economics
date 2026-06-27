@@ -1,0 +1,15 @@
+		(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)
+VARIABLES	LABELS	TWFE crime_index_eb	TWFE theft_to_vehicle_index_eb	TWFE theft_to_people_index_eb	TWFE theft_to_motorbike_index_eb	TWFE sexual_index_eb	TWFE homicide_index_eb	TWFE	TWFE H
+									
+Constant	Constant	23.39***	1.371***	18.25***	1.464***	1.681***	0.424***	32.22***	33.44***
+		(1.669)	(0.0254)	(1.572)	(0.0221)	(0.0595)	(0.00994)	(1.689)	(3.293)
+									
+Observations		3,744	3,744	3,744	3,744	3,744	3,744	1,664	1,664
+R-squared		0.522	0.565	0.502	0.622	0.429	0.485	0.758	0.760
+Chain stores		NO	NO	NO	NO	NO	NO	NO	SI
+Gender controles		NO	NO	NO	NO	NO	NO	NO	
+Day controls		NO	NO	NO	NO	NO	NO	NO	NO
+Control spillover		NO	NO	NO	NO	NO	NO	NO	NO
+Access controles		NO	NO	NO	NO	NO	NO	NO	
+Robust standard errors in parentheses									
+*** p<0.01, ** p<0.05, * p<0.1									

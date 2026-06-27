@@ -1,0 +1,17 @@
+		(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)	(11)	(12)	(13)	(14)
+VARIABLES	LABELS	TWFE crime_index_eb	TWFE theft_to_vehicle_index_eb	TWFE theft_to_people_index_eb	TWFE theft_to_motorbike_index_eb	TWFE sexual_index_eb	TWFE homicide_index_eb	TWFE	TWFE crime_index_eb H	TWFE theft_to_vehicle_index_eb H	TWFE theft_to_people_index_eb H	TWFE theft_to_motorbike_index_eb H	TWFE sexual_index_eb H	TWFE homicide_index_eb H	TWFE
+															
+dummy_oxxo	dummy_oxxo	-8.762	-0.147*	-8.218	-0.0502	-0.232	0.101***	-0.612	-9.823	-0.175**	-9.172	-0.0669	-0.225	0.0967***	-0.221
+		(6.799)	(0.0812)	(6.229)	(0.0669)	(0.280)	(0.0323)	(6.838)	(7.021)	(0.0813)	(6.418)	(0.0663)	(0.295)	(0.0321)	(6.545)
+Constant	Constant	25.46***	1.381***	19.92***	1.475***	1.841***	0.418***	34.28***	22.43***	1.317***	17.07***	1.429***	1.978***	0.407***	37.08***
+		(2.052)	(0.0245)	(1.880)	(0.0202)	(0.0846)	(0.00975)	(1.138)	(1.661)	(0.0305)	(1.598)	(0.0269)	(0.123)	(0.0156)	(3.647)
+															
+Observations		3,744	3,744	3,744	3,744	3,744	3,744	1,664	3,744	3,744	3,744	3,744	3,744	3,744	1,664
+R-squared		0.492	0.582	0.472	0.625	0.396	0.471	0.678	0.494	0.585	0.474	0.626	0.397	0.471	0.679
+Chain stores		NO	NO	NO	NO	NO	NO	NO	SI	SI	SI	SI	SI	SI	NO
+Gender controles		NO	NO	NO	NO	NO	NO	NO							NO
+Day controls		NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO
+Control spillover		NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO
+Access controles		NO	NO	NO	NO	NO	NO	NO							NO
+Robust standard errors in parentheses															
+*** p<0.01, ** p<0.05, * p<0.1															

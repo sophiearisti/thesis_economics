@@ -1,0 +1,20 @@
+	(1)
+VARIABLES	theft_to_people_index_eb
+	
+dummy_oxxo	-8.447
+	(11.53)
+cantidad_d1	-5.336
+	(4.552)
+cantidad_ara	19.61
+	(18.56)
+cantidad_jb	-0.256
+	(0.952)
+o.outliers	-
+	
+Constant	37.79***
+	(3.753)
+	
+Observations	1,664
+R-squared	0.700
+Robust standard errors in parentheses	
+*** p<0.01, ** p<0.05, * p<0.1	

@@ -98,7 +98,6 @@ drop siempre_tratada max_siempre
 
 //listar los always treated y esos tratar quitandolos o poniendolos como outliers
 
-
 //mark the outliers in a variable
 gen outliers = 0 
 
@@ -178,6 +177,8 @@ preserve
 		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
 		
 	//bacondecomp theft_to_people_index_eb dummy_oxxo outliers, ddetail vce(cluster codigo_upz)
+	
+	count
 
 	drop if tq != tq(2018q4)
 
@@ -549,8 +550,10 @@ restore
 *C&S
 *********************************************************
 
-
 cd "$dir_controls_results/events study/CS/multiple"
+
+global dep_var crime_index_eb theft_to_vehicle_index_eb //theft_to_people_index_eb theft_to_motorbike_index_eb sexual_index_eb homicide_index_eb 
+
 
 foreach y of global dep_var {
 	preserve

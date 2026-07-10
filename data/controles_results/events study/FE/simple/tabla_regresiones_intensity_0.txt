@@ -1,17 +1,17 @@
-		(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)	(11)	(12)	(13)	(14)
-VARIABLES	LABELS	TWFE crime_index_eb	TWFE theft_to_vehicle_index_eb	TWFE theft_to_people_index_eb	TWFE theft_to_motorbike_index_eb	TWFE sexual_index_eb	TWFE homicide_index_eb	TWFE	TWFE crime_index_eb H	TWFE theft_to_vehicle_index_eb H	TWFE theft_to_people_index_eb H	TWFE theft_to_motorbike_index_eb H	TWFE sexual_index_eb H	TWFE homicide_index_eb H	TWFE H
-															
-cantidad_oxxo	cantidad_oxxo	-3.070**	-0.0254	-3.271**	0.0101	0.136	0.0442***	5.011	-4.003***	-0.0435*	-4.150***	0.000653	0.159	0.0438***	5.580
-		(1.420)	(0.0247)	(1.312)	(0.0193)	(0.119)	(0.0101)	(9.046)	(1.414)	(0.0262)	(1.300)	(0.0209)	(0.145)	(0.00993)	(8.756)
-Constant	Constant	24.52***	1.351***	19.26***	1.454***	1.696***	0.424***	33.17***	21.11***	1.285***	15.97***	1.411***	1.873***	0.419***	35.92***
-		(0.788)	(0.0137)	(0.728)	(0.0107)	(0.0661)	(0.00561)	(1.810)	(1.566)	(0.0273)	(1.458)	(0.0218)	(0.0799)	(0.0125)	(3.801)
-															
-Observations		3,744	3,744	3,744	3,744	3,744	3,744	1,664	3,744	3,744	3,744	3,744	3,744	3,744	1,664
-R-squared		0.492	0.582	0.473	0.625	0.396	0.472	0.678	0.494	0.584	0.475	0.626	0.398	0.472	0.679
-Chain stores		NO	NO	NO	NO	NO	NO	NO	SI	SI	SI	SI	SI	SI	SI
-Gender controles		NO	NO	NO	NO	NO	NO	NO							
-Day controls		NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO
-Control spillover		NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO
-Access controles		NO	NO	NO	NO	NO	NO	NO							
-Robust standard errors in parentheses															
-*** p<0.01, ** p<0.05, * p<0.1															
+		(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)	(11)	(12)
+VARIABLES	LABELS	TWFE homicide_area_index	TWFE theft_to_motorbike_area_index	TWFE theft_to_people_area_index	TWFE theft_to_vehicle_area_index	TWFE sexual_area_index	TWFE	TWFE homicide_area_index H	TWFE theft_to_motorbike_area_index H	TWFE theft_to_people_area_index H	TWFE theft_to_vehicle_area_index H	TWFE sexual_area_index H	TWFE H
+													
+cantidad_oxxo	cantidad_oxxo	0.0431	-0.0808	-4.202***	-0.0633	0.330	15.25**	0.0756**	-0.0670	-4.090***	-0.0979	0.470	12.71*
+		(0.0516)	(0.111)	(1.506)	(0.0621)	(0.242)	(6.929)	(0.0351)	(0.0808)	(1.461)	(0.0669)	(0.329)	(7.341)
+Constant	Constant	1.498***	3.559***	23.12***	2.831***	4.527***	37.23***	1.553***	3.615***	22.92***	2.786***	5.141***	34.05***
+		(0.0124)	(0.0267)	(0.362)	(0.0149)	(0.0582)	(0.255)	(0.0747)	(0.247)	(0.983)	(0.126)	(0.460)	(1.638)
+													
+Observations		2,880	2,880	2,880	2,880	2,880	1,440	2,880	2,880	2,880	2,880	2,880	1,440
+R-squared		0.481	0.489	0.648	0.349	0.557	0.764	0.481	0.489	0.648	0.350	0.557	0.771
+Chain stores		NO	NO	NO	NO	NO	NO	SI	SI	SI	SI	SI	SI
+Gender controles		NO	NO	NO	NO	NO	NO						
+Day controls		NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO
+Control spillover		NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO
+Access controles		NO	NO	NO	NO	NO	NO						
+Robust standard errors in parentheses													
+*** p<0.01, ** p<0.05, * p<0.1													

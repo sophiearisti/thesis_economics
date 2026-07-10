@@ -310,3 +310,34 @@ for (geom in geometries) {
   
 }
 
+
+#########################################ALWAYS TREATED GRAPH ##########################################
+
+# Leer layer correspondiente al año
+gdf <- st_read("data/maps_data/gpkg_all_years/joined_all_upz_years.gpkg",
+               layer = "joined_2020", quiet = TRUE)
+
+# 1. Definir la lista de UPZ tratadas
+upz_tratadas <- c(12, 19, 20, 22, 24, 25, 27, 29, 39, 91, 93, 94, 97, 100, 101, 102, 116)
+
+# Crear columna FACTOR con etiquetas claras usando %in%
+gdf <- gdf %>%
+  mutate(always_treated = ifelse(codigo_upz %in% upz_tratadas, "Yes", "No"),
+         always_treated = factor(always_treated, levels = c("Yes", "No")))
+
+# 2. Graficar con escala manual
+ggplot(gdf) +
+  geom_sf(aes(fill = always_treated), color = "white", size = 0.1) +
+  scale_fill_manual(
+    values = c("Yes" = "#28536B", "No" = "#C5DCE7"), # Azul oscuro para presencia, claro para ausencia
+    name = "Always treated?",
+    labels = c("Yes" = "Yes", "No" = "No")
+  ) +
+  labs(title = "Always treated UPZs") + # Simplificado y corregido para el título
+  theme_void() +
+  theme(
+    legend.position = "bottom",
+    plot.title = element_text(hjust = 0.5, face = "bold"),
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 9)
+  )

@@ -17,11 +17,11 @@ setwd("~/Desktop/1 economia/thesis_economics")
 #esta grafica será para hacer el event study bonito con colores lindos en diferentes tinalidades de morado
 #es un csv
 # 1. Tus vectores base
-crimes <- c("homicide_area_index", 
-            "theft_to_motorbike_area_index",
-            "theft_to_people_area_index",
-            "theft_to_vehicle_area_index",
-            "sexual_area_index")
+crimes <- c("homicide_log_index", 
+            "theft_to_motorbike_log_index",
+            "theft_to_people_log_index",
+            "theft_to_vehicle_log_index",
+            "sexual_log_index")
 
 
 # 1. Definimos la función de limpieza

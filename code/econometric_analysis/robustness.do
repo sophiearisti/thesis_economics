@@ -1,6 +1,7 @@
 *********************************************************
 *version 4:analisis de controles y var dep
 *********************************************************
+* 1. Guardar la lista de números en una macro local llamada "mis_upz"
 
 *--------------Directorios --------------------------------------------*
 global global_dir "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics"
@@ -84,6 +85,24 @@ drop if codigo_upz == 63
 drop if codigo_upz == 117
 
 //listar los always treated y esos tratar quitandolos o poniendolos como outliers
+
+//1. Creamos una variable que marque con 1 a la UPZ si en 2015q1 ya tenía Oxxo
+gen siempre_tratada = 0
+replace siempre_tratada = 1 if tq == tq(2015q1) & dummy_oxxo == 1
+
+* 2. Extendemos esa marca a todos los trimestres de esas mismas UPZ
+by codigo_upz: egen max_siempre = max(siempre_tratada)
+
+list codigo_upz if max_siempre == 1
+
+* 3. Eliminamos por completo esas UPZ de la base de datos
+drop if max_siempre == 1
+
+* 4. Limpiamos las variables temporales que creamos
+drop siempre_tratada max_siempre
+
+//listar los always treated y esos tratar quitandolos o poniendolos como outliers
+
 
 //mark the outliers in a variable
 gen outliers = 0 
@@ -270,7 +289,7 @@ preserve
 
 	drop if year>2018
 	
-	reghdfe theft_to_people_index_eb cantidad_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe theft_to_people_area_index  cantidad_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
 		outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
 		ctitle("TWFE `y'") ///
@@ -328,7 +347,7 @@ preserve
 
 	drop if year>2018
 
-	reghdfe theft_to_people_index_eb cantidad_oxxo $harddiscount_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe theft_to_people_area_index cantidad_oxxo $harddiscount_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 	
 		
 	outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
@@ -832,3 +851,11 @@ foreach y of global dep_var {
 }
 
 
+list codigo_upz theft_to_people_index_eb theft_to_people_area_index
+
+drop if theft_to_people_index_eb < theft_to_people_area_index
+
+list codigo_upz theft_to_people_index_eb theft_to_people_area_index 
+histogram theft_to_people_index_eb
+
+histogram theft_to_people_area_index

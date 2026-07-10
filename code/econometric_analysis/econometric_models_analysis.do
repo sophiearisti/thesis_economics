@@ -56,6 +56,12 @@ format tq %tq
 *borrar duplicados
 duplicates drop
 
+duplicates list codigo_upz year quarter
+
+duplicates drop codigo_upz tq, force
+
+drop if year == 2023
+
 * Declarar el panel
 xtset codigo_upz tq
 
@@ -77,7 +83,7 @@ drop if codigo_upz == 63
 drop if codigo_upz == 117
 
 
-* 1. Creamos una variable que marque con 1 a la UPZ si en 2015q1 ya tenía Oxxo
+//1. Creamos una variable que marque con 1 a la UPZ si en 2015q1 ya tenía Oxxo
 gen siempre_tratada = 0
 replace siempre_tratada = 1 if tq == tq(2015q1) & dummy_oxxo == 1
 
@@ -97,6 +103,7 @@ gen outliers = 0
 
 //replace outliers = 1 if codigo_upz == 97 | codigo_upz == 91 | codigo_upz == 93 | theft_to_people_index_eb > 400 
 
+//drop if codigo_upz == 97 | codigo_upz == 91 | codigo_upz == 93
 
 ***************************************************************
 *REGRESIONES PARA LA ENTREGA
@@ -170,6 +177,8 @@ preserve
 		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
 		
 	//bacondecomp theft_to_people_index_eb dummy_oxxo outliers, ddetail vce(cluster codigo_upz)
+	
+	count
 
 	drop if tq != tq(2018q4)
 
@@ -187,6 +196,7 @@ preserve
 	sum theft_to_people_index if dummy_oxxo ==0
 	
 restore
+
 
 
 preserve 
@@ -774,6 +784,7 @@ foreach y of global dep_var {
 	restore
 
 }
+
 		
 *********************************************************
 *ESTUDIO DE EVENTOS
@@ -906,7 +917,6 @@ foreach y of global dep_var {
 }
 
 cd "$dir_controls_results/events study/FE/simple"
-
 
 foreach y of global dep_var {
     preserve

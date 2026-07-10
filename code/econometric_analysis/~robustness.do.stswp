@@ -86,6 +86,7 @@ drop if codigo_upz == 117
 
 //listar los always treated y esos tratar quitandolos o poniendolos como outliers
 
+
 //1. Creamos una variable que marque con 1 a la UPZ si en 2015q1 ya tenía Oxxo
 gen siempre_tratada = 0
 replace siempre_tratada = 1 if tq == tq(2015q1) & dummy_oxxo == 1
@@ -116,6 +117,10 @@ gen area_k2 = area_m2 / 1000000
 
 foreach y of global crimes {
 	gen `y'_area_index = `y' / area_k2
+	
+	gen `y'_log_lvl_index = log(1+`y')
+	
+	gen `y'_log_index = log(1+`y'_index)
 }
 
 ***************************************************************
@@ -124,7 +129,9 @@ foreach y of global crimes {
 
 cd "$dir_controls_results"
 
-global dep_var homicide_area_index theft_to_motorbike_area_index theft_to_people_area_index theft_to_vehicle_area_index sexual_area_index
+//global dep_var homicide_log_lvl_index theft_to_motorbike_log_lvl_index theft_to_people_log_lvl_index theft_to_vehicle_log_lvl_index sexual_log_lvl_index
+
+global dep_var homicide_log_index theft_to_motorbike_log_index theft_to_people_log_index theft_to_vehicle_log_index sexual_log_index
 
 global access_controls spillover_oxxo
  
@@ -171,7 +178,7 @@ preserve
 
 	drop if year>2018
 	
-	reghdfe theft_to_people_area_index dummy_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe theft_to_people_log_index dummy_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
 	outreg2 using tabla_regresiones_${panel}.xls, append label ///
 	ctitle("TWFE ") ///
@@ -238,7 +245,7 @@ preserve
 
 	drop if year>2018
 	
-	reghdfe theft_to_people_area_index dummy_oxxo outliers $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe theft_to_people_log_index dummy_oxxo outliers $harddiscount_controls,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
 	outreg2 using tabla_regresiones_${panel}.xls, append label ///
 		ctitle("TWFE H") ///
@@ -289,7 +296,7 @@ preserve
 
 	drop if year>2018
 	
-	reghdfe theft_to_people_index_eb cantidad_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe theft_to_people_log_index  cantidad_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
 		outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
 		ctitle("TWFE `y'") ///
@@ -347,7 +354,7 @@ preserve
 
 	drop if year>2018
 
-	reghdfe theft_to_people_index_eb cantidad_oxxo $harddiscount_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe theft_to_people_log_index cantidad_oxxo $harddiscount_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 	
 		
 	outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
@@ -851,3 +858,11 @@ foreach y of global dep_var {
 }
 
 
+list codigo_upz theft_to_people_index_eb theft_to_people_area_index
+
+drop if theft_to_people_index_eb < theft_to_people_area_index
+
+list codigo_upz theft_to_people_index_eb theft_to_people_area_index 
+histogram theft_to_people_index_eb
+
+histogram theft_to_people_log_index

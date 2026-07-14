@@ -18,7 +18,7 @@
 %for citations
 \usepackage{csquotes}       % Requerido por biblatex para manejar comillas según el estilo
 \usepackage[style=apa, backend=biber]{biblatex}
-\addbibresource{referencess.bib}
+\addbibresource{references.bib}
 \usepackage{hyperref}       % Siempre cárgalo DESPUÉS de biblatex
 
 %for notes and corrections
@@ -34,15 +34,45 @@
 
 
 \onehalfspacing
-\title{When OXXO Moves Into the Block: Evaluating the Impact of OXXO on Crime Activity in Bogotá}
-\author{Sophia Aristizábal Flórez \thanks{The code and data repository for this thesis can be accessed at \url{https://github.com/sophiearisti/thesis_economics.git}}}
+\title{When OXXO Moves Into the Block: Evaluating the Impact of OXXO on Crime Activity in Bogotá \footnote{The code and data repository for this thesis can be accessed at \url{https://github.com/sophiearisti/thesis_economics.git}} \thanks{HHHH}}
+\author{}
+\date{}
 
 \begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\Large Pontificia Universidad Javeriana \par}
+    {\large Facultad de Ciencias Económicas y Administrativas \par}
+    \vspace{2cm}
+    
+    {\Large\bfseries When OXXO Moves Into the Block: Evaluating the Impact of OXXO on Crime Activity in Bogotá \par}
+    \vspace{1.5cm}
+    
+    {\large Author: Sophia Aristizábal Flórez \par}
+    {\large Advisor: Ana María Díaz \par}
+    \vspace{1.5cm}
+    
+    {\large Bachelor's Degree in Economics \par}
+    
+    \vfill
+    {\large Bogotá, D.C., 2026 \par}
+\end{titlepage}
 
 \maketitle
 \onehalfspacing
 
-\section{Abstract}
+\begin{abstract}
+Although Bogotá, the capital city of Colombia, has experienced a significant reduction in crime since the 1990s, delinquency and insecurity remain major public concerns. OXXO a conveniece store chain that has steadily expanded across the capital, may be an urban factor that is actively shaping Bogotá’s criminal environment. Also, despite extensive research on urban crime in Bogotá, no study has systematically examined the causal impact of convenience store proliferation on local crime patterns. This study employed TWFE and Callaway and Sant’Anna approaches with their respective event studies to estimate the causal effect of OXXO openings on local crime activity in Bogota’s Zonal Planning Units, and if effects vary by crime type and time since opening. Results from both spectifiations showed that homicide is the only crime category that exhibits a robust positive effect. Additionally, I found that both in the medium- and long-run OXXO stores do not appear to significantly alter the city’s security dynamics. 
+\hl{ The implications and significance}
+
+\vspace{0.5cm}
+
+\noindent \textbf{Keywords:} Convenience stores, TWFE, crime activity, Bogotá, OXXO, Callaway and Sant'Anna.
+
+\end{abstract}
 
 \newpage
 
@@ -64,7 +94,7 @@ To estimate this impact, I constructed a quarterly panel dataset covering the pe
 
 Additionally, I employed Two-Way Fixed Effects (TWFE) and the Callaway and Sant’Anna (C\&S) estimator, along with their corresponding event-study specifications, as the main empirical strategies of this investigation. The TWFE model was useful for estimating the average relationship between the expansion of OXXO stores and crime rates across UPZs over time. However, because staggered treatment adoption may generate bias under treatment-effect heterogeneity, the C\&S estimator was also implemented to obtain more robust estimates and assess the consistency of the TWFE results. Finally, event-study analyses were conducted to examine the dynamic evolution of treatment effects over time and to evaluate the parallel trends assumption for both empirical approaches.\\
 
-\hl{At the end, I found that the staggered entry of OXXO stores had no statistically significant effect on criminal activity across Bogotá. Using both aggregated specifications through the TWFE model and dynamic specifications through event-study analyses, I found no evidence that the expansion of OXXO affected different types of crime in the city. Additionally, after controlling for the presence of other similar commercial establishments located near OXXO stores, such as hard-discount retailers, which have also been associated with changes in criminal activity in Bogotá, the estimated effects remained statistically insignificant. These findings suggest that, both in the short and long run, OXXO stores do not appear to significantly alter Bogotá’s security dynamics. This may be because ANOTHER EXPLANATION}.\\
+At the end I find that the staggered entry of OXXO stores has virtually no statistically significant effect on overall criminal activity across Bogotá. Using both aggregated specifications through the TWFE and C\&S models, I demonstrate that homicide is the only crime category that exhibits a robust positive effect across specifications. Additionally, for dynamic treatment effects I found that both in the medium- and long-run OXXO stores do not appear to significantly alter Bogotá’s security dynamics. These null effects can be explained by two hypotheses: First, the systemic measurement error present in all crime types except homicide may attenuate the estimates; indeed, when utilizing an alternative specification designed to mitigate reporting bias and the influence of outliers, personal theft and other offenses become statistically significant. Second, OXXO may simply not be a principal determinant of broader urban crime patterns, impacting homicide due to its 24-hour operational format, alcohol sales, and role in facilitating nocturnal gatherings.\\
 
 Despite extensive research on urban crime in Bogotá, no study has systematically examined the causal impact of convenience store proliferation, particularly OXXO, on local crime patterns. Existing investigations have focused on public transport infrastructure \parencite{Bacares2013a,Bacares2013b,Garcia2005}, large-scale police interventions \parencite{Blattman2017,Blattman2021}, alcohol sales restrictions \parencite{Mello2013}, and socioeconomic determinants \parencite{Escobar2012}. One recent study examined the relationship between Tiendas D1 hard-discount stores and crime \parencite{Lopez2024}, but OXXO represents a distinct retail model characterized by 24-hour operations and a higher density of ``grab-and-go'' items, which may create different criminal opportunities compared to the limited operating hours of hard-discount formats.\\
 
@@ -88,6 +118,8 @@ Although OXXO has been operating in Colombia for almost 17 years, it only consol
 The proliferation of OXXO stores began in the northern part of the city before spreading throughout the eastern region. Figure~\ref{fig:fourpanelOXXO_evolution_UPZ} illustrates this evolution, showing that OXXO is now present in nearly 70\% of the city’s Zonal Planning Units (UPZ) , these being units that group neighborhoods based on socioeconomic stratification, land use, housing characteristics, and the living conditions of their inhabitants \parencite{alcaldia_bogota_upz}. Furthermore, it can be observed that OXXO presence has a primary concentration in the northeastern neighborhoods of Bogotá. Currently, the only areas lacking OXXO establishments are in the far southern reaches of the city. These places correspond to UPZs with lower levels of economic performance, socioeconomic stratification, and urban transport connectivity \parencite{Guzman2017, Bocarejo2013, PRISMBogota}, where residents continue to rely heavily on traditional neighborhood stores \parencite{RicoPencue2021}. \\
 
 This expansion across the years positively correlates with the inherent characteristics of northeastern Bogotá, where high traffic, spatial accessibility, and high-income residential clusters provide an ideal environment for the convenience store model \hl{(citation)}. Figure~\ref{fig:oxxo_transmilenio_vias} illustrates this behavior by mapping the city’s arterial roads, main avenues, and Transmilenio stations (Bogotá's Bus Rapid Transit system); it demonstrates that by 2025, OXXO locations tended to cluster along these major transport corridors. Furthermore, Section~\ref{sec:Statistics} provides a statistical analysis confirming the positive correlation between these variables and store locations. \\
+
+OXXO locations are centrally administered by FEMSA with the purpose of standardizing processes, logistics, services, and products \parencite{oxxo_faqs}. This implies that store placement is strategically determined according to the company’s broader commercial objectives rather than being randomly distributed across space. Such non-aleatory allocation may complicate econometric identification, since the characteristics that attract OXXO establishments may also affect crime behavior.\\
 
 \begin{figure}
     \centering
@@ -153,8 +185,6 @@ This expansion across the years positively correlates with the inherent characte
     \label{fig:oxxo_transmilenio_vias}
 \end{figure}
 
-OXXO locations are centrally administered by FEMSA with the purpose of standardizing processes, logistics, services, and products \parencite{oxxo_faqs}. This implies that store placement is strategically determined according to the company’s broader commercial objectives rather than being randomly distributed across space. Such non-aleatory allocation may complicate econometric identification, since the characteristics that attract OXXO establishments may also affect crime behavior.\\
-
 The concern about endogenous OXXO placement, however, may be mitigated through the use of TWFE estimators, because many determinants of store location are either time-invariant or evolve only gradually over the sample period, allowing UPZ fixed effects to absorb a substantial portion of the selection process. Nonetheless, some bias may persist if OXXO entry responds to time-varying local trends correlated with the outcome. For example, FEMSA may prioritize expansion into UPZs experiencing increases in commercial activity, population density, household income, pedestrian flows, or improvements in public security, all of which could independently influence the dependent variable. In such cases, TWFE estimates could partly capture these underlying trends rather than the causal effect of OXXO entry alone.
 
 \subsection{Criminality in Bogotá}
@@ -219,8 +249,8 @@ Although useful, they fail to account for convenience stores’ role on crime of
 
 On the other hand, other recent publications have examined the influence of analogous commercial establishments on urban crime. While some of these studies do not focus exclusively on convenience stores, they utilize other retail outlets with similar operational profiles which can serve as proxies for what this thesis aims to investigate. \textcite{askey2018fast} is and example as the authors pooled data from fast-food restaurants and convenience stores in Seattle. They used sales revenue as a proxy for human activity to count the different levels of operational intensity across locations, and aimed to explain crime patterns in the immediate surroundings of these establishments. Their results indicate that stores with higher average sales were associated with with a 7.4\% increase in expected crime counts. Conversely, \cite{feng2019aggravating} contribute to this discussion by finding that alcohol outlets influenced the likelihood of aggravated assault and street robbery in New York City. Their findings reveal differential impacts depending on the type of outlet (if it is a bar, a grocery store, or other similar establishment); for instance, the authors highlighted that in Manhattan and the Bronx, proximity within two blocks of a grocery store increased the relative risk of street robbery by more than sixfold.\\ 
 
-Another relevant investigation is the one of \parencite{shin2024dollar}. 
-Shin used a DiD approach to invetigate the impact of dollar stores on localized violent crime patterns in Chicago. 
+Another relevant investigation is the one of \cite{shin2024dollar}. 
+Shin used a Difference-in-Difference  approach to invetigate the impact of dollar stores on localized violent crime patterns in Chicago. 
 To ensure the treatment and control groups were as homogeneous as possible, the author created localized areas using a 250-feet buffer for the treatment group and a 250-to-354-feet outer ring as the control. 
 At the end, this research found that store openings lead to a 21.\% increase in violent crime (0.17 incidents per quarter), a result primarily driven by a 38\% surge in robberies.\\
 
@@ -310,7 +340,7 @@ On the other hand, Figure~\ref{fig:Treatment_intensity} presents preliminary evi
     \centering
     \begin{subfigure}[b]{0.48\textwidth} 
         \includegraphics[width=\linewidth]{dif_meds/diff_means_theft_to_people_index.png}
-        \caption{Theft rate}
+        \caption{Personal theft rate}
         \label{fig:diff_people}
     \end{subfigure}
 
@@ -356,7 +386,7 @@ On the other hand, Figure~\ref{fig:Treatment_intensity} presents preliminary evi
     {\footnotesize \textit{Note:} This figure displays the difference-in-means tests for various crime categories across Bogota's UPZs. The confidence intervals represent 95\% significance. If the intervals do not cross the zero line (red), the difference between treated and control units is statistically significant.     personal theft is only calculated for the period from 2015 to 2018, as I was unable to obtain data from the SIEDCO system after 2018.}
 \end{figure}
 
-These results are consistent with expectations, as theft is the crime category most likely to be positively associated with the presence of OXXO stores. This finding aligns with the hypothesis that such establishments may function as crime attractors by increasing the flow of suitable targets. However, this pattern may also reflect the possibility that OXXO stores are disproportionately located in UPZs with inherently higher theft rates. Moreover, the graphs indicate that differences for other types of crime are not generally statistically significant. This fits the pattern expected, as crimes such as sexual violence or vehicle and motorcycle theft are less likely to be influenced by OXXO presence. These Violence often rely on different spatial and social dynamics, such as secluded areas or long-term parking patterns, which remain largely unaffected by convenience retail expansion  \hl{cita}.\\
+These results are consistent with expectations, as personal theft is the crime category most likely to be positively associated with the presence of OXXO stores. This finding aligns with the hypothesis that such establishments may function as crime attractors by increasing the flow of suitable targets. However, this pattern may also reflect the possibility that OXXO stores are disproportionately located in UPZs with inherently higher theft rates. Moreover, the graphs indicate that differences for other types of crime are not generally statistically significant. This fits the pattern expected, as crimes such as sexual violence or vehicle and motorcycle theft are less likely to be influenced by OXXO presence. These Violence often rely on different spatial and social dynamics, such as secluded areas or long-term parking patterns, which remain largely unaffected by convenience retail expansion  \hl{cita}.\\
 
 Table~\ref{tab:diferencias_medias_controles_fijos} also shows preliminary differences between treated and never treated groups with fixed baseline controls. The variables chosen help to visualize that OXXOs are located in areas where there is higher traffic, accessibility, quality of life, and purchasing power. Moreover, these results indicate that potential market size may not be adequately captured by population measures alone (such as total inhabitants or household size in 2007), but rather by indicators of economic activity and consumption capacity. Since OXXO's product mix consists primarily of non-essential daily goods and convenience items rather than vital necessities, this retail chain prioritizes locations with high-income transit rather than just high residential density. These results are consistent with what was confirmed by \textcite{marcos2022}, where convenience store chains in Mexico were found to be distributed by similar characteristics.\\
 
@@ -678,19 +708,24 @@ Mean never treated & 55.531 & 2.501 & 0.292 & 1.819 & 1.176 \\
 }
 \end{table}
 
-Incorporating treatment intensity constitutes a relevant extension of the baseline analysis, given the heterogeneous evolution in the number of OXXO stores across treatment cohorts illustrated in figure ~\ref{fig:Treatment_intensity}. The intensity specification better captures differences in exposure to OXXO presence that are not reflected by a binary treatment indicator. Since the C\&S estimator is not defined for continuous treatment intensity, these estimates cannot be directly validated using this approach.\\
+Incorporating treatment intensity constitutes a relevant extension of the baseline analysis, given the heterogeneous evolution in the number of OXXO stores across treatment cohorts illustrated in figure ~\ref{fig:Treatment_intensity}. The intensity specification better captures differences in exposure to OXXO presence that are not reflected by a binary treatment indicator. Since the C\&S estimator is not defined for continuous treatment intensity, these estimates cannot be directly validated using this approach.
 
 \section{Robustness}
 
-To assess the sensitivity of the results, two robustness checks were conducted. First, I incorporated the presence of other convenience store chains, namely Justo \& Bueno, D1, and Ara, as controls in all specifications. This considers the potential confounding effect of competing hard discount retailers, which may simultaneously influence OXXO' location decisions and local criminal activity, thereby biasing the estimates obtained. Second, following \cite{ChalfinMcCrary2018, RaphaelWinterEbmer2001}, I re-estimated all regression using  $log( 1 + crime\_type\_index_{upz,year} )$, where $crime\_type\_index_{upz,year}$ coresponds to the usual crime index per 10,000 inhabitants defined in equation ~\ref{eq:index_crime}. This logarithmic specification reduces the influence of outlier values arising from low residential populations and high crime counts in some UPZs, and, as \cite{ChalfinMcCrary2018} show, mitigates the attenuation bias introduced by measurement error in crime data, a particularly relevant concern given that Colombian administrative crime records are subject to systematic underreporting. In both robustness checks always-treated units were excluded from the estimation sample to maintain the same observation used in the Results section.
+To assess the sensitivity of the results, two robustness checks were conducted. First, I incorporated the presence of other convenience store chains, namely Justo \& Bueno, D1, and Ara, as controls in all specifications. This considers the potential confounding effect of competing hard discount retailers, which may simultaneously influence OXXO location decisions and local criminal activity, thereby biasing the estimates obtained. Second, following \cite{ChalfinMcCrary2018, RaphaelWinterEbmer2001}, I re-estimated all regressions using  $log( 1 + crime\_type\_index_{upz,year} )$, where $crime\_type\_index_{upz,year}$ coresponds to the usual crime index per 10,000 inhabitants defined in equation ~\ref{eq:index_crime}. This logarithmic specification reduces the influence of outlier values arising from low residential populations and high crime counts in some UPZs, and, as \cite{ChalfinMcCrary2018} argue, could mitigate the measurement error in crime data, a particularly relevant concern given that Colombian administrative crime records are subject to systematic underreporting. In both robustness checks always-treated units were excluded from the estimation sample to maintain the same observation used in the Results section.
 
-\subsection{Hard discount stores as covariates}
+\subsection{Hard discount stores as control variables}
 
-The inclusion of these variables did not substantially alter the main results. D1, Ara, and Justo & Bueno were each incorporated as dummy variables in the TWFE and C\&S models, and then as continous variables in the intensity of treatment specification. In general, the estimated effects maintained their statistical insignificance across all crime categories, and some of the coefficients  even decreased in magnitude. This means that omitting these chains from the main specification leads to a slight overestimation of OXXO's effect on crime, albeit one that does not affect the qualitative conclusions.\\
+The inclusion of these variables did not substantially alter the main results. D1, Ara, and Justo \& Bueno were each incorporated as dummy variables in the TWFE and C\&S models, and then as continous variables in the intensity of treatment specification. In general, the estimated effects maintained their statistical insignificance across all crime categories, and some of the coefficients  even decreased in magnitude. This means that omitting these chains from the main specification leads to a slight overestimation of OXXO's effect on crime, albeit one that does not affect the prior conclusions.\\
 
-Regarding the event studies comparison, the violation of the parallel trends assumption became less pronounced. All crimes, except personal theft, maintained a similar behavioral patter across quarters. For personal theft, the increasing dynamic effects that were previously observed in figure ~\ref{ fig:fourpanelESCompared} were atenuated, and after period seven the ES of each model diverged: one (C\&S) conserved an increasing dynamic, while the other (TWFE) presented a decreasing tendency. These results indicate that, after considering hard dicount stores, none of the crimes analyzed have a temporal tendency following OXXO's entry into a UPZ. The complete set of estimates and ES is reported in Appendix ~\ref{sec:otherresultstable}.\\
+Regarding the event studies comparison, the violation of the parallel trends assumption became less pronounced. All crimes, except personal theft, maintained a similar behavioral patter across quarters. For personal theft, the increasing dynamic effects that were previously observed in figure ~\ref{fig:fourpanelESCompared} were atenuated, and after period seven the ES of each model diverged: one (C\&S) conserved an increasing dynamic, while the other (TWFE) presented a decreasing tendency. These results indicate that, after considering hard dicount stores, none of the crimes analyzed have a temporal tendency following OXXO's entry into a UPZ. The complete set of estimates and ES is reported in Appendix ~\ref{sec:otherresultstable}.
 
 \subsection{Transformation of the dependent variable}
+\label{sec:transformation}
+
+There are two reasons why the estimates obtained may not show the real impact of OXXO. First, the measurement error in the dependent variables could be the reason why almost all crimes ended with statistically insignificant estimates. Second, a number of UPZs reported high crime counts relative to their residential population, even after excluding always treated units. Thus, the log transformation is expected to mitigate this two issues, and provide a useful test for assessing whether they were biasing the original estimates.\\
+
+Table~\ref{tab:resultados_regresion_area} reports the estimates obtained after applying the log transformation. Unlike the baseline specification, the coefficients for personal theft, homicide, and motorcycle theft are now statistically significant, despite being smaller in magnitude. The estimated effect on sexual violence remains statistically insignificant, as expected, since it serves as a placebo outcome and therefore should not be affected by the presence of OXXO stores. These findings suggest that the transformation was effective in mitigating both the outliers and the measurement error. In particular, the estimates become more precise, as reflected in the reduction of the standard errors relative to the estimated coefficients. This could indicate that the original specification understated the effects of OXXO on some crime categories. However, the results reported in table ~\ref{tab:resultados_ES_robustness} challenge this interpretation. Even with the log specification all C\&S estimates remained statistically insignificant. Because this pattern is consistent across all robustness checks and the baseline analysis, the evidence more strongly supports the conclusion that OXXO entry only affected homicide and not the other crime types.\\
 
 \begin{table}[htbp]
     \centering
@@ -703,19 +738,19 @@ Regarding the event studies comparison, the violation of the parallel trends ass
 
     \begin{tabularx}{\textwidth}{l C C C C C}
     \hline\hline
-    \textbf{Crime rates} & Personal Theft & Sexual Violence & Homicide & Theft to Motorbike & Theft to Vehicle \\
-    & (1) & (2) & (3) & (4) & (5) \\
+    \textbf{Crime rates} & Personal Theft & Sexual Violence & Homicide      & Theft to Motorbike & Theft to Vehicle \\
+                         & (1)            & (2)             & (3)           & (4)                & (5) \\
     \hline
-    Has OXXO & $15.25^{**}$  & 0.217         & $0.0877^{***}$ & -0.380        & $-0.255$ \\
-             & (6.929)       & (0.304)       & (0.122)        & (0.325)       & (0.204) \\
-    Constant & $37.23^{***}$ & $4.573^{***}$ & $1.495^{***}$  & $3.598^{***}$ & $2.856^{***}$ \\
-             & (0.255)       & (0.0468)      & (0.0188)       & (0.0501)      & (0.0315) \\
+    Has OXXO             & $0.160^{***}$  & 0.0703          & $0.0573^{**}$ & $-0.0774^{*}$      & $-0.0498$ \\
+                         & (0.0509)       & (0.0540)        & (0.0274)      & (0.0394)           & (0.0430) \\
+    Constant             & $2.837^{***}$  & $0.855^{***}$   & $0.317^{***}$ & $0.812^{***}$      & $0.766^{***}$ \\
+                         & (0.00187)      & (0.00832)       & (0.00422)     & (0.00607)          & (0.0125) \\
     \hline
-    Observations & 1,440 & 2,880 & 2,880 & 2,880 & 2,880 \\
-    Treated (UPZ) & 9 & 40 & 40 & 40 & 40 \\
-    Never treated & 81 & 50 & 50 & 50 & 50 \\
-    R-squared & 0.764 & 0.557 & 0.481 & 0.489 & 0.349 \\
-    Mean never treated & 55.531 & 2.501 & 0.722 & 0.603 & 1.176 \\
+    Observations         & 1,440          & 2,880           & 2,880         & 2,880              & 2,880 \\
+    Treated (UPZ)        & 9              & 40              & 40            & 40                 & 40 \\
+    Never treated        & 81             & 50              & 50            & 50                 & 50 \\
+    R-squared            & 0.930          & 0.590           & 0.491         & 0.500              & 0.505 \\
+    Mean never treated   & 55.531         & 2.501           & 0.722         & 0.603              & 1.176 \\
     \hline\hline
     \end{tabularx}
 
@@ -723,12 +758,46 @@ Regarding the event studies comparison, the violation of the parallel trends ass
     \parbox{\textwidth}{\footnotesize
         \textit{Note:} Standard errors in parentheses. $^{***}$ $p<0.01$, $^{**}$ $p<0.05$, $^{*}$ $p<0.1$. \\
         TWFE considers fixed effects by unit and time, with standard errors clustered by UPZ. 
-        The dependent variable is the smoothed crime type rate per $Km^2$ inhabitants per UPZ. 
+        The dependent variable is the logarithm of the smoothed crime type rate per 10,000 inhabitants per UPZ. 
         Moreover, the treatment variable is binary and indicates if the UPZ has at least one OXXO in its area. 
         Personal theft is only calculated for the period from 2015 to 2018, as I was unable to obtain data from the SIEDCO system after 2018.
     }
 \end{table}
 
+Finally, the ES for both models maintained the same dynamic effects as the baseline results. Only personal theft, as presented in Panel A of figure ~\ref{fig:fourpanelESRobustness}, mirrors the behavior observed when hard-discount stores were added as control variables; specifically, it no longer exhibits the increasing dynamic effects that previously characterized this crime. This strengthens the conclusion that, in fact, OXXO had no medium- to long-term effect on personal theft, and that this behavior was driven by UPZ outliers and other variables omitted in the simpler regressions.
+
+\afterpage { % El comando afterpage asegura que la tabla se coloque en la siguiente página disponible sin romper el flujo del texto
+    \begin{landscape}
+        \begin{table}[p] % [p] para que ocupe una página completa
+            \centering
+            \caption{Comparison of ATT Estimates from TWFE and C\&S Across Different Crime Types}
+            \label{tab:resultados_ES_robustness}
+            \resizebox{\linewidth}{!}{% Ajustado a \linewidth para que use el ancho total de la hoja horizontal
+            \begin{tabular}{lcccccccccc} % Definidas las 11 columnas
+            \hline\hline
+            \textbf{Crime rates} & \multicolumn{2}{c}{Personal Theft} & \multicolumn{2}{c}{Sexual Violence} & \multicolumn{2}{c}{Homicide} & \multicolumn{2}{c}{Theft to Motorbike} & \multicolumn{2}{c}{Theft to Vehicle} \\
+            Method & TWFE & C\&S & TWFE & C\&S & TWFE & C\&S & TWFE & C\&S & TWFE & C\&S \\
+            \hline
+                         & (1)             & (2)      & (3)      & (4)      & (5)           & (6)       & (7)            & (8)       & (9)          & (10)  \\
+            \hline
+            ATT          & $0.160^{***}$   & 0.0625   & 0.0703   & 0.0306   & $0.0573^{**}$ & 0.0302    & $-0.0774^{*}$  & -0.0113   & $-0.0498$    & -0.0510 \\
+            SE ATT       & (0.0509)        & (0.0654) & (0.0540) & (0.0693) & (0.0274)      & (0.0414)  & (0.0394)       & (0.0601)  & (0.0430)     & (0.0402) \\
+            Observations & 1,440.          & 2,880    & 2,880    & 2,880    & 2,880         & 2,880     & 2,880          & 2,880     & 2,880        & 2,880    \\
+            \hline
+            \end{tabular}
+            }
+            
+            \vspace{1em}
+            \begin{minipage}{\linewidth} 
+                \footnotesize
+                \textit{Note:} Standard errors in parentheses. *** p$<$0.01, ** p$<$0.05, * p$<$0.1. 
+                ATT is the average effect of the treatment on the treated. For TWFE, this is the coefficient presented in Table~\ref{tab:resultados_regresion} and for C\&S is the weighted average of the ATTs by cohort.
+                In total, there are 32 trimesters that represent the totality of the period of analysis. 
+                Always treated units are excluded from the analysis.
+            \end{minipage}
+        \end{table}
+    \end{landscape}
+}
 
 \begin{figure}[htbp]
     \centering
@@ -772,42 +841,10 @@ Regarding the event studies comparison, the violation of the parallel trends ass
     \caption{Event Study Analysis: TWFE vs C\&S Estimates}
     \label{fig:fourpanelESRobustness}
     \vspace{0.1cm}
-    \footnotesize{\textit{Note:} The rate of each crime number is per $Km^2$. I excluded always-treated units from both C\&S and TWFE Event Studies analysis. The dashed vertical line indicates the quarter before the first OXXO opening in each UPZ. The horizontal line at zero represents no effect. The shaded areas represent 95\% confidence intervals.}
+    \footnotesize{\textit{Note:} The rate of each crime number is the logarithm of the smoothed crime type rate per 10,000 inhabitants per UPZ. I excluded always-treated units from both C\&S and TWFE Event Studies analysis. The dashed vertical line indicates the quarter before the first OXXO opening in each UPZ. The horizontal line at zero represents no effect. The shaded areas represent 95\% confidence intervals.}
 \end{figure}
 
-\afterpage { % El comando afterpage asegura que la tabla se coloque en la siguiente página disponible sin romper el flujo del texto
-    \begin{landscape}
-        \begin{table}[p] % [p] para que ocupe una página completa
-            \centering
-            \caption{Comparison of ATT Estimates from TWFE and C\&S Across Different Crime Types}
-            \label{tab:resultados_ES_robustness}
-            \resizebox{\linewidth}{!}{% Ajustado a \linewidth para que use el ancho total de la hoja horizontal
-            \begin{tabular}{lcccccccccc} % Definidas las 11 columnas
-            \hline\hline
-            \textbf{Crime rates} & \multicolumn{2}{c}{Personal Theft} & \multicolumn{2}{c}{Sexual Violence} & \multicolumn{2}{c}{Homicide} & \multicolumn{2}{c}{Theft to Motorbike} & \multicolumn{2}{c}{Theft to Vehicle} \\
-            Method & TWFE & C\&S & TWFE & C\&S & TWFE & C\&S & TWFE & C\&S & TWFE & C\&S \\
-            \hline
-                         & (1)     & (2)     & (3)     & (4)      & (5)           & (6)      & (7)      & (8)     & (9)          & (10)  \\
-            \hline
-            ATT          & 2.331   & -1.917  & -0.229  & 0.114    & $0.112^{***}$ & 0.0799   & -0.0408  & -0.029  & $0.170^{**}$ & -0.058 \\
-            SE ATT       & (7.141) & (6.699) & (0.275) & (0.0310) & (0.0310)      & (0.0698) & (0.0783) & (0.165) & (0.0795)     & (0.119) \\
-            Observations & 1,440.  & 2,880   & 2,880   & 2,880    & 2,880         & 2,880    & 2,880    & 2,880   & 2,880        & 2,880    \\
-            \hline
-            \end{tabular}
-            }
-            
-            \vspace{1em}
-            \begin{minipage}{\linewidth} 
-                \footnotesize
-                \textit{Note:} Standard errors in parentheses. *** p$<$0.01, ** p$<$0.05, * p$<$0.1. 
-                ATT is the average effect of the treatment on the treated. For TWFE, this is the coefficient presented in Table~\ref{tab:resultados_regresion} and for C\&S is the weighted average of the ATTs by cohort.
-                In total, there are 32 trimesters that represent the totality of the period of analysis. 
-                Always treated units are excluded from the analysis.
-            \end{minipage}
-        \end{table}
-    \end{landscape}
-}
-
+\begin{comment}
 \begin{table}[htbp]
     \centering
     \caption{Effects of OXXO Store Openings on Different Crime Rates under the Treatment-Intensity Specification and log transformation of the dependent variable}
@@ -819,19 +856,19 @@ Regarding the event studies comparison, the violation of the parallel trends ass
 
     \begin{tabularx}{\textwidth}{l C C C C C}
     \hline\hline
-    \textbf{Crime rates} & Personal Theft & Sexual Violence & Homicide & Theft to Motorbike & Theft to Vehicle \\
-    & (1) & (2) & (3) & (4) & (5) \\
+    \textbf{Crime rates} & Personal Theft  & Sexual Violence & Homicide       & Theft to Motorbike & Theft to Vehicle \\
+                         & (1)             & (2)             & (3)            & (4)                & (5) \\
     \hline
-    Has OXXO & $15.25^{**}$  & 0.330         & $0.0431^{***}$ & 0.0808        & $-0.0633$ \\
-            & (6.929)       & (0.242)       & (0.0516)       & (0.111)       & (0.0621) \\
-    Constant & $37.23^{***}$ & $4.527^{***}$ & $1.498^{***}$  & $3.559^{***}$ & $2.831^{***}$ \\
-            & (0.255)       & (0.0582)      & (0.0124)       & (0.0267)      & (0.0149) \\
+    Has OXXO             & $0.160^{***}$   & $-0.0193$       & $0.0223^{**}$  & $0.0293^{**}$      & $-0.0633$ \\
+                         & (0.0509)        & (0.0241)        & (0.0107)       & (0.0143)           & (0.0621) \\
+    Constant             & $2.837^{***}$   & $0.849^{***}$   & $0.320^{***}$  & $0.807^{***}$      & $2.831^{***}$ \\
+                         & (0.00187)       & (0.00581)       & (0.00256)      & (0.00343)          & (0.0149) \\
     \hline
-    Observations & 1,440 & 2,880 & 2,880 & 2,880 & 2,880 \\
-    Treated (UPZ) & 26 & 57 & 57 & 57 & 57 \\
-    Never treated & 81 & 50 & 50 & 50 & 50 \\
-    R-squared & 0.696 & 0.414 & 0.481 & 0.410 & 0.552 \\
-    Mean never treated & 55.531 & 2.501 & 0.722 & 0.603 & 1.176 \\
+    Observations         & 1,440           & 2,880           & 2,880          & 2,880              & 2,880 \\
+    Treated (UPZ)        & 9               & 57              & 57             & 57                 & 57 \\
+    Never treated        & 81              & 50              & 50             & 50                 & 50 \\
+    R-squared            & 0.908           & 0.558           & 0.425          & 0.499              & 0.495 \\
+    Mean never treated   & 55.531          & 2.501           & 0.722          & 0.603              & 1.176 \\
     \hline\hline
     \end{tabularx}
 
@@ -839,15 +876,29 @@ Regarding the event studies comparison, the violation of the parallel trends ass
     \parbox{\textwidth}{\footnotesize
         \textit{Note:} Standard errors in parentheses. $^{***}$ $p<0.01$, $^{**}$ $p<0.05$, $^{*}$ $p<0.1$. \\
         TWFE considers fixed effects by unit and time, with standard errors clustered by UPZ. 
-        The dependent variable is the crime type rate per $Km^2$ inhabitants per UPZ. 
+        The dependent variable is the log of the crime rate. 
         Moreover, the treatment variable is continuous and indicates the number of OXXO stores in the UPZ.
         Personal theft is only calculated for the period from 2015 to 2018, as I was unable to obtain data from the SIEDCO system after 2018.
     }
 \end{table}
+\end{comment}
 
 \section{Discussion}
 
+In general, results showed that the expansion of OXXO stores over time has no effect on most crimes analyzed. Baseline results and robustness checks evidenced that the only crime that maintained statistically significant was homicide, others such as theft to people oscillated amog specifications. In some types, such as sexual violence, it is reasonable to expect no effect, but in theft to people or theft to motorbike or vehicle I expected to find evidence of a positive effect. For example, studies such as \textcite{askey2018fast, Dugato2026}, and \textcite{Brantingham1995} reported that similar establishments were crime attractors for personal theft as they increase the concentration of potential victims in a single spatial point. Additionally, \cite{Lu2006} and \cite{Piza2017} demonstrated that commercial establishments such as convenience stores have a positive correlation with vehicles’ theft, mainly because these locations create artificial concentrations of cars and motorbikes in areas where drivers have low situational awareness. Anticipating these outcomes in the case of OXXO is grounded, as these convenience stores typically do not provide private parking facilities. Consequently, drivers may opt to park on the public street, leaving their vehicles unattended along high-flow roads where guardianship is low. Also, OXXO’s integration of delivery services \parencite{OxxoTyC2026} could simultaneously increase local motorcycle flow and heighten the risk of motorcycle theft. However, my empirical findings reveal that both of these specific property crimes remain statistically imperceptible.\\
+
+In terms of dynamic treatment effects, event studies demonstrate that the arrival of OXXO establishments yields no medium- or long-term impacts across any of the analyzed crime categories. Personal theft may have been the only one that presened a tendecy in the baseline results. However, robustness checks did not confirm this evolution; while they corrected the parallel trends violation present in the baseline model, they also removed the statistical significance of the treatment effect. Contrary to this finding, \textcite{jaramillo2021low} and \textcite{shin2024dollar} reported diverging dynamic effects on theft for similar commercial establishments finding a post-treatment decrease and increase, respectively. These differences indicate that there may be diverging results depending on the context, and that the statistically insignificant dynamic treatment effects are correct and alligned to the results of the C\&S and TWFE estimates.\\
+
+The null effect of most crimes can be can be attributed to several underlying factors. A direct explanation is that the measurement error of crime rates may be inflating the standard errors, thereby rendering the estimations statistically insignificant and with absence of shifting patterns. This conjecture is reinforced by the fact that the only statistically robust effect is from homicide, a crime that hardly presents any measurement error as it is difficult to underreport. Furthermore, after the log transformation in section ~\ref{sec:transformation} almost all crimes resulted significant, a finding that strengthens this hypothesis. Another explanation is that, after all, OXXO is not a relevant actor in shaping the patterns of criminal activity in Bogotá. Other studies, such as \cite{feng2019aggravating, Davis2021}, and \cite{askey2018fast}, have evaluated similar commercial establishments collectively rather than isolating a single corporate chain, this may have been the reason why they consistently captured robust impacts on criminal activity in other urban contexts.\\
+
+A final plausible hypothesis is related to the spatial unit of analysis. Aggregating variables at the UPZ level introduces measurement challenges, as it treats crimes committed far from a store identically to those occurring in its immediate vicinity. Consequently, this administrative aggregation may mask the localized spatial footprint of OXXO establishments. In contrast to this aggregated approach, other empirical literature uses hyper-local identification strategies. For instance, \textcite{shin2024dollar} constructed localized areas using narrow distance buffers around each dollar store to define treated and control units, uncovering robust positive effects of these stores on robberies. Similarly, \textcite{jaramillo2021low} applied a comparable buffer-based methodology to evaluate D1 hard-discount stores in Bogotá, capturing statistically significant negative impacts on the same property crime category. Although the TWFE and C\&D estimations were properly applied at the UPZ level and the underlying identification assumptions were met, it will be appropriate to evaluate whether these spatial outcomes diverge within more localized or disaggregated settings.\\
+
+Lastly, homicide is the only crime category that remains robustly significant across the specifications. Empirical evidence from \textcite{Scribner1999} and \textcite{Bowen2022} provides a plausible mechanism for why OXXO openings alter homicide dynamics in Bogotá. \cite{Scribner1999}, for instance, studied the effect of alcohol outlets on homicide in New Orleans, finding a positive relationship and an increase in violence in areas with higher establishment density.  Moreover, \cite{Bowen2022} corroborate these findings for convenience stores, and commented that 24-hour retail operations more than doubled the odds of violent injuries in their surroundings compared to stores operating under restricted hours. Although OXXO stores are not excusively alcohol outlets, they sell alcoholic beverages and operate under a 24-hour system. Under these distinct operational characteristics, and from a public safety perspective, OXXO establishments can inadvertently act as ambient crime generators \parencite{Davis2021}. By functioning as highly visible, illuminated nodes, then can become focal points for nocturnal gatherings, facilitate alcohol consumption in adjacent public spaces or within the same street, and provide the conditions for spontaneous disputes. Moreover, these dynamics can rapidly escalate into lethal altercations or, as shown by this empirical study, in homicides \hl{XXX}.  For subsequent analyses of this thesis, it will be important to explore whether the significance and effect for homicide is led by nocturnal homicides. If true, this will further reinforce the idea that OXXO may be a crime generator outlet under noctunal hours. 
+
 \section{Conclusions}
+
+
+
 
 \newpage
 \printbibliography
@@ -1218,7 +1269,7 @@ Mean never treated & 55.531& 2.501 & 0.292 & 1.819 & 1.176 \\
         \begin{table}[p] % [p] para que ocupe una página completa
             \centering
             \caption{Comparison of ATT Estimates from TWFE and C\&S Across Different Crime Types}
-            \label{tab:resultados_ES_robustness}
+            \label{tab:resultados_ES_other}
             \resizebox{\linewidth}{!}{% Ajustado a \linewidth para que use el ancho total de la hoja horizontal
             \begin{tabular}{lcccccccccc} % Definidas las 11 columnas
             \hline\hline

@@ -552,6 +552,9 @@ restore
 
 cd "$dir_controls_results/events study/CS/multiple"
 
+global dep_var crime_index_eb theft_to_vehicle_index_eb //theft_to_people_index_eb theft_to_motorbike_index_eb sexual_index_eb homicide_index_eb 
+
+
 foreach y of global dep_var {
 	preserve
 

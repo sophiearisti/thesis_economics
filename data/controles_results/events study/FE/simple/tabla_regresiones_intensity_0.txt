@@ -1,17 +1,17 @@
-		(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)	(11)	(12)
-VARIABLES	LABELS	TWFE homicide_area_index	TWFE theft_to_motorbike_area_index	TWFE theft_to_people_area_index	TWFE theft_to_vehicle_area_index	TWFE sexual_area_index	TWFE	TWFE homicide_area_index H	TWFE theft_to_motorbike_area_index H	TWFE theft_to_people_area_index H	TWFE theft_to_vehicle_area_index H	TWFE sexual_area_index H	TWFE H
-													
-cantidad_oxxo	cantidad_oxxo	0.0431	-0.0808	-4.202***	-0.0633	0.330	15.25**	0.0756**	-0.0670	-4.090***	-0.0979	0.470	12.71*
-		(0.0516)	(0.111)	(1.506)	(0.0621)	(0.242)	(6.929)	(0.0351)	(0.0808)	(1.461)	(0.0669)	(0.329)	(7.341)
-Constant	Constant	1.498***	3.559***	23.12***	2.831***	4.527***	37.23***	1.553***	3.615***	22.92***	2.786***	5.141***	34.05***
-		(0.0124)	(0.0267)	(0.362)	(0.0149)	(0.0582)	(0.255)	(0.0747)	(0.247)	(0.983)	(0.126)	(0.460)	(1.638)
-													
-Observations		2,880	2,880	2,880	2,880	2,880	1,440	2,880	2,880	2,880	2,880	2,880	1,440
-R-squared		0.481	0.489	0.648	0.349	0.557	0.764	0.481	0.489	0.648	0.350	0.557	0.771
-Chain stores		NO	NO	NO	NO	NO	NO	SI	SI	SI	SI	SI	SI
-Gender controles		NO	NO	NO	NO	NO	NO						
-Day controls		NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO
-Control spillover		NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO	NO
-Access controles		NO	NO	NO	NO	NO	NO						
-Robust standard errors in parentheses													
-*** p<0.01, ** p<0.05, * p<0.1													
+		(1)	(2)	(3)	(4)	(5)
+VARIABLES	LABELS	TWFE theft_to_vehicle_index	TWFE theft_to_people_index	TWFE theft_to_motorbike_index	TWFE sexual_index	TWFE homicide_index
+						
+cantidad_oxxo	cantidad_oxxo	-0.0151	-5.078**	-0.0628	-0.106	0.0576
+		(0.0460)	(2.175)	(0.0461)	(0.140)	(0.0455)
+Constant	Constant	1.477***	19.60***	1.621***	2.323***	0.556***
+		(0.0111)	(0.523)	(0.0111)	(0.0337)	(0.0109)
+						
+Observations		2,880	2,880	2,880	2,880	2,880
+R-squared		0.274	0.489	0.408	0.383	0.242
+Chain stores		NO	NO	NO	NO	NO
+Gender controles		NO	NO	NO	NO	NO
+Day controls		NO	NO	NO	NO	NO
+Control spillover		NO	NO	NO	NO	NO
+Access controles		NO	NO	NO	NO	NO
+Robust standard errors in parentheses						
+*** p<0.01, ** p<0.05, * p<0.1						

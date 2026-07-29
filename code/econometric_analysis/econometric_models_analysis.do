@@ -114,11 +114,11 @@ cd "$dir_controls_results"
 *ssc install outreg2, replace
 
 if $panel == 1 | $panel == 0 {
-	global dep_var crime_index_eb theft_to_vehicle_index_eb theft_to_people_index_eb theft_to_motorbike_index_eb sexual_index_eb homicide_index_eb 
+	global dep_var theft_to_vehicle_index_eb theft_to_people_index_eb theft_to_motorbike_index_eb sexual_index_eb homicide_index_eb 
 	
 }
 else {
-    global dep_var crime_index theft_to_people_index male_index female_index
+    global dep_var theft_to_people_index male_index female_index
 }
 
 if $panel == 1 | $panel == 0 {
@@ -323,6 +323,37 @@ preserve
 	//bacondecomp theft_to_people_index_eb dummy_oxxo outliers $harddiscount_controls, ddetail vce(cluster codigo_upz)
 
 restore
+
+
+foreach y of global dep_var {
+
+	
+	reghdfe `y' dummy_oxxo spillover_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	
+		
+	outreg2 using tabla_regresiones_${panel}.xls, append label ///
+	ctitle("TWFE `y' spill") ///
+	keep(dummy_oxxo) ///
+	addtext(Chain stores, NO, Day controls, NO, Control spillover, SI)
+	
+}
+
+preserve
+
+	drop if year>2018
+	
+	reghdfe theft_to_people_index_eb dummy_oxxo outliers spillover_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+	outreg2 using tabla_regresiones_${panel}.xls, append label ///
+		ctitle("TWFE `y' spill") ///
+		keep(dummy_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, SI, Access controles, NO)
+		
+	//bacondecomp theft_to_people_index_eb dummy_oxxo outliers $harddiscount_controls, ddetail vce(cluster codigo_upz)
+
+restore
+
+
 
 
 *********************************************************
@@ -551,8 +582,6 @@ restore
 *********************************************************
 
 cd "$dir_controls_results/events study/CS/multiple"
-
-global dep_var crime_index_eb theft_to_vehicle_index_eb //theft_to_people_index_eb theft_to_motorbike_index_eb sexual_index_eb homicide_index_eb 
 
 
 foreach y of global dep_var {

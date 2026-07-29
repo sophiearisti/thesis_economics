@@ -90,7 +90,7 @@ for (i in 1:nrow(file_mapping_master)) {
   ymin_data <- min(event_study_data$ymin, na.rm = TRUE)
   ymax_data <- max(event_study_data$ymax, na.rm = TRUE)
   y_breaks  <- pretty(c(ymin_data, ymax_data), n = 5)
-  y_labels  <- function(x) sprintf("%.4f", x)
+  y_labels  <- function(x) sprintf("%.1f", x)
   
   # 5. Diseñar el GGPLOT
   events <- event_study_data %>%
@@ -208,7 +208,7 @@ for (i in 1:nrow(comparison_mapping)) {
   ymin_global <- min(event_both$ymin, na.rm = TRUE)
   ymax_global <- max(event_both$ymax, na.rm = TRUE)
   y_breaks    <- pretty(c(ymin_global, ymax_global), n = 5)
-  y_labels    <- function(x) sprintf("%.4f", x)
+  y_labels    <- function(x) sprintf("%.1f", x)
   
   # 6. Construir el gráfico
   comparative_plot <- ggplot(event_both, aes(x = exp, y = b, color = metodo)) +
@@ -306,7 +306,7 @@ for (i in 1:nrow(comparison_mapping)) {
   ymin_global <- min(event_both$ymin, na.rm = TRUE)
   ymax_global <- max(event_both$ymax, na.rm = TRUE)
   y_breaks    <- pretty(c(ymin_global, ymax_global), n = 5)
-  y_labels    <- function(x) sprintf("%.4f", x)
+  y_labels    <- function(x) sprintf("%.1f", x)
   
   # 6. Construir el gráfico con la estética exacta de la gráfica morada
   comparative_plot <- ggplot(event_both, aes(x = exp, y = b, color = metodo, fill = metodo)) +

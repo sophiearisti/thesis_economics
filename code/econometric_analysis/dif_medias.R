@@ -15,10 +15,9 @@ clean_num <- function(x) {
 }
 
 # Diccionario de variables a procesar
-variables_tesis <- c("theft_to_vehicle_index", "theft_to_people_index", 
-                     "crime_index", "theft_to_motorbike_index", 
-                     "sexual_index", "homicide_index", 
-                     "male_index", "female_index")
+variables_tesis <- c("theft_to_vehicle_index", "theft_to_people_index",
+                       "theft_to_motorbike_index", 
+                     "sexual_index", "homicide_index")
 
 # Modificamos ligeramente la función para que acepte la variable como parámetro
 extraer_datos_v2 <- function(ruta, target_var) {
@@ -53,8 +52,16 @@ extraer_datos_v2 <- function(ruta, target_var) {
 for (v in variables_tesis) {
   
   # 1. Extraer datos para la variable actual de TODOS los archivos
+  # 1. Extraer datos para la variable actual de TODOS los archivos
   dataset_temp <- map_df(archivos, ~extraer_datos_v2(.x, v)) %>% 
     arrange(periodo)
+  
+  # Filtro condicional: solo para theft_to_people_index, cortar en 2018
+  if (v == "theft_to_people_index") {
+    dataset_temp <- dataset_temp %>%
+      filter(as.numeric(str_extract(periodo, "^\\d{4}")) <= 2018)
+  }
+  
   
   if(nrow(dataset_temp) > 0) {
     
@@ -63,11 +70,17 @@ for (v in variables_tesis) {
       geom_hline(yintercept = 0, linetype = "dashed", color = "#F0544F") +
       geom_point(size = 3, color = "#9FC490") +
       geom_errorbar(aes(ymin = lower, ymax = upper), width = 0.2) +
-      labs(title = paste("Means difference:", v),
-           subtitle = "95% Confidence Interval",
+      labs(title = "",
+           subtitle = "",
            x = "Quarter", y = "Difference (Treated - Control)") +
       theme_minimal() +
-      theme(axis.text.x = element_text(angle = 45, hjust = 1))
+      theme(
+        axis.text.x = element_text(angle = 40, hjust = 1, size = 12),
+        axis.text.y = element_text(size = 12),
+        axis.title = element_text(size = 12)
+      )
+    
+    p <- p + scale_x_discrete(breaks = dataset_temp$periodo[seq(1, length(dataset_temp$periodo), by = 2)])
     
     print(p)
     

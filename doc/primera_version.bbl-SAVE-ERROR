@@ -536,6 +536,37 @@
       \verb https://www.ccb.org.co/en/of-interest/communications/decreasing-perception-of-insecurity-and-victimization-in-bogota
       \endverb
     \endentry
+    \entry{ccb2026distribucion}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6c0f8f989973d981a19f035de5266566}{%
+           family={{Cámara de Comercio de Bogotá}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Cámara de Comercio de Bogotá}%
+      }
+      \strng{namehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{fullhash}{6c0f8f989973d981a19f035de5266566}
+      \strng{fullhashraw}{6c0f8f989973d981a19f035de5266566}
+      \strng{bibnamehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authorbibnamehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authornamehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authorfullhash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authorfullhashraw}{6c0f8f989973d981a19f035de5266566}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.ccb.org.co/informacion-especializada/observatorio/dinamica-empresarial/empresas-activas/distribucion-por-localidades}}
+      \field{note}{Accessed: 2026-07-22}
+      \field{title}{Evolución de las empresas activas por localidad de Bogotá}
+      \field{year}{2026}
+    \endentry
     \entry{CCB2026}{online}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=6c0f8f989973d981a19f035de5266566}{%
@@ -550,9 +581,10 @@
       \strng{authornamehash}{6c0f8f989973d981a19f035de5266566}
       \strng{authorfullhash}{6c0f8f989973d981a19f035de5266566}
       \strng{authorfullhashraw}{6c0f8f989973d981a19f035de5266566}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradate}{2}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
@@ -609,6 +641,43 @@
       \verb{doi}
       \verb 10.1162/REST_a_00694
       \endverb
+    \endentry
+    \entry{clarke1994parking}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=38980f636d4aed2effd5a9beeed383e7}{%
+           family={Clarke},
+           familyi={C\bibinitperiod},
+           given={Ronald\bibnamedelima V.},
+           giveni={R\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a95e1e7832f4fc0e250e5d0f8bd559e9}{%
+           family={Mayhew},
+           familyi={M\bibinitperiod},
+           given={Pat},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2b004f32efa37afe91f2e629f30cc721}
+      \strng{fullhash}{2b004f32efa37afe91f2e629f30cc721}
+      \strng{fullhashraw}{2b004f32efa37afe91f2e629f30cc721}
+      \strng{bibnamehash}{2b004f32efa37afe91f2e629f30cc721}
+      \strng{authorbibnamehash}{2b004f32efa37afe91f2e629f30cc721}
+      \strng{authornamehash}{2b004f32efa37afe91f2e629f30cc721}
+      \strng{authorfullhash}{2b004f32efa37afe91f2e629f30cc721}
+      \strng{authorfullhashraw}{2b004f32efa37afe91f2e629f30cc721}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Crime Prevention Studies}
+      \field{title}{Parking Patterns and Car Theft Risks: Policy-Relevant Findings from the British Crime Survey}
+      \field{volume}{3}
+      \field{year}{1994}
+      \field{pages}{91\bibrangedash 107}
+      \range{pages}{17}
     \endentry
     \entry{dalessio1990crime}{article}{}{}
       \name{author}{2}{}{%
@@ -1064,16 +1133,55 @@
       \verb https://doi.org/10.1080/0735648X.2018.1559076
       \endverb
     \endentry
+    \entry{garcia2016seguridadlocal}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=1,uniquepart=given,hash=f491128e1eb38b19131089e158b8ad64}{%
+           family={García},
+           familyi={G\bibinitperiod},
+           given={Jairo},
+           giveni={J\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{f491128e1eb38b19131089e158b8ad64}
+      \strng{fullhash}{f491128e1eb38b19131089e158b8ad64}
+      \strng{fullhashraw}{f491128e1eb38b19131089e158b8ad64}
+      \strng{bibnamehash}{f491128e1eb38b19131089e158b8ad64}
+      \strng{authorbibnamehash}{f491128e1eb38b19131089e158b8ad64}
+      \strng{authornamehash}{f491128e1eb38b19131089e158b8ad64}
+      \strng{authorfullhash}{f491128e1eb38b19131089e158b8ad64}
+      \strng{authorfullhashraw}{f491128e1eb38b19131089e158b8ad64}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Presentación institucional, Secretaría Distrital de Gobierno de Bogotá}
+      \field{month}{5}
+      \field{note}{Accessed: 2026-07-21}
+      \field{title}{Inducción Alcaldes Locales: Seguridad Local -- Plan Integral de Seguridad, Convivencia y Justicia (PISCJ)}
+      \field{urlday}{21}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://historico.gobiernobogota.gov.co/sites/gobiernobogota.gov.co/files/documentos/tabla_archivos/10.seguridad_local_-_pics_06-05-16_dr._jairo_garcia.pdf
+      \endverb
+      \verb{url}
+      \verb https://historico.gobiernobogota.gov.co/sites/gobiernobogota.gov.co/files/documentos/tabla_archivos/10.seguridad_local_-_pics_06-05-16_dr._jairo_garcia.pdf
+      \endverb
+    \endentry
     \entry{Garcia2005}{report}{}{}
       \true{moreauthor}
       \true{morelabelname}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=98546b2854b71094ba9ef6bc2e980803}{%
+        {{un=1,uniquepart=given,hash=98546b2854b71094ba9ef6bc2e980803}{%
            family={García},
            familyi={G\bibinitperiod},
            given={Margarita},
            giveni={M\bibinitperiod},
-           givenun=0}}%
+           givenun=1}}%
       }
       \list{institution}{1}{%
         {Research Papers in Economics (RePEc)}%
@@ -1090,7 +1198,6 @@
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Impacto de Transmilenio en el crimen de la Avenida Caracas y sus vecindades}
@@ -1760,6 +1867,42 @@
       \verb 10.1057/s41284-025-00517-w
       \endverb
     \endentry
+    \entry{odeb2022atlas}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9c71d704a63ae5977b3ae1ac9059855e}{%
+           family={{Observatorio de Desarrollo Económico de Bogotá}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Secretaría de Desarrollo Económico de Bogotá}%
+      }
+      \strng{namehash}{9c71d704a63ae5977b3ae1ac9059855e}
+      \strng{fullhash}{9c71d704a63ae5977b3ae1ac9059855e}
+      \strng{fullhashraw}{9c71d704a63ae5977b3ae1ac9059855e}
+      \strng{bibnamehash}{9c71d704a63ae5977b3ae1ac9059855e}
+      \strng{authorbibnamehash}{9c71d704a63ae5977b3ae1ac9059855e}
+      \strng{authornamehash}{9c71d704a63ae5977b3ae1ac9059855e}
+      \strng{authorfullhash}{9c71d704a63ae5977b3ae1ac9059855e}
+      \strng{authorfullhashraw}{9c71d704a63ae5977b3ae1ac9059855e}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{note}{Accessed: 2026-07-22}
+      \field{title}{Atlas Económico de Bogotá 2022}
+      \field{type}{Report}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://observatorio.desarrolloeconomico.gov.co/wp-content/uploads/2025/03/2022-12-30-Atlas_economico_2022.pdf
+      \endverb
+      \verb{url}
+      \verb https://observatorio.desarrolloeconomico.gov.co/wp-content/uploads/2025/03/2022-12-30-Atlas_economico_2022.pdf
+      \endverb
+    \endentry
     \entry{oxxo_faqs}{misc}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=1074b1d776aa7a7ad8f5eda056f57080}{%
@@ -1827,6 +1970,66 @@
       \endverb
       \verb{url}
       \verb https://colombia.oxxodomicilios.com/section/tcHomePurchaseService
+      \endverb
+    \endentry
+    \entry{pinasanchez2022impact}{report}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=165a10bc0b58deff00b4f7b6d1994631}{%
+           family={Pina-Sánchez},
+           familyi={P\bibinithyphendelim S\bibinitperiod},
+           given={Jose},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=459480d0601e3313a6151058026f9848}{%
+           family={Buil-Gil},
+           familyi={B\bibinithyphendelim G\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b0e0c2014a121e599bf42d6c4cd9cf32}{%
+           family={Brunton-Smith},
+           familyi={B\bibinithyphendelim S\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2e4ee74c66995eb1cb971d8939ae541f}{%
+           family={Cernat},
+           familyi={C\bibinitperiod},
+           given={Alexandru},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {SocArXiv}%
+      }
+      \strng{namehash}{996f8225615e0b77e12f79187bcf2270}
+      \strng{fullhash}{a96836174f5d7217c7f64cdd1d2d26b0}
+      \strng{fullhashraw}{a96836174f5d7217c7f64cdd1d2d26b0}
+      \strng{bibnamehash}{a96836174f5d7217c7f64cdd1d2d26b0}
+      \strng{authorbibnamehash}{a96836174f5d7217c7f64cdd1d2d26b0}
+      \strng{authornamehash}{996f8225615e0b77e12f79187bcf2270}
+      \strng{authorfullhash}{a96836174f5d7217c7f64cdd1d2d26b0}
+      \strng{authorfullhashraw}{a96836174f5d7217c7f64cdd1d2d26b0}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{University of Leeds}
+      \field{title}{The Impact of Measurement Error in Models Using Police Recorded Crime Rates}
+      \field{type}{Preprint}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.31235/osf.io/ydf4b
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.31235/osf.io/ydf4b
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.31235/osf.io/ydf4b
       \endverb
     \endentry
     \entry{Piza2017}{article}{}{}
@@ -2390,6 +2593,59 @@
       \endverb
       \keyw{dollar stores,discount retailers,violent crime,Chicago}
     \endentry
+    \entry{summers2014outdoor}{inbook}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1cf59f4df74ab2cc3d92e5e59d046aa6}{%
+           family={Summers},
+           familyi={S\bibinitperiod},
+           given={Lucia},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=adf0ead92ba5cf660871891d651fc3c5}{%
+           family={Bruinsma},
+           familyi={B\bibinitperiod},
+           given={Gerben},
+           giveni={G\bibinitperiod}}}%
+        {{hash=20f1e091232663c91a142eedc60f9746}{%
+           family={Weisburd},
+           familyi={W\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{fullhash}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{fullhashraw}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{bibnamehash}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{authorbibnamehash}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{authornamehash}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{authorfullhash}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{authorfullhashraw}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{editorbibnamehash}{03acd6ae93535ac81ca9880e4d65bfbc}
+      \strng{editornamehash}{03acd6ae93535ac81ca9880e4d65bfbc}
+      \strng{editorfullhash}{03acd6ae93535ac81ca9880e4d65bfbc}
+      \strng{editorfullhashraw}{03acd6ae93535ac81ca9880e4d65bfbc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Encyclopedia of Criminology and Criminal Justice}
+      \field{title}{Outdoor Serious Violence: The Role of Place}
+      \field{year}{2014}
+      \verb{doi}
+      \verb 10.1007/978-1-4614-5690-2_299
+      \endverb
+    \endentry
     \entry{Wellford1997}{report}{}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=132df2449b9b7e80042a4082fd083511}{%
@@ -2443,6 +2699,40 @@
       \verb{url}
       \verb https://www.jrsa.org/pubs/reports/conv-store-robbery.pdf
       \endverb
+    \endentry
+    \entry{wooldridge2010econometric}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c93aeef4998e670d5343b7e632c431dc}{%
+           family={Wooldridge},
+           familyi={W\bibinitperiod},
+           given={Jeffrey\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{fullhash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{fullhashraw}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{bibnamehash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{authorbibnamehash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{authornamehash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{authorfullhash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{authorfullhashraw}{c93aeef4998e670d5343b7e632c431dc}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd}
+      \field{title}{Econometric Analysis of Cross Section and Panel Data}
+      \field{year}{2010}
     \endentry
     \entry{ijgi10100632}{article}{}{}
       \name{author}{5}{}{%
@@ -3032,6 +3322,37 @@
       \verb https://www.ccb.org.co/en/of-interest/communications/decreasing-perception-of-insecurity-and-victimization-in-bogota
       \endverb
     \endentry
+    \entry{ccb2026distribucion}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=6c0f8f989973d981a19f035de5266566}{%
+           family={{Cámara de Comercio de Bogotá}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {Cámara de Comercio de Bogotá}%
+      }
+      \strng{namehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{fullhash}{6c0f8f989973d981a19f035de5266566}
+      \strng{fullhashraw}{6c0f8f989973d981a19f035de5266566}
+      \strng{bibnamehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authorbibnamehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authornamehash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authorfullhash}{6c0f8f989973d981a19f035de5266566}
+      \strng{authorfullhashraw}{6c0f8f989973d981a19f035de5266566}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.ccb.org.co/informacion-especializada/observatorio/dinamica-empresarial/empresas-activas/distribucion-por-localidades}}
+      \field{note}{Accessed: 2026-07-22}
+      \field{title}{Evolución de las empresas activas por localidad de Bogotá}
+      \field{year}{2026}
+    \endentry
     \entry{CCB2026}{online}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=6c0f8f989973d981a19f035de5266566}{%
@@ -3046,9 +3367,10 @@
       \strng{authornamehash}{6c0f8f989973d981a19f035de5266566}
       \strng{authorfullhash}{6c0f8f989973d981a19f035de5266566}
       \strng{authorfullhashraw}{6c0f8f989973d981a19f035de5266566}
-      \field{extraname}{2}
+      \field{extraname}{3}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradate}{2}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \true{uniqueprimaryauthor}
@@ -3105,6 +3427,43 @@
       \verb{doi}
       \verb 10.1162/REST_a_00694
       \endverb
+    \endentry
+    \entry{clarke1994parking}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=38980f636d4aed2effd5a9beeed383e7}{%
+           family={Clarke},
+           familyi={C\bibinitperiod},
+           given={Ronald\bibnamedelima V.},
+           giveni={R\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a95e1e7832f4fc0e250e5d0f8bd559e9}{%
+           family={Mayhew},
+           familyi={M\bibinitperiod},
+           given={Pat},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2b004f32efa37afe91f2e629f30cc721}
+      \strng{fullhash}{2b004f32efa37afe91f2e629f30cc721}
+      \strng{fullhashraw}{2b004f32efa37afe91f2e629f30cc721}
+      \strng{bibnamehash}{2b004f32efa37afe91f2e629f30cc721}
+      \strng{authorbibnamehash}{2b004f32efa37afe91f2e629f30cc721}
+      \strng{authornamehash}{2b004f32efa37afe91f2e629f30cc721}
+      \strng{authorfullhash}{2b004f32efa37afe91f2e629f30cc721}
+      \strng{authorfullhashraw}{2b004f32efa37afe91f2e629f30cc721}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Crime Prevention Studies}
+      \field{title}{Parking Patterns and Car Theft Risks: Policy-Relevant Findings from the British Crime Survey}
+      \field{volume}{3}
+      \field{year}{1994}
+      \field{pages}{91\bibrangedash 107}
+      \range{pages}{17}
     \endentry
     \entry{dalessio1990crime}{article}{}{}
       \name{author}{2}{}{%
@@ -3560,16 +3919,55 @@
       \verb https://doi.org/10.1080/0735648X.2018.1559076
       \endverb
     \endentry
+    \entry{garcia2016seguridadlocal}{misc}{}{}
+      \name{author}{1}{}{%
+        {{un=1,uniquepart=given,hash=f491128e1eb38b19131089e158b8ad64}{%
+           family={García},
+           familyi={G\bibinitperiod},
+           given={Jairo},
+           giveni={J\bibinitperiod},
+           givenun=1}}%
+      }
+      \strng{namehash}{f491128e1eb38b19131089e158b8ad64}
+      \strng{fullhash}{f491128e1eb38b19131089e158b8ad64}
+      \strng{fullhashraw}{f491128e1eb38b19131089e158b8ad64}
+      \strng{bibnamehash}{f491128e1eb38b19131089e158b8ad64}
+      \strng{authorbibnamehash}{f491128e1eb38b19131089e158b8ad64}
+      \strng{authornamehash}{f491128e1eb38b19131089e158b8ad64}
+      \strng{authorfullhash}{f491128e1eb38b19131089e158b8ad64}
+      \strng{authorfullhashraw}{f491128e1eb38b19131089e158b8ad64}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Presentación institucional, Secretaría Distrital de Gobierno de Bogotá}
+      \field{month}{5}
+      \field{note}{Accessed: 2026-07-21}
+      \field{title}{Inducción Alcaldes Locales: Seguridad Local -- Plan Integral de Seguridad, Convivencia y Justicia (PISCJ)}
+      \field{urlday}{21}
+      \field{urlmonth}{7}
+      \field{urlyear}{2026}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://historico.gobiernobogota.gov.co/sites/gobiernobogota.gov.co/files/documentos/tabla_archivos/10.seguridad_local_-_pics_06-05-16_dr._jairo_garcia.pdf
+      \endverb
+      \verb{url}
+      \verb https://historico.gobiernobogota.gov.co/sites/gobiernobogota.gov.co/files/documentos/tabla_archivos/10.seguridad_local_-_pics_06-05-16_dr._jairo_garcia.pdf
+      \endverb
+    \endentry
     \entry{Garcia2005}{report}{}{}
       \true{moreauthor}
       \true{morelabelname}
       \name{author}{1}{}{%
-        {{un=0,uniquepart=base,hash=98546b2854b71094ba9ef6bc2e980803}{%
+        {{un=1,uniquepart=given,hash=98546b2854b71094ba9ef6bc2e980803}{%
            family={García},
            familyi={G\bibinitperiod},
            given={Margarita},
            giveni={M\bibinitperiod},
-           givenun=0}}%
+           givenun=1}}%
       }
       \list{institution}{1}{%
         {Research Papers in Economics (RePEc)}%
@@ -3586,7 +3984,6 @@
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Impacto de Transmilenio en el crimen de la Avenida Caracas y sus vecindades}
@@ -4256,6 +4653,42 @@
       \verb 10.1057/s41284-025-00517-w
       \endverb
     \endentry
+    \entry{odeb2022atlas}{report}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=9c71d704a63ae5977b3ae1ac9059855e}{%
+           family={{Observatorio de Desarrollo Económico de Bogotá}},
+           familyi={O\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Secretaría de Desarrollo Económico de Bogotá}%
+      }
+      \strng{namehash}{9c71d704a63ae5977b3ae1ac9059855e}
+      \strng{fullhash}{9c71d704a63ae5977b3ae1ac9059855e}
+      \strng{fullhashraw}{9c71d704a63ae5977b3ae1ac9059855e}
+      \strng{bibnamehash}{9c71d704a63ae5977b3ae1ac9059855e}
+      \strng{authorbibnamehash}{9c71d704a63ae5977b3ae1ac9059855e}
+      \strng{authornamehash}{9c71d704a63ae5977b3ae1ac9059855e}
+      \strng{authorfullhash}{9c71d704a63ae5977b3ae1ac9059855e}
+      \strng{authorfullhashraw}{9c71d704a63ae5977b3ae1ac9059855e}
+      \field{sortinit}{O}
+      \field{sortinithash}{2cd7140a07aea5341f9e2771efe90aae}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{note}{Accessed: 2026-07-22}
+      \field{title}{Atlas Económico de Bogotá 2022}
+      \field{type}{Report}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://observatorio.desarrolloeconomico.gov.co/wp-content/uploads/2025/03/2022-12-30-Atlas_economico_2022.pdf
+      \endverb
+      \verb{url}
+      \verb https://observatorio.desarrolloeconomico.gov.co/wp-content/uploads/2025/03/2022-12-30-Atlas_economico_2022.pdf
+      \endverb
+    \endentry
     \entry{oxxo_faqs}{misc}{}{}
       \name{author}{1}{}{%
         {{un=0,uniquepart=base,hash=1074b1d776aa7a7ad8f5eda056f57080}{%
@@ -4323,6 +4756,66 @@
       \endverb
       \verb{url}
       \verb https://colombia.oxxodomicilios.com/section/tcHomePurchaseService
+      \endverb
+    \endentry
+    \entry{pinasanchez2022impact}{report}{}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=165a10bc0b58deff00b4f7b6d1994631}{%
+           family={Pina-Sánchez},
+           familyi={P\bibinithyphendelim S\bibinitperiod},
+           given={Jose},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=459480d0601e3313a6151058026f9848}{%
+           family={Buil-Gil},
+           familyi={B\bibinithyphendelim G\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b0e0c2014a121e599bf42d6c4cd9cf32}{%
+           family={Brunton-Smith},
+           familyi={B\bibinithyphendelim S\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=2e4ee74c66995eb1cb971d8939ae541f}{%
+           family={Cernat},
+           familyi={C\bibinitperiod},
+           given={Alexandru},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {SocArXiv}%
+      }
+      \strng{namehash}{996f8225615e0b77e12f79187bcf2270}
+      \strng{fullhash}{a96836174f5d7217c7f64cdd1d2d26b0}
+      \strng{fullhashraw}{a96836174f5d7217c7f64cdd1d2d26b0}
+      \strng{bibnamehash}{a96836174f5d7217c7f64cdd1d2d26b0}
+      \strng{authorbibnamehash}{a96836174f5d7217c7f64cdd1d2d26b0}
+      \strng{authornamehash}{996f8225615e0b77e12f79187bcf2270}
+      \strng{authorfullhash}{a96836174f5d7217c7f64cdd1d2d26b0}
+      \strng{authorfullhashraw}{a96836174f5d7217c7f64cdd1d2d26b0}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{University of Leeds}
+      \field{title}{The Impact of Measurement Error in Models Using Police Recorded Crime Rates}
+      \field{type}{Preprint}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.31235/osf.io/ydf4b
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.31235/osf.io/ydf4b
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.31235/osf.io/ydf4b
       \endverb
     \endentry
     \entry{Piza2017}{article}{}{}
@@ -4886,6 +5379,59 @@
       \endverb
       \keyw{dollar stores,discount retailers,violent crime,Chicago}
     \endentry
+    \entry{summers2014outdoor}{inbook}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=1cf59f4df74ab2cc3d92e5e59d046aa6}{%
+           family={Summers},
+           familyi={S\bibinitperiod},
+           given={Lucia},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=adf0ead92ba5cf660871891d651fc3c5}{%
+           family={Bruinsma},
+           familyi={B\bibinitperiod},
+           given={Gerben},
+           giveni={G\bibinitperiod}}}%
+        {{hash=20f1e091232663c91a142eedc60f9746}{%
+           family={Weisburd},
+           familyi={W\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{fullhash}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{fullhashraw}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{bibnamehash}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{authorbibnamehash}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{authornamehash}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{authorfullhash}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{authorfullhashraw}{1cf59f4df74ab2cc3d92e5e59d046aa6}
+      \strng{editorbibnamehash}{03acd6ae93535ac81ca9880e4d65bfbc}
+      \strng{editornamehash}{03acd6ae93535ac81ca9880e4d65bfbc}
+      \strng{editorfullhash}{03acd6ae93535ac81ca9880e4d65bfbc}
+      \strng{editorfullhashraw}{03acd6ae93535ac81ca9880e4d65bfbc}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Encyclopedia of Criminology and Criminal Justice}
+      \field{title}{Outdoor Serious Violence: The Role of Place}
+      \field{year}{2014}
+      \verb{doi}
+      \verb 10.1007/978-1-4614-5690-2_299
+      \endverb
+    \endentry
     \entry{Wellford1997}{report}{}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=132df2449b9b7e80042a4082fd083511}{%
@@ -4939,6 +5485,40 @@
       \verb{url}
       \verb https://www.jrsa.org/pubs/reports/conv-store-robbery.pdf
       \endverb
+    \endentry
+    \entry{wooldridge2010econometric}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c93aeef4998e670d5343b7e632c431dc}{%
+           family={Wooldridge},
+           familyi={W\bibinitperiod},
+           given={Jeffrey\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{fullhash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{fullhashraw}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{bibnamehash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{authorbibnamehash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{authornamehash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{authorfullhash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{authorfullhashraw}{c93aeef4998e670d5343b7e632c431dc}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd}
+      \field{title}{Econometric Analysis of Cross Section and Panel Data}
+      \field{year}{2010}
     \endentry
     \entry{ijgi10100632}{article}{}{}
       \name{author}{5}{}{%

@@ -137,7 +137,7 @@ plot_dep_map <- function(year, geometry, folder, depVar) {
     # 2. ASIGNAR CERO A VALORES EXTREMOS (UPZ 63 y 117)
     # Usamos sym(depVar) para que dplyr entienda que es el nombre de una columna dinámica
     gdf <- gdf %>%
-      mutate(!!sym(depVar) := ifelse(codigo_upz %in% c(63, 117), 0, !!sym(depVar)))
+      mutate(!!sym(depVar) := ifelse(codigo_upz %in% c(63, 117), NA, !!sym(depVar)))
     
   }
 

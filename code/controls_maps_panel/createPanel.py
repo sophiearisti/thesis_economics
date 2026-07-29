@@ -413,13 +413,47 @@ def create_basic_panel(map=False, tienda_gdf = None, final_geometry = "upz", fre
             
     # Spatial join: ahora left_df sigue siendo GeoDataFrame
     # this depends on the geometry chosen for the panel, if it is by upz, we need to do a spatial join with the upz, if it is by localidad we need to do a spatial join with the localidad, and if it is by zat we need to do a spatial join with the zat
+    #
+    # IMPORTANTE: gpd.sjoin conserva la columna 'geometry' del DataFrame
+    # de la IZQUIERDA (geometry_year = polígonos de UPZ), no la del de
+    # la derecha (tienda_gdf = puntos). Esto significa que, tras el sjoin,
+    # la columna 'geometry' de cada tienda deja de ser su ubicación puntual
+    # y pasa a ser el polígono completo de la UPZ que la contiene.
+    # Para no perder la ubicación puntual real (necesaria para el buffer
+    # de spillover más abajo), la guardamos aparte ANTES del sjoin.
+    tienda_gdf = tienda_gdf.copy()
+    tienda_gdf['geometry_tienda'] = tienda_gdf.geometry  # copia de la geometría de PUNTO
+
     tiendas_gdf = gpd.sjoin(
         geometry_year,       # polígonos con geometría
         tienda_gdf,          # puntos
         how="left",
         predicate="contains"
     )
+    # Nota: tiendas_gdf['geometry'] es ahora el polígono de la UPZ (heredado
+    # de geometry_year). tiendas_gdf['geometry_tienda'] sigue siendo el punto
+    # real de la tienda -esta es la que hay que usar para bufferear tiendas.
     
+    ####################################################
+    # Polígonos de UPZ (sin buffer) para el cálculo de spillover.
+    # El buffer se aplica sobre las TIENDAS (dentro del loop, ya
+    # que la lista de tiendas cambia cada periodo), no sobre la
+    # UPZ. Aquí solo dejamos listo el polígono original de cada
+    # geometría, una sola vez, para no repetirlo en cada iteración.
+    ####################################################
+
+    geo_col_name = geometry_dict[final_geometry]
+    spillover_buffer_m = 400  # metros <-- AQUÍ se define la distancia del buffer
+
+    # Reproyectar a CRS métrico para trabajar con distancias reales (metros)
+    geometry_year_metric = geometry_year.to_crs("EPSG:3116")
+
+    # Un polígono por geometría (sin duplicados, SIN buffer)
+    upz_polygons = geometry_year_metric[[geo_col_name, 'geometry']].drop_duplicates(
+        subset=geo_col_name
+    ).reset_index(drop=True)
+
+
     for year in años:
         #loop from 1 to freq_value, for example if it is anual, we will loop only once, if it is mensual we will loop 12 times, etc
         for i in range(1, freq_value + 1):     
@@ -553,54 +587,67 @@ def create_basic_panel(map=False, tienda_gdf = None, final_geometry = "upz", fre
         
             ####################################################
             # Spillover effects:
-            # variable de geometry cercano a un oxxo (que no tiene oxxo)
+            # a cada tienda OXXO (punto) se le pone un buffer de
+            # 20m a su alrededor. Si ese buffer toca el polígono
+            # de una UPZ, esa tienda cuenta como spillover de esa
+            # UPZ -salvo que la tienda esté DENTRO de esa misma UPZ,
+            # en cuyo caso ya se cuenta en cantidad_oxxo, no en spillover.
             ####################################################
-            
-            # para cada oxxo, crear un buffer de x metros
-            # si ese buffer intersecta con otro geometry, ese geometry tiene spillover
-            #la variable es la cantidad de veces que un geometry tiene un oxxo cerca
-            
-            # -------------------------------
-            # Spillover de OXXO
-            # -------------------------------
-        
-            buffer = 400  # metros
 
-            oxxo_buffers = joined_geometry_tiendas[joined_geometry_tiendas['cadena'] == 'oxxo'].copy()
-            
-            if not oxxo_buffers.empty:
-                
-                # Guardar CRS original
-                crs_tiendas_orig = oxxo_buffers.crs
+            oxxo_points = joined_geometry_tiendas[joined_geometry_tiendas['cadena'] == 'oxxo'].copy()
 
-                # Reproyectar a CRS métrico
-                oxxo_buffers = oxxo_buffers.to_crs("EPSG:3116")
-                geometry_year = geometry_year.to_crs("EPSG:3116")
+            if not oxxo_points.empty:
 
-                # Crear buffers alrededor de cada OXXO
-                oxxo_buffers['geometry'] = oxxo_buffers.buffer(buffer)
+                # CORRECCIÓN: usar 'geometry_tienda' (el punto real de la tienda),
+                # NO 'geometry' (que aquí es el polígono de la UPZ heredado del
+                # primer sjoin). Activamos esa columna como la geometría del gdf.
+                oxxo_points = gpd.GeoDataFrame(
+                    oxxo_points.drop(columns='geometry'),
+                    geometry='geometry_tienda',
+                    crs="EPSG:3116"
+                )
+                oxxo_points = oxxo_points.to_crs("EPSG:3116")
 
-                # Overlay para obtener intersecciones reales geometry - OXXO buffers
-                intersect = gpd.overlay(geometry_year[[geometry_dict[final_geometry],'geometry']], oxxo_buffers[['geometry']], how='intersection')
+                # Buffer alrededor de cada TIENDA (aquí es donde se aplica spillover_buffer_m)
+                oxxo_buffered = oxxo_points[['geometry_tienda']].copy()
+                oxxo_buffered = oxxo_buffered.rename_geometry('geometry')
+                oxxo_buffered['geometry'] = oxxo_buffered.buffer(spillover_buffer_m)
 
-                # Contar cuántos buffers tocan cada geometry
-                spill_counts = intersect.groupby(geometry_dict[final_geometry]).size().reset_index(name='spillover_oxxo')
+                # sjoin: qué buffers de tienda tocan qué polígonos de UPZ (sin buffer)
+                # (predicate="intersects" -> un mismo buffer de tienda puede tocar
+                # varias UPZ a la vez si está cerca de un límite compartido por 2 o más)
+                tiendas_en_buffer = gpd.sjoin(
+                    upz_polygons[[geo_col_name, 'geometry']],
+                    oxxo_buffered[['geometry']],
+                    how="inner",
+                    predicate="intersects"
+                )
 
-                # Restar cantidad interna de OXXO si existe
-                spill_counts = spill_counts.merge(tienda_counts_by_geometry[[geometry_dict[final_geometry],'cantidad_oxxo']], on=geometry_dict[final_geometry], how='left')
-                spill_counts['spillover_oxxo'] = spill_counts['spillover_oxxo'] - spill_counts['cantidad_oxxo']
-                spill_counts['spillover_oxxo'] = spill_counts['spillover_oxxo'].clip(lower=0)  # evitar negativos
+                # Total de "toques" tienda-buffer -> UPZ por geometría
+                total_en_buffer = (
+                    tiendas_en_buffer.groupby(geo_col_name)
+                    .size()
+                    .reset_index(name='total_en_buffer')
+                )
 
-                # Unir resultado a counts y llenar NaN con 0
-                tienda_counts_by_geometry = tienda_counts_by_geometry.merge(spill_counts[[geometry_dict[final_geometry],'spillover_oxxo']], on=geometry_dict[final_geometry], how='left').fillna({'spillover_oxxo':0})
+                # Restar las tiendas que YA están dentro del polígono original de esa
+                # UPZ (esas cuentan en cantidad_oxxo, no son spillover)
+                total_en_buffer = total_en_buffer.merge(
+                    tienda_counts_by_geometry[[geo_col, 'cantidad_oxxo']],
+                    left_on=geo_col_name, right_on=geo_col, how='left'
+                ).fillna({'cantidad_oxxo': 0})
 
-                # Volver CRS original
-                oxxo_buffers = oxxo_buffers.to_crs(crs_tiendas_orig)
+                total_en_buffer['spillover_oxxo'] = (
+                    total_en_buffer['total_en_buffer'] - total_en_buffer['cantidad_oxxo']
+                ).clip(lower=0)  # nunca negativo, por seguridad numérica
+
+                tienda_counts_by_geometry = tienda_counts_by_geometry.merge(
+                    total_en_buffer[[geo_col, 'spillover_oxxo']], on=geo_col, how='left'
+                ).fillna({'spillover_oxxo': 0})
 
             else:
                 tienda_counts_by_geometry['spillover_oxxo'] = 0
-            
-                  
+
             tienda_counts_by_geometry_list.append(tienda_counts_by_geometry)
 
     # Concatenar todos los años

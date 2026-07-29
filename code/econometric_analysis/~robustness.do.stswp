@@ -58,7 +58,7 @@ duplicates list codigo_upz tq
 
 duplicates drop codigo_upz tq, force
 
-drop if year == 2023
+drop if year == 2023 | year == 2022
 
 
 *borrar duplicados
@@ -113,15 +113,29 @@ gen outliers = 0
 
 global crimes theft_to_vehicle theft_to_people theft_to_motorbike sexual homicide
 
-gen area_k2 = area_m2 / 1000000
+//gen area_k2 = area_m2 / 1000000
 
 foreach y of global crimes {
-	gen `y'_area_index = `y' / area_k2
 	
-	gen `y'_log_lvl_index = log(1+`y')
+**# Bookmark #1
 	
-	gen `y'_log_index = log(1+`y'_index)
+	* Log of raw count (levels + 1, to handle zeros)
+	gen `y'_log_lvl_index = log(1 + `y')
+	
+	* Log of the population-based rate (levels + 1, to handle zeros)
+	gen `y'_log_index = log(1 + `y'_index)
+	
+	* Count and print the number of observations where `y'_index == 0
+	quietly count if `y'_index == 0
+	local n_zero = r(N)
+	
+	quietly count
+	local n_total = r(N)
+	
+	disp "`y'_index: `n_zero' zero observations out of `n_total' (" %4.1f 100*`n_zero'/`n_total' "%)"
 }
+
+
 
 ***************************************************************
 *REGRESIONES PARA LA ENTREGA
@@ -251,6 +265,87 @@ preserve
 		ctitle("TWFE H") ///
 		keep(dummy_oxxo) ///
 		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		
+	//bacondecomp theft_to_people_index_eb dummy_oxxo outliers $harddiscount_controls, ddetail vce(cluster codigo_upz)
+
+restore
+
+
+*********************************************************
+*SPILL OVER
+*********************************************************
+ 
+
+
+local first = 1
+
+foreach y of global dep_var {
+
+    //reg `y' dummy_oxxo
+
+    if `first' == 1 {
+		reghdfe `y' dummy_oxxo spillover_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+		outreg2 using tabla_regresiones_spill_${panel}.xls, replace label ///
+		ctitle("TWFE `y'") ///
+		keep(dummy_oxxo spillover_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO)
+		
+
+        local first = 0
+    }
+    else {
+        reghdfe `y' dummy_oxxo spillover_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+		outreg2 using tabla_regresiones_spill_${panel}.xls, append label ///
+		ctitle("TWFE `y'") ///
+		keep(dummy_oxxo spillover_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO)
+		
+    }
+	
+	//bacondecomp `y' dummy_oxxo outliers, ddetail vce(cluster codigo_upz)
+}
+
+preserve
+
+	drop if year>2018
+	
+	reghdfe theft_to_people_index_eb dummy_oxxo outliers spillover_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+	outreg2 using tabla_regresiones_spill_${panel}.xls, append label ///
+		ctitle("TWFE `y' spill") ///
+		keep(dummy_oxxo spillover_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, SI)
+		
+	//bacondecomp theft_to_people_index_eb dummy_oxxo outliers $harddiscount_controls, ddetail vce(cluster codigo_upz)
+
+restore
+
+
+foreach y of global dep_var {
+
+	
+	reghdfe `y' dummy_oxxo $harddiscount_controls spillover_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	
+		
+	outreg2 using tabla_regresiones_spill_${panel}.xls, append label ///
+	ctitle("TWFE `y' H") ///
+	keep(dummy_oxxo spillover_oxxo) ///
+	addtext(Chain stores, SI, Day controls, NO, Control spillover, SI)
+	
+}
+
+preserve
+
+	drop if year>2018
+	
+	reghdfe theft_to_people_index_eb $harddiscount_controls dummy_oxxo outliers spillover_oxxo ,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+	outreg2 using tabla_regresiones_spill_${panel}.xls, append label ///
+		ctitle("TWFE `y' spill") ///
+		keep(dummy_oxxo spillover_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, SI, Access controles, NO)
 		
 	//bacondecomp theft_to_people_index_eb dummy_oxxo outliers $harddiscount_controls, ddetail vce(cluster codigo_upz)
 
@@ -866,3 +961,105 @@ list codigo_upz theft_to_people_index_eb theft_to_people_area_index
 histogram theft_to_people_index_eb
 
 histogram theft_to_people_log_index
+
+********************************************************************
+* STEP 1: Skewness / distributional check
+********************************************************************
+
+sum theft_to_people_index_eb, detail
+sum theft_to_people_log_index, detail
+* Compare skewness stat: levels should be high (>1), log should be near 0
+
+histogram theft_to_people_index_eb, name(hist_levels, replace) title("Levels")
+histogram theft_to_people_log_index, name(hist_log, replace) title("Log")
+
+
+********************************************************************
+* STEP 2: Mean-variance relationship (core multiplicative-error test)
+********************************************************************
+* Multiplicative error => variance grows with square of the mean
+* Additive error => variance roughly constant across the mean
+
+
+egen mean_crime_upz = mean(theft_to_people_index_eb), by(codigo_upz)
+egen sd_crime_upz   = sd(theft_to_people_index_eb),   by(codigo_upz)
+
+preserve
+
+duplicates drop codigo_upz, force
+
+scatter sd_crime_upz mean_crime_upz, ///
+    title("Mean-Variance Relationship") ///
+    ytitle("SD of crime rate") xtitle("Mean crime rate")
+* Add a fitted line to check if relationship is linear (~multiplicative)
+* or flat (~additive)
+lpoly sd_crime_upz mean_crime_upz, addplot(scatter sd_crime_upz mean_crime_upz)
+
+restore
+
+* Formal test: regress log(SD) on log(mean) -- slope near 1 supports
+* multiplicative error (SD proportional to mean); slope near 0 supports additive
+preserve
+
+duplicates drop codigo_upz, force
+
+gen log_mean = log(mean_crime_upz)
+
+gen log_sd   = log(sd_crime_upz)
+
+regress log_sd log_mean
+* Check the slope coefficient on log_mean: near 1 = multiplicative signature
+
+restore
+
+********************************************************************
+* STEP 3: Heteroscedasticity tests -- levels vs. log
+********************************************************************
+* Levels model
+
+//ssc install xttest3
+preserve
+
+	drop if year>2018
+
+	xtreg theft_to_people_log_index dummy_oxxo outliers i.tq, fe
+	xttest3
+
+		
+	drop if tq != tq(2018q4)
+
+	count if dummy_oxxo ==1
+
+	count if dummy_oxxo ==0
+	
+	count
+	
+	sum theft_to_people_index if dummy_oxxo ==0
+
+restore
+
+preserve
+
+	drop if year>2018
+	
+	xtreg theft_to_people_index_eb dummy_oxxo outliers i.tq, fe
+	xttest3
+
+		
+	drop if tq != tq(2018q4)
+
+	count if dummy_oxxo ==1
+
+	count if dummy_oxxo ==0
+	
+	count
+	
+	sum theft_to_people_index if dummy_oxxo ==0
+
+restore
+
+
+
+
+
+

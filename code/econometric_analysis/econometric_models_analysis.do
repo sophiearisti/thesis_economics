@@ -105,6 +105,7 @@ gen outliers = 0
 
 //drop if codigo_upz == 97 | codigo_upz == 91 | codigo_upz == 93
 
+
 ***************************************************************
 *REGRESIONES PARA LA ENTREGA
 ***************************************************************
@@ -114,7 +115,7 @@ cd "$dir_controls_results"
 *ssc install outreg2, replace
 
 if $panel == 1 | $panel == 0 {
-	global dep_var theft_to_vehicle_index_eb theft_to_people_index_eb theft_to_motorbike_index_eb sexual_index_eb homicide_index_eb 
+	global dep_var theft_to_people_index_eb //theft_to_vehicle_index_eb theft_to_people_index_eb theft_to_motorbike_index_eb sexual_index_eb homicide_index_eb 
 	
 }
 else {
@@ -129,7 +130,8 @@ global access_controls spillover_oxxo
  
 global harddiscount_controls cantidad_d1 cantidad_ara cantidad_jb 
 
- 
+
+
 *********************************************************
 *TWO WAY FIXED EFFECTS
 *********************************************************
@@ -230,83 +232,6 @@ foreach y of global dep_var {
 	keep(dummy_oxxo) ///
 	addtext(Chain stores, SI, Day controls, NO, Control spillover, NO)
 	
-	//bacondecomp `y' dummy_oxxo  $harddiscount_controls outliers, ddetail vce(cluster codigo_upz)
-
-	/*
-	/*if "`y'" == "crime_index" {
-		bacondecomp crime_index dummy_oxxo $harddiscount_controls, ddetail vce(cluster codigo_upz)
-	}*/
-	
-	reghdfe `y' dummy_oxxo $access_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
-	
-		
-	outreg2 using tabla_regresiones_${panel}.xls, append label ///
-	ctitle("TWFE `y' S") ///
-	keep(dummy_oxxo) ///
-	addtext(Chain stores, NO, Day controls, NO, Control spillover, SI)
-		
-	/*if "`y'" == "crime_index" {
-		bacondecomp crime_index dummy_oxxo  $access_controlss, ddetail vce(cluster codigo_upz)
-	}*/
-		
-	if $panel == 1 {
-			
-		
-		reghdfe `y' dummy_oxxo $day_controls $harddiscount_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
-
-			
-		outreg2 using tabla_regresiones_${panel}.xls, append label ///
-		ctitle("TWFE `y' D H") ///
-		keep(dummy_oxxo) ///
-		addtext(Chain stores, SI, Day controls, SI, Control spillover, NO)
-		
-		if "`y'" == "crime_index" {
-			bacondecomp crime_index dummy_oxxo $day_controls $harddiscount_controls outliers , ddetail vce(cluster codigo_upz)
-		}
-
-			
-		reghdfe `y' dummy_oxxo $day_controls  outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
-		
-			
-		outreg2 using tabla_regresiones_${panel}.xls, append label ///
-		ctitle("TWFE `y' D A") ///
-		keep(dummy_oxxo) ///
-		addtext(Chain stores, NO, Day controls, SI, Control spillover, NO)
-		
-		if "`y'" == "crime_index" {
-			bacondecomp crime_index dummy_oxxo $day_controls outliers, ddetail vce(cluster codigo_upz)
-		}
-		
-		reghdfe `y' dummy_oxxo $day_controls $access_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
-
-			
-		outreg2 using tabla_regresiones_${panel}.xls, append label ///
-		ctitle("TWFE `y' D A") ///
-		keep(dummy_oxxo) ///
-		addtext(Chain stores, NO, Day controls, SI, Control spillover, SI)
-		
-		
-		reghdfe `y' dummy_oxxo $day_controls $access_controls $harddiscount_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
-
-			
-		outreg2 using tabla_regresiones_${panel}.xls, append label ///
-		ctitle("TWFE `y' D A") ///
-		keep(dummy_oxxo) ///
-		addtext(Chain stores, SI,  Day controls, SI, Control spillover, SI)
-
-	
-	}	
-
-	
-	reghdfe `y' dummy_oxxo $harddiscount_controls $access_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
-	
-		
-	outreg2 using tabla_regresiones_${panel}.xls, append label ///
-	ctitle("TWFE `y' H A") ///
-	keep(dummy_oxxo) ///
-	addtext(Chain stores, SI,  Day controls, NO, Control spillover, SI)	
-	
-	*/
 }
 
 preserve
@@ -318,7 +243,58 @@ preserve
 	outreg2 using tabla_regresiones_${panel}.xls, append label ///
 		ctitle("TWFE `y'") ///
 		keep(dummy_oxxo) ///
-		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		addtext(Chain stores, SI, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		
+	//bacondecomp theft_to_people_index_eb dummy_oxxo outliers $harddiscount_controls, ddetail vce(cluster codigo_upz)
+
+restore
+
+*********************************************************
+*SPILL OVER
+*********************************************************
+ 
+
+
+local first = 1
+
+foreach y of global dep_var {
+
+    //reg `y' dummy_oxxo
+
+    if `first' == 1 {
+		reghdfe `y' dummy_oxxo spillover_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+		outreg2 using tabla_regresiones_spill_${panel}.xls, replace label ///
+		ctitle("TWFE `y'") ///
+		keep(dummy_oxxo spillover_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO)
+		
+
+        local first = 0
+    }
+    else {
+        reghdfe `y' dummy_oxxo spillover_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+		outreg2 using tabla_regresiones_spill_${panel}.xls, append label ///
+		ctitle("TWFE `y'") ///
+		keep(dummy_oxxo spillover_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO)
+		
+    }
+	
+	//bacondecomp `y' dummy_oxxo outliers, ddetail vce(cluster codigo_upz)
+}
+
+preserve
+
+	drop if year>2018
+	
+	reghdfe theft_to_people_index_eb dummy_oxxo outliers spillover_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+	outreg2 using tabla_regresiones_spill_${panel}.xls, append label ///
+		ctitle("TWFE `y' spill") ///
+		keep(dummy_oxxo spillover_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, SI)
 		
 	//bacondecomp theft_to_people_index_eb dummy_oxxo outliers $harddiscount_controls, ddetail vce(cluster codigo_upz)
 
@@ -328,13 +304,13 @@ restore
 foreach y of global dep_var {
 
 	
-	reghdfe `y' dummy_oxxo spillover_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe `y' dummy_oxxo $harddiscount_controls spillover_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 	
 		
-	outreg2 using tabla_regresiones_${panel}.xls, append label ///
-	ctitle("TWFE `y' spill") ///
-	keep(dummy_oxxo) ///
-	addtext(Chain stores, NO, Day controls, NO, Control spillover, SI)
+	outreg2 using tabla_regresiones_spill_${panel}.xls, append label ///
+	ctitle("TWFE `y' H") ///
+	keep(dummy_oxxo spillover_oxxo) ///
+	addtext(Chain stores, SI, Day controls, NO, Control spillover, SI)
 	
 }
 
@@ -342,19 +318,16 @@ preserve
 
 	drop if year>2018
 	
-	reghdfe theft_to_people_index_eb dummy_oxxo outliers spillover_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	reghdfe theft_to_people_index_eb $harddiscount_controls dummy_oxxo outliers spillover_oxxo ,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
 
-	outreg2 using tabla_regresiones_${panel}.xls, append label ///
+	outreg2 using tabla_regresiones_spill_${panel}.xls, append label ///
 		ctitle("TWFE `y' spill") ///
-		keep(dummy_oxxo) ///
+		keep(dummy_oxxo spillover_oxxo) ///
 		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, SI, Access controles, NO)
 		
 	//bacondecomp theft_to_people_index_eb dummy_oxxo outliers $harddiscount_controls, ddetail vce(cluster codigo_upz)
 
 restore
-
-
-
 
 *********************************************************
 *TWO WAY FIXED EFFECTS INTENSITY OF TREATMENT
@@ -442,33 +415,7 @@ foreach y of global dep_var {
 	ctitle("TWFE `y' H") ///
 	keep(cantidad_oxxo) ///
 	addtext(Chain stores, SI, Day controls, NO, Control spillover, NO)
-	/*	
-	/*if "`y'" == "crime_index" {
-		bacondecomp crime_index dummy_oxxo $harddiscount_controls, ddetail vce(cluster codigo_upz)
-	}*/
 	
-	reghdfe `y' cantidad_oxxo $access_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
-	
-		
-	outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
-	ctitle("TWFE `y' S") ///
-	keep(cantidad_oxxo) ///
-	addtext(Chain stores, NO, Day controls, NO, Control spillover, SI)
-		
-	/*if "`y'" == "crime_index" {
-		bacondecomp crime_index dummy_oxxo  $access_controlss, ddetail vce(cluster codigo_upz)
-	}*/
-		
-
-	reghdfe `y' cantidad_oxxo $harddiscount_controls $access_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
-	
-		
-	outreg2 using tabla_regresiones_intensity_${panel}.xls, append label ///
-	ctitle("TWFE `y' H A") ///
-	keep(cantidad_oxxo) ///
-	addtext(Chain stores, SI,  Day controls, NO, Control spillover, SI)	
-	
-	*/
 }
 
 preserve
@@ -484,6 +431,110 @@ preserve
 	addtext(Chain stores, SI,  Day controls, NO, Control spillover, NO)	
 	
 restore 
+
+*********************************************************
+*TWO WAY FIXED EFFECTS INTENSITY OF TREATMENT SPILLOVER
+*********************************************************
+ 
+local first = 1
+
+foreach y of global dep_var {
+
+    //reg `y' dummy_oxxo
+
+    if `first' == 1 {
+		reghdfe `y' cantidad_oxxo spillover_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+		outreg2 using tabla_regresiones_intensity_spillover_oxxo_${panel}.xls, replace label ///
+		ctitle("TWFE `y'") ///
+		keep(cantidad_oxxo spillover_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		
+
+        local first = 0
+    }
+    else {
+        reghdfe `y' cantidad_oxxo spillover_oxxo,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+		outreg2 using tabla_regresiones_intensity_spillover_oxxo_${panel}.xls, append label ///
+		ctitle("TWFE `y'") ///
+		keep(cantidad_oxxo spillover_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		
+    }
+	
+}
+
+preserve
+
+	drop if year>2018
+	
+	reghdfe theft_to_people_index_eb cantidad_oxxo spillover_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+
+		outreg2 using tabla_regresiones_intensity_spillover_oxxo_${panel}.xls, append label ///
+		ctitle("TWFE `y'") ///
+		keep(cantidad_oxxo spillover_oxxo) ///
+		addtext(Chain stores, NO, Gender controles, NO, Day controls, NO, Control spillover, NO, Access controles, NO)
+		
+		
+	drop if tq != tq(2018q4)
+
+	count if dummy_oxxo ==1
+
+	count if dummy_oxxo ==0
+	
+	count
+	
+	sum theft_to_people_index if dummy_oxxo ==0
+
+restore
+
+
+preserve
+
+drop if cantidad_oxxo ==0
+
+sum theft_to_people_index
+
+restore
+
+
+preserve
+
+drop if cantidad_oxxo !=0
+
+sum theft_to_people_index
+
+restore
+
+
+foreach y of global dep_var {
+
+	
+	reghdfe `y' cantidad_oxxo $harddiscount_controls spillover_oxxo outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	
+		
+	outreg2 using tabla_regresiones_intensity_spillover_oxxo_${panel}.xls, append label ///
+	ctitle("TWFE `y' H") ///
+	keep(cantidad_oxxo spillover_oxxo) ///
+	addtext(Chain stores, SI, Day controls, NO, Control spillover, NO)
+	
+}
+
+preserve
+
+	drop if year>2018
+
+	reghdfe theft_to_people_index_eb cantidad_oxxo spillover_oxxo $harddiscount_controls outliers,  absorb(codigo_upz i.tq) vce(cluster codigo_upz)
+	
+		
+	outreg2 using tabla_regresiones_intensity_spillover_oxxo_${panel}.xls, append label ///
+	ctitle("TWFE `y' H") ///
+	keep(cantidad_oxxo spillover_oxxo) ///
+	addtext(Chain stores, SI,  Day controls, NO, Control spillover, NO)	
+	
+restore 
+
 
 *********************************************************
 *TWO WAY FIXED EFFECTS INTENSITY OF TREATMENT AS DUMMIES

@@ -1,0 +1,17 @@
+		(1)	(2)	(3)	(4)
+VARIABLES	LABELS	TWFE sexual_index_eb	TWFE	TWFE sexual_index_eb H	TWFE
+					
+dummy_oxxo	dummy_oxxo	-0.440**	2.331	-0.320	2.095
+		(0.199)	(7.141)	(0.204)	(6.611)
+Constant	Constant	2.199***	30.96***	2.405***	33.65***
+		(0.0230)	(0.263)	(0.0968)	(2.800)
+					
+Observations		2,520	1,440	2,520	1,440
+R-squared		0.416	0.660	0.419	0.662
+Chain stores		NO	NO	SI	SI
+Gender controles		NO	NO		NO
+Day controls		NO	NO	NO	NO
+Control spillover		NO	NO	NO	NO
+Access controles		NO	NO		NO
+Robust standard errors in parentheses					
+*** p<0.01, ** p<0.05, * p<0.1					

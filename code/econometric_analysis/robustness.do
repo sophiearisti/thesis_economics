@@ -58,7 +58,7 @@ duplicates list codigo_upz tq
 
 duplicates drop codigo_upz tq, force
 
-drop if year == 2023 
+drop if year == 2023 | year == 2022
 
 
 *borrar duplicados

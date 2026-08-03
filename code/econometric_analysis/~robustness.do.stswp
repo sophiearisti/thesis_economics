@@ -58,7 +58,7 @@ duplicates list codigo_upz tq
 
 duplicates drop codigo_upz tq, force
 
-drop if year == 2023 | year == 2022
+drop if year == 2023
 
 
 *borrar duplicados
@@ -465,6 +465,8 @@ restore
 *********************************************************
 
 cd "$dir_controls_results/events study/CS/multiple"
+
+global dep_var theft_to_motorbike_log_index //theft_to_people_log_index theft_to_vehicle_log_index sexual_log_index
 
 foreach y of global dep_var {
 	preserve

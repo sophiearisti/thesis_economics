@@ -37,7 +37,8 @@ def append_dfs_by_crime_type(file_path_2015_2018, file_path_2019, type_of_crime)
         "HORA_HECHO",
         "DIRECCION_HECHO",
         "LONGITUD",
-        "LATITUD"   # assuming you meant LATITUD instead of repeating LONGITUD
+        "LATITUD",   # assuming you meant LATITUD instead of repeating LONGITUD
+        "MOVIL_VICTIMA"
     ]
 
     # Read all sheets
@@ -74,6 +75,19 @@ def append_dfs_by_crime_type(file_path_2015_2018, file_path_2019, type_of_crime)
     df_combined = df_combined.drop(columns=["MUNICIPIO_HECHO"])
     
     new_column_names = {"sexual", "homicide", "theft_to_people", "theft_to_motorbike", "theft_to_vehicle"}
+    
+    #ver la cantidad de delitos que se cometieron "A PIE" vs el total
+    total_delitos = len(df_combined)
+    a_pie = (df_combined["MOVIL_VICTIMA"] == "A PIE").sum()
+    porcentaje_a_pie = (a_pie / total_delitos) * 100
+
+    print(f"Total de delitos: {total_delitos}")
+    print(f"Delitos 'A PIE': {a_pie} ({porcentaje_a_pie:.2f}%)")
+
+    # Si además quieres ver la distribución completa de MOVIL_VICTIMA
+    print("\nDistribución completa de MOVIL_VICTIMA:")
+    print(df_combined["MOVIL_VICTIMA"].value_counts())
+    print("\nDistribución en porcentajes:")
     
     if type_of_crime == "sexual":
         df_combined.to_csv("../../data/crime/bogota_crime/sexual_crimes_bogota.csv", index=False)

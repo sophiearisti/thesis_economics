@@ -1,21 +1,21 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'primera_version.blg'
-[54] biber-darwin:340> INFO - === Sun Aug  2, 2026, 22:30:09
-[67] Biber.pm:420> INFO - Reading 'primera_version.bcf'
-[157] Biber.pm:994> INFO - Found 63 citekeys in bib section 0
-[174] Biber.pm:4463> INFO - Processing section 0
-[182] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
-[185] bibtex.pm:1713> INFO - LaTeX decoding ...
-[234] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
-[561] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[561] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[561] Biber.pm:4283> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'en-US'
-[561] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[681] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[681] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[681] Biber.pm:4283> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'en-US'
-[681] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[748] bbl.pm:676> INFO - Writing 'primera_version.bbl' with encoding 'UTF-8'
-[801] bbl.pm:779> INFO - Output to primera_version.bbl
-[801] Biber.pm:131> WARN - Duplicate entry key: 'jacobs1961death' in file 'references.bib', skipping ...
-[801] Biber.pm:133> INFO - WARNINGS: 1
+[54] biber-darwin:340> INFO - === Tue Aug 11, 2026, 19:41:53
+[71] Biber.pm:420> INFO - Reading 'primera_version.bcf'
+[161] Biber.pm:994> INFO - Found 63 citekeys in bib section 0
+[178] Biber.pm:4463> INFO - Processing section 0
+[186] Biber.pm:4654> INFO - Looking for bibtex file 'references.bib' for section 0
+[190] bibtex.pm:1713> INFO - LaTeX decoding ...
+[239] bibtex.pm:1519> INFO - Found BibTeX data source 'references.bib'
+[576] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[576] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[576] Biber.pm:4283> INFO - Sorting list 'apa/apasortcite//global/global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[576] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[697] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[698] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[698] Biber.pm:4283> INFO - Sorting list 'apa/global//global/global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[698] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[765] bbl.pm:676> INFO - Writing 'primera_version.bbl' with encoding 'UTF-8'
+[818] bbl.pm:779> INFO - Output to primera_version.bbl
+[819] Biber.pm:131> WARN - Duplicate entry key: 'jacobs1961death' in file 'references.bib', skipping ...
+[819] Biber.pm:133> INFO - WARNINGS: 1

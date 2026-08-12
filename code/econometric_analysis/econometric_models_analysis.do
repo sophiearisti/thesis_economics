@@ -115,7 +115,7 @@ cd "$dir_controls_results"
 *ssc install outreg2, replace
 
 if $panel == 1 | $panel == 0 {
-	global dep_var theft_to_people_index_eb //theft_to_vehicle_index_eb theft_to_people_index_eb theft_to_motorbike_index_eb sexual_index_eb homicide_index_eb 
+	global dep_var sexual_index_eb //theft_to_people_index_eb theft_to_vehicle_index_eb theft_to_people_index_eb theft_to_motorbike_index_eb sexual_index_eb homicide_index_eb 
 	
 }
 else {

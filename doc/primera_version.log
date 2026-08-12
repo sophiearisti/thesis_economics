@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  2 AUG 2026 22:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  11 AUG 2026 19:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1132,300 +1132,300 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.81 \newpage
+l.80 \newpage
               [1{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 91--92
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
 
  []
 
 
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--102
+Underfull \hbox (badness 10000) in paragraph at lines 100--101
 
  []
 
 
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 103--104
+Underfull \hbox (badness 10000) in paragraph at lines 102--103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 105--106
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
 
  []
 
 
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 114--115
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
 
  []
 
 <other_figs/oxxos_por_ano.png, id=224, 562.5015pt x 335.8146pt>
 File: other_figs/oxxos_por_ano.png Graphic file (type png)
 <use other_figs/oxxos_por_ano.png>
-Package pdftex.def Info: other_figs/oxxos_por_ano.png  used on input line 118.
+Package pdftex.def Info: other_figs/oxxos_por_ano.png  used on input line 117.
 (pdftex.def)             Requested size: 399.21791pt x 238.33267pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 125--126
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
 
 
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
 
  []
 
 <figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png, id=252, 209.583pt x 357.2547pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png  used on input line 136.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png  used on input line 135.
 (pdftex.def)             Requested size: 133.07489pt x 226.84329pt.
 <figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png, id=254, 210.0648pt x 360.8682pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png  used on input line 142.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png  used on input line 141.
 (pdftex.def)             Requested size: 133.07489pt x 228.60913pt.
 <figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png, id=255, 208.6194pt x 360.8682pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png  used on input line 148.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png  used on input line 147.
 (pdftex.def)             Requested size: 133.07489pt x 230.20047pt.
 <figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png, id=256, 209.583pt x 358.4592pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png  used on input line 157.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png  used on input line 156.
 (pdftex.def)             Requested size: 133.07489pt x 227.60811pt.
 <figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png, id=257, 208.8603pt x 358.941pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png  used on input line 163.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png  used on input line 162.
 (pdftex.def)             Requested size: 133.07489pt x 228.69725pt.
 <figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png, id=258, 210.3057pt x 359.1819pt>
 File: figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png  used on input line 169.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png  used on input line 168.
 (pdftex.def)             Requested size: 133.07489pt x 227.28326pt.
 <figs_oxxo_maps/legend.png, id=259, 196.8153pt x 21.9219pt>
 File: figs_oxxo_maps/legend.png Graphic file (type png)
 <use figs_oxxo_maps/legend.png>
-Package pdftex.def Info: figs_oxxo_maps/legend.png  used on input line 177.
+Package pdftex.def Info: figs_oxxo_maps/legend.png  used on input line 176.
 (pdftex.def)             Requested size: 133.07489pt x 14.82239pt.
 <figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png, id=260, 578.16pt x 433.62pt>
 File: figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png Graphic file (type png)
 <use figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png>
-Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png  used on input line 188.
+Package pdftex.def Info: figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png  used on input line 187.
 (pdftex.def)             Requested size: 399.21791pt x 299.40985pt.
 
 
 [7 <./other_figs/oxxos_por_ano.png>]
 
 [8 <./figs_oxxo_maps/mapa_oxxos_binary_upz_2009.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2011.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2015.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2019.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2023.png> <./figs_oxxo_maps/mapa_oxxos_binary_upz_2025.png> <./figs_oxxo_maps/legend.png>]
-Overfull \hbox (6.33122pt too wide) in paragraph at lines 196--197
+Overfull \hbox (6.33122pt too wide) in paragraph at lines 195--196
 []\T1/cmr/m/n/12 The con-cern about en-doge-nous OXXO place-ment, how-ever, may be mit-i-gated through
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
 
 
 [9 <./figs_oxxo_maps/mapa_oxxos_transmilenio_vias.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 202--203
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
 
  []
 
 <figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png, id=294, 237.5274pt x 415.0707pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png>
-Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png  used on input line 210.
+Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png  used on input line 209.
 (pdftex.def)             Requested size: 133.07489pt x 232.552pt.
 <figs_dep_maps/mapa_upz_gpkg_all_years_2016_theft_to_people_index_eb_edited.png, id=295, 225.0006pt x 402.7848pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2016_theft_to_people_index_eb_edited.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2016_theft_to_people_index_eb_edited.png>
-Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2016_theft_to_people_index_eb_edited.png  used on input line 216.
+Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2016_theft_to_people_index_eb_edited.png  used on input line 215.
 (pdftex.def)             Requested size: 133.07489pt x 238.21869pt.
 <figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png, id=296, 244.5135pt x 401.5803pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png>
-Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png  used on input line 225.
+Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png  used on input line 224.
 (pdftex.def)             Requested size: 133.07489pt x 218.56586pt.
 <figs_dep_maps/mapa_upz_gpkg_all_years_2018_theft_to_people_index_eb_edited.png, id=297, 222.8325pt x 399.894pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2018_theft_to_people_index_eb_edited.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2018_theft_to_people_index_eb_edited.png>
-Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2018_theft_to_people_index_eb_edited.png  used on input line 231.
+Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2018_theft_to_people_index_eb_edited.png  used on input line 230.
 (pdftex.def)             Requested size: 133.07489pt x 238.81549pt.
 
 
 [10]
 
 [11 <./figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_people_index_eb_edited.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2016_theft_to_people_index_eb_edited.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_people_index_eb_edited.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2018_theft_to_people_index_eb_edited.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--253
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
 
  []
 
 
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--259
+Underfull \hbox (badness 10000) in paragraph at lines 257--258
 
  []
 
 
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Underfull \hbox (badness 10000) in paragraph at lines 259--260
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--270
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
 
 
 
 [14]
-Underfull \hbox (badness 7649) in paragraph at lines 271--271
+Underfull \hbox (badness 7649) in paragraph at lines 270--270
 [][][]\T1/cmr/m/n/10 Access at [][]$https : / / oaiee . scj . gov . co / agc / rest / services / Tematicos _ Pub / SIEDCO _ Delitos _ Pub /
  []
 
 
-Overfull \hbox (1.58565pt too wide) detected at line 276
+Overfull \hbox (1.58565pt too wide) detected at line 275
 [][][]\OML/cmm/m/it/12 crime[]type[]index[] \OT1/cmr/m/n/12 = [] \OMS/cmsy/m/n/12 ^^C \OT1/cmr/m/n/12 10\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 000;  \OMS/cmsy/m/n/12 8\OML/cmm/m/it/12 upz; quarter; year
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--279
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 280--281
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
 
  []
 
 
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 282--283
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
+Underfull \hbox (badness 10000) in paragraph at lines 283--284
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 
  []
 
 
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 293--294
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--326
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 327--328
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
 
  []
 
 
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 329--330
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
 
  []
 
-<other_figs/oxxos_intensidad_tratamiento_noalwaystreated.png, id=412, 576.4737pt x 409.53pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
+
+ []
+
+<other_figs/oxxos_intensidad_tratamiento_noalwaystreated.png, id=410, 576.4737pt x 409.53pt>
 File: other_figs/oxxos_intensidad_tratamiento_noalwaystreated.png Graphic file (type png)
 <use other_figs/oxxos_intensidad_tratamiento_noalwaystreated.png>
-Package pdftex.def Info: other_figs/oxxos_intensidad_tratamiento_noalwaystreated.png  used on input line 333.
+Package pdftex.def Info: other_figs/oxxos_intensidad_tratamiento_noalwaystreated.png  used on input line 332.
 (pdftex.def)             Requested size: 399.21791pt x 283.60707pt.
-<dif_meds/diff_means_theft_to_people_index.png, id=413, 718.6047pt x 387.849pt>
+<dif_meds/diff_means_theft_to_people_index.png, id=411, 718.6047pt x 387.849pt>
 File: dif_meds/diff_means_theft_to_people_index.png Graphic file (type png)
 <use dif_meds/diff_means_theft_to_people_index.png>
-Package pdftex.def Info: dif_meds/diff_means_theft_to_people_index.png  used on input line 347.
+Package pdftex.def Info: dif_meds/diff_means_theft_to_people_index.png  used on input line 346.
 (pdftex.def)             Requested size: 354.86412pt x 191.52719pt.
 
 
 [18]
 
 [19 <./other_figs/oxxos_intensidad_tratamiento_noalwaystreated.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 358--359
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 360--361
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
 
  []
 
@@ -1435,129 +1435,129 @@ Underfull \hbox (badness 10000) in paragraph at lines 360--361
 <dif_meds/diff_means_homicide_index.png, id=444, 719.3274pt x 382.5492pt>
 File: dif_meds/diff_means_homicide_index.png Graphic file (type png)
 <use dif_meds/diff_means_homicide_index.png>
-Package pdftex.def Info: dif_meds/diff_means_homicide_index.png  used on input line 368.
+Package pdftex.def Info: dif_meds/diff_means_homicide_index.png  used on input line 367.
 (pdftex.def)             Requested size: 354.86412pt x 188.72325pt.
 <dif_meds/diff_means_sexual_index.png, id=445, 717.1593pt x 400.8576pt>
 File: dif_meds/diff_means_sexual_index.png Graphic file (type png)
 <use dif_meds/diff_means_sexual_index.png>
-Package pdftex.def Info: dif_meds/diff_means_sexual_index.png  used on input line 378.
+Package pdftex.def Info: dif_meds/diff_means_sexual_index.png  used on input line 377.
 (pdftex.def)             Requested size: 354.86412pt x 198.34866pt.
 <dif_meds/diff_means_theft_to_motorbike_index.png, id=446, 713.5458pt x 385.6809pt>
 File: dif_meds/diff_means_theft_to_motorbike_index.png Graphic file (type png)
 <use dif_meds/diff_means_theft_to_motorbike_index.png>
-Package pdftex.def Info: dif_meds/diff_means_theft_to_motorbike_index.png  used on input line 394.
+Package pdftex.def Info: dif_meds/diff_means_theft_to_motorbike_index.png  used on input line 393.
 (pdftex.def)             Requested size: 354.86412pt x 191.81009pt.
 <dif_meds/diff_means_theft_to_vehicle_index.png, id=447, 721.9773pt x 393.6306pt>
 File: dif_meds/diff_means_theft_to_vehicle_index.png Graphic file (type png)
 <use dif_meds/diff_means_theft_to_vehicle_index.png>
-Package pdftex.def Info: dif_meds/diff_means_theft_to_vehicle_index.png  used on input line 402.
+Package pdftex.def Info: dif_meds/diff_means_theft_to_vehicle_index.png  used on input line 401.
 (pdftex.def)             Requested size: 354.86412pt x 193.4753pt.
 
 
 [21 <./dif_meds/diff_means_homicide_index.png> <./dif_meds/diff_means_sexual_index.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 413--414
+Underfull \hbox (badness 10000) in paragraph at lines 412--413
 
  []
 
 
 
 [22 <./dif_meds/diff_means_theft_to_motorbike_index.png> <./dif_meds/diff_means_theft_to_vehicle_index.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 462--463
+
+ []
+
+
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 463--464
+Underfull \hbox (badness 10000) in paragraph at lines 469--470
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 470--471
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 472--473
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
 
  []
 
 
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 485--486
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 487--489
+Underfull \hbox (badness 10000) in paragraph at lines 486--488
 
  []
 
 
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 497--498
+Underfull \hbox (badness 10000) in paragraph at lines 496--497
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 506--507
+Underfull \hbox (badness 10000) in paragraph at lines 505--506
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 513--514
+Underfull \hbox (badness 10000) in paragraph at lines 512--513
 
  []
 
 
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 515--516
+Underfull \hbox (badness 10000) in paragraph at lines 514--515
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 517--518
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
 
  []
 
 
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 557--558
+Underfull \hbox (badness 10000) in paragraph at lines 556--557
 
  []
 
 <events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_people_index_eb.png, id=516, 552.6246pt x 385.44pt>
 File: events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_people_index_eb.png Graphic file (type png)
 <use events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_people_index_eb.png>
-Package pdftex.def Info: events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_people_index_eb.png  used on input line 563.
+Package pdftex.def Info: events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_people_index_eb.png  used on input line 562.
 (pdftex.def)             Requested size: 217.35588pt x 151.60312pt.
 <events_study/FE/simple/events_study_lindo_SimpleFE_0_sexual_index_eb.png, id=517, 556.7199pt x 384.7173pt>
 File: events_study/FE/simple/events_study_lindo_SimpleFE_0_sexual_index_eb.png Graphic file (type png)
 <use events_study/FE/simple/events_study_lindo_SimpleFE_0_sexual_index_eb.png>
-Package pdftex.def Info: events_study/FE/simple/events_study_lindo_SimpleFE_0_sexual_index_eb.png  used on input line 569.
+Package pdftex.def Info: events_study/FE/simple/events_study_lindo_SimpleFE_0_sexual_index_eb.png  used on input line 568.
 (pdftex.def)             Requested size: 217.35588pt x 150.2035pt.
 <events_study/FE/simple/events_study_lindo_SimpleFE_0_homicide_index_eb.png, id=518, 553.5882pt x 386.4036pt>
 File: events_study/FE/simple/events_study_lindo_SimpleFE_0_homicide_index_eb.png Graphic file (type png)
 <use events_study/FE/simple/events_study_lindo_SimpleFE_0_homicide_index_eb.png>
-Package pdftex.def Info: events_study/FE/simple/events_study_lindo_SimpleFE_0_homicide_index_eb.png  used on input line 578.
+Package pdftex.def Info: events_study/FE/simple/events_study_lindo_SimpleFE_0_homicide_index_eb.png  used on input line 577.
 (pdftex.def)             Requested size: 217.35588pt x 151.7109pt.
 <events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_motorbike_index_eb.png, id=519, 557.4426pt x 384.4764pt>
 File: events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_motorbike_index_eb.png Graphic file (type png)
 <use events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_motorbike_index_eb.png>
-Package pdftex.def Info: events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_motorbike_index_eb.png  used on input line 584.
+Package pdftex.def Info: events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_motorbike_index_eb.png  used on input line 583.
 (pdftex.def)             Requested size: 217.35588pt x 149.90999pt.
 <events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_vehicle_index_eb.png, id=520, 556.2381pt x 389.0535pt>
 File: events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_vehicle_index_eb.png Graphic file (type png)
 <use events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_vehicle_index_eb.png>
-Package pdftex.def Info: events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_vehicle_index_eb.png  used on input line 593.
+Package pdftex.def Info: events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_vehicle_index_eb.png  used on input line 592.
 (pdftex.def)             Requested size: 217.35588pt x 152.02707pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 607--608
+Underfull \hbox (badness 10000) in paragraph at lines 606--607
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 609--610
+Underfull \hbox (badness 10000) in paragraph at lines 608--609
 
  []
 
@@ -1566,7 +1566,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 609--610
 [28]
 
 [29 <./events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_people_index_eb.png> <./events_study/FE/simple/events_study_lindo_SimpleFE_0_sexual_index_eb.png> <./events_study/FE/simple/events_study_lindo_SimpleFE_0_homicide_index_eb.png> <./events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_motorbike_index_eb.png> <./events_study/FE/simple/events_study_lindo_SimpleFE_0_theft_to_vehicle_index_eb.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 644--645
+Underfull \hbox (badness 10000) in paragraph at lines 643--644
 
  []
 
@@ -1639,38 +1639,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 756--757
  []
 
 
-
-[35]
 Underfull \hbox (badness 10000) in paragraph at lines 758--759
 
  []
 
 
+
+[35]
 Underfull \hbox (badness 10000) in paragraph at lines 760--761
 
  []
 
-<robustnessNOAlwaysTreated/people.png, id=599, 628.0263pt x 381.3447pt>
+<robustnessNOAlwaysTreated/people.png, id=600, 628.0263pt x 381.3447pt>
 File: robustnessNOAlwaysTreated/people.png Graphic file (type png)
 <use robustnessNOAlwaysTreated/people.png>
 Package pdftex.def Info: robustnessNOAlwaysTreated/people.png  used on input line 766.
 (pdftex.def)             Requested size: 217.35588pt x 131.97719pt.
-<robustnessNOAlwaysTreated/sexual.png, id=600, 626.8218pt x 378.213pt>
+<robustnessNOAlwaysTreated/sexual.png, id=601, 626.8218pt x 378.213pt>
 File: robustnessNOAlwaysTreated/sexual.png Graphic file (type png)
 <use robustnessNOAlwaysTreated/sexual.png>
 Package pdftex.def Info: robustnessNOAlwaysTreated/sexual.png  used on input line 772.
 (pdftex.def)             Requested size: 217.35588pt x 131.1473pt.
-<robustnessNOAlwaysTreated/homicide.png, id=601, 625.8582pt x 385.6809pt>
+<robustnessNOAlwaysTreated/homicide.png, id=602, 625.8582pt x 385.6809pt>
 File: robustnessNOAlwaysTreated/homicide.png Graphic file (type png)
 <use robustnessNOAlwaysTreated/homicide.png>
 Package pdftex.def Info: robustnessNOAlwaysTreated/homicide.png  used on input line 781.
 (pdftex.def)             Requested size: 217.35588pt x 133.9428pt.
-<robustnessNOAlwaysTreated/motorbike.png, id=602, 628.5081pt x 381.1038pt>
+<robustnessNOAlwaysTreated/motorbike.png, id=603, 628.5081pt x 381.1038pt>
 File: robustnessNOAlwaysTreated/motorbike.png Graphic file (type png)
 <use robustnessNOAlwaysTreated/motorbike.png>
 Package pdftex.def Info: robustnessNOAlwaysTreated/motorbike.png  used on input line 787.
 (pdftex.def)             Requested size: 217.35588pt x 131.79497pt.
-<robustnessNOAlwaysTreated/vehicle.png, id=603, 628.9899pt x 381.5856pt>
+<robustnessNOAlwaysTreated/vehicle.png, id=604, 628.9899pt x 381.5856pt>
 File: robustnessNOAlwaysTreated/vehicle.png Graphic file (type png)
 <use robustnessNOAlwaysTreated/vehicle.png>
 Package pdftex.def Info: robustnessNOAlwaysTreated/vehicle.png  used on input line 796.
@@ -1875,27 +1875,27 @@ Overfull \hbox (0.51965pt too wide) in alignment at lines 946--987
 [52]
 
 [53]
-<events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_people_index_eb.png, id=821, 626.0991pt x 381.5856pt>
+<events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_people_index_eb.png, id=822, 626.0991pt x 381.5856pt>
 File: events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_people_index_eb.png Graphic file (type png)
 <use events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_people_index_eb.png>
 Package pdftex.def Info: events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_people_index_eb.png  used on input line 1069.
 (pdftex.def)             Requested size: 217.35588pt x 132.46814pt.
-<events_study/all/simple/rawData/events_study_comparado_simple_0_sexual_index_eb.png, id=822, 630.4353pt x 380.622pt>
+<events_study/all/simple/rawData/events_study_comparado_simple_0_sexual_index_eb.png, id=823, 630.4353pt x 380.622pt>
 File: events_study/all/simple/rawData/events_study_comparado_simple_0_sexual_index_eb.png Graphic file (type png)
 <use events_study/all/simple/rawData/events_study_comparado_simple_0_sexual_index_eb.png>
 Package pdftex.def Info: events_study/all/simple/rawData/events_study_comparado_simple_0_sexual_index_eb.png  used on input line 1075.
 (pdftex.def)             Requested size: 217.35588pt x 131.2276pt.
-<events_study/all/simple/rawData/events_study_comparado_simple_0_homicide_index_eb.png, id=823, 630.4353pt x 382.7901pt>
+<events_study/all/simple/rawData/events_study_comparado_simple_0_homicide_index_eb.png, id=824, 630.4353pt x 382.7901pt>
 File: events_study/all/simple/rawData/events_study_comparado_simple_0_homicide_index_eb.png Graphic file (type png)
 <use events_study/all/simple/rawData/events_study_comparado_simple_0_homicide_index_eb.png>
 Package pdftex.def Info: events_study/all/simple/rawData/events_study_comparado_simple_0_homicide_index_eb.png  used on input line 1084.
 (pdftex.def)             Requested size: 217.35588pt x 131.9751pt.
-<events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_motorbike_index_eb.png, id=824, 628.9899pt x 386.1627pt>
+<events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_motorbike_index_eb.png, id=825, 628.9899pt x 386.1627pt>
 File: events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_motorbike_index_eb.png Graphic file (type png)
 <use events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_motorbike_index_eb.png>
 Package pdftex.def Info: events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_motorbike_index_eb.png  used on input line 1090.
 (pdftex.def)             Requested size: 217.35588pt x 133.44429pt.
-<events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_vehicle_index_eb.png, id=825, 628.9899pt x 383.5128pt>
+<events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_vehicle_index_eb.png, id=826, 628.9899pt x 383.5128pt>
 File: events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_vehicle_index_eb.png Graphic file (type png)
 <use events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_vehicle_index_eb.png>
 Package pdftex.def Info: events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_vehicle_index_eb.png  used on input line 1099.
@@ -1917,22 +1917,22 @@ Overfull \hbox (1.91957pt too wide) in paragraph at lines 1135--1135
  <./events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_people_index_eb.png> <./events_study/all/simple/rawData/events_study_comparado_simple_0_sexual_index_eb.png> <./events_study/all/simple/rawData/events_study_comparado_simple_0_homicide_index_eb.png> <./events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_motorbike_index_eb.png> <./events_study/all/simple/rawData/events_study_comparado_simple_0_theft_to_vehicle_index_eb.png>]
 
 [57]
-<figs_dep_maps/mapa_upz_gpkg_all_years_2015_homicide_index_eb.png, id=848, 225.7233pt x 398.9304pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2015_homicide_index_eb.png, id=849, 225.7233pt x 398.9304pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2015_homicide_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2015_homicide_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2015_homicide_index_eb.png  used on input line 1223.
 (pdftex.def)             Requested size: 133.07489pt x 235.19037pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2017_homicide_index_eb.png, id=849, 223.3143pt x 401.0985pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2017_homicide_index_eb.png, id=850, 223.3143pt x 401.0985pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2017_homicide_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2017_homicide_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2017_homicide_index_eb.png  used on input line 1229.
 (pdftex.def)             Requested size: 133.07489pt x 239.01459pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2019_homicide_index_eb.png, id=850, 225.4824pt x 400.8576pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2019_homicide_index_eb.png, id=851, 225.4824pt x 400.8576pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2019_homicide_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2019_homicide_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2019_homicide_index_eb.png  used on input line 1238.
 (pdftex.def)             Requested size: 133.07489pt x 236.58955pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2021_homicide_index_eb.png, id=851, 222.5916pt x 401.0985pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2021_homicide_index_eb.png, id=852, 222.5916pt x 401.0985pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2021_homicide_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2021_homicide_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2021_homicide_index_eb.png  used on input line 1244.
@@ -1940,22 +1940,22 @@ Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2021_homicide_ind
 
 
 [58]
-<figs_dep_maps/mapa_upz_gpkg_all_years_2015_sexual_index_eb.png, id=858, 220.1826pt x 397.0032pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2015_sexual_index_eb.png, id=859, 220.1826pt x 397.0032pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2015_sexual_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2015_sexual_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2015_sexual_index_eb.png  used on input line 1257.
 (pdftex.def)             Requested size: 133.07489pt x 239.9484pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2017_sexual_index_eb.png, id=859, 223.7961pt x 402.303pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2017_sexual_index_eb.png, id=860, 223.7961pt x 402.303pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2017_sexual_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2017_sexual_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2017_sexual_index_eb.png  used on input line 1263.
 (pdftex.def)             Requested size: 133.07489pt x 239.22899pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2019_sexual_index_eb.png, id=860, 224.2779pt x 399.4122pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2019_sexual_index_eb.png, id=861, 224.2779pt x 399.4122pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2019_sexual_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2019_sexual_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2019_sexual_index_eb.png  used on input line 1272.
 (pdftex.def)             Requested size: 133.07489pt x 236.99805pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2021_sexual_index_eb.png, id=861, 220.9053pt x 401.0985pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2021_sexual_index_eb.png, id=862, 220.9053pt x 401.0985pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2021_sexual_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2021_sexual_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2021_sexual_index_eb.png  used on input line 1278.
@@ -1963,22 +1963,22 @@ Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2021_sexual_index
 
 
 [59 <./figs_dep_maps/mapa_upz_gpkg_all_years_2015_homicide_index_eb.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2017_homicide_index_eb.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2019_homicide_index_eb.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2021_homicide_index_eb.png>]
-<figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_vehicle_index_eb.png, id=871, 223.7961pt x 399.4122pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_vehicle_index_eb.png, id=872, 223.7961pt x 399.4122pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_vehicle_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_vehicle_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_vehicle_index_eb.png  used on input line 1291.
 (pdftex.def)             Requested size: 133.07489pt x 237.50998pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_vehicle_index_eb.png, id=872, 229.0959pt x 400.6167pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_vehicle_index_eb.png, id=873, 229.0959pt x 400.6167pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_vehicle_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_vehicle_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_vehicle_index_eb.png  used on input line 1297.
 (pdftex.def)             Requested size: 133.07489pt x 232.70627pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_vehicle_index_eb.png, id=873, 221.3871pt x 401.8212pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_vehicle_index_eb.png, id=874, 221.3871pt x 401.8212pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_vehicle_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_vehicle_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_vehicle_index_eb.png  used on input line 1306.
 (pdftex.def)             Requested size: 133.07489pt x 241.54216pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_vehicle_index_eb.png, id=874, 220.4235pt x 399.1713pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_vehicle_index_eb.png, id=875, 220.4235pt x 399.1713pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_vehicle_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_vehicle_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_vehicle_index_eb.png  used on input line 1312.
@@ -1986,22 +1986,22 @@ Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_veh
 
 
 [60 <./figs_dep_maps/mapa_upz_gpkg_all_years_2015_sexual_index_eb.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2017_sexual_index_eb.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2019_sexual_index_eb.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2021_sexual_index_eb.png>]
-<figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_motorbike_index_eb.png, id=885, 223.7961pt x 399.894pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_motorbike_index_eb.png, id=886, 223.7961pt x 399.894pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_motorbike_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_motorbike_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_motorbike_index_eb.png  used on input line 1325.
 (pdftex.def)             Requested size: 133.07489pt x 237.79648pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_motorbike_index_eb.png, id=886, 231.9867pt x 399.6531pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_motorbike_index_eb.png, id=887, 231.9867pt x 399.6531pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_motorbike_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_motorbike_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_motorbike_index_eb.png  used on input line 1331.
 (pdftex.def)             Requested size: 133.07489pt x 229.2499pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_motorbike_index_eb.png, id=887, 225.9642pt x 400.6167pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_motorbike_index_eb.png, id=888, 225.9642pt x 400.6167pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_motorbike_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_motorbike_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_motorbike_index_eb.png  used on input line 1340.
 (pdftex.def)             Requested size: 133.07489pt x 235.94pt.
-<figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_motorbike_index_eb.png, id=888, 219.7008pt x 401.0985pt>
+<figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_motorbike_index_eb.png, id=889, 219.7008pt x 401.0985pt>
 File: figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_motorbike_index_eb.png Graphic file (type png)
 <use figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_motorbike_index_eb.png>
 Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_motorbike_index_eb.png  used on input line 1346.
@@ -2011,27 +2011,27 @@ Package pdftex.def Info: figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_mot
 [61 <./figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_vehicle_index_eb.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_vehicle_index_eb.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_vehicle_index_eb.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_vehicle_index_eb.png>]
 
 [62 <./figs_dep_maps/mapa_upz_gpkg_all_years_2015_theft_to_motorbike_index_eb.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2017_theft_to_motorbike_index_eb.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2019_theft_to_motorbike_index_eb.png> <./figs_dep_maps/mapa_upz_gpkg_all_years_2021_theft_to_motorbike_index_eb.png>]
-<events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_people_index_eb.png, id=907, 625.6173pt x 384.9582pt>
+<events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_people_index_eb.png, id=908, 625.6173pt x 384.9582pt>
 File: events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_people_index_eb.png Graphic file (type png)
 <use events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_people_index_eb.png>
 Package pdftex.def Info: events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_people_index_eb.png  used on input line 1435.
 (pdftex.def)             Requested size: 217.35588pt x 133.74467pt.
-<events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_sexual_index_eb.png, id=908, 626.8218pt x 380.1402pt>
+<events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_sexual_index_eb.png, id=909, 626.8218pt x 380.1402pt>
 File: events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_sexual_index_eb.png Graphic file (type png)
 <use events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_sexual_index_eb.png>
 Package pdftex.def Info: events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_sexual_index_eb.png  used on input line 1441.
 (pdftex.def)             Requested size: 217.35588pt x 131.81555pt.
-<events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_homicide_index_eb.png, id=909, 625.3764pt x 371.7087pt>
+<events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_homicide_index_eb.png, id=910, 625.3764pt x 371.7087pt>
 File: events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_homicide_index_eb.png Graphic file (type png)
 <use events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_homicide_index_eb.png>
 Package pdftex.def Info: events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_homicide_index_eb.png  used on input line 1450.
 (pdftex.def)             Requested size: 217.35588pt x 129.19249pt.
-<events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_motorbike_index_eb.png, id=910, 628.0263pt x 379.8993pt>
+<events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_motorbike_index_eb.png, id=911, 628.0263pt x 379.8993pt>
 File: events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_motorbike_index_eb.png Graphic file (type png)
 <use events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_motorbike_index_eb.png>
 Package pdftex.def Info: events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_motorbike_index_eb.png  used on input line 1456.
 (pdftex.def)             Requested size: 217.35588pt x 131.47697pt.
-<events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_vehicle_index_eb.png, id=911, 629.9535pt x 387.3672pt>
+<events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_vehicle_index_eb.png, id=912, 629.9535pt x 387.3672pt>
 File: events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_vehicle_index_eb.png Graphic file (type png)
 <use events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_vehicle_index_eb.png>
 Package pdftex.def Info: events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_vehicle_index_eb.png  used on input line 1465.
@@ -2051,7 +2051,7 @@ Overfull \hbox (1.91957pt too wide) in paragraph at lines 1502--1502
 
 
  <./events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_people_index_eb.png> <./events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_sexual_index_eb.png> <./events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_homicide_index_eb.png> <./events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_motorbike_index_eb.png> <./events_study/all/multiple/noAlwaysTreated/events_study_comparado_multiple_0_theft_to_vehicle_index_eb.png>]
-<other_figs/Alwaystreatedunits.png, id=927, 500.87125pt x 955.57pt>
+<other_figs/Alwaystreatedunits.png, id=928, 500.87125pt x 955.57pt>
 File: other_figs/Alwaystreatedunits.png Graphic file (type png)
 <use other_figs/Alwaystreatedunits.png>
 Package pdftex.def Info: other_figs/Alwaystreatedunits.png  used on input line 1522.
@@ -2065,27 +2065,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 1596--1597
 
  []
 
-<events_study/all/simple/events_study_comparado_simple_0_theft_to_people_index_eb.png, id=940, 629.7126pt x 383.7537pt>
+<events_study/all/simple/events_study_comparado_simple_0_theft_to_people_index_eb.png, id=941, 629.7126pt x 383.7537pt>
 File: events_study/all/simple/events_study_comparado_simple_0_theft_to_people_index_eb.png Graphic file (type png)
 <use events_study/all/simple/events_study_comparado_simple_0_theft_to_people_index_eb.png>
 Package pdftex.def Info: events_study/all/simple/events_study_comparado_simple_0_theft_to_people_index_eb.png  used on input line 1602.
 (pdftex.def)             Requested size: 217.35588pt x 132.45956pt.
-<events_study/all/simple/events_study_comparado_simple_0_sexual_index_eb.png, id=941, 628.5081pt x 388.8126pt>
+<events_study/all/simple/events_study_comparado_simple_0_sexual_index_eb.png, id=942, 628.5081pt x 388.8126pt>
 File: events_study/all/simple/events_study_comparado_simple_0_sexual_index_eb.png Graphic file (type png)
 <use events_study/all/simple/events_study_comparado_simple_0_sexual_index_eb.png>
 Package pdftex.def Info: events_study/all/simple/events_study_comparado_simple_0_sexual_index_eb.png  used on input line 1608.
 (pdftex.def)             Requested size: 217.35588pt x 134.46086pt.
-<events_study/all/simple/events_study_comparado_simple_0_homicide_index_eb.png, id=942, 627.5445pt x 378.6948pt>
+<events_study/all/simple/events_study_comparado_simple_0_homicide_index_eb.png, id=943, 627.5445pt x 378.6948pt>
 File: events_study/all/simple/events_study_comparado_simple_0_homicide_index_eb.png Graphic file (type png)
 <use events_study/all/simple/events_study_comparado_simple_0_homicide_index_eb.png>
 Package pdftex.def Info: events_study/all/simple/events_study_comparado_simple_0_homicide_index_eb.png  used on input line 1617.
 (pdftex.def)             Requested size: 217.35588pt x 131.16411pt.
-<events_study/all/simple/events_study_comparado_simple_0_theft_to_motorbike_index_eb.png, id=943, 629.4717pt x 382.0674pt>
+<events_study/all/simple/events_study_comparado_simple_0_theft_to_motorbike_index_eb.png, id=944, 629.4717pt x 382.0674pt>
 File: events_study/all/simple/events_study_comparado_simple_0_theft_to_motorbike_index_eb.png Graphic file (type png)
 <use events_study/all/simple/events_study_comparado_simple_0_theft_to_motorbike_index_eb.png>
 Package pdftex.def Info: events_study/all/simple/events_study_comparado_simple_0_theft_to_motorbike_index_eb.png  used on input line 1623.
 (pdftex.def)             Requested size: 217.35588pt x 131.92415pt.
-<events_study/all/simple/events_study_comparado_simple_0_theft_to_vehicle_index_eb.png, id=944, 628.2672pt x 382.5492pt>
+<events_study/all/simple/events_study_comparado_simple_0_theft_to_vehicle_index_eb.png, id=945, 628.2672pt x 382.5492pt>
 File: events_study/all/simple/events_study_comparado_simple_0_theft_to_vehicle_index_eb.png Graphic file (type png)
 <use events_study/all/simple/events_study_comparado_simple_0_theft_to_vehicle_index_eb.png>
 Package pdftex.def Info: events_study/all/simple/events_study_comparado_simple_0_theft_to_vehicle_index_eb.png  used on input line 1632.
@@ -2132,16 +2132,16 @@ Package logreq Info: Writing requests to 'primera_version.run.xml'.
 Here is how much of TeX's memory you used:
  40595 strings out of 473190
  841064 string characters out of 5715801
- 1756815 words of memory out of 5000000
+ 1755815 words of memory out of 5000000
  63028 multiletter control sequences out of 15000+600000
  582533 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,12n,105p,1827b,5185s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on primera_version.pdf (73 pages, 16372393 bytes).
+Output written on primera_version.pdf (73 pages, 16372117 bytes).
 PDF statistics:
- 1137 PDF objects out of 1200 (max. 8388607)
- 880 compressed objects within 9 object streams
+ 1138 PDF objects out of 1200 (max. 8388607)
+ 881 compressed objects within 9 object streams
  209 named destinations out of 1000 (max. 500000)
  663 words of extra memory for PDF output out of 10000 (max. 10000000)
 

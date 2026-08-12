@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber primera_version"] 1785727806.82466 "primera_version.bcf" "primera_version.bbl" "primera_version" 1785727891.41674 0
-  "primera_version.bcf" 1785727890.96332 143731 06d81be697b7457a9ec9b5bcc5a47f26 "pdflatex"
+["biber primera_version"] 1786495310.52779 "primera_version.bcf" "primera_version.bbl" "primera_version" 1786495829.25097 0
+  "primera_version.bcf" 1786495828.91085 143731 06d81be697b7457a9ec9b5bcc5a47f26 "pdflatex"
   "references.bib" 1785355083.31899 25040 ad29a98a7c02290a822bc532ac788778 ""
   (generated)
   "primera_version.bbl"
   "primera_version.blg"
   (rewritten before read)
-["pdflatex"] 1785727851.10809 "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" "primera_version.pdf" "primera_version" 1785727891.41734 0
-  "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" 1785727761.03032 147345 c8ca3ac0f09c215b32e653341612da8a ""
+["pdflatex"] 1786495790.44498 "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" "primera_version.pdf" "primera_version" 1786495829.25157 0
+  "/Users/sophiaaristizabal/Desktop/1 economia/thesis_economics/doc/primera_version.tex" 1786495789.95609 146936 abf88cf6fc1146deb876986015285e69 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -341,11 +341,11 @@
   "other_figs/Alwaystreatedunits.png" 1782602989.28036 124042 3162b115735973ddd233ce6e021b9df3 ""
   "other_figs/oxxos_intensidad_tratamiento_noalwaystreated.png" 1784604242.99735 214589 953128e2421147453ab4defe05efff55 ""
   "other_figs/oxxos_por_ano.png" 1775271185.2321 115534 bf28badacefdcedaeef91d90353f9ffa ""
-  "primera_version.aux" 1785727890.89902 50615 218b6107a5e13b8785bc5925ef9909d9 "pdflatex"
-  "primera_version.bbl" 1785727809.97838 231646 5095970a37c98c8ceff5aad5c1aa1075 "biber primera_version"
-  "primera_version.out" 1785727890.95688 3924 f83f48ef32339eb8301644c20039f4da "pdflatex"
-  "primera_version.run.xml" 1785727890.96666 2504 b76f80f3fb47b3613c578946be1337de "pdflatex"
-  "primera_version.tex" 1785727761.03032 147345 c8ca3ac0f09c215b32e653341612da8a ""
+  "primera_version.aux" 1786495828.84005 50615 03189bacec0791930a5a8adea4fe426e "pdflatex"
+  "primera_version.bbl" 1786495314.21137 231646 5095970a37c98c8ceff5aad5c1aa1075 "biber primera_version"
+  "primera_version.out" 1786495828.90546 3924 f83f48ef32339eb8301644c20039f4da "pdflatex"
+  "primera_version.run.xml" 1786495828.91249 2504 b76f80f3fb47b3613c578946be1337de "pdflatex"
+  "primera_version.tex" 1786495789.95609 146936 abf88cf6fc1146deb876986015285e69 ""
   "robustnessNOAlwaysTreated/homicide.png" 1785098802.25413 513011 0170e6b709633cd4e2ba1e5dbdd63525 ""
   "robustnessNOAlwaysTreated/motorbike.png" 1785098894.9696 521551 0b1c1c24103e5ceed9b7eccb5a6984b7 ""
   "robustnessNOAlwaysTreated/people.png" 1785098894.74607 429857 e18fd9ef9fe3bfb65fbaf6131a139c68 ""
